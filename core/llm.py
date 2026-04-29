@@ -2,14 +2,18 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 
-def get_llm(model: str = "gemini-2.0-flash", temperature: float = 0.0) -> ChatGoogleGenerativeAI:
+# Allow model to be overridden via environment variable
+DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+
+def get_llm(model: str = DEFAULT_MODEL, temperature: float = 0.0) -> ChatGoogleGenerativeAI:
     """
     Returns a configured ChatGoogleGenerativeAI instance.
 
     Args:
-        model: The Gemini model to use. Defaults to 'gemini-2.0-flash'.
+        model: The Gemini model to use. Defaults to the GEMINI_MODEL env var,
+               falling back to 'gemini-2.5-flash'.
         temperature: Sampling temperature. 0.0 for deterministic outputs.
 
     Returns:
