@@ -1,22 +1,25 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
-from sqlalchemy.orm import relationship
-from .database import Base
+"""
+Database Models
 
-class User(Base):
-    __tablename__ = "users"
+Define your declarative SQLAlchemy models here if needed for
+an API or traditional backend functions. The NL2SQL AI primarily uses
+dynamic metadata from db/database.py to construct raw queries, 
+but models are useful for ORM mapping when saving history or interacting 
+with standard routes.
+"""
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    email = Column(String, unique=True, index=True)
+from sqlalchemy.orm import declarative_base
 
-    orders = relationship("Order", back_populates="user")
+Base = declarative_base()
 
-class Order(Base):
-    __tablename__ = "orders"
-
-    id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, ForeignKey("users.id"))
-    product_name = Column(String, index=True)
-    amount = Column(Float)
-
-    user = relationship("User", back_populates="orders")
+# Example History Model (Optional)
+# from sqlalchemy import Column, Integer, String, Text, DateTime
+# from datetime import datetime
+# 
+# class QueryHistory(Base):
+#     __tablename__ = "query_history"
+#     
+#     id = Column(Integer, primary_key=True, index=True)
+#     user_query = Column(Text, nullable=False)
+#     generated_sql = Column(Text, nullable=False)
+#     created_at = Column(DateTime, default=datetime.utcnow)

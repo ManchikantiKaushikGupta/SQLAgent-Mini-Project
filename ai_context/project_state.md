@@ -12,19 +12,16 @@
 * Validation & Correction Agent
 * LangGraph workflow setup
 * SQLGlot integration
-
-## In Progress
-
 * PostgreSQL connection setup
-
-## Pending
-
 * FastAPI backend
 * Streamlit UI
 
-## Future Improvements
+## In Progress
 
 * Query plan visualization
+
+## Pending
+
 * Improved retry strategies
 * Performance optimization
 * Better prompt tuning

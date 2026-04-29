@@ -1,23 +1,9 @@
-from db.database import engine, Base, get_schema_string
-from db.models import User, Order
-from core.graph import build_graph
+from api.app import app
 
-def init_db():
-    print("Initializing database...")
-    Base.metadata.create_all(bind=engine)
-    print("Database schema:")
-    print(get_schema_string())
-
-def run_pipeline(query: str):
-    app = build_graph()
-    
-    print(f"\n--- Running Pipeline for Query: '{query}' ---")
-    initial_state = {
-        "query": query,
-        "retry_count": 0
-    }
-    
-    # Run the graph
+if __name__ == "__main__":
+    import uvicorn
+    # Make sure to run uvicorn on the application defined in api.app
+    uvicorn.run("api.app:app", host="127.0.0.1", port=8000, reload=True)
     final_state = app.invoke(initial_state)
     
     print("\n--- Final Pipeline Output ---")

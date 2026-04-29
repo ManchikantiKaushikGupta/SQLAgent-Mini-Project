@@ -4,3 +4,9 @@ langchain-google-genai
 sqlalchemy
 python-dotenv
 sqlglot
+psycopg2-binary
+fastapi
+uvicorn
+streamlit
+pandas
+requests

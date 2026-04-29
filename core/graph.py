@@ -13,6 +13,7 @@ from features.intent_clarification.agent import clarify_intent
 from features.query_planning.agent import generate_query_plan
 from features.sql_generation.agent import generate_sql
 from features.validation_correction.agent import validate_sql_safety, correct_sql
+from db.database import execute_sql_query
 
 MAX_RETRIES = 3
 
@@ -49,8 +50,16 @@ def node_correct_sql(state: SQLAgentState):
     return {"sql_query": corrected_sql, "retry_count": current_retries + 1, "error_message": None}
 
 def node_execute_sql(state: SQLAgentState):
-    # TO DO: Connect to db/database.py once PostgreSQL connection setup is ready
-    return {"final_result": "Pending DB execution mapping"}
+    sql = state.get("sql_query")
+    if not sql:
+        return {"final_result": None, "error_message": "No SQL query to execute."}
+        
+    try:
+        # Connects to PostgreSQL and fetches results mapping
+        results = execute_sql_query(sql)
+        return {"final_result": results, "error_message": None}
+    except Exception as e:
+        return {"final_result": None, "error_message": str(e)}
 
 def decide_next_after_validation(state: SQLAgentState) -> Literal["execute", "correct", "end"]:
     """Conditional Edge routing after checking SQL validity."""
