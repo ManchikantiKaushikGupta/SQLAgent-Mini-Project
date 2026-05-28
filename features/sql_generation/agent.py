@@ -70,7 +70,9 @@ def generate_sql(plan: Union[str, QueryPlan], schema: str) -> str:
 
     try:
         response = llm.invoke(messages)
-        sql_query = response.content.strip()
+        from core.llm import extract_text
+        sql_query = extract_text(response)
+
 
         # Clean up formatting the LLM might have added despite instructions
         if sql_query.startswith("```sql"):

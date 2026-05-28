@@ -15,76 +15,136 @@ from features.sql_generation.agent import generate_sql
 from features.validation_correction.agent import validate_sql_safety, correct_sql
 from features.validation_correction.semantic_validator import validate_sql_semantics
 from db.database import execute_sql_query
+import logging
+from observability import (
+    init_metrics_state,
+    track_latency,
+    record_validation,
+    record_correction,
+    record_execution
+)
 
 MAX_RETRIES = 3
 
+logger = logging.getLogger("SQLAgent.Graph")
+logger.setLevel(logging.INFO)
+
 def node_clarify_intent(state: SQLAgentState):
-    refined = clarify_intent(state["original_query"], state.get("db_schema", ""))
-    return {"refined_query": refined}
+    init_metrics_state(state)
+    with track_latency(state, "intent_clarification"):
+        refined = clarify_intent(state["original_query"], state.get("db_schema", ""))
+    return {"refined_query": refined, "metrics": state["metrics"]}
+
+def node_retrieve_schema(state: SQLAgentState):
+    query = state.get("refined_query") or state["original_query"]
+    logger.info("Executing Schema Retrieval stage...")
+    init_metrics_state(state)
+    with track_latency(state, "schema_retrieval"):
+        try:
+            from retrieval.schema_retriever import get_schema_retriever
+            retriever = get_schema_retriever()
+            pruned_schema = retriever.retrieve(query)
+            state["db_schema"] = pruned_schema
+        except Exception as e:
+            logger.error(f"Error during schema retrieval: {e}. Falling back to original schema.")
+            pruned_schema = state.get("db_schema", "")
+    return {"db_schema": pruned_schema, "metrics": state["metrics"]}
 
 def node_query_planning(state: SQLAgentState):
-    plan = generate_query_plan(state["refined_query"], state.get("db_schema", ""))
-    return {"query_plan": plan}
+    init_metrics_state(state)
+    with track_latency(state, "query_planning"):
+        plan = generate_query_plan(state["refined_query"], state.get("db_schema", ""))
+    return {"query_plan": plan, "metrics": state["metrics"]}
 
 def node_sql_generation(state: SQLAgentState):
-    sql = generate_sql(state["query_plan"], state.get("db_schema", ""))
-    return {"sql_query": sql, "error_message": None, "retry_count": 0}
+    init_metrics_state(state)
+    with track_latency(state, "sql_generation"):
+        sql = generate_sql(state["query_plan"], state.get("db_schema", ""))
+    return {"sql_query": sql, "error_message": None, "retry_count": 0, "metrics": state["metrics"]}
 
 def node_validate_sql(state: SQLAgentState):
     sql = state.get("sql_query", "")
-    try:
-        # Validates syntax and safety via SQLGlot
-        validate_sql_safety(sql, dialect="postgres")
-        return {"error_message": None}
-    except Exception as e:
-        return {"error_message": str(e)}
+    init_metrics_state(state)
+    with track_latency(state, "syntax_validation"):
+        try:
+            # Validates syntax and safety via SQLGlot
+            validate_sql_safety(sql, dialect="postgres")
+            record_validation(state, "syntax", True, "SQL syntax and safety checks passed successfully.")
+            return {"error_message": None, "metrics": state["metrics"]}
+        except Exception as e:
+            record_validation(state, "syntax", False, str(e))
+            return {"error_message": str(e), "metrics": state["metrics"]}
 
 def node_correct_sql(state: SQLAgentState):
-    corrected_sql = correct_sql(
-        failed_sql=state["sql_query"],
-        error_message=state["error_message"],
-        schema=state.get("db_schema", ""),
-        original_query=state.get("refined_query") or state["original_query"]
-    )
-    # Increment retry counter
+    failed_sql = state["sql_query"]
+    error_msg = state["error_message"]
     current_retries = state.get("retry_count", 0)
-    return {"sql_query": corrected_sql, "retry_count": current_retries + 1, "error_message": None}
+    init_metrics_state(state)
+    with track_latency(state, f"sql_correction_attempt_{current_retries + 1}"):
+        correction_result = correct_sql(
+            failed_sql=failed_sql,
+            error_message=error_msg,
+            schema=state.get("db_schema", ""),
+            original_query=state.get("refined_query") or state["original_query"]
+        )
+        corrected_sql = correction_result.corrected_sql
+        thought_process = correction_result.thought_process
+    record_correction(
+        state=state,
+        attempt_number=current_retries + 1,
+        failed_sql=failed_sql,
+        error_message=error_msg,
+        corrected_sql=corrected_sql,
+        thought_process=thought_process
+    )
+    return {"sql_query": corrected_sql, "retry_count": current_retries + 1, "error_message": None, "metrics": state["metrics"]}
+
 
 def node_execute_sql(state: SQLAgentState):
     sql = state.get("sql_query")
+    init_metrics_state(state)
     if not sql:
-        return {"final_result": None, "error_message": "No SQL query to execute."}
+        record_execution(state, False, error="No SQL query to execute.")
+        return {"final_result": None, "error_message": "No SQL query to execute.", "metrics": state["metrics"]}
         
-    try:
-        # Connects to PostgreSQL and fetches results mapping
-        results = execute_sql_query(sql)
-        return {"final_result": results, "error_message": None}
-    except Exception as e:
-        return {"final_result": None, "error_message": str(e)}
+    with track_latency(state, "database_execution"):
+        try:
+            # Connects to PostgreSQL and fetches results mapping
+            results = execute_sql_query(sql)
+            record_execution(state, True, len(results) if results else 0)
+            return {"final_result": results, "error_message": None, "metrics": state["metrics"]}
+        except Exception as e:
+            record_execution(state, False, error=str(e))
+            return {"final_result": None, "error_message": str(e), "metrics": state["metrics"]}
 
 def node_semantic_validate(state: SQLAgentState):
     sql = state.get("sql_query", "")
+    init_metrics_state(state)
     if state.get("error_message"):
         return {}
         
-    try:
-        # Performs execution-aware semantic correctness validation
-        validation_res = validate_sql_semantics(
-            sql_query=sql,
-            results=state.get("final_result"),
-            refined_query=state.get("refined_query") or state["original_query"],
-            schema=state.get("db_schema", "")
-        )
-        
-        if not validation_res.is_valid:
-            error_msg = f"Semantic Validation Error: {validation_res.reason}"
-            if validation_res.suggested_fix:
-                error_msg += f" Suggested fix: {validation_res.suggested_fix}"
-            return {"error_message": error_msg}
+    with track_latency(state, "semantic_validation"):
+        try:
+            # Performs execution-aware semantic correctness validation
+            validation_res = validate_sql_semantics(
+                sql_query=sql,
+                results=state.get("final_result"),
+                refined_query=state.get("refined_query") or state["original_query"],
+                schema=state.get("db_schema", "")
+            )
             
-        return {"error_message": None}
-    except Exception as e:
-        return {"error_message": f"Semantic Validation Exception: {str(e)}"}
+            if not validation_res.is_valid:
+                error_msg = f"Semantic Validation Error: {validation_res.reason}"
+                if validation_res.suggested_fix:
+                    error_msg += f" Suggested fix: {validation_res.suggested_fix}"
+                record_validation(state, "semantic", False, validation_res.reason, validation_res.suggested_fix)
+                return {"error_message": error_msg, "metrics": state["metrics"]}
+                
+            record_validation(state, "semantic", True, "Semantic correctness validated successfully.")
+            return {"error_message": None, "metrics": state["metrics"]}
+        except Exception as e:
+            record_validation(state, "semantic", False, f"Semantic Validation Exception: {str(e)}")
+            return {"error_message": f"Semantic Validation Exception: {str(e)}", "metrics": state["metrics"]}
 
 def decide_after_syntax_validation(state: SQLAgentState) -> Literal["execute", "correct", "end"]:
     """Conditional Edge routing after checking SQL syntax and safety."""
@@ -116,6 +176,7 @@ def build_workflow():
 
     # Add Nodes
     workflow.add_node("clarify", node_clarify_intent)
+    workflow.add_node("retrieve_schema", node_retrieve_schema)
     workflow.add_node("plan", node_query_planning)
     workflow.add_node("generate", node_sql_generation)
     workflow.add_node("validate", node_validate_sql)
@@ -125,7 +186,8 @@ def build_workflow():
 
     # Add Edges (linear flow for generation)
     workflow.set_entry_point("clarify")
-    workflow.add_edge("clarify", "plan")
+    workflow.add_edge("clarify", "retrieve_schema")
+    workflow.add_edge("retrieve_schema", "plan")
     workflow.add_edge("plan", "generate")
     workflow.add_edge("generate", "validate")
 

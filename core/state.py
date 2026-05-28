@@ -4,7 +4,7 @@ LangGraph State Definition
 Represents the memory passed between nodes during execution.
 """
 
-from typing import TypedDict, Any, Optional, Union
+from typing import TypedDict, Any, Optional, Union, Dict
 from schemas.planner import QueryPlan
 
 class SQLAgentState(TypedDict):
@@ -16,3 +16,5 @@ class SQLAgentState(TypedDict):
     error_message: Optional[str] # Any error encountered during SQL compilation/validation
     retry_count: int           # The number of times the agent tried to correct a query
     final_result: Optional[Any]  # Target for the database execution results
+    metrics: Optional[Dict[str, Any]] # Observability metrics (latency, tokens, validation, corrections, execution)
+

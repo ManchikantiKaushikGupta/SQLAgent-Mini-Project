@@ -1,17 +1,12 @@
 import json
 import re
 import logging
-from pydantic import BaseModel, Field
 from typing import List, Optional, Any, Dict
 from langchain_core.messages import SystemMessage, HumanMessage
 from core.llm import get_llm
+from schemas.validation import SemanticValidationResult
 
 logger = logging.getLogger(__name__)
-
-class SemanticValidationResult(BaseModel):
-    is_valid: bool = Field(..., description="Whether the SQL query is semantically correct and answers the user query")
-    reason: str = Field(..., description="Explanation of why the query is correct or incorrect (detailing logical bugs, missing filters, wrong joins, etc.)")
-    suggested_fix: Optional[str] = Field(None, description="If invalid, a suggestion of how to fix the query (e.g. 'Use LEFT JOIN instead of INNER JOIN', 'Add a filter for active status')")
 
 SEMANTIC_VALIDATOR_SYSTEM_PROMPT = """
 You are an expert SQL QA specialist. Your job is to check if a generated SQL query is semantically and logically correct and actually answers the user's refined natural language query.

@@ -52,3 +52,28 @@ def get_llm(model: str = DEFAULT_MODEL, temperature: float = 0.0) -> ChatGoogleG
         google_api_key=api_key,
         callbacks=active_callbacks if active_callbacks else None,
     )
+
+
+def extract_text(response) -> str:
+    """
+    Safely extracts string content from an LLM response or AIMessage.
+    Handles standard string payloads and complex multi-part dictionary/list payloads.
+    """
+    if hasattr(response, "text") and response.text:
+        return response.text.strip()
+        
+    content = getattr(response, "content", response)
+    if isinstance(content, str):
+        return content.strip()
+        
+    if isinstance(content, list):
+        text_parts = []
+        for part in content:
+            if isinstance(part, str):
+                text_parts.append(part)
+            elif isinstance(part, dict) and "text" in part:
+                text_parts.append(part["text"])
+        return "".join(text_parts).strip()
+        
+    return str(content).strip()
+

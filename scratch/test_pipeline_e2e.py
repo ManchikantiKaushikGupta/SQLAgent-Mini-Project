@@ -67,6 +67,16 @@ def test_e2e_pipeline():
     logger.info(f"Final Execution Error: {final_state.get('error_message')}")
     logger.info(f"Final Execution Result: {final_state.get('final_result')}")
 
+    logger.info("--- Observability Metrics Diagnostic ---")
+    metrics = final_state.get("metrics")
+    if metrics:
+        logger.info(f"Stage Latencies: {metrics.get('latency')}")
+        logger.info(f"Validation Details: {metrics.get('validation')}")
+        logger.info(f"Execution Stats: {metrics.get('execution')}")
+        logger.info(f"Correction History Size: {len(metrics.get('correction_history', []))}")
+    else:
+        logger.error("Failure: Metrics dictionary not found in final state!")
+
     # Verify if semantic validation was reached
     if final_state.get("error_message") and "Semantic Validation" in final_state["error_message"]:
         logger.info("Semantic validation triggered an error loop successfully!")

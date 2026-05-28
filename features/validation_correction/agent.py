@@ -15,6 +15,7 @@ from features.validation_correction.prompt import (
 )
 
 
+from schemas.validation import SQLCorrectionResult
 from features.validation_correction.repair_engine import repair_sql_clause
 
 
@@ -57,7 +58,7 @@ def validate_sql_safety(sql: str, dialect: str = "postgres") -> bool:
     return True
 
 
-def correct_sql(failed_sql: str, error_message: str, schema: str, original_query: str) -> str:
+def correct_sql(failed_sql: str, error_message: str, schema: str, original_query: str) -> SQLCorrectionResult:
     """
     Calls the LLM to fix a broken SQL query based on the schema and error message.
     Tries surgical clause repair first, falling back to full query regeneration.
@@ -69,12 +70,14 @@ def correct_sql(failed_sql: str, error_message: str, schema: str, original_query
         original_query: The natural language intent query.
 
     Returns:
-        A corrected raw SQL string.
+        A SQLCorrectionResult Pydantic model containing the thought process and corrected SQL.
     """
     if not failed_sql or not error_message or not schema:
         raise ValueError("failed_sql, error_message, and schema must be provided.")
 
     import logging
+    import re
+    import json
     logger = logging.getLogger(__name__)
 
     # Try AST-based clause repair first
@@ -87,7 +90,10 @@ def correct_sql(failed_sql: str, error_message: str, schema: str, original_query
         )
         if repaired_sql:
             logger.info("Successfully repaired SQL using surgical clause-level AST grafting.")
-            return repaired_sql
+            return SQLCorrectionResult(
+                thought_process="Surgically repaired SQL using clause-level AST grafting.",
+                corrected_sql=repaired_sql
+            )
     except Exception as re_err:
         logger.warning(f"AST-based surgical clause repair failed: {re_err}. Falling back to full query correction.")
 
@@ -109,12 +115,28 @@ def correct_sql(failed_sql: str, error_message: str, schema: str, original_query
     response = llm.invoke(messages)
     
     # Strip markdown code blocks if LLM adds them
-    sql_query = response.content.strip()
-    if sql_query.startswith("```sql"):
-        sql_query = sql_query.split("```sql", 1)[1]
-    if sql_query.startswith("```"):
-        sql_query = sql_query.split("```", 1)[1]
-    if sql_query.endswith("```"):
-        sql_query = sql_query.rsplit("```", 1)[0]
-        
-    return sql_query.strip()
+    from core.llm import extract_text
+    content = extract_text(response).strip()
+    logger.debug(f"Raw LLM response for SQL correction:\n{content}")
+
+    # Extract JSON block deterministically
+    match = re.search(r"(\{.*\})", content, re.DOTALL)
+    if not match:
+        logger.error(f"Failed to find JSON block in LLM response: {content}")
+        raise ValueError("The SQL correction agent did not output a valid JSON correction block.")
+
+    json_str = match.group(1)
+    data = json.loads(json_str)
+
+    # Validate against the Pydantic SQLCorrectionResult model
+    if hasattr(SQLCorrectionResult, "model_validate"):
+        result = SQLCorrectionResult.model_validate(data)
+    else:
+        result = SQLCorrectionResult.parse_obj(data)
+
+    logger.info(
+        f"SQL correction completed successfully. "
+        f"Thought Process: {result.thought_process}"
+    )
+    return result
+

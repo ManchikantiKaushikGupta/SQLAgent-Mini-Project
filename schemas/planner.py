@@ -10,6 +10,9 @@ class TableRequirement(BaseModel):
     def normalize_table(cls, data: Any) -> Any:
         if isinstance(data, str):
             return {"table_name": data, "purpose": "Required for query execution"}
+        if isinstance(data, dict):
+            if "name" in data and "table_name" not in data:
+                data["table_name"] = data["name"]
         return data
 
 class JoinRequirement(BaseModel):
@@ -17,6 +20,14 @@ class JoinRequirement(BaseModel):
     right_table: str = Field(..., description="The right table name in the join")
     join_type: str = Field("INNER", description="Type of join (INNER, LEFT, RIGHT, FULL)")
     on_condition: str = Field(..., description="The column condition to join on (e.g. users.id = orders.user_id)")
+
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_join(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            if "condition" in data and "on_condition" not in data:
+                data["on_condition"] = data["condition"]
+        return data
 
 class FilterRequirement(BaseModel):
     column: str = Field(..., description="The fully qualified column name to filter on (e.g. users.status)")
@@ -65,7 +76,28 @@ class QueryPlan(BaseModel):
                 for t in data["tables"]:
                     if isinstance(t, str):
                         normalized_tables.append({"table_name": t, "purpose": "Required for query execution"})
+                    elif isinstance(t, dict):
+                        if "name" in t and "table_name" not in t:
+                            t["table_name"] = t["name"]
+                        normalized_tables.append(t)
                     else:
                         normalized_tables.append(t)
                 data["tables"] = normalized_tables
+                
+            # If group_by contains dict objects, extract their column name
+            if "group_by" in data and isinstance(data["group_by"], list):
+                normalized_gb = []
+                for gb in data["group_by"]:
+                    if isinstance(gb, str):
+                        normalized_gb.append(gb)
+                    elif isinstance(gb, dict):
+                        if "column" in gb:
+                            normalized_gb.append(gb["column"])
+                        elif "expression" in gb:
+                            normalized_gb.append(gb["expression"])
+                        else:
+                            normalized_gb.append(str(list(gb.values())[0]))
+                    else:
+                        normalized_gb.append(str(gb))
+                data["group_by"] = normalized_gb
         return data

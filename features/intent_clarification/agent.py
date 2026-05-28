@@ -113,6 +113,8 @@ def clarify_intent(query: str, schema: str = "") -> str:
     ]
 
     response = llm.invoke(messages)
-    refined_query = response.content.strip()
+    from core.llm import extract_text
+    refined_query = extract_text(response)
 
     return refined_query
+

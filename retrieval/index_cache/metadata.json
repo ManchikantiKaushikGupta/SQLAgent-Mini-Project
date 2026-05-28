@@ -1,0 +1,262 @@
+{
+  "table_names": [
+    "categories",
+    "products",
+    "users",
+    "orders",
+    "order_items",
+    "reviews"
+  ],
+  "db_metadata": {
+    "categories": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "is_pk": true,
+          "is_fk": false
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(50)",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "department",
+          "type": "VARCHAR(50)",
+          "is_pk": false,
+          "is_fk": false
+        }
+      ],
+      "pk_columns": [
+        "id"
+      ],
+      "fk_columns": []
+    },
+    "products": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "is_pk": true,
+          "is_fk": false
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(100)",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "category_id",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": true
+        },
+        {
+          "name": "price",
+          "type": "DOUBLE PRECISION",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "stock_quantity",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "average_rating",
+          "type": "DOUBLE PRECISION",
+          "is_pk": false,
+          "is_fk": false
+        }
+      ],
+      "pk_columns": [
+        "id"
+      ],
+      "fk_columns": [
+        "category_id"
+      ]
+    },
+    "users": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "is_pk": true,
+          "is_fk": false
+        },
+        {
+          "name": "first_name",
+          "type": "VARCHAR(50)",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "last_name",
+          "type": "VARCHAR(50)",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR(100)",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "city",
+          "type": "VARCHAR(50)",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "country",
+          "type": "VARCHAR(50)",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "is_premium",
+          "type": "BOOLEAN",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "signup_date",
+          "type": "TIMESTAMP",
+          "is_pk": false,
+          "is_fk": false
+        }
+      ],
+      "pk_columns": [
+        "id"
+      ],
+      "fk_columns": []
+    },
+    "orders": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "is_pk": true,
+          "is_fk": false
+        },
+        {
+          "name": "user_id",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": true
+        },
+        {
+          "name": "order_date",
+          "type": "TIMESTAMP",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "status",
+          "type": "VARCHAR(20)",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "shipping_cost",
+          "type": "DOUBLE PRECISION",
+          "is_pk": false,
+          "is_fk": false
+        }
+      ],
+      "pk_columns": [
+        "id"
+      ],
+      "fk_columns": [
+        "user_id"
+      ]
+    },
+    "order_items": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "is_pk": true,
+          "is_fk": false
+        },
+        {
+          "name": "order_id",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": true
+        },
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": true
+        },
+        {
+          "name": "quantity",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "unit_price",
+          "type": "DOUBLE PRECISION",
+          "is_pk": false,
+          "is_fk": false
+        }
+      ],
+      "pk_columns": [
+        "id"
+      ],
+      "fk_columns": [
+        "product_id",
+        "order_id"
+      ]
+    },
+    "reviews": {
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "is_pk": true,
+          "is_fk": false
+        },
+        {
+          "name": "product_id",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": true
+        },
+        {
+          "name": "user_id",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": true
+        },
+        {
+          "name": "rating",
+          "type": "INTEGER",
+          "is_pk": false,
+          "is_fk": false
+        },
+        {
+          "name": "review_text",
+          "type": "TEXT",
+          "is_pk": false,
+          "is_fk": false
+        }
+      ],
+      "pk_columns": [
+        "id"
+      ],
+      "fk_columns": [
+        "product_id",
+        "user_id"
+      ]
+    }
+  }
+}

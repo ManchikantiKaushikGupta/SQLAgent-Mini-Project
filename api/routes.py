@@ -33,6 +33,7 @@ class QueryResponse(BaseModel):
     sql_query: Optional[str]
     results: Optional[List[Dict[str, Any]]]
     error: Optional[str]
+    metrics: Optional[Dict[str, Any]] = None
 
 
 @router.post("/ask", response_model=QueryResponse)
@@ -60,18 +61,47 @@ async def ask_database(request: QueryRequest):
         "final_result": None
     }
 
+    from core.llm import register_thread_callbacks, clear_thread_callbacks
+    from observability.metrics import TokenAccumulatorCallback
+    
+    tokens_tracker = TokenAccumulatorCallback()
+    register_thread_callbacks([tokens_tracker])
+
     try:
         # Run the graph until the end
         result_state = workflow_app.invoke(initial_state)
+
+        # Inject final token usage stats into the metrics telemetry
+        metrics = result_state.get("metrics", {})
+        if metrics:
+            metrics["tokens"] = {
+                "prompt_tokens": tokens_tracker.prompt_tokens,
+                "completion_tokens": tokens_tracker.completion_tokens,
+                "total_tokens": tokens_tracker.total_tokens
+            }
+            
+            # Inject serialized Query Plan into metrics context
+            plan = result_state.get("query_plan")
+            if plan:
+                if hasattr(plan, "model_dump"):
+                    metrics["query_plan"] = plan.model_dump()
+                elif hasattr(plan, "dict"):
+                    metrics["query_plan"] = plan.dict()
+                else:
+                    metrics["query_plan"] = plan
+
 
         return QueryResponse(
             original_query=result_state.get("original_query", ""),
             refined_query=result_state.get("refined_query"),
             sql_query=result_state.get("sql_query"),
             results=result_state.get("final_result"),
-            error=result_state.get("error_message")
+            error=result_state.get("error_message"),
+            metrics=metrics
         )
-
     except Exception as e:
         logger.error(f"Error executing query graph: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        clear_thread_callbacks()
+

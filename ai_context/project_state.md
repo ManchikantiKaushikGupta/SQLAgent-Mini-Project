@@ -293,35 +293,31 @@ Eliminate fragile free-text reasoning outputs.
 
 * [x] Introduce Pydantic schemas (added `schemas/planner.py`)
 * [x] Add structured planner outputs (refactored Query Planning Agent to return Pydantic `QueryPlan` with robust validation-first parsing)
-* [ ] Add structured validator outputs
-* [ ] Add typed correction outputs
+* [x] Add structured validator outputs (centralized validation schemas under `schemas/validation.py` and refactored semantic validator agent)
+* [x] Add typed correction outputs (refactored the SQL correction fallback loop to enforce structured JSON prompts parsed and validated via Pydantic)
+
 
 ---
 
-# PRIORITY 2 — Evaluation Framework
+# PRIORITY 2 — Evaluation Framework [COMPLETED]
 
 ## Objective
 
 Move from demo-based validation to benchmark-driven evaluation.
 
-## Required
+## Status
+* [x] **Pydantic metrics schemas** (added `evaluation/metrics.py` defining standard schemas for `BenchmarkCase`, `BenchmarkResult`, and `BenchmarkSummary`)
+* [x] **Semantic cell comparison engine** (added `evaluation/execution_accuracy.py` implementing robust, alias-independent result-set cell matching)
+* [x] **Rate-limit resilient benchmark suite** (added `evaluation/benchmark_runner.py` defining 10 diverse e-commerce test cases with active proactive and reactive backoff retry mechanisms)
+* [x] **Observability logs** (logs failures to `evaluation/failed_queries.json` and histories to `evaluation/run_history.json`)
 
-evaluation/
+## Metrics Tracked
 
-### Add
-
-* benchmark_runner.py
-* metrics.py
-* failed_queries.json
-* execution_accuracy.py
-
-### Metrics To Track
-
-* execution accuracy
-* correction success rate
-* retry count
-* latency
-* token usage
+* **Execution accuracy** (percentage of queries yielding semantically identical rows to ground-truth reference SQL)
+* **Correction success rate** (efficiency of the correction loop when correcting initially invalid queries)
+* **Retry count** (total correction loop iterations executed per query and in aggregate)
+* **Latency** (latency from graph invocation to final result across stages)
+* **Token usage** (transparent prompt, completion, and total token usage tracked via thread-local LangChain callbacks in `core/llm.py`)
 
 ---
 
@@ -353,37 +349,36 @@ Repair failing SQL components individually.
 
 ---
 
-# PRIORITY 5 — Schema Retrieval Layer
+# PRIORITY 5 — Schema Retrieval Layer [COMPLETED]
 
 ## Objective
 
-Scale efficiently to larger schemas.
+Scale efficiently to larger database schemas.
 
-## Add
+## Status
 
-* embedding-based retrieval
-* schema pruning
-* relevant table ranking
-* relevant column ranking
+* [x] **FAISS vector indexing**: added `retrieval/` module leveraging `faiss-cpu` and `models/gemini-embedding-2` for dual-layer table and column vector indices.
+* [x] **Structural preservation**: automatically retains all Primary Key and Foreign Key columns in retrieved tables to guarantee downstream JOIN capabilities.
+* [x] **Dynamic column ranking**: uses Unit Inner-Product Cosine Similarity in-memory to select the top $M$ most relevant data columns per table.
+* [x] **LangGraph integration**: added `retrieve_schema` node intercepts and overrides the `db_schema` state variable seamlessly, maintaining complete backward compatibility with all subsequent agents.
+* [x] **Smart caching**: serializes FAISS index binaries and structural metadata to disk (`retrieval/index_cache/`) and holds retriever singleton in memory, avoiding redundant API costs.
 
 ---
 
-# PRIORITY 6 — Observability & Transparency
+# PRIORITY 6 — Observability & Transparency [COMPLETED]
 
 ## Objective
 
 Make the entire reasoning pipeline inspectable.
 
-## Dashboard Should Show
+## Status
 
-* user query
-* planner output
-* generated SQL
-* validation results
-* correction attempts
-* execution output
-* latency
-* token usage
+* [x] **Reusable Telemetry Module**: added `observability/` package defining structured, clean context managers, callbacks, and diagnostic recorders.
+* [x] **Stage-wise Latency Timeline**: measures step durations for all graph nodes and stores them in state telemetries.
+* [x] **Thread-safe Token Accumulator**: thread-local callback aggregated prompt, completion, and total tokens safely.
+* [x] **Diagnostic Audits**: records safety AST validations (SQLGlot) and execution-aware semantic intent validations.
+* [x] **SQL Correction Trails**: chronological logging captures clause grafts and repair loops.
+* [x] **Interactive Observability Dashboard**: Streamlit tabbed UI (`📊 Observability Dashboard`) displays latency bar charts, token lists, planner diagrams, validation audits, and correction histories.
 
 ---
 

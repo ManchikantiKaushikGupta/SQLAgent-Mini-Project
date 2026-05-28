@@ -164,7 +164,7 @@ def run_benchmarks() -> Tuple[BenchmarkSummary, List[BenchmarkResult]]:
     results: List[BenchmarkResult] = []
     
     print(f"\n========================================================")
-    print(f"🚀 SQLAgent Benchmark Run {run_id}")
+    print(f"[RUN] SQLAgent Benchmark Run {run_id}")
     print(f"========================================================\n")
     
     for case in BENCHMARK_CASES:
@@ -189,7 +189,27 @@ def run_benchmarks() -> Tuple[BenchmarkSummary, List[BenchmarkResult]]:
         start_time = time.time()
         
         try:
-            final_state = app.invoke(initial_state)
+            # Execute with active rate-limiting retries
+            max_attempts = 5
+            attempt = 1
+            final_state = None
+            while attempt <= max_attempts:
+                try:
+                    final_state = app.invoke(initial_state)
+                    break
+                except Exception as e:
+                    err_str = str(e)
+                    if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str or "quota" in err_str.lower():
+                        sleep_time = attempt * 12
+                        print(f"   [RATE LIMIT] Quota exceeded. Sleeping for {sleep_time}s before retrying (Attempt {attempt}/{max_attempts})...")
+                        time.sleep(sleep_time)
+                        attempt += 1
+                    else:
+                        raise e
+            
+            if final_state is None:
+                raise RuntimeError("Failed to execute graph after max rate-limit retries.")
+                
             latency = time.time() - start_time
             
             generated_sql = final_state.get("sql_query")
@@ -256,8 +276,12 @@ def run_benchmarks() -> Tuple[BenchmarkSummary, List[BenchmarkResult]]:
             clear_thread_callbacks()
             
         results.append(result)
-        status_symbol = "🟢 PASS" if result.success else "🔴 FAIL"
-        print(f"   ↳ {status_symbol} (Latency: {result.latency_seconds:.2f}s | Tokens: {result.total_tokens} | Retries: {result.retry_count})\n")
+        status_symbol = "PASS" if result.success else "FAIL"
+        print(f"   => {status_symbol} (Latency: {result.latency_seconds:.2f}s | Tokens: {result.total_tokens} | Retries: {result.retry_count})\n")
+        
+        # Proactive delay between cases to stay under rate limits
+        if case != BENCHMARK_CASES[-1]:
+            time.sleep(3)
         
     # --- Aggregate Summary Metrics ---
     total_cases = len(results)
@@ -368,7 +392,7 @@ def render_dashboard(summary: BenchmarkSummary, results: List[BenchmarkResult]):
     Prints a rich ANSI console dashboard summarizing the run.
     """
     print(f"\n========================================================")
-    print(f"📊 BENCHMARK RUN RESULTS: {summary.run_id}")
+    print(f"BENCHMARK RUN RESULTS: {summary.run_id}")
     print(f"========================================================")
     print(f"Timestamp:                 {summary.timestamp}")
     print(f"Total Test Cases:          {summary.total_cases}")
@@ -385,10 +409,10 @@ def render_dashboard(summary: BenchmarkSummary, results: List[BenchmarkResult]):
     
     print(f"\n--- Difficulty Breakdown ---")
     for diff, stats in summary.difficulty_breakdown.items():
-        print(f"  • {diff.capitalize():10}: {stats['passed']}/{stats['total']} correct ({stats['accuracy_pct']:.1f}%)")
+        print(f"  * {diff.capitalize():10}: {stats['passed']}/{stats['total']} correct ({stats['accuracy_pct']:.1f}%)")
         
     print(f"\n========================================================")
-    print(f"📋 DETAILED RESULTS TABLE")
+    print(f"DETAILED RESULTS TABLE")
     print(f"========================================================")
     print(f"{'Case ID':8} | {'Difficulty':10} | {'Status':6} | {'Retries':7} | {'Latency':8} | {'NL Query'}")
     print(f"-" * 80)
