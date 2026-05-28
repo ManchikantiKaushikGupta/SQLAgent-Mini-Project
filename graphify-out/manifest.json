@@ -14,16 +14,6 @@
     "ast_hash": "85b99393f8efed74822d1b4ca1367226",
     "semantic_hash": ""
   },
-  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch_test.py": {
-    "mtime": 1779966292.4461186,
-    "ast_hash": "ecd8aa91ab0641d961033623ce732ccf",
-    "semantic_hash": ""
-  },
-  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch_test_planner.py": {
-    "mtime": 1779966588.8443224,
-    "ast_hash": "9328ca6c91ef8dc256f36a024d2ed94a",
-    "semantic_hash": ""
-  },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\seed_db.py": {
     "mtime": 1777529766.9678402,
     "ast_hash": "f1de075b16c10b494b6e5df2ad548e5b",
@@ -155,8 +145,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\ai_context\\project_state.md": {
-    "mtime": 1779965631.9073737,
-    "ast_hash": "130644291e5602e08f953e2d255cd1e3",
+    "mtime": 1779967496.5806313,
+    "ast_hash": "c8538cf52ed2a64bf17ed43ac44f8c55",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\ai_context\\system_prompt.md": {

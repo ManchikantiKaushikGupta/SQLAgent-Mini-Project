@@ -4,1104 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "label": "build_graph_offline.py",
-      "file_type": "code",
-      "source_file": "build_graph_offline.py",
-      "source_location": "L1",
-      "id": "build_graph_offline_py",
-      "community": 7,
-      "norm_label": "build_graph_offline.py"
-    },
-    {
-      "label": "load_detection()",
-      "file_type": "code",
-      "source_file": "build_graph_offline.py",
-      "source_location": "L20",
-      "id": "sqlagent_mini_project_build_graph_offline_load_detection",
-      "community": 7,
-      "norm_label": "load_detection()"
-    },
-    {
-      "label": "extract_offline()",
-      "file_type": "code",
-      "source_file": "build_graph_offline.py",
-      "source_location": "L26",
-      "id": "sqlagent_mini_project_build_graph_offline_extract_offline",
-      "community": 7,
-      "norm_label": "extract_offline()"
-    },
-    {
-      "label": "label_communities()",
-      "file_type": "code",
-      "source_file": "build_graph_offline.py",
-      "source_location": "L55",
-      "id": "sqlagent_mini_project_build_graph_offline_label_communities",
-      "community": 7,
-      "norm_label": "label_communities()"
-    },
-    {
-      "label": "int",
-      "file_type": "code",
-      "source_file": "build_graph_offline.py",
-      "source_location": "L55",
-      "id": "int",
-      "community": 7,
-      "norm_label": "int"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "build_graph_offline.py",
-      "source_location": "L55",
-      "id": "build_graph_offline_py_str",
-      "community": 7,
-      "norm_label": "str"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "build_graph_offline.py",
-      "source_location": "L72",
-      "id": "sqlagent_mini_project_build_graph_offline_main",
-      "community": 7,
-      "norm_label": "main()"
-    },
-    {
-      "label": "graphify_detect_summary.py",
-      "file_type": "code",
-      "source_file": "graphify_detect_summary.py",
-      "source_location": "L1",
-      "id": "graphify_detect_summary_py",
-      "community": 14,
-      "norm_label": "graphify_detect_summary.py"
-    },
-    {
-      "label": "main.py",
-      "file_type": "code",
-      "source_file": "main.py",
-      "source_location": "L1",
-      "id": "main_py",
-      "community": 15,
-      "norm_label": "main.py"
-    },
-    {
-      "label": "scratch_test.py",
-      "file_type": "code",
-      "source_file": "scratch_test.py",
-      "source_location": "L1",
-      "id": "scratch_test_py",
-      "community": 23,
-      "norm_label": "scratch_test.py"
-    },
-    {
-      "label": "TestSchema",
-      "file_type": "code",
-      "source_file": "scratch_test.py",
-      "source_location": "L8",
-      "id": "sqlagent_mini_project_scratch_test_testschema",
-      "community": 23,
-      "norm_label": "testschema"
-    },
-    {
-      "label": "BaseModel",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "id": "basemodel",
-      "community": 23,
-      "norm_label": "basemodel"
-    },
-    {
-      "label": "scratch_test_planner.py",
-      "file_type": "code",
-      "source_file": "scratch_test_planner.py",
-      "source_location": "L1",
-      "id": "scratch_test_planner_py",
-      "community": 2,
-      "norm_label": "scratch_test_planner.py"
-    },
-    {
-      "label": "seed_db.py",
-      "file_type": "code",
-      "source_file": "seed_db.py",
-      "source_location": "L1",
-      "id": "seed_db_py",
-      "community": 4,
-      "norm_label": "seed_db.py"
-    },
-    {
-      "label": "User",
-      "file_type": "code",
-      "source_file": "seed_db.py",
-      "source_location": "L19",
-      "id": "sqlagent_mini_project_seed_db_user",
-      "community": 4,
-      "norm_label": "user"
-    },
-    {
-      "label": "Base",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "id": "base",
-      "community": 4,
-      "norm_label": "base"
-    },
-    {
-      "label": "Category",
-      "file_type": "code",
-      "source_file": "seed_db.py",
-      "source_location": "L30",
-      "id": "sqlagent_mini_project_seed_db_category",
-      "community": 4,
-      "norm_label": "category"
-    },
-    {
-      "label": "Product",
-      "file_type": "code",
-      "source_file": "seed_db.py",
-      "source_location": "L36",
-      "id": "sqlagent_mini_project_seed_db_product",
-      "community": 4,
-      "norm_label": "product"
-    },
-    {
-      "label": "Order",
-      "file_type": "code",
-      "source_file": "seed_db.py",
-      "source_location": "L45",
-      "id": "sqlagent_mini_project_seed_db_order",
-      "community": 4,
-      "norm_label": "order"
-    },
-    {
-      "label": "OrderItem",
-      "file_type": "code",
-      "source_file": "seed_db.py",
-      "source_location": "L53",
-      "id": "sqlagent_mini_project_seed_db_orderitem",
-      "community": 4,
-      "norm_label": "orderitem"
-    },
-    {
-      "label": "Review",
-      "file_type": "code",
-      "source_file": "seed_db.py",
-      "source_location": "L61",
-      "id": "sqlagent_mini_project_seed_db_review",
-      "community": 4,
-      "norm_label": "review"
-    },
-    {
-      "label": "Complex Database Seeder for Presentation  Creates a realistic E-Commerce schema",
-      "file_type": "rationale",
-      "source_file": "seed_db.py",
-      "source_location": "L1",
-      "id": "sqlagent_mini_project_seed_db_rationale_1",
-      "community": 4,
-      "norm_label": "complex database seeder for presentation  creates a realistic e-commerce schema"
-    },
-    {
-      "label": "app.py",
-      "file_type": "code",
-      "source_file": "api/app.py",
-      "source_location": "L1",
-      "id": "api_app_py",
-      "community": 10,
-      "norm_label": "app.py"
-    },
-    {
-      "label": "health_check()",
-      "file_type": "code",
-      "source_file": "api/app.py",
-      "source_location": "L30",
-      "id": "api_app_health_check",
-      "community": 10,
-      "norm_label": "health_check()"
-    },
-    {
-      "label": "FastAPI Application Setup  Provides an entry point for running the API backend.",
-      "file_type": "rationale",
-      "source_file": "api/app.py",
-      "source_location": "L1",
-      "id": "api_app_rationale_1",
-      "community": 10,
-      "norm_label": "fastapi application setup  provides an entry point for running the api backend."
-    },
-    {
-      "label": "routes.py",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L1",
-      "id": "api_routes_py",
-      "community": 1,
-      "norm_label": "routes.py"
-    },
-    {
-      "label": "QueryRequest",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L26",
-      "id": "api_routes_queryrequest",
-      "community": 1,
-      "norm_label": "queryrequest"
-    },
-    {
-      "label": "QueryResponse",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L30",
-      "id": "api_routes_queryresponse",
-      "community": 1,
-      "norm_label": "queryresponse"
-    },
-    {
-      "label": "ask_database()",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L39",
-      "id": "api_routes_ask_database",
-      "community": 1,
-      "norm_label": "ask_database()"
-    },
-    {
-      "label": "FastAPI Routes  Defines endpoints for the SQLAgent application.",
-      "file_type": "rationale",
-      "source_file": "api/routes.py",
-      "source_location": "L1",
-      "id": "api_routes_rationale_1",
-      "community": 1,
-      "norm_label": "fastapi routes  defines endpoints for the sqlagent application."
-    },
-    {
-      "label": "Takes a natural language query, runs it through the SQLAgent graph,     and retu",
-      "file_type": "rationale",
-      "source_file": "api/routes.py",
-      "source_location": "L40",
-      "id": "api_routes_rationale_40",
-      "community": 1,
-      "norm_label": "takes a natural language query, runs it through the sqlagent graph,     and retu"
-    },
-    {
-      "label": "graph.py",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L1",
-      "id": "core_graph_py",
-      "community": 0,
-      "norm_label": "graph.py"
-    },
-    {
-      "label": "node_clarify_intent()",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L20",
-      "id": "core_graph_node_clarify_intent",
-      "community": 3,
-      "norm_label": "node_clarify_intent()"
-    },
-    {
-      "label": "SQLAgentState",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L20",
-      "id": "sqlagentstate",
-      "community": 0,
-      "norm_label": "sqlagentstate"
-    },
-    {
-      "label": "node_query_planning()",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L24",
-      "id": "core_graph_node_query_planning",
-      "community": 0,
-      "norm_label": "node_query_planning()"
-    },
-    {
-      "label": "node_sql_generation()",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L28",
-      "id": "core_graph_node_sql_generation",
-      "community": 0,
-      "norm_label": "node_sql_generation()"
-    },
-    {
-      "label": "node_validate_sql()",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L32",
-      "id": "core_graph_node_validate_sql",
-      "community": 0,
-      "norm_label": "node_validate_sql()"
-    },
-    {
-      "label": "node_correct_sql()",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L41",
-      "id": "core_graph_node_correct_sql",
-      "community": 0,
-      "norm_label": "node_correct_sql()"
-    },
-    {
-      "label": "node_execute_sql()",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L52",
-      "id": "core_graph_node_execute_sql",
-      "community": 0,
-      "norm_label": "node_execute_sql()"
-    },
-    {
-      "label": "decide_next_after_validation()",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L64",
-      "id": "core_graph_decide_next_after_validation",
-      "community": 0,
-      "norm_label": "decide_next_after_validation()"
-    },
-    {
-      "label": "build_workflow()",
-      "file_type": "code",
-      "source_file": "core/graph.py",
-      "source_location": "L72",
-      "id": "core_graph_build_workflow",
-      "community": 1,
-      "norm_label": "build_workflow()"
-    },
-    {
-      "label": "LangGraph Workflow Definition  Connects individual agents into a cohesive cycle,",
-      "file_type": "rationale",
-      "source_file": "core/graph.py",
-      "source_location": "L1",
-      "id": "core_graph_rationale_1",
-      "community": 0,
-      "norm_label": "langgraph workflow definition  connects individual agents into a cohesive cycle,"
-    },
-    {
-      "label": "Conditional Edge routing after checking SQL validity.",
-      "file_type": "rationale",
-      "source_file": "core/graph.py",
-      "source_location": "L65",
-      "id": "core_graph_rationale_65",
-      "community": 0,
-      "norm_label": "conditional edge routing after checking sql validity."
-    },
-    {
-      "label": "Compiles and returns the LangGraph application.",
-      "file_type": "rationale",
-      "source_file": "core/graph.py",
-      "source_location": "L73",
-      "id": "core_graph_rationale_73",
-      "community": 1,
-      "norm_label": "compiles and returns the langgraph application."
-    },
-    {
-      "label": "llm.py",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L1",
-      "id": "core_llm_py",
-      "community": 2,
-      "norm_label": "llm.py"
-    },
-    {
-      "label": "get_llm()",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L10",
-      "id": "core_llm_get_llm",
-      "community": 2,
-      "norm_label": "get_llm()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L10",
-      "id": "core_llm_py_str",
-      "community": 2,
-      "norm_label": "str"
-    },
-    {
-      "label": "float",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L10",
-      "id": "float",
-      "community": 2,
-      "norm_label": "float"
-    },
-    {
-      "label": "ChatGoogleGenerativeAI",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L10",
-      "id": "chatgooglegenerativeai",
-      "community": 2,
-      "norm_label": "chatgooglegenerativeai"
-    },
-    {
-      "label": "Returns a configured ChatGoogleGenerativeAI instance.      Args:         model:",
-      "file_type": "rationale",
-      "source_file": "core/llm.py",
-      "source_location": "L11",
-      "id": "core_llm_rationale_11",
-      "community": 2,
-      "norm_label": "returns a configured chatgooglegenerativeai instance.      args:         model:"
-    },
-    {
-      "label": "state.py",
-      "file_type": "code",
-      "source_file": "core/state.py",
-      "source_location": "L1",
-      "id": "core_state_py",
-      "community": 2,
-      "norm_label": "state.py"
-    },
-    {
-      "label": "SQLAgentState",
-      "file_type": "code",
-      "source_file": "core/state.py",
-      "source_location": "L10",
-      "id": "core_state_sqlagentstate",
-      "community": 2,
-      "norm_label": "sqlagentstate"
-    },
-    {
-      "label": "TypedDict",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "id": "typeddict",
-      "community": 2,
-      "norm_label": "typeddict"
-    },
-    {
-      "label": "LangGraph State Definition  Represents the memory passed between nodes during ex",
-      "file_type": "rationale",
-      "source_file": "core/state.py",
-      "source_location": "L1",
-      "id": "core_state_rationale_1",
-      "community": 2,
-      "norm_label": "langgraph state definition  represents the memory passed between nodes during ex"
-    },
-    {
-      "label": "database.py",
-      "file_type": "code",
-      "source_file": "db/database.py",
-      "source_location": "L1",
-      "id": "db_database_py",
-      "community": 1,
-      "norm_label": "database.py"
-    },
-    {
-      "label": "get_db()",
-      "file_type": "code",
-      "source_file": "db/database.py",
-      "source_location": "L28",
-      "id": "db_database_get_db",
-      "community": 1,
-      "norm_label": "get_db()"
-    },
-    {
-      "label": "get_database_schema()",
-      "file_type": "code",
-      "source_file": "db/database.py",
-      "source_location": "L37",
-      "id": "db_database_get_database_schema",
-      "community": 1,
-      "norm_label": "get_database_schema()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "db/database.py",
-      "source_location": "L37",
-      "id": "db_database_py_str",
-      "community": 1,
-      "norm_label": "str"
-    },
-    {
-      "label": "execute_sql_query()",
-      "file_type": "code",
-      "source_file": "db/database.py",
-      "source_location": "L62",
-      "id": "db_database_execute_sql_query",
-      "community": 0,
-      "norm_label": "execute_sql_query()"
-    },
-    {
-      "label": "Database connection and utilities.  Handles PostgreSQL connection setup using SQ",
-      "file_type": "rationale",
-      "source_file": "db/database.py",
-      "source_location": "L1",
-      "id": "db_database_rationale_1",
-      "community": 1,
-      "norm_label": "database connection and utilities.  handles postgresql connection setup using sq"
-    },
-    {
-      "label": "Yields a database session.",
-      "file_type": "rationale",
-      "source_file": "db/database.py",
-      "source_location": "L29",
-      "id": "db_database_rationale_29",
-      "community": 1,
-      "norm_label": "yields a database session."
-    },
-    {
-      "label": "Extracts table names, columns, and data types from the connected PostgreSQL data",
-      "file_type": "rationale",
-      "source_file": "db/database.py",
-      "source_location": "L38",
-      "id": "db_database_rationale_38",
-      "community": 1,
-      "norm_label": "extracts table names, columns, and data types from the connected postgresql data"
-    },
-    {
-      "label": "Executes a raw SQL SELECT query against the PostgreSQL database safely.",
-      "file_type": "rationale",
-      "source_file": "db/database.py",
-      "source_location": "L63",
-      "id": "db_database_rationale_63",
-      "community": 0,
-      "norm_label": "executes a raw sql select query against the postgresql database safely."
-    },
-    {
-      "label": "models.py",
-      "file_type": "code",
-      "source_file": "db/models.py",
-      "source_location": "L1",
-      "id": "db_models_py",
-      "community": 13,
-      "norm_label": "models.py"
-    },
-    {
-      "label": "Database Models  Define your declarative SQLAlchemy models here if needed for an",
-      "file_type": "rationale",
-      "source_file": "db/models.py",
-      "source_location": "L1",
-      "id": "db_models_rationale_1",
-      "community": 13,
-      "norm_label": "database models  define your declarative sqlalchemy models here if needed for an"
-    },
-    {
-      "label": "agent.py",
-      "file_type": "code",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L1",
-      "id": "features_intent_clarification_agent_py",
-      "community": 3,
-      "norm_label": "agent.py"
-    },
-    {
-      "label": "is_ambiguous()",
-      "file_type": "code",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L47",
-      "id": "intent_clarification_agent_is_ambiguous",
-      "community": 3,
-      "norm_label": "is_ambiguous()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L47",
-      "id": "features_intent_clarification_agent_py_str",
-      "community": 3,
-      "norm_label": "str"
-    },
-    {
-      "label": "bool",
-      "file_type": "code",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L47",
-      "id": "features_intent_clarification_agent_py_bool",
-      "community": 3,
-      "norm_label": "bool"
-    },
-    {
-      "label": "get_matched_vague_terms()",
-      "file_type": "code",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L61",
-      "id": "intent_clarification_agent_get_matched_vague_terms",
-      "community": 3,
-      "norm_label": "get_matched_vague_terms()"
-    },
-    {
-      "label": "clarify_intent()",
-      "file_type": "code",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L78",
-      "id": "intent_clarification_agent_clarify_intent",
-      "community": 3,
-      "norm_label": "clarify_intent()"
-    },
-    {
-      "label": "Intent Clarification Agent  Detects and resolves ambiguous natural language quer",
-      "file_type": "rationale",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L1",
-      "id": "intent_clarification_agent_rationale_1",
-      "community": 3,
-      "norm_label": "intent clarification agent  detects and resolves ambiguous natural language quer"
-    },
-    {
-      "label": "Checks whether a user query contains vague or ambiguous terms     that need clar",
-      "file_type": "rationale",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L48",
-      "id": "intent_clarification_agent_rationale_48",
-      "community": 3,
-      "norm_label": "checks whether a user query contains vague or ambiguous terms     that need clar"
-    },
-    {
-      "label": "Returns a list of vague/ambiguous terms found in the query.      Args:         q",
-      "file_type": "rationale",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L62",
-      "id": "intent_clarification_agent_rationale_62",
-      "community": 3,
-      "norm_label": "returns a list of vague/ambiguous terms found in the query.      args:         q"
-    },
-    {
-      "label": "Clarifies an ambiguous natural language query using the LLM.      If the query c",
-      "file_type": "rationale",
-      "source_file": "features/intent_clarification/agent.py",
-      "source_location": "L79",
-      "id": "intent_clarification_agent_rationale_79",
-      "community": 3,
-      "norm_label": "clarifies an ambiguous natural language query using the llm.      if the query c"
-    },
-    {
-      "label": "prompt.py",
-      "file_type": "code",
-      "source_file": "features/intent_clarification/prompt.py",
-      "source_location": "L1",
-      "id": "features_intent_clarification_prompt_py",
-      "community": 16,
-      "norm_label": "prompt.py"
-    },
-    {
-      "label": "__init__.py",
-      "file_type": "code",
-      "source_file": "features/intent_clarification/__init__.py",
-      "source_location": "L1",
-      "id": "features_intent_clarification_init_py",
-      "community": 3,
-      "norm_label": "__init__.py"
-    },
-    {
-      "label": "Intent Clarification Agent package.",
-      "file_type": "rationale",
-      "source_file": "features/intent_clarification/__init__.py",
-      "source_location": "L1",
-      "id": "intent_clarification_init_rationale_1",
-      "community": 3,
-      "norm_label": "intent clarification agent package."
-    },
-    {
-      "label": "agent.py",
-      "file_type": "code",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L1",
-      "id": "features_query_planning_agent_py",
-      "community": 2,
-      "norm_label": "agent.py"
-    },
-    {
-      "label": "generate_query_plan()",
-      "file_type": "code",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L24",
-      "id": "query_planning_agent_generate_query_plan",
-      "community": 2,
-      "norm_label": "generate_query_plan()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L24",
-      "id": "features_query_planning_agent_py_str",
-      "community": 2,
-      "norm_label": "str"
-    },
-    {
-      "label": "QueryPlan",
-      "file_type": "code",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L24",
-      "id": "features_query_planning_agent_py_queryplan",
-      "community": 2,
-      "norm_label": "queryplan"
-    },
-    {
-      "label": "Query Planning Agent  Converts a refined natural language query into a structure",
-      "file_type": "rationale",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L1",
-      "id": "query_planning_agent_rationale_1",
-      "community": 2,
-      "norm_label": "query planning agent  converts a refined natural language query into a structure"
-    },
-    {
-      "label": "Generates a structured, step-by-step SQL query plan from a refined     natural l",
-      "file_type": "rationale",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L25",
-      "id": "query_planning_agent_rationale_25",
-      "community": 2,
-      "norm_label": "generates a structured, step-by-step sql query plan from a refined     natural l"
-    },
-    {
-      "label": "prompt.py",
-      "file_type": "code",
-      "source_file": "features/query_planning/prompt.py",
-      "source_location": "L1",
-      "id": "features_query_planning_prompt_py",
-      "community": 17,
-      "norm_label": "prompt.py"
-    },
-    {
-      "label": "__init__.py",
-      "file_type": "code",
-      "source_file": "features/query_planning/__init__.py",
-      "source_location": "L1",
-      "id": "features_query_planning_init_py",
-      "community": 2,
-      "norm_label": "__init__.py"
-    },
-    {
-      "label": "Query Planning Agent package.",
-      "file_type": "rationale",
-      "source_file": "features/query_planning/__init__.py",
-      "source_location": "L1",
-      "id": "query_planning_init_rationale_1",
-      "community": 2,
-      "norm_label": "query planning agent package."
-    },
-    {
-      "label": "agent.py",
-      "file_type": "code",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L1",
-      "id": "features_sql_generation_agent_py",
-      "community": 2,
-      "norm_label": "agent.py"
-    },
-    {
-      "label": "generate_sql()",
-      "file_type": "code",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L21",
-      "id": "sql_generation_agent_generate_sql",
-      "community": 2,
-      "norm_label": "generate_sql()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L21",
-      "id": "features_sql_generation_agent_py_str",
-      "community": 2,
-      "norm_label": "str"
-    },
-    {
-      "label": "QueryPlan",
-      "file_type": "code",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L21",
-      "id": "features_sql_generation_agent_py_queryplan",
-      "community": 2,
-      "norm_label": "queryplan"
-    },
-    {
-      "label": "SQL Generation Agent  Converts a structured query execution plan into a raw SQL",
-      "file_type": "rationale",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L1",
-      "id": "sql_generation_agent_rationale_1",
-      "community": 2,
-      "norm_label": "sql generation agent  converts a structured query execution plan into a raw sql"
-    },
-    {
-      "label": "Generates a SQL SELECT statement based on a query execution plan and     databas",
-      "file_type": "rationale",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L22",
-      "id": "sql_generation_agent_rationale_22",
-      "community": 2,
-      "norm_label": "generates a sql select statement based on a query execution plan and     databas"
-    },
-    {
-      "label": "prompt.py",
-      "file_type": "code",
-      "source_file": "features/sql_generation/prompt.py",
-      "source_location": "L1",
-      "id": "features_sql_generation_prompt_py",
-      "community": 18,
-      "norm_label": "prompt.py"
-    },
-    {
-      "label": "__init__.py",
-      "file_type": "code",
-      "source_file": "features/sql_generation/__init__.py",
-      "source_location": "L1",
-      "id": "features_sql_generation_init_py",
-      "community": 2,
-      "norm_label": "__init__.py"
-    },
-    {
-      "label": "SQL Generation Agent package.",
-      "file_type": "rationale",
-      "source_file": "features/sql_generation/__init__.py",
-      "source_location": "L1",
-      "id": "sql_generation_init_rationale_1",
-      "community": 2,
-      "norm_label": "sql generation agent package."
-    },
-    {
-      "label": "agent.py",
-      "file_type": "code",
-      "source_file": "features/validation_correction/agent.py",
-      "source_location": "L1",
-      "id": "features_validation_correction_agent_py",
-      "community": 0,
-      "norm_label": "agent.py"
-    },
-    {
-      "label": "validate_sql_safety()",
-      "file_type": "code",
-      "source_file": "features/validation_correction/agent.py",
-      "source_location": "L18",
-      "id": "validation_correction_agent_validate_sql_safety",
-      "community": 0,
-      "norm_label": "validate_sql_safety()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "features/validation_correction/agent.py",
-      "source_location": "L18",
-      "id": "features_validation_correction_agent_py_str",
-      "community": 0,
-      "norm_label": "str"
-    },
-    {
-      "label": "bool",
-      "file_type": "code",
-      "source_file": "features/validation_correction/agent.py",
-      "source_location": "L18",
-      "id": "features_validation_correction_agent_py_bool",
-      "community": 0,
-      "norm_label": "bool"
-    },
-    {
-      "label": "correct_sql()",
-      "file_type": "code",
-      "source_file": "features/validation_correction/agent.py",
-      "source_location": "L57",
-      "id": "validation_correction_agent_correct_sql",
-      "community": 0,
-      "norm_label": "correct_sql()"
-    },
-    {
-      "label": "Validation & Correction Agent  Validates SQL syntax and safety using SQLGlot. Co",
-      "file_type": "rationale",
-      "source_file": "features/validation_correction/agent.py",
-      "source_location": "L1",
-      "id": "validation_correction_agent_rationale_1",
-      "community": 0,
-      "norm_label": "validation & correction agent  validates sql syntax and safety using sqlglot. co"
-    },
-    {
-      "label": "Parses the SQL query with SQLGlot to ensure it is syntactically valid     and st",
-      "file_type": "rationale",
-      "source_file": "features/validation_correction/agent.py",
-      "source_location": "L19",
-      "id": "validation_correction_agent_rationale_19",
-      "community": 0,
-      "norm_label": "parses the sql query with sqlglot to ensure it is syntactically valid     and st"
-    },
-    {
-      "label": "Calls the LLM to fix a broken SQL query based on the schema and error message.",
-      "file_type": "rationale",
-      "source_file": "features/validation_correction/agent.py",
-      "source_location": "L58",
-      "id": "validation_correction_agent_rationale_58",
-      "community": 0,
-      "norm_label": "calls the llm to fix a broken sql query based on the schema and error message."
-    },
-    {
-      "label": "prompt.py",
-      "file_type": "code",
-      "source_file": "features/validation_correction/prompt.py",
-      "source_location": "L1",
-      "id": "features_validation_correction_prompt_py",
-      "community": 19,
-      "norm_label": "prompt.py"
-    },
-    {
-      "label": "app.py",
-      "file_type": "code",
-      "source_file": "frontend/app.py",
-      "source_location": "L1",
-      "id": "frontend_app_py",
-      "community": 20,
-      "norm_label": "app.py"
-    },
-    {
-      "label": "planner.py",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L1",
-      "id": "schemas_planner_py",
-      "community": 23,
-      "norm_label": "planner.py"
-    },
-    {
-      "label": "TableRequirement",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L4",
-      "id": "schemas_planner_tablerequirement",
-      "community": 23,
-      "norm_label": "tablerequirement"
-    },
-    {
-      "label": ".normalize_table()",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L10",
-      "id": "schemas_planner_tablerequirement_normalize_table",
-      "community": 23,
-      "norm_label": ".normalize_table()"
-    },
-    {
-      "label": "Any",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L10",
-      "id": "any",
-      "community": 23,
-      "norm_label": "any"
-    },
-    {
-      "label": "JoinRequirement",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L15",
-      "id": "schemas_planner_joinrequirement",
-      "community": 23,
-      "norm_label": "joinrequirement"
-    },
-    {
-      "label": "FilterRequirement",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L21",
-      "id": "schemas_planner_filterrequirement",
-      "community": 23,
-      "norm_label": "filterrequirement"
-    },
-    {
-      "label": "AggregationRequirement",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L26",
-      "id": "schemas_planner_aggregationrequirement",
-      "community": 23,
-      "norm_label": "aggregationrequirement"
-    },
-    {
-      "label": "OrderByRequirement",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L31",
-      "id": "schemas_planner_orderbyrequirement",
-      "community": 23,
-      "norm_label": "orderbyrequirement"
-    },
-    {
-      "label": ".normalize_order_by()",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L37",
-      "id": "schemas_planner_orderbyrequirement_normalize_order_by",
-      "community": 23,
-      "norm_label": ".normalize_order_by()"
-    },
-    {
-      "label": "QueryPlan",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L45",
-      "id": "schemas_planner_queryplan",
-      "community": 2,
-      "norm_label": "queryplan"
-    },
-    {
-      "label": ".normalize_plan()",
-      "file_type": "code",
-      "source_file": "schemas/planner.py",
-      "source_location": "L60",
-      "id": "schemas_planner_queryplan_normalize_plan",
-      "community": 23,
-      "norm_label": ".normalize_plan()"
-    },
-    {
-      "label": "A structured, step-by-step query execution plan that guides the SQL Generation A",
-      "file_type": "rationale",
-      "source_file": "schemas/planner.py",
-      "source_location": "L46",
-      "id": "schemas_planner_rationale_46",
-      "community": 2,
-      "norm_label": "a structured, step-by-step query execution plan that guides the sql generation a"
-    },
-    {
-      "label": "test_pipeline_e2e.py",
-      "file_type": "code",
-      "source_file": "scratch/test_pipeline_e2e.py",
-      "source_location": "L1",
-      "id": "scratch_test_pipeline_e2e_py",
-      "community": 1,
-      "norm_label": "test_pipeline_e2e.py"
-    },
-    {
-      "label": "test_e2e_pipeline()",
-      "file_type": "code",
-      "source_file": "scratch/test_pipeline_e2e.py",
-      "source_location": "L19",
-      "id": "scratch_test_pipeline_e2e_test_e2e_pipeline",
-      "community": 1,
-      "norm_label": "test_e2e_pipeline()"
-    },
-    {
-      "label": "README.md",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "id": "readme_md",
-      "community": 12,
-      "norm_label": "readme.md"
-    },
-    {
-      "label": "SQLAgent-Mini-Project",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "id": "sqlagent_mini_project_readme_sqlagent_mini_project",
-      "community": 12,
-      "norm_label": "sqlagent-mini-project"
-    },
-    {
       "label": "graphify.md",
       "file_type": "document",
       "source_file": ".agents/rules/graphify.md",
@@ -1768,112 +670,1192 @@
       "norm_label": "final vision"
     },
     {
+      "label": "build_graph_offline.py",
+      "file_type": "code",
+      "source_file": "build_graph_offline.py",
+      "source_location": "L1",
+      "id": "build_graph_offline_py",
+      "community": 7,
+      "norm_label": "build_graph_offline.py"
+    },
+    {
+      "label": "load_detection()",
+      "file_type": "code",
+      "source_file": "build_graph_offline.py",
+      "source_location": "L20",
+      "id": "sqlagent_mini_project_build_graph_offline_load_detection",
+      "community": 7,
+      "norm_label": "load_detection()"
+    },
+    {
+      "label": "extract_offline()",
+      "file_type": "code",
+      "source_file": "build_graph_offline.py",
+      "source_location": "L26",
+      "id": "sqlagent_mini_project_build_graph_offline_extract_offline",
+      "community": 7,
+      "norm_label": "extract_offline()"
+    },
+    {
+      "label": "label_communities()",
+      "file_type": "code",
+      "source_file": "build_graph_offline.py",
+      "source_location": "L55",
+      "id": "sqlagent_mini_project_build_graph_offline_label_communities",
+      "community": 7,
+      "norm_label": "label_communities()"
+    },
+    {
+      "label": "int",
+      "file_type": "code",
+      "source_file": "build_graph_offline.py",
+      "source_location": "L55",
+      "id": "int",
+      "community": 7,
+      "norm_label": "int"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "build_graph_offline.py",
+      "source_location": "L55",
+      "id": "build_graph_offline_py_str",
+      "community": 7,
+      "norm_label": "str"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "build_graph_offline.py",
+      "source_location": "L72",
+      "id": "sqlagent_mini_project_build_graph_offline_main",
+      "community": 7,
+      "norm_label": "main()"
+    },
+    {
+      "label": "state.py",
+      "file_type": "code",
+      "source_file": "core/state.py",
+      "source_location": "L1",
+      "id": "core_state_py",
+      "community": 23,
+      "norm_label": "state.py"
+    },
+    {
+      "label": "SQLAgentState",
+      "file_type": "code",
+      "source_file": "core/state.py",
+      "source_location": "L10",
+      "id": "core_state_sqlagentstate",
+      "community": 23,
+      "norm_label": "sqlagentstate"
+    },
+    {
+      "label": "TypedDict",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "typeddict",
+      "community": 23,
+      "norm_label": "typeddict"
+    },
+    {
+      "label": "LangGraph State Definition  Represents the memory passed between nodes during ex",
+      "file_type": "rationale",
+      "source_file": "core/state.py",
+      "source_location": "L1",
+      "id": "core_state_rationale_1",
+      "community": 23,
+      "norm_label": "langgraph state definition  represents the memory passed between nodes during ex"
+    },
+    {
+      "label": "agent.py",
+      "file_type": "code",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L1",
+      "id": "features_query_planning_agent_py",
+      "community": 2,
+      "norm_label": "agent.py"
+    },
+    {
+      "label": "generate_query_plan()",
+      "file_type": "code",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L24",
+      "id": "query_planning_agent_generate_query_plan",
+      "community": 2,
+      "norm_label": "generate_query_plan()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L24",
+      "id": "features_query_planning_agent_py_str",
+      "community": 2,
+      "norm_label": "str"
+    },
+    {
+      "label": "QueryPlan",
+      "file_type": "code",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L24",
+      "id": "features_query_planning_agent_py_queryplan",
+      "community": 2,
+      "norm_label": "queryplan"
+    },
+    {
+      "label": "Query Planning Agent  Converts a refined natural language query into a structure",
+      "file_type": "rationale",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L1",
+      "id": "query_planning_agent_rationale_1",
+      "community": 2,
+      "norm_label": "query planning agent  converts a refined natural language query into a structure"
+    },
+    {
+      "label": "Generates a structured, step-by-step SQL query plan from a refined     natural l",
+      "file_type": "rationale",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L25",
+      "id": "query_planning_agent_rationale_25",
+      "community": 2,
+      "norm_label": "generates a structured, step-by-step sql query plan from a refined     natural l"
+    },
+    {
+      "label": "prompt.py",
+      "file_type": "code",
+      "source_file": "features/query_planning/prompt.py",
+      "source_location": "L1",
+      "id": "features_query_planning_prompt_py",
+      "community": 17,
+      "norm_label": "prompt.py"
+    },
+    {
+      "label": "agent.py",
+      "file_type": "code",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L1",
+      "id": "features_sql_generation_agent_py",
+      "community": 2,
+      "norm_label": "agent.py"
+    },
+    {
+      "label": "generate_sql()",
+      "file_type": "code",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L21",
+      "id": "sql_generation_agent_generate_sql",
+      "community": 2,
+      "norm_label": "generate_sql()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L21",
+      "id": "features_sql_generation_agent_py_str",
+      "community": 2,
+      "norm_label": "str"
+    },
+    {
+      "label": "QueryPlan",
+      "file_type": "code",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L21",
+      "id": "features_sql_generation_agent_py_queryplan",
+      "community": 2,
+      "norm_label": "queryplan"
+    },
+    {
+      "label": "SQL Generation Agent  Converts a structured query execution plan into a raw SQL",
+      "file_type": "rationale",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L1",
+      "id": "sql_generation_agent_rationale_1",
+      "community": 2,
+      "norm_label": "sql generation agent  converts a structured query execution plan into a raw sql"
+    },
+    {
+      "label": "Generates a SQL SELECT statement based on a query execution plan and     databas",
+      "file_type": "rationale",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L22",
+      "id": "sql_generation_agent_rationale_22",
+      "community": 2,
+      "norm_label": "generates a sql select statement based on a query execution plan and     databas"
+    },
+    {
+      "label": "graphify_detect_summary.py",
+      "file_type": "code",
+      "source_file": "graphify_detect_summary.py",
+      "source_location": "L1",
+      "id": "graphify_detect_summary_py",
+      "community": 14,
+      "norm_label": "graphify_detect_summary.py"
+    },
+    {
+      "label": "planner.py",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L1",
+      "id": "schemas_planner_py",
+      "community": 23,
+      "norm_label": "planner.py"
+    },
+    {
+      "label": "TableRequirement",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L4",
+      "id": "schemas_planner_tablerequirement",
+      "community": 23,
+      "norm_label": "tablerequirement"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basemodel",
+      "community": 23,
+      "norm_label": "basemodel"
+    },
+    {
+      "label": ".normalize_table()",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L10",
+      "id": "schemas_planner_tablerequirement_normalize_table",
+      "community": 23,
+      "norm_label": ".normalize_table()"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L10",
+      "id": "any",
+      "community": 23,
+      "norm_label": "any"
+    },
+    {
+      "label": "JoinRequirement",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L15",
+      "id": "schemas_planner_joinrequirement",
+      "community": 23,
+      "norm_label": "joinrequirement"
+    },
+    {
+      "label": "FilterRequirement",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L21",
+      "id": "schemas_planner_filterrequirement",
+      "community": 23,
+      "norm_label": "filterrequirement"
+    },
+    {
+      "label": "AggregationRequirement",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L26",
+      "id": "schemas_planner_aggregationrequirement",
+      "community": 23,
+      "norm_label": "aggregationrequirement"
+    },
+    {
+      "label": "OrderByRequirement",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L31",
+      "id": "schemas_planner_orderbyrequirement",
+      "community": 23,
+      "norm_label": "orderbyrequirement"
+    },
+    {
+      "label": ".normalize_order_by()",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L37",
+      "id": "schemas_planner_orderbyrequirement_normalize_order_by",
+      "community": 23,
+      "norm_label": ".normalize_order_by()"
+    },
+    {
+      "label": "QueryPlan",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L45",
+      "id": "schemas_planner_queryplan",
+      "community": 23,
+      "norm_label": "queryplan"
+    },
+    {
+      "label": ".normalize_plan()",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L60",
+      "id": "schemas_planner_queryplan_normalize_plan",
+      "community": 23,
+      "norm_label": ".normalize_plan()"
+    },
+    {
+      "label": "A structured, step-by-step query execution plan that guides the SQL Generation A",
+      "file_type": "rationale",
+      "source_file": "schemas/planner.py",
+      "source_location": "L46",
+      "id": "schemas_planner_rationale_46",
+      "community": 23,
+      "norm_label": "a structured, step-by-step query execution plan that guides the sql generation a"
+    },
+    {
+      "label": "test_pipeline_e2e.py",
+      "file_type": "code",
+      "source_file": "scratch/test_pipeline_e2e.py",
+      "source_location": "L1",
+      "id": "scratch_test_pipeline_e2e_py",
+      "community": 1,
+      "norm_label": "test_pipeline_e2e.py"
+    },
+    {
+      "label": "test_e2e_pipeline()",
+      "file_type": "code",
+      "source_file": "scratch/test_pipeline_e2e.py",
+      "source_location": "L19",
+      "id": "scratch_test_pipeline_e2e_test_e2e_pipeline",
+      "community": 1,
+      "norm_label": "test_e2e_pipeline()"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "main.py",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "main.py",
+      "id": "main_py"
+    },
+    {
+      "label": "scratch_test.py",
+      "file_type": "code",
+      "source_file": "scratch_test.py",
+      "source_location": "L1",
+      "community": 23,
+      "norm_label": "scratch_test.py",
+      "id": "scratch_test_py"
+    },
+    {
+      "label": "TestSchema",
+      "file_type": "code",
+      "source_file": "scratch_test.py",
+      "source_location": "L8",
+      "community": 23,
+      "norm_label": "testschema",
+      "id": "sqlagent_mini_project_scratch_test_testschema"
+    },
+    {
+      "label": "scratch_test_planner.py",
+      "file_type": "code",
+      "source_file": "scratch_test_planner.py",
+      "source_location": "L1",
+      "community": 23,
+      "norm_label": "scratch_test_planner.py",
+      "id": "scratch_test_planner_py"
+    },
+    {
+      "label": "seed_db.py",
+      "file_type": "code",
+      "source_file": "seed_db.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "seed_db.py",
+      "id": "seed_db_py"
+    },
+    {
+      "label": "User",
+      "file_type": "code",
+      "source_file": "seed_db.py",
+      "source_location": "L19",
+      "community": 4,
+      "norm_label": "user",
+      "id": "sqlagent_mini_project_seed_db_user"
+    },
+    {
+      "label": "Base",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "community": 4,
+      "norm_label": "base",
+      "id": "base"
+    },
+    {
+      "label": "Category",
+      "file_type": "code",
+      "source_file": "seed_db.py",
+      "source_location": "L30",
+      "community": 4,
+      "norm_label": "category",
+      "id": "sqlagent_mini_project_seed_db_category"
+    },
+    {
+      "label": "Product",
+      "file_type": "code",
+      "source_file": "seed_db.py",
+      "source_location": "L36",
+      "community": 4,
+      "norm_label": "product",
+      "id": "sqlagent_mini_project_seed_db_product"
+    },
+    {
+      "label": "Order",
+      "file_type": "code",
+      "source_file": "seed_db.py",
+      "source_location": "L45",
+      "community": 4,
+      "norm_label": "order",
+      "id": "sqlagent_mini_project_seed_db_order"
+    },
+    {
+      "label": "OrderItem",
+      "file_type": "code",
+      "source_file": "seed_db.py",
+      "source_location": "L53",
+      "community": 4,
+      "norm_label": "orderitem",
+      "id": "sqlagent_mini_project_seed_db_orderitem"
+    },
+    {
+      "label": "Review",
+      "file_type": "code",
+      "source_file": "seed_db.py",
+      "source_location": "L61",
+      "community": 4,
+      "norm_label": "review",
+      "id": "sqlagent_mini_project_seed_db_review"
+    },
+    {
+      "label": "Complex Database Seeder for Presentation  Creates a realistic E-Commerce schema",
+      "file_type": "rationale",
+      "source_file": "seed_db.py",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "complex database seeder for presentation  creates a realistic e-commerce schema",
+      "id": "sqlagent_mini_project_seed_db_rationale_1"
+    },
+    {
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "api/app.py",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "app.py",
+      "id": "api_app_py"
+    },
+    {
+      "label": "health_check()",
+      "file_type": "code",
+      "source_file": "api/app.py",
+      "source_location": "L30",
+      "community": 10,
+      "norm_label": "health_check()",
+      "id": "api_app_health_check"
+    },
+    {
+      "label": "FastAPI Application Setup  Provides an entry point for running the API backend.",
+      "file_type": "rationale",
+      "source_file": "api/app.py",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "fastapi application setup  provides an entry point for running the api backend.",
+      "id": "api_app_rationale_1"
+    },
+    {
+      "label": "routes.py",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "routes.py",
+      "id": "api_routes_py"
+    },
+    {
+      "label": "QueryRequest",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L26",
+      "community": 1,
+      "norm_label": "queryrequest",
+      "id": "api_routes_queryrequest"
+    },
+    {
+      "label": "QueryResponse",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L30",
+      "community": 1,
+      "norm_label": "queryresponse",
+      "id": "api_routes_queryresponse"
+    },
+    {
+      "label": "ask_database()",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L39",
+      "community": 1,
+      "norm_label": "ask_database()",
+      "id": "api_routes_ask_database"
+    },
+    {
+      "label": "FastAPI Routes  Defines endpoints for the SQLAgent application.",
+      "file_type": "rationale",
+      "source_file": "api/routes.py",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "fastapi routes  defines endpoints for the sqlagent application.",
+      "id": "api_routes_rationale_1"
+    },
+    {
+      "label": "Takes a natural language query, runs it through the SQLAgent graph,     and retu",
+      "file_type": "rationale",
+      "source_file": "api/routes.py",
+      "source_location": "L40",
+      "community": 1,
+      "norm_label": "takes a natural language query, runs it through the sqlagent graph,     and retu",
+      "id": "api_routes_rationale_40"
+    },
+    {
+      "label": "graph.py",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "graph.py",
+      "id": "core_graph_py"
+    },
+    {
+      "label": "node_clarify_intent()",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L20",
+      "community": 3,
+      "norm_label": "node_clarify_intent()",
+      "id": "core_graph_node_clarify_intent"
+    },
+    {
+      "label": "SQLAgentState",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L20",
+      "community": 0,
+      "norm_label": "sqlagentstate",
+      "id": "sqlagentstate"
+    },
+    {
+      "label": "node_query_planning()",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L24",
+      "community": 0,
+      "norm_label": "node_query_planning()",
+      "id": "core_graph_node_query_planning"
+    },
+    {
+      "label": "node_sql_generation()",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L28",
+      "community": 0,
+      "norm_label": "node_sql_generation()",
+      "id": "core_graph_node_sql_generation"
+    },
+    {
+      "label": "node_validate_sql()",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L32",
+      "community": 0,
+      "norm_label": "node_validate_sql()",
+      "id": "core_graph_node_validate_sql"
+    },
+    {
+      "label": "node_correct_sql()",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L41",
+      "community": 0,
+      "norm_label": "node_correct_sql()",
+      "id": "core_graph_node_correct_sql"
+    },
+    {
+      "label": "node_execute_sql()",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L52",
+      "community": 0,
+      "norm_label": "node_execute_sql()",
+      "id": "core_graph_node_execute_sql"
+    },
+    {
+      "label": "decide_next_after_validation()",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L64",
+      "community": 0,
+      "norm_label": "decide_next_after_validation()",
+      "id": "core_graph_decide_next_after_validation"
+    },
+    {
+      "label": "build_workflow()",
+      "file_type": "code",
+      "source_file": "core/graph.py",
+      "source_location": "L72",
+      "community": 1,
+      "norm_label": "build_workflow()",
+      "id": "core_graph_build_workflow"
+    },
+    {
+      "label": "LangGraph Workflow Definition  Connects individual agents into a cohesive cycle,",
+      "file_type": "rationale",
+      "source_file": "core/graph.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "langgraph workflow definition  connects individual agents into a cohesive cycle,",
+      "id": "core_graph_rationale_1"
+    },
+    {
+      "label": "Conditional Edge routing after checking SQL validity.",
+      "file_type": "rationale",
+      "source_file": "core/graph.py",
+      "source_location": "L65",
+      "community": 0,
+      "norm_label": "conditional edge routing after checking sql validity.",
+      "id": "core_graph_rationale_65"
+    },
+    {
+      "label": "Compiles and returns the LangGraph application.",
+      "file_type": "rationale",
+      "source_file": "core/graph.py",
+      "source_location": "L73",
+      "community": 1,
+      "norm_label": "compiles and returns the langgraph application.",
+      "id": "core_graph_rationale_73"
+    },
+    {
+      "label": "llm.py",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "llm.py",
+      "id": "core_llm_py"
+    },
+    {
+      "label": "get_llm()",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L10",
+      "community": 2,
+      "norm_label": "get_llm()",
+      "id": "core_llm_get_llm"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L10",
+      "community": 2,
+      "norm_label": "str",
+      "id": "core_llm_py_str"
+    },
+    {
+      "label": "float",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L10",
+      "community": 2,
+      "norm_label": "float",
+      "id": "float"
+    },
+    {
+      "label": "ChatGoogleGenerativeAI",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L10",
+      "community": 2,
+      "norm_label": "chatgooglegenerativeai",
+      "id": "chatgooglegenerativeai"
+    },
+    {
+      "label": "Returns a configured ChatGoogleGenerativeAI instance.      Args:         model:",
+      "file_type": "rationale",
+      "source_file": "core/llm.py",
+      "source_location": "L11",
+      "community": 2,
+      "norm_label": "returns a configured chatgooglegenerativeai instance.      args:         model:",
+      "id": "core_llm_rationale_11"
+    },
+    {
+      "label": "database.py",
+      "file_type": "code",
+      "source_file": "db/database.py",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "database.py",
+      "id": "db_database_py"
+    },
+    {
+      "label": "get_db()",
+      "file_type": "code",
+      "source_file": "db/database.py",
+      "source_location": "L28",
+      "community": 1,
+      "norm_label": "get_db()",
+      "id": "db_database_get_db"
+    },
+    {
+      "label": "get_database_schema()",
+      "file_type": "code",
+      "source_file": "db/database.py",
+      "source_location": "L37",
+      "community": 1,
+      "norm_label": "get_database_schema()",
+      "id": "db_database_get_database_schema"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "db/database.py",
+      "source_location": "L37",
+      "community": 0,
+      "norm_label": "str",
+      "id": "db_database_py_str"
+    },
+    {
+      "label": "execute_sql_query()",
+      "file_type": "code",
+      "source_file": "db/database.py",
+      "source_location": "L62",
+      "community": 0,
+      "norm_label": "execute_sql_query()",
+      "id": "db_database_execute_sql_query"
+    },
+    {
+      "label": "Database connection and utilities.  Handles PostgreSQL connection setup using SQ",
+      "file_type": "rationale",
+      "source_file": "db/database.py",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "database connection and utilities.  handles postgresql connection setup using sq",
+      "id": "db_database_rationale_1"
+    },
+    {
+      "label": "Yields a database session.",
+      "file_type": "rationale",
+      "source_file": "db/database.py",
+      "source_location": "L29",
+      "community": 1,
+      "norm_label": "yields a database session.",
+      "id": "db_database_rationale_29"
+    },
+    {
+      "label": "Extracts table names, columns, and data types from the connected PostgreSQL data",
+      "file_type": "rationale",
+      "source_file": "db/database.py",
+      "source_location": "L38",
+      "community": 1,
+      "norm_label": "extracts table names, columns, and data types from the connected postgresql data",
+      "id": "db_database_rationale_38"
+    },
+    {
+      "label": "Executes a raw SQL SELECT query against the PostgreSQL database safely.",
+      "file_type": "rationale",
+      "source_file": "db/database.py",
+      "source_location": "L63",
+      "community": 0,
+      "norm_label": "executes a raw sql select query against the postgresql database safely.",
+      "id": "db_database_rationale_63"
+    },
+    {
+      "label": "models.py",
+      "file_type": "code",
+      "source_file": "db/models.py",
+      "source_location": "L1",
+      "community": 13,
+      "norm_label": "models.py",
+      "id": "db_models_py"
+    },
+    {
+      "label": "Database Models  Define your declarative SQLAlchemy models here if needed for an",
+      "file_type": "rationale",
+      "source_file": "db/models.py",
+      "source_location": "L1",
+      "community": 13,
+      "norm_label": "database models  define your declarative sqlalchemy models here if needed for an",
+      "id": "db_models_rationale_1"
+    },
+    {
+      "label": "agent.py",
+      "file_type": "code",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "agent.py",
+      "id": "features_intent_clarification_agent_py"
+    },
+    {
+      "label": "is_ambiguous()",
+      "file_type": "code",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L47",
+      "community": 3,
+      "norm_label": "is_ambiguous()",
+      "id": "intent_clarification_agent_is_ambiguous"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L47",
+      "community": 3,
+      "norm_label": "str",
+      "id": "features_intent_clarification_agent_py_str"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L47",
+      "community": 3,
+      "norm_label": "bool",
+      "id": "features_intent_clarification_agent_py_bool"
+    },
+    {
+      "label": "get_matched_vague_terms()",
+      "file_type": "code",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L61",
+      "community": 3,
+      "norm_label": "get_matched_vague_terms()",
+      "id": "intent_clarification_agent_get_matched_vague_terms"
+    },
+    {
+      "label": "clarify_intent()",
+      "file_type": "code",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L78",
+      "community": 3,
+      "norm_label": "clarify_intent()",
+      "id": "intent_clarification_agent_clarify_intent"
+    },
+    {
+      "label": "Intent Clarification Agent  Detects and resolves ambiguous natural language quer",
+      "file_type": "rationale",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "intent clarification agent  detects and resolves ambiguous natural language quer",
+      "id": "intent_clarification_agent_rationale_1"
+    },
+    {
+      "label": "Checks whether a user query contains vague or ambiguous terms     that need clar",
+      "file_type": "rationale",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L48",
+      "community": 3,
+      "norm_label": "checks whether a user query contains vague or ambiguous terms     that need clar",
+      "id": "intent_clarification_agent_rationale_48"
+    },
+    {
+      "label": "Returns a list of vague/ambiguous terms found in the query.      Args:         q",
+      "file_type": "rationale",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L62",
+      "community": 3,
+      "norm_label": "returns a list of vague/ambiguous terms found in the query.      args:         q",
+      "id": "intent_clarification_agent_rationale_62"
+    },
+    {
+      "label": "Clarifies an ambiguous natural language query using the LLM.      If the query c",
+      "file_type": "rationale",
+      "source_file": "features/intent_clarification/agent.py",
+      "source_location": "L79",
+      "community": 3,
+      "norm_label": "clarifies an ambiguous natural language query using the llm.      if the query c",
+      "id": "intent_clarification_agent_rationale_79"
+    },
+    {
+      "label": "prompt.py",
+      "file_type": "code",
+      "source_file": "features/intent_clarification/prompt.py",
+      "source_location": "L1",
+      "community": 16,
+      "norm_label": "prompt.py",
+      "id": "features_intent_clarification_prompt_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "features/intent_clarification/__init__.py",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "__init__.py",
+      "id": "features_intent_clarification_init_py"
+    },
+    {
+      "label": "Intent Clarification Agent package.",
+      "file_type": "rationale",
+      "source_file": "features/intent_clarification/__init__.py",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "intent clarification agent package.",
+      "id": "intent_clarification_init_rationale_1"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "features/query_planning/__init__.py",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "__init__.py",
+      "id": "features_query_planning_init_py"
+    },
+    {
+      "label": "Query Planning Agent package.",
+      "file_type": "rationale",
+      "source_file": "features/query_planning/__init__.py",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "query planning agent package.",
+      "id": "query_planning_init_rationale_1"
+    },
+    {
+      "label": "prompt.py",
+      "file_type": "code",
+      "source_file": "features/sql_generation/prompt.py",
+      "source_location": "L1",
+      "community": 18,
+      "norm_label": "prompt.py",
+      "id": "features_sql_generation_prompt_py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "features/sql_generation/__init__.py",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "__init__.py",
+      "id": "features_sql_generation_init_py"
+    },
+    {
+      "label": "SQL Generation Agent package.",
+      "file_type": "rationale",
+      "source_file": "features/sql_generation/__init__.py",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "sql generation agent package.",
+      "id": "sql_generation_init_rationale_1"
+    },
+    {
+      "label": "agent.py",
+      "file_type": "code",
+      "source_file": "features/validation_correction/agent.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "agent.py",
+      "id": "features_validation_correction_agent_py"
+    },
+    {
+      "label": "validate_sql_safety()",
+      "file_type": "code",
+      "source_file": "features/validation_correction/agent.py",
+      "source_location": "L18",
+      "community": 0,
+      "norm_label": "validate_sql_safety()",
+      "id": "validation_correction_agent_validate_sql_safety"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "features/validation_correction/agent.py",
+      "source_location": "L18",
+      "community": 0,
+      "norm_label": "str",
+      "id": "features_validation_correction_agent_py_str"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "features/validation_correction/agent.py",
+      "source_location": "L18",
+      "community": 0,
+      "norm_label": "bool",
+      "id": "features_validation_correction_agent_py_bool"
+    },
+    {
+      "label": "correct_sql()",
+      "file_type": "code",
+      "source_file": "features/validation_correction/agent.py",
+      "source_location": "L57",
+      "community": 0,
+      "norm_label": "correct_sql()",
+      "id": "validation_correction_agent_correct_sql"
+    },
+    {
+      "label": "Validation & Correction Agent  Validates SQL syntax and safety using SQLGlot. Co",
+      "file_type": "rationale",
+      "source_file": "features/validation_correction/agent.py",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "validation & correction agent  validates sql syntax and safety using sqlglot. co",
+      "id": "validation_correction_agent_rationale_1"
+    },
+    {
+      "label": "Parses the SQL query with SQLGlot to ensure it is syntactically valid     and st",
+      "file_type": "rationale",
+      "source_file": "features/validation_correction/agent.py",
+      "source_location": "L19",
+      "community": 0,
+      "norm_label": "parses the sql query with sqlglot to ensure it is syntactically valid     and st",
+      "id": "validation_correction_agent_rationale_19"
+    },
+    {
+      "label": "Calls the LLM to fix a broken SQL query based on the schema and error message.",
+      "file_type": "rationale",
+      "source_file": "features/validation_correction/agent.py",
+      "source_location": "L58",
+      "community": 0,
+      "norm_label": "calls the llm to fix a broken sql query based on the schema and error message.",
+      "id": "validation_correction_agent_rationale_58"
+    },
+    {
+      "label": "prompt.py",
+      "file_type": "code",
+      "source_file": "features/validation_correction/prompt.py",
+      "source_location": "L1",
+      "community": 19,
+      "norm_label": "prompt.py",
+      "id": "features_validation_correction_prompt_py"
+    },
+    {
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "frontend/app.py",
+      "source_location": "L1",
+      "community": 20,
+      "norm_label": "app.py",
+      "id": "frontend_app_py"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "community": 12,
+      "norm_label": "readme.md",
+      "id": "readme_md"
+    },
+    {
+      "label": "SQLAgent-Mini-Project",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "community": 12,
+      "norm_label": "sqlagent-mini-project",
+      "id": "sqlagent_mini_project_readme_sqlagent_mini_project"
+    },
+    {
       "label": "system_prompt.md",
       "file_type": "document",
       "source_file": "ai_context/system_prompt.md",
       "source_location": "L1",
-      "id": "ai_context_system_prompt_md",
       "community": 27,
-      "norm_label": "system_prompt.md"
+      "norm_label": "system_prompt.md",
+      "id": "ai_context_system_prompt_md"
     },
     {
       "label": "agents.md",
       "file_type": "document",
       "source_file": "architecture/agents.md",
       "source_location": "L1",
-      "id": "architecture_agents_md",
       "community": 6,
-      "norm_label": "agents.md"
+      "norm_label": "agents.md",
+      "id": "architecture_agents_md"
     },
     {
       "label": "Multi-Agent System Design",
       "file_type": "document",
       "source_file": "architecture/agents.md",
       "source_location": "L1",
-      "id": "architecture_agents_multi_agent_system_design",
       "community": 6,
-      "norm_label": "multi-agent system design"
+      "norm_label": "multi-agent system design",
+      "id": "architecture_agents_multi_agent_system_design"
     },
     {
       "label": "1. Intent Clarification Agent",
       "file_type": "document",
       "source_file": "architecture/agents.md",
       "source_location": "L3",
-      "id": "architecture_agents_1_intent_clarification_agent",
       "community": 6,
-      "norm_label": "1. intent clarification agent"
+      "norm_label": "1. intent clarification agent",
+      "id": "architecture_agents_1_intent_clarification_agent"
     },
     {
       "label": "2. Query Planning Agent",
       "file_type": "document",
       "source_file": "architecture/agents.md",
       "source_location": "L25",
-      "id": "architecture_agents_2_query_planning_agent",
       "community": 6,
-      "norm_label": "2. query planning agent"
+      "norm_label": "2. query planning agent",
+      "id": "architecture_agents_2_query_planning_agent"
     },
     {
       "label": "3. SQL Generation Agent",
       "file_type": "document",
       "source_file": "architecture/agents.md",
       "source_location": "L50",
-      "id": "architecture_agents_3_sql_generation_agent",
       "community": 6,
-      "norm_label": "3. sql generation agent"
+      "norm_label": "3. sql generation agent",
+      "id": "architecture_agents_3_sql_generation_agent"
     },
     {
       "label": "4. Validation & Correction Agent",
       "file_type": "document",
       "source_file": "architecture/agents.md",
       "source_location": "L73",
-      "id": "architecture_agents_4_validation_correction_agent",
       "community": 6,
-      "norm_label": "4. validation & correction agent"
+      "norm_label": "4. validation & correction agent",
+      "id": "architecture_agents_4_validation_correction_agent"
     },
     {
       "label": "System Flow",
       "file_type": "document",
       "source_file": "architecture/agents.md",
       "source_location": "L100",
-      "id": "architecture_agents_system_flow",
       "community": 6,
-      "norm_label": "system flow"
+      "norm_label": "system flow",
+      "id": "architecture_agents_system_flow"
     },
     {
       "label": "flow.md",
       "file_type": "document",
       "source_file": "architecture/flow.md",
       "source_location": "L1",
-      "id": "architecture_flow_md",
       "community": 11,
-      "norm_label": "flow.md"
+      "norm_label": "flow.md",
+      "id": "architecture_flow_md"
     },
     {
       "label": "System Workflow",
       "file_type": "document",
       "source_file": "architecture/flow.md",
       "source_location": "L1",
-      "id": "architecture_flow_system_workflow",
       "community": 11,
-      "norm_label": "system workflow"
-    },
-    {
-      "label": "Generates a structured, step-by-step SQL query plan from a refined     natural l",
-      "file_type": "rationale",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L18",
-      "community": 2,
-      "norm_label": "generates a structured, step-by-step sql query plan from a refined     natural l",
-      "id": "query_planning_agent_rationale_18"
-    },
-    {
-      "label": "Generates a SQL SELECT statement based on a query execution plan and     databas",
-      "file_type": "rationale",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L17",
-      "community": 2,
-      "norm_label": "generates a sql select statement based on a query execution plan and     databas",
-      "id": "sql_generation_agent_rationale_17"
+      "norm_label": "system workflow",
+      "id": "architecture_flow_system_workflow"
     },
     {
       "label": "README.md",
@@ -1892,24 +1874,6 @@
       "community": 21,
       "norm_label": "requirements.txt",
       "id": "c_users_manch_onedrive_documents_sqlagent_mini_project_requirements_txt"
-    },
-    {
-      "label": "project_state.md",
-      "file_type": "document",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L1",
-      "community": 8,
-      "norm_label": "project_state.md",
-      "id": "c_users_manch_onedrive_documents_sqlagent_mini_project_ai_context_project_state_md"
-    },
-    {
-      "label": "Pending",
-      "file_type": "document",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L23",
-      "community": 8,
-      "norm_label": "pending",
-      "id": "ai_context_project_state_pending"
     },
     {
       "label": "system_prompt.md",
@@ -1940,6 +1904,736 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_rules_graphify_md",
+      "target": "rules_graphify_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_workflows_graphify_md",
+      "target": "workflows_graphify_workflow_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_architecture_philosophy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_completed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_critical_weaknesses_to_address"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_current_architecture"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L431",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_current_project_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_current_tech_stack"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L451",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_final_vision"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L284",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_high_priority_roadmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L412",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_important_development_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L131",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_in_progress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L286",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_1_structured_outputs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L301",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_2_evaluation_framework"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L328",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_3_semantic_validation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L342",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_4_clause_level_sql_repair"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L356",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_5_schema_retrieval_layer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L371",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_6_observability_transparency"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_project_state"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L390",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_recommended_future_architecture"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_project_state",
+      "target": "ai_context_project_state_completed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_project_state",
+      "target": "ai_context_project_state_in_progress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_project_state",
+      "target": "ai_context_project_state_project_overview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L88",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_current_tech_stack",
+      "target": "ai_context_project_state_backend"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_current_tech_stack",
+      "target": "ai_context_project_state_core"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_current_tech_stack",
+      "target": "ai_context_project_state_frontend"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_current_tech_stack",
+      "target": "ai_context_project_state_llm_providers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_current_tech_stack",
+      "target": "ai_context_project_state_sql_tooling"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_completed",
+      "target": "ai_context_project_state_architecture_system_design"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_completed",
+      "target": "ai_context_project_state_core_pipeline"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L123",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_completed",
+      "target": "ai_context_project_state_infrastructure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_completed",
+      "target": "ai_context_project_state_validation_safety"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_in_progress",
+      "target": "ai_context_project_state_correction_workflow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L145",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_in_progress",
+      "target": "ai_context_project_state_optimization"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L133",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_in_progress",
+      "target": "ai_context_project_state_visualization_transparency"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L154",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_critical_weaknesses_to_address",
+      "target": "ai_context_project_state_1_unstructured_llm_outputs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L185",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_critical_weaknesses_to_address",
+      "target": "ai_context_project_state_2_full_sql_regeneration_during_correction"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L213",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_critical_weaknesses_to_address",
+      "target": "ai_context_project_state_3_validation_is_mostly_syntax_level"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L247",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_critical_weaknesses_to_address",
+      "target": "ai_context_project_state_4_no_real_schema_retrieval_layer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L268",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_critical_weaknesses_to_address",
+      "target": "ai_context_project_state_5_limited_observability"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L165",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_1_unstructured_llm_outputs",
+      "target": "ai_context_project_state_goal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L158",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_1_unstructured_llm_outputs",
+      "target": "ai_context_project_state_problem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L173",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_1_unstructured_llm_outputs",
+      "target": "ai_context_project_state_target_example"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L197",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_2_full_sql_regeneration_during_correction",
+      "target": "ai_context_project_state_goal_197"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L187",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_2_full_sql_regeneration_during_correction",
+      "target": "ai_context_project_state_problem_187"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L215",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_3_validation_is_mostly_syntax_level",
+      "target": "ai_context_project_state_current_validation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L226",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_3_validation_is_mostly_syntax_level",
+      "target": "ai_context_project_state_goal_226"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L220",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_3_validation_is_mostly_syntax_level",
+      "target": "ai_context_project_state_missing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L230",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_goal_226",
+      "target": "ai_context_project_state_layer_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L234",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_goal_226",
+      "target": "ai_context_project_state_layer_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L238",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_goal_226",
+      "target": "ai_context_project_state_layer_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L249",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_4_no_real_schema_retrieval_layer",
+      "target": "ai_context_project_state_current_problem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L255",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_4_no_real_schema_retrieval_layer",
+      "target": "ai_context_project_state_goal_255"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L278",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_5_limited_observability",
+      "target": "ai_context_project_state_goal_278"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L270",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_5_limited_observability",
+      "target": "ai_context_project_state_missing_features"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L288",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_1_structured_outputs",
+      "target": "ai_context_project_state_objective"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L292",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_1_structured_outputs",
+      "target": "ai_context_project_state_tasks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L303",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_2_evaluation_framework",
+      "target": "ai_context_project_state_objective_303"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L307",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_2_evaluation_framework",
+      "target": "ai_context_project_state_required"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L311",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_required",
+      "target": "ai_context_project_state_add"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L318",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_required",
+      "target": "ai_context_project_state_metrics_to_track"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L334",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_3_semantic_validation",
+      "target": "ai_context_project_state_add_334"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L330",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_3_semantic_validation",
+      "target": "ai_context_project_state_objective_330"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L344",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_4_clause_level_sql_repair",
+      "target": "ai_context_project_state_objective_344"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L348",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_4_clause_level_sql_repair",
+      "target": "ai_context_project_state_technologies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L362",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_5_schema_retrieval_layer",
+      "target": "ai_context_project_state_add_362"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L358",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_5_schema_retrieval_layer",
+      "target": "ai_context_project_state_objective_358"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L377",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_6_observability_transparency",
+      "target": "ai_context_project_state_dashboard_should_show"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L373",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_6_observability_transparency",
+      "target": "ai_context_project_state_objective_373"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L414",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_important_development_rules",
+      "target": "ai_context_project_state_do"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L422",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_important_development_rules",
+      "target": "ai_context_project_state_do_not"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L433",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_current_project_status",
+      "target": "ai_context_project_state_current_maturity"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L437",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_current_project_status",
+      "target": "ai_context_project_state_main_focus_going_forward"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -2038,22 +2732,452 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scratch_test.py",
+      "source_file": "core/state.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_state_py",
+      "target": "core_state_sqlagentstate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/state.py",
       "source_location": "L8",
       "weight": 1.0,
-      "source": "scratch_test_py",
-      "target": "sqlagent_mini_project_scratch_test_testschema",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "core_state_py",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "core/state.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_state_rationale_1",
+      "target": "core_state_py"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/graph.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_graph_py",
+      "target": "core_state_sqlagentstate"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "core/state.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "core_state_sqlagentstate",
+      "target": "schemas_planner_queryplan"
     },
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "scratch_test.py",
-      "source_location": "L8",
+      "source_file": "core/state.py",
+      "source_location": "L9",
       "weight": 1.0,
-      "source": "sqlagent_mini_project_scratch_test_testschema",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "core_state_sqlagentstate",
+      "target": "typeddict"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "core/graph.py",
+      "source_location": "L11",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "sqlagentstate",
+      "target": "core_state_sqlagentstate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_query_planning_agent_py",
+      "target": "core_llm_get_llm"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_query_planning_agent_py",
+      "target": "query_planning_agent_generate_query_plan"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_query_planning_agent_py",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/__init__.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_query_planning_init_py",
+      "target": "features_query_planning_agent_py"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "query_planning_agent_rationale_1",
+      "target": "features_query_planning_agent_py"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/graph.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_graph_node_query_planning",
+      "target": "query_planning_agent_generate_query_plan"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/graph.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_graph_py",
+      "target": "query_planning_agent_generate_query_plan"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/__init__.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_query_planning_init_py",
+      "target": "query_planning_agent_generate_query_plan"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "query_planning_agent_generate_query_plan",
+      "target": "core_llm_get_llm"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "query_planning_agent_generate_query_plan",
+      "target": "features_query_planning_agent_py_queryplan"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "query_planning_agent_generate_query_plan",
+      "target": "features_query_planning_agent_py_str"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "query_planning_agent_rationale_25",
+      "target": "query_planning_agent_generate_query_plan"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "features_query_planning_agent_py_str",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "features/query_planning/agent.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "features_query_planning_agent_py_queryplan",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_sql_generation_agent_py",
+      "target": "core_llm_get_llm"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_sql_generation_agent_py",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_sql_generation_agent_py",
+      "target": "sql_generation_agent_generate_sql"
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/__init__.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_sql_generation_init_py",
+      "target": "features_sql_generation_agent_py"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sql_generation_agent_rationale_1",
+      "target": "features_sql_generation_agent_py"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/graph.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_graph_node_sql_generation",
+      "target": "sql_generation_agent_generate_sql"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/graph.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_graph_py",
+      "target": "sql_generation_agent_generate_sql"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/__init__.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "features_sql_generation_init_py",
+      "target": "sql_generation_agent_generate_sql"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sql_generation_agent_generate_sql",
+      "target": "core_llm_get_llm"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sql_generation_agent_generate_sql",
+      "target": "features_sql_generation_agent_py_queryplan"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sql_generation_agent_generate_sql",
+      "target": "features_sql_generation_agent_py_str"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "sql_generation_agent_rationale_22",
+      "target": "sql_generation_agent_generate_sql"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L12",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "features_sql_generation_agent_py_str",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "features/sql_generation/agent.py",
+      "source_location": "L12",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "features_sql_generation_agent_py_queryplan",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_py",
+      "target": "schemas_planner_aggregationrequirement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_py",
+      "target": "schemas_planner_filterrequirement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_py",
+      "target": "schemas_planner_joinrequirement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_py",
+      "target": "schemas_planner_orderbyrequirement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_py",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_py",
+      "target": "schemas_planner_tablerequirement"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_tablerequirement",
+      "target": "basemodel"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_tablerequirement",
+      "target": "schemas_planner_tablerequirement_normalize_table"
     },
     {
       "relation": "inherits",
@@ -2081,9 +3205,9 @@
       "source_file": "schemas/planner.py",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_planner_aggregationrequirement",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -2091,9 +3215,9 @@
       "source_file": "schemas/planner.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_planner_filterrequirement",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -2101,9 +3225,9 @@
       "source_file": "schemas/planner.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_planner_joinrequirement",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -2111,9 +3235,9 @@
       "source_file": "schemas/planner.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_planner_orderbyrequirement",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -2121,19 +3245,93 @@
       "source_file": "schemas/planner.py",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_planner_queryplan",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L4",
+      "source_file": "scratch_test.py",
+      "source_location": "L8",
       "weight": 1.0,
-      "source": "schemas_planner_tablerequirement",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "sqlagent_mini_project_scratch_test_testschema",
+      "target": "basemodel"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_tablerequirement_normalize_table",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_orderbyrequirement_normalize_order_by",
+      "target": "any"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_queryplan_normalize_plan",
+      "target": "any"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_orderbyrequirement",
+      "target": "schemas_planner_orderbyrequirement_normalize_order_by"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_queryplan",
+      "target": "schemas_planner_queryplan_normalize_plan"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "schemas_planner_rationale_46",
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pipeline_e2e.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_pipeline_e2e_py",
+      "target": "schemas_planner_queryplan"
     },
     {
       "relation": "imports",
@@ -2142,9 +3340,73 @@
       "source_file": "scratch_test_planner.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_planner_py",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 1.0
+      "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pipeline_e2e.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_pipeline_e2e_py",
+      "target": "core_graph_build_workflow"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pipeline_e2e.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_pipeline_e2e_py",
+      "target": "db_database_get_database_schema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pipeline_e2e.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_pipeline_e2e_py",
+      "target": "scratch_test_pipeline_e2e_test_e2e_pipeline"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pipeline_e2e.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_pipeline_e2e_test_e2e_pipeline",
+      "target": "core_graph_build_workflow"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pipeline_e2e.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_pipeline_e2e_test_e2e_pipeline",
+      "target": "db_database_get_database_schema"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch_test.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_py",
+      "target": "sqlagent_mini_project_scratch_test_testschema"
     },
     {
       "relation": "contains",
@@ -2486,17 +3748,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "core/graph.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_graph_py",
-      "target": "core_state_sqlagentstate"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "core/graph.py",
       "source_location": "L16",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -2513,28 +3764,6 @@
       "confidence_score": 1.0,
       "source": "core_graph_py",
       "target": "intent_clarification_agent_clarify_intent"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "core/graph.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_graph_py",
-      "target": "query_planning_agent_generate_query_plan"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "core/graph.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_graph_py",
-      "target": "sql_generation_agent_generate_sql"
     },
     {
       "relation": "imports",
@@ -2657,38 +3886,6 @@
       "target": "sqlagentstate"
     },
     {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "core/graph.py",
-      "source_location": "L11",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "sqlagentstate",
-      "target": "core_state_sqlagentstate"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "core/graph.py",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_graph_node_query_planning",
-      "target": "query_planning_agent_generate_query_plan"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "core/graph.py",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_graph_node_sql_generation",
-      "target": "sql_generation_agent_generate_sql"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -2740,28 +3937,6 @@
       "confidence_score": 1.0,
       "source": "core_graph_rationale_73",
       "target": "core_graph_build_workflow"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_pipeline_e2e.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "scratch_test_pipeline_e2e_py",
-      "target": "core_graph_build_workflow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_pipeline_e2e.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "scratch_test_pipeline_e2e_test_e2e_pipeline",
-      "target": "core_graph_build_workflow",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2831,28 +4006,6 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "features_query_planning_agent_py",
-      "target": "core_llm_get_llm"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "features_sql_generation_agent_py",
-      "target": "core_llm_get_llm"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L11",
       "weight": 1.0,
@@ -2875,85 +4028,12 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L45",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "query_planning_agent_generate_query_plan",
-      "target": "core_llm_get_llm"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sql_generation_agent_generate_sql",
-      "target": "core_llm_get_llm"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L73",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "validation_correction_agent_correct_sql",
       "target": "core_llm_get_llm"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "core/state.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_state_py",
-      "target": "core_state_sqlagentstate"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "core/state.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "core_state_py",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "core/state.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_state_rationale_1",
-      "target": "core_state_py"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "core/state.py",
-      "source_location": "L8",
-      "weight": 0.8,
-      "source": "core_state_sqlagentstate",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "core/state.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "core_state_sqlagentstate",
-      "target": "typeddict"
     },
     {
       "relation": "contains",
@@ -3025,28 +4105,6 @@
       "confidence_score": 1.0,
       "source": "db_database_rationale_38",
       "target": "db_database_get_database_schema"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_pipeline_e2e.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "scratch_test_pipeline_e2e_py",
-      "target": "db_database_get_database_schema",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_pipeline_e2e.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "scratch_test_pipeline_e2e_test_e2e_pipeline",
-      "target": "db_database_get_database_schema",
-      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -3259,121 +4317,6 @@
       "target": "features_intent_clarification_init_py"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "features_query_planning_agent_py",
-      "target": "query_planning_agent_generate_query_plan"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "features_query_planning_agent_py",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "re_exports",
-      "context": "export",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/__init__.py",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "features_query_planning_init_py",
-      "target": "features_query_planning_agent_py"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "query_planning_agent_rationale_1",
-      "target": "features_query_planning_agent_py"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/__init__.py",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "features_query_planning_init_py",
-      "target": "query_planning_agent_generate_query_plan"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "query_planning_agent_generate_query_plan",
-      "target": "features_query_planning_agent_py_queryplan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "query_planning_agent_generate_query_plan",
-      "target": "features_query_planning_agent_py_str"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "query_planning_agent_rationale_18",
-      "target": "query_planning_agent_generate_query_plan"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "query_planning_agent_rationale_25",
-      "target": "query_planning_agent_generate_query_plan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L15",
-      "weight": 0.8,
-      "source": "features_query_planning_agent_py_str",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "features/query_planning/agent.py",
-      "source_location": "L15",
-      "weight": 0.8,
-      "source": "features_query_planning_agent_py_queryplan",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 0.5
-    },
-    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "features/query_planning/__init__.py",
@@ -3382,121 +4325,6 @@
       "confidence_score": 1.0,
       "source": "query_planning_init_rationale_1",
       "target": "features_query_planning_init_py"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "features_sql_generation_agent_py",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "features_sql_generation_agent_py",
-      "target": "sql_generation_agent_generate_sql"
-    },
-    {
-      "relation": "re_exports",
-      "context": "export",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/__init__.py",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "features_sql_generation_init_py",
-      "target": "features_sql_generation_agent_py"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sql_generation_agent_rationale_1",
-      "target": "features_sql_generation_agent_py"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/__init__.py",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "features_sql_generation_init_py",
-      "target": "sql_generation_agent_generate_sql"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "sql_generation_agent_generate_sql",
-      "target": "features_sql_generation_agent_py_queryplan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sql_generation_agent_generate_sql",
-      "target": "features_sql_generation_agent_py_str"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "sql_generation_agent_rationale_17",
-      "target": "sql_generation_agent_generate_sql"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "sql_generation_agent_rationale_22",
-      "target": "sql_generation_agent_generate_sql",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L12",
-      "weight": 0.8,
-      "source": "features_sql_generation_agent_py_str",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "features/sql_generation/agent.py",
-      "source_location": "L12",
-      "weight": 0.8,
-      "source": "features_sql_generation_agent_py_queryplan",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 0.5
     },
     {
       "relation": "rationale_for",
@@ -3594,166 +4422,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "schemas_planner_py",
-      "target": "schemas_planner_aggregationrequirement",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "schemas_planner_py",
-      "target": "schemas_planner_filterrequirement",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "schemas_planner_py",
-      "target": "schemas_planner_joinrequirement",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "schemas_planner_py",
-      "target": "schemas_planner_orderbyrequirement",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L45",
-      "weight": 1.0,
-      "source": "schemas_planner_py",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "schemas_planner_py",
-      "target": "schemas_planner_tablerequirement",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "schemas_planner_tablerequirement",
-      "target": "schemas_planner_tablerequirement_normalize_table",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "schemas_planner_tablerequirement_normalize_table",
-      "target": "any",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "schemas_planner_orderbyrequirement_normalize_order_by",
-      "target": "any",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "schemas_planner_queryplan_normalize_plan",
-      "target": "any",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "schemas_planner_orderbyrequirement",
-      "target": "schemas_planner_orderbyrequirement_normalize_order_by",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "schemas_planner_queryplan",
-      "target": "schemas_planner_queryplan_normalize_plan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "schemas/planner.py",
-      "source_location": "L46",
-      "weight": 1.0,
-      "source": "schemas_planner_rationale_46",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_pipeline_e2e.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "scratch_test_pipeline_e2e_py",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_pipeline_e2e.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "scratch_test_pipeline_e2e_py",
-      "target": "scratch_test_pipeline_e2e_test_e2e_pipeline",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_md",
-      "target": "sqlagent_mini_project_readme_sqlagent_mini_project",
-      "confidence_score": 1.0
+      "target": "sqlagent_mini_project_readme_sqlagent_mini_project"
     },
     {
       "relation": "contains",
@@ -3768,762 +4442,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": ".agents/rules/graphify.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "agents_rules_graphify_md",
-      "target": "rules_graphify_graphify",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/workflows/graphify.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "agents_workflows_graphify_md",
-      "target": "workflows_graphify_workflow_graphify",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_architecture_philosophy",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L98",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_completed",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L152",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_critical_weaknesses_to_address",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L49",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_current_architecture",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L431",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_current_project_status",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L69",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_current_tech_stack",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L451",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_final_vision",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L284",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_high_priority_roadmap",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L412",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_important_development_rules",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L131",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_in_progress",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L286",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_priority_1_structured_outputs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L301",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_priority_2_evaluation_framework",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L328",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_priority_3_semantic_validation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L342",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_priority_4_clause_level_sql_repair",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L356",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_priority_5_schema_retrieval_layer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L371",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_priority_6_observability_transparency",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_project_state",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L390",
-      "weight": 1.0,
-      "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_recommended_future_architecture",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_project_state",
-      "target": "ai_context_project_state_completed"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_project_state",
-      "target": "ai_context_project_state_in_progress"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_project_state",
-      "target": "ai_context_project_state_pending"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "ai_context_project_state_project_state",
-      "target": "ai_context_project_state_project_overview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "c_users_manch_onedrive_documents_sqlagent_mini_project_ai_context_project_state_md",
-      "target": "ai_context_project_state_project_state"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L88",
-      "weight": 1.0,
-      "source": "ai_context_project_state_current_tech_stack",
-      "target": "ai_context_project_state_backend",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L71",
-      "weight": 1.0,
-      "source": "ai_context_project_state_current_tech_stack",
-      "target": "ai_context_project_state_core",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L92",
-      "weight": 1.0,
-      "source": "ai_context_project_state_current_tech_stack",
-      "target": "ai_context_project_state_frontend",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L77",
-      "weight": 1.0,
-      "source": "ai_context_project_state_current_tech_stack",
-      "target": "ai_context_project_state_llm_providers",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L82",
-      "weight": 1.0,
-      "source": "ai_context_project_state_current_tech_stack",
-      "target": "ai_context_project_state_sql_tooling",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L100",
-      "weight": 1.0,
-      "source": "ai_context_project_state_completed",
-      "target": "ai_context_project_state_architecture_system_design",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L108",
-      "weight": 1.0,
-      "source": "ai_context_project_state_completed",
-      "target": "ai_context_project_state_core_pipeline",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L123",
-      "weight": 1.0,
-      "source": "ai_context_project_state_completed",
-      "target": "ai_context_project_state_infrastructure",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L116",
-      "weight": 1.0,
-      "source": "ai_context_project_state_completed",
-      "target": "ai_context_project_state_validation_safety",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L139",
-      "weight": 1.0,
-      "source": "ai_context_project_state_in_progress",
-      "target": "ai_context_project_state_correction_workflow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L145",
-      "weight": 1.0,
-      "source": "ai_context_project_state_in_progress",
-      "target": "ai_context_project_state_optimization",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L133",
-      "weight": 1.0,
-      "source": "ai_context_project_state_in_progress",
-      "target": "ai_context_project_state_visualization_transparency",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L154",
-      "weight": 1.0,
-      "source": "ai_context_project_state_critical_weaknesses_to_address",
-      "target": "ai_context_project_state_1_unstructured_llm_outputs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L185",
-      "weight": 1.0,
-      "source": "ai_context_project_state_critical_weaknesses_to_address",
-      "target": "ai_context_project_state_2_full_sql_regeneration_during_correction",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L213",
-      "weight": 1.0,
-      "source": "ai_context_project_state_critical_weaknesses_to_address",
-      "target": "ai_context_project_state_3_validation_is_mostly_syntax_level",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L247",
-      "weight": 1.0,
-      "source": "ai_context_project_state_critical_weaknesses_to_address",
-      "target": "ai_context_project_state_4_no_real_schema_retrieval_layer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L268",
-      "weight": 1.0,
-      "source": "ai_context_project_state_critical_weaknesses_to_address",
-      "target": "ai_context_project_state_5_limited_observability",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L165",
-      "weight": 1.0,
-      "source": "ai_context_project_state_1_unstructured_llm_outputs",
-      "target": "ai_context_project_state_goal",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L158",
-      "weight": 1.0,
-      "source": "ai_context_project_state_1_unstructured_llm_outputs",
-      "target": "ai_context_project_state_problem",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L173",
-      "weight": 1.0,
-      "source": "ai_context_project_state_1_unstructured_llm_outputs",
-      "target": "ai_context_project_state_target_example",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L197",
-      "weight": 1.0,
-      "source": "ai_context_project_state_2_full_sql_regeneration_during_correction",
-      "target": "ai_context_project_state_goal_197",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L187",
-      "weight": 1.0,
-      "source": "ai_context_project_state_2_full_sql_regeneration_during_correction",
-      "target": "ai_context_project_state_problem_187",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L215",
-      "weight": 1.0,
-      "source": "ai_context_project_state_3_validation_is_mostly_syntax_level",
-      "target": "ai_context_project_state_current_validation",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L226",
-      "weight": 1.0,
-      "source": "ai_context_project_state_3_validation_is_mostly_syntax_level",
-      "target": "ai_context_project_state_goal_226",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L220",
-      "weight": 1.0,
-      "source": "ai_context_project_state_3_validation_is_mostly_syntax_level",
-      "target": "ai_context_project_state_missing",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L230",
-      "weight": 1.0,
-      "source": "ai_context_project_state_goal_226",
-      "target": "ai_context_project_state_layer_1",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L234",
-      "weight": 1.0,
-      "source": "ai_context_project_state_goal_226",
-      "target": "ai_context_project_state_layer_2",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L238",
-      "weight": 1.0,
-      "source": "ai_context_project_state_goal_226",
-      "target": "ai_context_project_state_layer_3",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L249",
-      "weight": 1.0,
-      "source": "ai_context_project_state_4_no_real_schema_retrieval_layer",
-      "target": "ai_context_project_state_current_problem",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L255",
-      "weight": 1.0,
-      "source": "ai_context_project_state_4_no_real_schema_retrieval_layer",
-      "target": "ai_context_project_state_goal_255",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L278",
-      "weight": 1.0,
-      "source": "ai_context_project_state_5_limited_observability",
-      "target": "ai_context_project_state_goal_278",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L270",
-      "weight": 1.0,
-      "source": "ai_context_project_state_5_limited_observability",
-      "target": "ai_context_project_state_missing_features",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L288",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_1_structured_outputs",
-      "target": "ai_context_project_state_objective",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L292",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_1_structured_outputs",
-      "target": "ai_context_project_state_tasks",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L303",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_2_evaluation_framework",
-      "target": "ai_context_project_state_objective_303",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L307",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_2_evaluation_framework",
-      "target": "ai_context_project_state_required",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L311",
-      "weight": 1.0,
-      "source": "ai_context_project_state_required",
-      "target": "ai_context_project_state_add",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L318",
-      "weight": 1.0,
-      "source": "ai_context_project_state_required",
-      "target": "ai_context_project_state_metrics_to_track",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L334",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_3_semantic_validation",
-      "target": "ai_context_project_state_add_334",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L330",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_3_semantic_validation",
-      "target": "ai_context_project_state_objective_330",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L344",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_4_clause_level_sql_repair",
-      "target": "ai_context_project_state_objective_344",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L348",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_4_clause_level_sql_repair",
-      "target": "ai_context_project_state_technologies",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L362",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_5_schema_retrieval_layer",
-      "target": "ai_context_project_state_add_362",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L358",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_5_schema_retrieval_layer",
-      "target": "ai_context_project_state_objective_358",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L377",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_6_observability_transparency",
-      "target": "ai_context_project_state_dashboard_should_show",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L373",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_6_observability_transparency",
-      "target": "ai_context_project_state_objective_373",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L414",
-      "weight": 1.0,
-      "source": "ai_context_project_state_important_development_rules",
-      "target": "ai_context_project_state_do",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L422",
-      "weight": 1.0,
-      "source": "ai_context_project_state_important_development_rules",
-      "target": "ai_context_project_state_do_not",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L433",
-      "weight": 1.0,
-      "source": "ai_context_project_state_current_project_status",
-      "target": "ai_context_project_state_current_maturity",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L437",
-      "weight": 1.0,
-      "source": "ai_context_project_state_current_project_status",
-      "target": "ai_context_project_state_main_focus_going_forward",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "architecture/agents.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "architecture_agents_md",
-      "target": "architecture_agents_multi_agent_system_design",
-      "confidence_score": 1.0
+      "target": "architecture_agents_multi_agent_system_design"
     },
     {
       "relation": "contains",
@@ -4531,9 +4455,9 @@
       "source_file": "architecture/agents.md",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "architecture_agents_md",
-      "target": "architecture_agents_system_flow",
-      "confidence_score": 1.0
+      "target": "architecture_agents_system_flow"
     },
     {
       "relation": "contains",
@@ -4601,9 +4525,9 @@
       "source_file": "architecture/flow.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "architecture_flow_md",
-      "target": "architecture_flow_system_workflow",
-      "confidence_score": 1.0
+      "target": "architecture_flow_system_workflow"
     },
     {
       "relation": "contains",
@@ -4617,5 +4541,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9c80c0dff8ce40e2acf5172cc1a3b65f3d6157c0"
+  "built_at_commit": "b7b51d2a338d2ea14c053b444bd40a24e67a036a"
 }
