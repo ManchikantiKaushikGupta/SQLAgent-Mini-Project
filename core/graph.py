@@ -13,6 +13,7 @@ from features.intent_clarification.agent import clarify_intent
 from features.query_planning.agent import generate_query_plan
 from features.sql_generation.agent import generate_sql
 from features.validation_correction.agent import validate_sql_safety, correct_sql
+from features.validation_correction.semantic_validator import validate_sql_semantics
 from db.database import execute_sql_query
 
 MAX_RETRIES = 3
@@ -61,13 +62,53 @@ def node_execute_sql(state: SQLAgentState):
     except Exception as e:
         return {"final_result": None, "error_message": str(e)}
 
-def decide_next_after_validation(state: SQLAgentState) -> Literal["execute", "correct", "end"]:
-    """Conditional Edge routing after checking SQL validity."""
+def node_semantic_validate(state: SQLAgentState):
+    sql = state.get("sql_query", "")
+    if state.get("error_message"):
+        return {}
+        
+    try:
+        # Performs execution-aware semantic correctness validation
+        validation_res = validate_sql_semantics(
+            sql_query=sql,
+            results=state.get("final_result"),
+            refined_query=state.get("refined_query") or state["original_query"],
+            schema=state.get("db_schema", "")
+        )
+        
+        if not validation_res.is_valid:
+            error_msg = f"Semantic Validation Error: {validation_res.reason}"
+            if validation_res.suggested_fix:
+                error_msg += f" Suggested fix: {validation_res.suggested_fix}"
+            return {"error_message": error_msg}
+            
+        return {"error_message": None}
+    except Exception as e:
+        return {"error_message": f"Semantic Validation Exception: {str(e)}"}
+
+def decide_after_syntax_validation(state: SQLAgentState) -> Literal["execute", "correct", "end"]:
+    """Conditional Edge routing after checking SQL syntax and safety."""
     if not state.get("error_message"):
-        return "execute"  # Validation passed
+        return "execute"
     if state.get("retry_count", 0) >= MAX_RETRIES:
-        return "end"      # Out of retries
-    return "correct"      # Try again
+        return "end"
+    return "correct"
+
+def decide_after_execution(state: SQLAgentState) -> Literal["semantic_validate", "correct", "end"]:
+    """Conditional Edge routing after executing SQL query."""
+    if not state.get("error_message"):
+        return "semantic_validate"
+    if state.get("retry_count", 0) >= MAX_RETRIES:
+        return "end"
+    return "correct"
+
+def decide_after_semantic_validation(state: SQLAgentState) -> Literal["correct", "end"]:
+    """Conditional Edge routing after semantic verification."""
+    if not state.get("error_message"):
+        return "end"
+    if state.get("retry_count", 0) >= MAX_RETRIES:
+        return "end"
+    return "correct"
 
 def build_workflow():
     """Compiles and returns the LangGraph application."""
@@ -80,6 +121,7 @@ def build_workflow():
     workflow.add_node("validate", node_validate_sql)
     workflow.add_node("correct", node_correct_sql)
     workflow.add_node("execute_db", node_execute_sql)
+    workflow.add_node("semantic_validate", node_semantic_validate)
 
     # Add Edges (linear flow for generation)
     workflow.set_entry_point("clarify")
@@ -87,10 +129,10 @@ def build_workflow():
     workflow.add_edge("plan", "generate")
     workflow.add_edge("generate", "validate")
 
-    # Add Conditional Edges based on validation success
+    # Add Conditional Edges based on stage-wise validation success
     workflow.add_conditional_edges(
         "validate",
-        decide_next_after_validation,
+        decide_after_syntax_validation,
         {
             "execute": "execute_db",
             "correct": "correct",
@@ -98,8 +140,26 @@ def build_workflow():
         }
     )
 
+    workflow.add_conditional_edges(
+        "execute_db",
+        decide_after_execution,
+        {
+            "semantic_validate": "semantic_validate",
+            "correct": "correct",
+            "end": END
+        }
+    )
+
+    workflow.add_conditional_edges(
+        "semantic_validate",
+        decide_after_semantic_validation,
+        {
+            "correct": "correct",
+            "end": END
+        }
+    )
+
     # Loop back from correct to validate to re-check the fixed SQL
     workflow.add_edge("correct", "validate")
-    workflow.add_edge("execute_db", END)
 
     return workflow.compile()

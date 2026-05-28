@@ -63,10 +63,17 @@ def test_e2e_pipeline():
         assert False, "Query plan must be a QueryPlan model instance"
 
     logger.info(f"Generated SQL: '{final_state.get('sql_query')}'")
+    logger.info(f"Pipeline Retry Count: {final_state.get('retry_count')}")
     logger.info(f"Final Execution Error: {final_state.get('error_message')}")
     logger.info(f"Final Execution Result: {final_state.get('final_result')}")
 
-    logger.info("E2E Pipeline Test Passed Successfully!")
+    # Verify if semantic validation was reached
+    if final_state.get("error_message") and "Semantic Validation" in final_state["error_message"]:
+        logger.info("Semantic validation triggered an error loop successfully!")
+    elif not final_state.get("error_message"):
+        logger.info("Semantic validation successfully passed and query executed!")
+
+    logger.info("E2E Pipeline Test completed!")
 
 if __name__ == "__main__":
     test_e2e_pipeline()

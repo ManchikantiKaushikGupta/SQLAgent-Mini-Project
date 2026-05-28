@@ -331,11 +331,11 @@ evaluation/
 
 Verify logical correctness, not just syntax correctness.
 
-## Add
+## Status
 
-* execution-aware validation
-* intent alignment checking
-* semantic validator stage
+* [x] execution-aware validation (checks returned row data against original user intent)
+* [x] intent alignment checking (compares generated query constraints with refined intent)
+* [x] semantic validator stage (integrated `semantic_validate` node inside `core/graph.py` with correction loop routing)
 
 ---
 
