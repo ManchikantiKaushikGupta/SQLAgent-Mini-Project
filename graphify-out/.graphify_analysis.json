@@ -1,0 +1,350 @@
+{
+  "communities": {
+    "0": [
+      "core_graph_decide_next_after_validation",
+      "core_graph_node_clarify_intent",
+      "core_graph_node_correct_sql",
+      "core_graph_node_execute_sql",
+      "core_graph_node_validate_sql",
+      "core_graph_py",
+      "core_graph_rationale_1",
+      "core_graph_rationale_65",
+      "db_database_execute_sql_query",
+      "db_database_rationale_63",
+      "features_validation_correction_agent_py",
+      "features_validation_correction_agent_py_bool",
+      "features_validation_correction_agent_py_str",
+      "sqlagentstate",
+      "validation_correction_agent_correct_sql",
+      "validation_correction_agent_rationale_1",
+      "validation_correction_agent_rationale_19",
+      "validation_correction_agent_rationale_58",
+      "validation_correction_agent_validate_sql_safety"
+    ],
+    "1": [
+      "api_routes_ask_database",
+      "api_routes_py",
+      "api_routes_queryrequest",
+      "api_routes_queryresponse",
+      "api_routes_rationale_1",
+      "api_routes_rationale_40",
+      "basemodel",
+      "core_graph_build_workflow",
+      "core_graph_rationale_73",
+      "db_database_get_database_schema",
+      "db_database_get_db",
+      "db_database_py",
+      "db_database_py_str",
+      "db_database_rationale_1",
+      "db_database_rationale_29",
+      "db_database_rationale_38"
+    ],
+    "2": [
+      "chatgooglegenerativeai",
+      "core_graph_node_query_planning",
+      "core_llm_get_llm",
+      "core_llm_py",
+      "core_llm_py_str",
+      "core_llm_rationale_11",
+      "features_query_planning_agent_py",
+      "features_query_planning_agent_py_str",
+      "features_query_planning_init_py",
+      "float",
+      "query_planning_agent_generate_query_plan",
+      "query_planning_agent_rationale_1",
+      "query_planning_agent_rationale_18",
+      "query_planning_init_rationale_1"
+    ],
+    "3": [
+      "features_intent_clarification_agent_py",
+      "features_intent_clarification_agent_py_bool",
+      "features_intent_clarification_agent_py_str",
+      "features_intent_clarification_init_py",
+      "intent_clarification_agent_clarify_intent",
+      "intent_clarification_agent_get_matched_vague_terms",
+      "intent_clarification_agent_is_ambiguous",
+      "intent_clarification_agent_rationale_1",
+      "intent_clarification_agent_rationale_48",
+      "intent_clarification_agent_rationale_62",
+      "intent_clarification_agent_rationale_79",
+      "intent_clarification_init_rationale_1"
+    ],
+    "4": [
+      "base",
+      "seed_db_py",
+      "sqlagent_mini_project_seed_db_category",
+      "sqlagent_mini_project_seed_db_order",
+      "sqlagent_mini_project_seed_db_orderitem",
+      "sqlagent_mini_project_seed_db_product",
+      "sqlagent_mini_project_seed_db_rationale_1",
+      "sqlagent_mini_project_seed_db_review",
+      "sqlagent_mini_project_seed_db_user"
+    ],
+    "5": [
+      "core_graph_node_sql_generation",
+      "features_sql_generation_agent_py",
+      "features_sql_generation_agent_py_str",
+      "features_sql_generation_init_py",
+      "sql_generation_agent_generate_sql",
+      "sql_generation_agent_rationale_1",
+      "sql_generation_agent_rationale_17",
+      "sql_generation_init_rationale_1"
+    ],
+    "6": [
+      "architecture_agents_1_intent_clarification_agent",
+      "architecture_agents_2_query_planning_agent",
+      "architecture_agents_3_sql_generation_agent",
+      "architecture_agents_4_validation_correction_agent",
+      "architecture_agents_multi_agent_system_design",
+      "architecture_agents_system_flow",
+      "c_users_manch_onedrive_documents_sqlagent_mini_project_architecture_agents_md"
+    ],
+    "7": [
+      "build_graph_offline_py",
+      "build_graph_offline_py_str",
+      "int",
+      "sqlagent_mini_project_build_graph_offline_extract_offline",
+      "sqlagent_mini_project_build_graph_offline_label_communities",
+      "sqlagent_mini_project_build_graph_offline_load_detection",
+      "sqlagent_mini_project_build_graph_offline_main"
+    ],
+    "8": [
+      "ai_context_project_state_completed",
+      "ai_context_project_state_in_progress",
+      "ai_context_project_state_pending",
+      "ai_context_project_state_project_state",
+      "c_users_manch_onedrive_documents_sqlagent_mini_project_ai_context_project_state_md"
+    ],
+    "9": [
+      "core_state_py",
+      "core_state_rationale_1",
+      "core_state_sqlagentstate",
+      "typeddict"
+    ],
+    "10": [
+      "api_app_health_check",
+      "api_app_py",
+      "api_app_rationale_1"
+    ],
+    "11": [
+      "architecture_flow_system_workflow",
+      "c_users_manch_onedrive_documents_sqlagent_mini_project_architecture_flow_md"
+    ],
+    "12": [
+      "c_users_manch_onedrive_documents_sqlagent_mini_project_readme_md",
+      "sqlagent_mini_project_readme_sqlagent_mini_project"
+    ],
+    "13": [
+      "db_models_py",
+      "db_models_rationale_1"
+    ],
+    "14": [
+      "graphify_detect_summary_py"
+    ],
+    "15": [
+      "main_py"
+    ],
+    "16": [
+      "features_intent_clarification_prompt_py"
+    ],
+    "17": [
+      "features_query_planning_prompt_py"
+    ],
+    "18": [
+      "features_sql_generation_prompt_py"
+    ],
+    "19": [
+      "features_validation_correction_prompt_py"
+    ],
+    "20": [
+      "frontend_app_py"
+    ],
+    "21": [
+      "c_users_manch_onedrive_documents_sqlagent_mini_project_requirements_txt"
+    ],
+    "22": [
+      "c_users_manch_onedrive_documents_sqlagent_mini_project_ai_context_system_prompt_md"
+    ]
+  },
+  "cohesion": {
+    "0": 0.15789473684210525,
+    "1": 0.15833333333333333,
+    "2": 0.16483516483516483,
+    "3": 0.25757575757575757,
+    "4": 0.3611111111111111,
+    "5": 0.2857142857142857,
+    "6": 0.2857142857142857,
+    "7": 0.42857142857142855,
+    "8": 0.4,
+    "9": 0.5,
+    "10": 0.6666666666666666,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0
+  },
+  "gods": [
+    {
+      "id": "core_llm_get_llm",
+      "label": "get_llm()",
+      "degree": 13
+    },
+    {
+      "id": "sqlagentstate",
+      "label": "SQLAgentState",
+      "degree": 8
+    },
+    {
+      "id": "intent_clarification_agent_clarify_intent",
+      "label": "clarify_intent()",
+      "degree": 8
+    },
+    {
+      "id": "query_planning_agent_generate_query_plan",
+      "label": "generate_query_plan()",
+      "degree": 7
+    },
+    {
+      "id": "sql_generation_agent_generate_sql",
+      "label": "generate_sql()",
+      "degree": 7
+    },
+    {
+      "id": "intent_clarification_agent_is_ambiguous",
+      "label": "is_ambiguous()",
+      "degree": 6
+    },
+    {
+      "id": "validation_correction_agent_validate_sql_safety",
+      "label": "validate_sql_safety()",
+      "degree": 6
+    },
+    {
+      "id": "validation_correction_agent_correct_sql",
+      "label": "correct_sql()",
+      "degree": 6
+    },
+    {
+      "id": "api_routes_ask_database",
+      "label": "ask_database()",
+      "degree": 5
+    },
+    {
+      "id": "db_database_get_database_schema",
+      "label": "get_database_schema()",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "node_clarify_intent()",
+      "target": "clarify_intent()",
+      "source_files": [
+        "core/graph.py",
+        "features/intent_clarification/agent.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "clarify_intent()",
+      "target": "get_llm()",
+      "source_files": [
+        "features/intent_clarification/agent.py",
+        "core/llm.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "generate_sql()",
+      "target": "get_llm()",
+      "source_files": [
+        "features/sql_generation/agent.py",
+        "core/llm.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "correct_sql()",
+      "target": "get_llm()",
+      "source_files": [
+        "features/validation_correction/agent.py",
+        "core/llm.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "ask_database()",
+      "target": "get_database_schema()",
+      "source_files": [
+        "api/routes.py",
+        "db/database.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `get_llm()` connect `get_llm()` to `graph.py`, `clarify_intent()`, `generate_sql()`?",
+      "why": "High betweenness centrality (0.095) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `clarify_intent()` connect `clarify_intent()` to `graph.py`, `get_llm()`?",
+      "why": "High betweenness centrality (0.083) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `build_workflow()` connect `routes.py` to `graph.py`?",
+      "why": "High betweenness centrality (0.071) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `int`, `str`, `Complex Database Seeder for Presentation  Creates a realistic E-Commerce schema` to the rest of the system?",
+      "why": "47 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ],
+  "labels": {
+    "0": "graph.py",
+    "1": "routes.py",
+    "2": "get_llm()",
+    "3": "clarify_intent()",
+    "4": "seed_db.py",
+    "5": "generate_sql()",
+    "6": "Multi-Agent System Design",
+    "7": "build_graph_offline.py",
+    "8": "Project State",
+    "9": "SQLAgentState",
+    "10": "app.py",
+    "11": "System Workflow",
+    "12": "README.md",
+    "13": "models.py",
+    "14": "graphify_detect_summary.py",
+    "15": "main.py",
+    "16": "prompt.py",
+    "17": "prompt.py",
+    "18": "prompt.py",
+    "19": "prompt.py",
+    "20": "app.py",
+    "21": "requirements.txt",
+    "22": "system_prompt.md"
+  }
+}

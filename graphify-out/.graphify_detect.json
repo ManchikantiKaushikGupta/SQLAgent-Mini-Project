@@ -1,0 +1,47 @@
+{
+  "files": {
+    "code": [
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\build_graph_offline.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\graphify_detect_summary.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\main.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\seed_db.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\api\\app.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\api\\routes.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\graph.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\llm.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\state.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\db\\database.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\db\\models.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\intent_clarification\\agent.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\intent_clarification\\prompt.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\intent_clarification\\__init__.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\query_planning\\agent.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\query_planning\\prompt.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\query_planning\\__init__.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\sql_generation\\agent.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\sql_generation\\prompt.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\sql_generation\\__init__.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\validation_correction\\agent.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\features\\validation_correction\\prompt.py",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\frontend\\app.py"
+    ],
+    "document": [
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\README.md",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\requirements.txt",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\ai_context\\project_state.md",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\ai_context\\system_prompt.md",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\architecture\\agents.md",
+      "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\architecture\\flow.md"
+    ],
+    "paper": [],
+    "image": [],
+    "video": []
+  },
+  "total_files": 29,
+  "total_words": 5125,
+  "needs_graph": false,
+  "warning": "Corpus is ~5,125 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 7,
+  "scan_root": "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project"
+}
