@@ -345,11 +345,11 @@ Verify logical correctness, not just syntax correctness.
 
 Repair failing SQL components individually.
 
-## Technologies
+## Status
 
-* SQLGlot AST parsing
-* AST patching
-* clause-specific correction logic
+* [x] SQLGlot AST parsing (parses original failed SQL into an AST object for precise manipulation)
+* [x] AST patching (deterministically grafts corrected clauses into the original AST)
+* [x] clause-specific correction logic (prompts LLM for only the failing clause e.g. WHERE, GROUP BY, JOIN, LIMIT, ORDER BY)
 
 ---
 

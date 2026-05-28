@@ -15,6 +15,9 @@ from features.validation_correction.prompt import (
 )
 
 
+from features.validation_correction.repair_engine import repair_sql_clause
+
+
 def validate_sql_safety(sql: str, dialect: str = "postgres") -> bool:
     """
     Parses the SQL query with SQLGlot to ensure it is syntactically valid
@@ -57,6 +60,7 @@ def validate_sql_safety(sql: str, dialect: str = "postgres") -> bool:
 def correct_sql(failed_sql: str, error_message: str, schema: str, original_query: str) -> str:
     """
     Calls the LLM to fix a broken SQL query based on the schema and error message.
+    Tries surgical clause repair first, falling back to full query regeneration.
 
     Args:
         failed_sql: The failed SQL string.
@@ -70,6 +74,24 @@ def correct_sql(failed_sql: str, error_message: str, schema: str, original_query
     if not failed_sql or not error_message or not schema:
         raise ValueError("failed_sql, error_message, and schema must be provided.")
 
+    import logging
+    logger = logging.getLogger(__name__)
+
+    # Try AST-based clause repair first
+    try:
+        repaired_sql = repair_sql_clause(
+            failed_sql=failed_sql,
+            error_message=error_message,
+            schema=schema,
+            original_query=original_query
+        )
+        if repaired_sql:
+            logger.info("Successfully repaired SQL using surgical clause-level AST grafting.")
+            return repaired_sql
+    except Exception as re_err:
+        logger.warning(f"AST-based surgical clause repair failed: {re_err}. Falling back to full query correction.")
+
+    logger.info("Executing full SQL query regeneration fallback...")
     llm = get_llm()
 
     human_content = VALIDATION_CORRECTION_HUMAN_TEMPLATE.format(
