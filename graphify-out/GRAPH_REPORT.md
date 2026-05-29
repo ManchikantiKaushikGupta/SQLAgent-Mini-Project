@@ -1,16 +1,16 @@
-# Graph Report - SQLAgent-Mini-Project  (2026-05-28)
+# Graph Report - SQLAgent-Mini-Project  (2026-05-29)
 
 ## Corpus Check
-- 51 files · ~116,423 words
+- 51 files · ~116,952 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 395 nodes · 613 edges · 34 communities (27 shown, 7 thin omitted)
+- 419 nodes · 639 edges · 45 communities (38 shown, 7 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 29 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8569d5a1`
+- Built from commit: `c3018da5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,7 +36,18 @@
 - [[_COMMUNITY_Community 28|Community 28]]
 - [[_COMMUNITY_Community 29|Community 29]]
 - [[_COMMUNITY_Community 30|Community 30]]
+- [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
+- [[_COMMUNITY_Community 33|Community 33]]
+- [[_COMMUNITY_Community 34|Community 34]]
+- [[_COMMUNITY_Community 35|Community 35]]
+- [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 37|Community 37]]
+- [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_Community 40|Community 40]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `init_metrics_state()` - 20 edges
@@ -62,7 +73,7 @@
 - `SQLCorrectionResult` --uses--> `SQLCorrectionResult`  [INFERRED]
   features/validation_correction/agent.py → schemas/validation.py
 
-## Communities (34 total, 7 thin omitted)
+## Communities (45 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.13
@@ -77,16 +88,16 @@ Cohesion: 0.09
 Nodes (20): ndarray, Retrieval Module Initialization, get_schema_retriever(), Any, bool, int, str, FAISS-Based Database Schema Retriever  Dynamically reflects database metadata us (+12 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.07
-Nodes (34): ChatGoogleGenerativeAI, extract_text(), get_active_callbacks(), get_llm(), str, Returns the list of active callbacks for the current thread., Returns a configured ChatGoogleGenerativeAI instance.      Args:         model:, Safely extracts string content from an LLM response or AIMessage.     Handles st (+26 more)
+Cohesion: 0.08
+Nodes (32): ChatGoogleGenerativeAI, extract_text(), get_llm(), str, Returns a configured ChatGoogleGenerativeAI instance.      Args:         model:, Safely extracts string content from an LLM response or AIMessage.     Handles st, LangGraph State Definition  Represents the memory passed between nodes during ex, bool (+24 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.36
 Nodes (8): Base, Category, Order, OrderItem, Product, Complex Database Seeder for Presentation  Creates a realistic E-Commerce schema, Review, User
 
 ### Community 5 - "Community 5"
-Cohesion: 0.26
-Nodes (8): Any, BaseModel, AggregationRequirement, FilterRequirement, JoinRequirement, OrderByRequirement, Any, TableRequirement
+Cohesion: 0.20
+Nodes (9): Architecture Philosophy, Current Architecture, Enterprise Architecture Vision, Final Vision, High Priority Roadmap, Objective, PRIORITY 1 — Structured Outputs, Recommended Future Architecture (+1 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.29
@@ -109,23 +120,67 @@ Cohesion: 0.10
 Nodes (26): bool, str, Any, str, Validation & Correction Pydantic Schemas  Defines structural models for SQL sema, Structured response representing the semantic correctness verification of a gene, Structured response representing the output of the query correction agent., SemanticValidationResult (+18 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.09
-Nodes (36): ask_database(), QueryRequest, QueryResponse, FastAPI Routes  Defines endpoints for the SQLAgent application., Takes a natural language query, runs it through the SQLAgent graph,     and retu, BenchmarkResult, BenchmarkSummary, build_workflow() (+28 more)
+Cohesion: 0.08
+Nodes (38): ask_database(), QueryRequest, QueryResponse, FastAPI Routes  Defines endpoints for the SQLAgent application., Takes a natural language query, runs it through the SQLAgent graph,     and retu, BenchmarkResult, BenchmarkSummary, build_workflow() (+30 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.17
-Nodes (17): bool, execute_sql_query(), get_db(), str, Database connection and utilities.  Handles PostgreSQL connection setup using SQ, Yields a database session., Executes a raw SQL SELECT query against the PostgreSQL database safely., compare_results() (+9 more)
+Cohesion: 0.10
+Nodes (25): Any, BaseModel, bool, execute_sql_query(), get_db(), str, Database connection and utilities.  Handles PostgreSQL connection setup using SQ, Yields a database session. (+17 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.07
 Nodes (26): columns, fk_columns, pk_columns, db_metadata, categories, order_items, orders, products (+18 more)
 
+### Community 31 - "Community 31"
+Cohesion: 0.29
+Nodes (7): Metrics Tracked, Objective, Objective, PRIORITY 2 — Evaluation Framework [COMPLETED], PRIORITY 3 — Semantic Validation, Status, Status
+
 ### Community 32 - "Community 32"
-Cohesion: 0.04
-Nodes (47): Architecture Philosophy, Architecture & System Design, Backend, Completed, Core, Core Pipeline, Correction Workflow, Current Architecture (+39 more)
+Cohesion: 0.18
+Nodes (11): Architecture & System Design, Completed, Core Pipeline, Correction Workflow, In Progress, Infrastructure, Optimization, Project Overview (+3 more)
+
+### Community 33 - "Community 33"
+Cohesion: 0.33
+Nodes (6): Backend, Core, Current Tech Stack, Frontend, LLM Providers, SQL Tooling
+
+### Community 34 - "Community 34"
+Cohesion: 0.33
+Nodes (6): Deployment Backends, Enterprise Benefit, Objective, PRIORITY 8 — Enterprise Local LLM Support, Requirements, Target Models
+
+### Community 35 - "Community 35"
+Cohesion: 0.40
+Nodes (6): Objective, Objective, PRIORITY 4 — Clause-Level SQL Repair, PRIORITY 6 — Observability & Transparency [COMPLETED], Status, Status
+
+### Community 36 - "Community 36"
+Cohesion: 0.40
+Nodes (5): Datasets, Goal, Metrics, Objective, PRIORITY 10 — Benchmark Expansion
+
+### Community 37 - "Community 37"
+Cohesion: 0.40
+Nodes (5): Objective, PRIORITY 7 — Provider-Agnostic LLM Layer, Required Architecture, Requirements, Success Criteria
+
+### Community 38 - "Community 38"
+Cohesion: 0.50
+Nodes (4): Error Categories, Goal, Objective, PRIORITY 9 — Formal Error Taxonomy Engine
+
+### Community 39 - "Community 39"
+Cohesion: 0.67
+Nodes (3): Current Maturity, Current Project Status, Main Focus Going Forward
+
+### Community 40 - "Community 40"
+Cohesion: 0.67
+Nodes (3): DO, DO NOT, Important Development Rules
+
+### Community 43 - "Community 43"
+Cohesion: 0.67
+Nodes (3): Features, Objective, PRIORITY 11 — Production Governance & Security
+
+### Community 44 - "Community 44"
+Cohesion: 0.67
+Nodes (3): Objective, PRIORITY 5 — Schema Retrieval Layer [COMPLETED], Status
 
 ## Knowledge Gaps
-- **87 isolated node(s):** `liveServer.settings.port`, `Project Overview`, `Architecture Philosophy`, `Current Architecture`, `Core` (+82 more)
+- **104 isolated node(s):** `Project Overview`, `Architecture Philosophy`, `Current Architecture`, `Enterprise Architecture Vision`, `Core` (+99 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -133,16 +188,16 @@ Nodes (47): Architecture Philosophy, Architecture & System Design, Backend, Comp
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `get_schema_retriever()` connect `Community 2` to `Community 0`?**
-  _High betweenness centrality (0.084) - this node is a cross-community bridge._
+  _High betweenness centrality (0.075) - this node is a cross-community bridge._
 - **Why does `correct_sql()` connect `Community 23` to `Community 0`, `Community 1`, `Community 3`?**
-  _High betweenness centrality (0.046) - this node is a cross-community bridge._
-- **What connects `liveServer.settings.port`, `Project Overview`, `Architecture Philosophy` to the rest of the system?**
-  _171 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **What connects `Project Overview`, `Architecture Philosophy`, `Current Architecture` to the rest of the system?**
+  _188 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.12550607287449392 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.09247311827956989 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.07317073170731707 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07827260458839407 - nodes in this community are weakly interconnected._
 - **Should `Community 9` be split into smaller, more focused modules?**
   _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._

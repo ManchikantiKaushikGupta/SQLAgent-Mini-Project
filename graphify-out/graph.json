@@ -4,30 +4,12 @@
   "graph": {},
   "nodes": [
     {
-      "label": "settings.json",
-      "file_type": "code",
-      "source_file": ".vscode/settings.json",
-      "source_location": "L1",
-      "id": "vscode_settings_json",
-      "community": 30,
-      "norm_label": "settings.json"
-    },
-    {
-      "label": "liveServer.settings.port",
-      "file_type": "code",
-      "source_file": ".vscode/settings.json",
-      "source_location": "L2",
-      "id": "vscode_settings_liveserver_settings_port",
-      "community": 30,
-      "norm_label": "liveserver.settings.port"
-    },
-    {
       "label": "project_state.md",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
       "source_location": "L1",
       "id": "ai_context_project_state_md",
-      "community": 32,
+      "community": 5,
       "norm_label": "project_state.md"
     },
     {
@@ -54,7 +36,7 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L19",
       "id": "ai_context_project_state_architecture_philosophy",
-      "community": 32,
+      "community": 5,
       "norm_label": "architecture philosophy"
     },
     {
@@ -63,68 +45,77 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L49",
       "id": "ai_context_project_state_current_architecture",
-      "community": 32,
+      "community": 5,
       "norm_label": "current architecture"
+    },
+    {
+      "label": "Enterprise Architecture Vision",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L69",
+      "id": "ai_context_project_state_enterprise_architecture_vision",
+      "community": 5,
+      "norm_label": "enterprise architecture vision"
     },
     {
       "label": "Current Tech Stack",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L69",
+      "source_location": "L99",
       "id": "ai_context_project_state_current_tech_stack",
-      "community": 32,
+      "community": 33,
       "norm_label": "current tech stack"
     },
     {
       "label": "Core",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L71",
+      "source_location": "L101",
       "id": "ai_context_project_state_core",
-      "community": 32,
+      "community": 33,
       "norm_label": "core"
     },
     {
       "label": "LLM Providers",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L77",
+      "source_location": "L107",
       "id": "ai_context_project_state_llm_providers",
-      "community": 32,
+      "community": 33,
       "norm_label": "llm providers"
     },
     {
       "label": "SQL Tooling",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L82",
+      "source_location": "L112",
       "id": "ai_context_project_state_sql_tooling",
-      "community": 32,
+      "community": 33,
       "norm_label": "sql tooling"
     },
     {
       "label": "Backend",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L88",
+      "source_location": "L118",
       "id": "ai_context_project_state_backend",
-      "community": 32,
+      "community": 33,
       "norm_label": "backend"
     },
     {
       "label": "Frontend",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L92",
+      "source_location": "L122",
       "id": "ai_context_project_state_frontend",
-      "community": 32,
+      "community": 33,
       "norm_label": "frontend"
     },
     {
       "label": "Completed",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L98",
+      "source_location": "L128",
       "id": "ai_context_project_state_completed",
       "community": 32,
       "norm_label": "completed"
@@ -133,7 +124,7 @@
       "label": "Architecture & System Design",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L100",
+      "source_location": "L130",
       "id": "ai_context_project_state_architecture_system_design",
       "community": 32,
       "norm_label": "architecture & system design"
@@ -142,7 +133,7 @@
       "label": "Core Pipeline",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L108",
+      "source_location": "L138",
       "id": "ai_context_project_state_core_pipeline",
       "community": 32,
       "norm_label": "core pipeline"
@@ -151,7 +142,7 @@
       "label": "Validation & Safety",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L116",
+      "source_location": "L146",
       "id": "ai_context_project_state_validation_safety",
       "community": 32,
       "norm_label": "validation & safety"
@@ -160,7 +151,7 @@
       "label": "Infrastructure",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L123",
+      "source_location": "L153",
       "id": "ai_context_project_state_infrastructure",
       "community": 32,
       "norm_label": "infrastructure"
@@ -169,7 +160,7 @@
       "label": "In Progress",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L131",
+      "source_location": "L161",
       "id": "ai_context_project_state_in_progress",
       "community": 32,
       "norm_label": "in progress"
@@ -178,7 +169,7 @@
       "label": "Visualization & Transparency",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L133",
+      "source_location": "L163",
       "id": "ai_context_project_state_visualization_transparency",
       "community": 32,
       "norm_label": "visualization & transparency"
@@ -187,7 +178,7 @@
       "label": "Correction Workflow",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L139",
+      "source_location": "L169",
       "id": "ai_context_project_state_correction_workflow",
       "community": 32,
       "norm_label": "correction workflow"
@@ -196,7 +187,7 @@
       "label": "Optimization",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L145",
+      "source_location": "L175",
       "id": "ai_context_project_state_optimization",
       "community": 32,
       "norm_label": "optimization"
@@ -205,7 +196,7 @@
       "label": "Critical Weaknesses To Address",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L152",
+      "source_location": "L182",
       "id": "ai_context_project_state_critical_weaknesses_to_address",
       "community": 9,
       "norm_label": "critical weaknesses to address"
@@ -214,7 +205,7 @@
       "label": "1. Unstructured LLM Outputs",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L154",
+      "source_location": "L184",
       "id": "ai_context_project_state_1_unstructured_llm_outputs",
       "community": 9,
       "norm_label": "1. unstructured llm outputs"
@@ -223,7 +214,7 @@
       "label": "Problem",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L158",
+      "source_location": "L188",
       "id": "ai_context_project_state_problem",
       "community": 9,
       "norm_label": "problem"
@@ -232,7 +223,7 @@
       "label": "Goal",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L165",
+      "source_location": "L195",
       "id": "ai_context_project_state_goal",
       "community": 9,
       "norm_label": "goal"
@@ -241,7 +232,7 @@
       "label": "Target Example",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L173",
+      "source_location": "L203",
       "id": "ai_context_project_state_target_example",
       "community": 9,
       "norm_label": "target example"
@@ -250,7 +241,7 @@
       "label": "2. Full SQL Regeneration During Correction",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L185",
+      "source_location": "L215",
       "id": "ai_context_project_state_2_full_sql_regeneration_during_correction",
       "community": 9,
       "norm_label": "2. full sql regeneration during correction"
@@ -259,8 +250,8 @@
       "label": "Problem",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L187",
-      "id": "ai_context_project_state_problem_187",
+      "source_location": "L217",
+      "id": "ai_context_project_state_problem_217",
       "community": 9,
       "norm_label": "problem"
     },
@@ -268,8 +259,8 @@
       "label": "Goal",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L197",
-      "id": "ai_context_project_state_goal_197",
+      "source_location": "L227",
+      "id": "ai_context_project_state_goal_227",
       "community": 9,
       "norm_label": "goal"
     },
@@ -277,7 +268,7 @@
       "label": "3. Validation Is Mostly Syntax-Level",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L213",
+      "source_location": "L243",
       "id": "ai_context_project_state_3_validation_is_mostly_syntax_level",
       "community": 9,
       "norm_label": "3. validation is mostly syntax-level"
@@ -286,7 +277,7 @@
       "label": "Current Validation",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L215",
+      "source_location": "L245",
       "id": "ai_context_project_state_current_validation",
       "community": 9,
       "norm_label": "current validation"
@@ -295,7 +286,7 @@
       "label": "Missing",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L220",
+      "source_location": "L250",
       "id": "ai_context_project_state_missing",
       "community": 9,
       "norm_label": "missing"
@@ -304,8 +295,8 @@
       "label": "Goal",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L226",
-      "id": "ai_context_project_state_goal_226",
+      "source_location": "L256",
+      "id": "ai_context_project_state_goal_256",
       "community": 9,
       "norm_label": "goal"
     },
@@ -313,7 +304,7 @@
       "label": "Layer 1",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L230",
+      "source_location": "L260",
       "id": "ai_context_project_state_layer_1",
       "community": 9,
       "norm_label": "layer 1"
@@ -322,7 +313,7 @@
       "label": "Layer 2",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L234",
+      "source_location": "L264",
       "id": "ai_context_project_state_layer_2",
       "community": 9,
       "norm_label": "layer 2"
@@ -331,7 +322,7 @@
       "label": "Layer 3",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L238",
+      "source_location": "L268",
       "id": "ai_context_project_state_layer_3",
       "community": 9,
       "norm_label": "layer 3"
@@ -340,7 +331,7 @@
       "label": "4. No Real Schema Retrieval Layer",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L247",
+      "source_location": "L277",
       "id": "ai_context_project_state_4_no_real_schema_retrieval_layer",
       "community": 9,
       "norm_label": "4. no real schema retrieval layer"
@@ -349,7 +340,7 @@
       "label": "Current Problem",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L249",
+      "source_location": "L279",
       "id": "ai_context_project_state_current_problem",
       "community": 9,
       "norm_label": "current problem"
@@ -358,8 +349,8 @@
       "label": "Goal",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L255",
-      "id": "ai_context_project_state_goal_255",
+      "source_location": "L285",
+      "id": "ai_context_project_state_goal_285",
       "community": 9,
       "norm_label": "goal"
     },
@@ -367,7 +358,7 @@
       "label": "5. Limited Observability",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L268",
+      "source_location": "L298",
       "id": "ai_context_project_state_5_limited_observability",
       "community": 9,
       "norm_label": "5. limited observability"
@@ -376,7 +367,7 @@
       "label": "Missing Features",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L270",
+      "source_location": "L300",
       "id": "ai_context_project_state_missing_features",
       "community": 9,
       "norm_label": "missing features"
@@ -385,8 +376,8 @@
       "label": "Goal",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L278",
-      "id": "ai_context_project_state_goal_278",
+      "source_location": "L308",
+      "id": "ai_context_project_state_goal_308",
       "community": 9,
       "norm_label": "goal"
     },
@@ -394,163 +385,109 @@
       "label": "High Priority Roadmap",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L284",
+      "source_location": "L314",
       "id": "ai_context_project_state_high_priority_roadmap",
-      "community": 32,
+      "community": 5,
       "norm_label": "high priority roadmap"
     },
     {
       "label": "PRIORITY 1 \u2014 Structured Outputs",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L286",
+      "source_location": "L316",
       "id": "ai_context_project_state_priority_1_structured_outputs",
-      "community": 32,
+      "community": 5,
       "norm_label": "priority 1 \u2014 structured outputs"
     },
     {
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L288",
+      "source_location": "L318",
       "id": "ai_context_project_state_objective",
-      "community": 32,
+      "community": 5,
       "norm_label": "objective"
     },
     {
       "label": "Tasks",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L292",
+      "source_location": "L322",
       "id": "ai_context_project_state_tasks",
-      "community": 32,
+      "community": 5,
       "norm_label": "tasks"
     },
     {
       "label": "PRIORITY 2 \u2014 Evaluation Framework [COMPLETED]",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L302",
+      "source_location": "L332",
       "id": "ai_context_project_state_priority_2_evaluation_framework_completed",
-      "community": 32,
+      "community": 31,
       "norm_label": "priority 2 \u2014 evaluation framework [completed]"
     },
     {
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L304",
-      "id": "ai_context_project_state_objective_304",
-      "community": 32,
+      "source_location": "L334",
+      "id": "ai_context_project_state_objective_334",
+      "community": 31,
       "norm_label": "objective"
     },
     {
       "label": "Status",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L308",
+      "source_location": "L338",
       "id": "ai_context_project_state_status",
-      "community": 32,
+      "community": 31,
       "norm_label": "status"
     },
     {
       "label": "Metrics Tracked",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L314",
+      "source_location": "L344",
       "id": "ai_context_project_state_metrics_tracked",
-      "community": 32,
+      "community": 31,
       "norm_label": "metrics tracked"
     },
     {
       "label": "PRIORITY 3 \u2014 Semantic Validation",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L324",
+      "source_location": "L354",
       "id": "ai_context_project_state_priority_3_semantic_validation",
-      "community": 32,
+      "community": 31,
       "norm_label": "priority 3 \u2014 semantic validation"
     },
     {
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L326",
-      "id": "ai_context_project_state_objective_326",
-      "community": 32,
+      "source_location": "L356",
+      "id": "ai_context_project_state_objective_356",
+      "community": 31,
       "norm_label": "objective"
     },
     {
       "label": "Status",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L330",
-      "id": "ai_context_project_state_status_330",
-      "community": 32,
+      "source_location": "L360",
+      "id": "ai_context_project_state_status_360",
+      "community": 31,
       "norm_label": "status"
     },
     {
       "label": "PRIORITY 4 \u2014 Clause-Level SQL Repair",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L338",
-      "id": "ai_context_project_state_priority_4_clause_level_sql_repair",
-      "community": 32,
-      "norm_label": "priority 4 \u2014 clause-level sql repair"
-    },
-    {
-      "label": "Objective",
-      "file_type": "document",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L340",
-      "id": "ai_context_project_state_objective_340",
-      "community": 32,
-      "norm_label": "objective"
-    },
-    {
-      "label": "Status",
-      "file_type": "document",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L344",
-      "id": "ai_context_project_state_status_344",
-      "community": 32,
-      "norm_label": "status"
-    },
-    {
-      "label": "PRIORITY 5 \u2014 Schema Retrieval Layer [COMPLETED]",
-      "file_type": "document",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L352",
-      "id": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
-      "community": 32,
-      "norm_label": "priority 5 \u2014 schema retrieval layer [completed]"
-    },
-    {
-      "label": "Objective",
-      "file_type": "document",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L354",
-      "id": "ai_context_project_state_objective_354",
-      "community": 32,
-      "norm_label": "objective"
-    },
-    {
-      "label": "Status",
-      "file_type": "document",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L358",
-      "id": "ai_context_project_state_status_358",
-      "community": 32,
-      "norm_label": "status"
-    },
-    {
-      "label": "PRIORITY 6 \u2014 Observability & Transparency [COMPLETED]",
-      "file_type": "document",
-      "source_file": "ai_context/project_state.md",
       "source_location": "L368",
-      "id": "ai_context_project_state_priority_6_observability_transparency_completed",
-      "community": 32,
-      "norm_label": "priority 6 \u2014 observability & transparency [completed]"
+      "id": "ai_context_project_state_priority_4_clause_level_sql_repair",
+      "community": 35,
+      "norm_label": "priority 4 \u2014 clause-level sql repair"
     },
     {
       "label": "Objective",
@@ -558,7 +495,7 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L370",
       "id": "ai_context_project_state_objective_370",
-      "community": 32,
+      "community": 35,
       "norm_label": "objective"
     },
     {
@@ -567,2087 +504,2366 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L374",
       "id": "ai_context_project_state_status_374",
-      "community": 32,
+      "community": 35,
       "norm_label": "status"
+    },
+    {
+      "label": "PRIORITY 5 \u2014 Schema Retrieval Layer [COMPLETED]",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L382",
+      "id": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
+      "community": 44,
+      "norm_label": "priority 5 \u2014 schema retrieval layer [completed]"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L384",
+      "id": "ai_context_project_state_objective_384",
+      "community": 44,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L388",
+      "id": "ai_context_project_state_status_388",
+      "community": 44,
+      "norm_label": "status"
+    },
+    {
+      "label": "PRIORITY 6 \u2014 Observability & Transparency [COMPLETED]",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L398",
+      "id": "ai_context_project_state_priority_6_observability_transparency_completed",
+      "community": 35,
+      "norm_label": "priority 6 \u2014 observability & transparency [completed]"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L400",
+      "id": "ai_context_project_state_objective_400",
+      "community": 35,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L404",
+      "id": "ai_context_project_state_status_404",
+      "community": 35,
+      "norm_label": "status"
+    },
+    {
+      "label": "PRIORITY 7 \u2014 Provider-Agnostic LLM Layer",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L415",
+      "id": "ai_context_project_state_priority_7_provider_agnostic_llm_layer",
+      "community": 37,
+      "norm_label": "priority 7 \u2014 provider-agnostic llm layer"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L417",
+      "id": "ai_context_project_state_objective_417",
+      "community": 37,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Required Architecture",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L431",
+      "id": "ai_context_project_state_required_architecture",
+      "community": 37,
+      "norm_label": "required architecture"
+    },
+    {
+      "label": "Requirements",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L442",
+      "id": "ai_context_project_state_requirements",
+      "community": 37,
+      "norm_label": "requirements"
+    },
+    {
+      "label": "Success Criteria",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L451",
+      "id": "ai_context_project_state_success_criteria",
+      "community": 37,
+      "norm_label": "success criteria"
+    },
+    {
+      "label": "PRIORITY 8 \u2014 Enterprise Local LLM Support",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L465",
+      "id": "ai_context_project_state_priority_8_enterprise_local_llm_support",
+      "community": 34,
+      "norm_label": "priority 8 \u2014 enterprise local llm support"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L467",
+      "id": "ai_context_project_state_objective_467",
+      "community": 34,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Target Models",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L471",
+      "id": "ai_context_project_state_target_models",
+      "community": 34,
+      "norm_label": "target models"
+    },
+    {
+      "label": "Deployment Backends",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L481",
+      "id": "ai_context_project_state_deployment_backends",
+      "community": 34,
+      "norm_label": "deployment backends"
+    },
+    {
+      "label": "Requirements",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L486",
+      "id": "ai_context_project_state_requirements_486",
+      "community": 34,
+      "norm_label": "requirements"
+    },
+    {
+      "label": "Enterprise Benefit",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L494",
+      "id": "ai_context_project_state_enterprise_benefit",
+      "community": 34,
+      "norm_label": "enterprise benefit"
+    },
+    {
+      "label": "PRIORITY 9 \u2014 Formal Error Taxonomy Engine",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L500",
+      "id": "ai_context_project_state_priority_9_formal_error_taxonomy_engine",
+      "community": 38,
+      "norm_label": "priority 9 \u2014 formal error taxonomy engine"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L502",
+      "id": "ai_context_project_state_objective_502",
+      "community": 38,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Error Categories",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L506",
+      "id": "ai_context_project_state_error_categories",
+      "community": 38,
+      "norm_label": "error categories"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L544",
+      "id": "ai_context_project_state_goal_544",
+      "community": 38,
+      "norm_label": "goal"
+    },
+    {
+      "label": "PRIORITY 10 \u2014 Benchmark Expansion",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L550",
+      "id": "ai_context_project_state_priority_10_benchmark_expansion",
+      "community": 36,
+      "norm_label": "priority 10 \u2014 benchmark expansion"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L552",
+      "id": "ai_context_project_state_objective_552",
+      "community": 36,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Datasets",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L556",
+      "id": "ai_context_project_state_datasets",
+      "community": 36,
+      "norm_label": "datasets"
+    },
+    {
+      "label": "Metrics",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L563",
+      "id": "ai_context_project_state_metrics",
+      "community": 36,
+      "norm_label": "metrics"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L574",
+      "id": "ai_context_project_state_goal_574",
+      "community": 36,
+      "norm_label": "goal"
+    },
+    {
+      "label": "PRIORITY 11 \u2014 Production Governance & Security",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L580",
+      "id": "ai_context_project_state_priority_11_production_governance_security",
+      "community": 43,
+      "norm_label": "priority 11 \u2014 production governance & security"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L582",
+      "id": "ai_context_project_state_objective_582",
+      "community": 43,
+      "norm_label": "objective"
+    },
+    {
+      "label": "Features",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L586",
+      "id": "ai_context_project_state_features",
+      "community": 43,
+      "norm_label": "features"
     },
     {
       "label": "Recommended Future Architecture",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L385",
+      "source_location": "L613",
       "id": "ai_context_project_state_recommended_future_architecture",
-      "community": 32,
+      "community": 5,
       "norm_label": "recommended future architecture"
     },
     {
       "label": "Important Development Rules",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L407",
+      "source_location": "L635",
       "id": "ai_context_project_state_important_development_rules",
-      "community": 32,
+      "community": 40,
       "norm_label": "important development rules"
     },
     {
       "label": "DO",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L409",
+      "source_location": "L637",
       "id": "ai_context_project_state_do",
-      "community": 32,
+      "community": 40,
       "norm_label": "do"
     },
     {
       "label": "DO NOT",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L417",
+      "source_location": "L645",
       "id": "ai_context_project_state_do_not",
-      "community": 32,
+      "community": 40,
       "norm_label": "do not"
     },
     {
       "label": "Current Project Status",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L426",
+      "source_location": "L654",
       "id": "ai_context_project_state_current_project_status",
-      "community": 32,
+      "community": 39,
       "norm_label": "current project status"
     },
     {
       "label": "Current Maturity",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L428",
+      "source_location": "L656",
       "id": "ai_context_project_state_current_maturity",
-      "community": 32,
+      "community": 39,
       "norm_label": "current maturity"
     },
     {
       "label": "Main Focus Going Forward",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L432",
+      "source_location": "L660",
       "id": "ai_context_project_state_main_focus_going_forward",
-      "community": 32,
+      "community": 39,
       "norm_label": "main focus going forward"
     },
     {
       "label": "Final Vision",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L446",
+      "source_location": "L674",
       "id": "ai_context_project_state_final_vision",
-      "community": 32,
+      "community": 5,
       "norm_label": "final vision"
+    },
+    {
+      "label": "settings.json",
+      "file_type": "code",
+      "source_file": ".vscode/settings.json",
+      "source_location": "L1",
+      "community": 30,
+      "norm_label": "settings.json",
+      "id": "vscode_settings_json"
+    },
+    {
+      "label": "liveServer.settings.port",
+      "file_type": "code",
+      "source_file": ".vscode/settings.json",
+      "source_location": "L2",
+      "community": 30,
+      "norm_label": "liveserver.settings.port",
+      "id": "vscode_settings_liveserver_settings_port"
     },
     {
       "label": "routes.py",
       "file_type": "code",
       "source_file": "api/routes.py",
       "source_location": "L1",
-      "id": "api_routes_py",
       "community": 24,
-      "norm_label": "routes.py"
+      "norm_label": "routes.py",
+      "id": "api_routes_py"
     },
     {
       "label": "QueryRequest",
       "file_type": "code",
       "source_file": "api/routes.py",
       "source_location": "L26",
-      "id": "api_routes_queryrequest",
       "community": 24,
-      "norm_label": "queryrequest"
+      "norm_label": "queryrequest",
+      "id": "api_routes_queryrequest"
     },
     {
       "label": "BaseModel",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "basemodel",
-      "community": 5,
-      "norm_label": "basemodel"
+      "community": 28,
+      "norm_label": "basemodel",
+      "id": "basemodel"
     },
     {
       "label": "QueryResponse",
       "file_type": "code",
       "source_file": "api/routes.py",
       "source_location": "L30",
-      "id": "api_routes_queryresponse",
       "community": 24,
-      "norm_label": "queryresponse"
+      "norm_label": "queryresponse",
+      "id": "api_routes_queryresponse"
     },
     {
       "label": "ask_database()",
       "file_type": "code",
       "source_file": "api/routes.py",
       "source_location": "L40",
-      "id": "api_routes_ask_database",
       "community": 24,
-      "norm_label": "ask_database()"
+      "norm_label": "ask_database()",
+      "id": "api_routes_ask_database"
     },
     {
       "label": "FastAPI Routes  Defines endpoints for the SQLAgent application.",
       "file_type": "rationale",
       "source_file": "api/routes.py",
       "source_location": "L1",
-      "id": "api_routes_rationale_1",
       "community": 24,
-      "norm_label": "fastapi routes  defines endpoints for the sqlagent application."
+      "norm_label": "fastapi routes  defines endpoints for the sqlagent application.",
+      "id": "api_routes_rationale_1"
     },
     {
       "label": "Takes a natural language query, runs it through the SQLAgent graph,     and retu",
       "file_type": "rationale",
       "source_file": "api/routes.py",
       "source_location": "L41",
-      "id": "api_routes_rationale_41",
       "community": 24,
-      "norm_label": "takes a natural language query, runs it through the sqlagent graph,     and retu"
+      "norm_label": "takes a natural language query, runs it through the sqlagent graph,     and retu",
+      "id": "api_routes_rationale_41"
     },
     {
       "label": "graph.py",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L1",
-      "id": "core_graph_py",
       "community": 0,
-      "norm_label": "graph.py"
+      "norm_label": "graph.py",
+      "id": "core_graph_py"
     },
     {
       "label": "node_clarify_intent()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L32",
-      "id": "core_graph_node_clarify_intent",
       "community": 0,
-      "norm_label": "node_clarify_intent()"
+      "norm_label": "node_clarify_intent()",
+      "id": "core_graph_node_clarify_intent"
     },
     {
       "label": "SQLAgentState",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L32",
-      "id": "sqlagentstate",
       "community": 0,
-      "norm_label": "sqlagentstate"
+      "norm_label": "sqlagentstate",
+      "id": "sqlagentstate"
     },
     {
       "label": "node_retrieve_schema()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L38",
-      "id": "core_graph_node_retrieve_schema",
       "community": 0,
-      "norm_label": "node_retrieve_schema()"
+      "norm_label": "node_retrieve_schema()",
+      "id": "core_graph_node_retrieve_schema"
     },
     {
       "label": "node_query_planning()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L53",
-      "id": "core_graph_node_query_planning",
       "community": 0,
-      "norm_label": "node_query_planning()"
+      "norm_label": "node_query_planning()",
+      "id": "core_graph_node_query_planning"
     },
     {
       "label": "node_sql_generation()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L59",
-      "id": "core_graph_node_sql_generation",
       "community": 0,
-      "norm_label": "node_sql_generation()"
+      "norm_label": "node_sql_generation()",
+      "id": "core_graph_node_sql_generation"
     },
     {
       "label": "node_validate_sql()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L65",
-      "id": "core_graph_node_validate_sql",
       "community": 0,
-      "norm_label": "node_validate_sql()"
+      "norm_label": "node_validate_sql()",
+      "id": "core_graph_node_validate_sql"
     },
     {
       "label": "node_correct_sql()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L78",
-      "id": "core_graph_node_correct_sql",
       "community": 0,
-      "norm_label": "node_correct_sql()"
+      "norm_label": "node_correct_sql()",
+      "id": "core_graph_node_correct_sql"
     },
     {
       "label": "node_execute_sql()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L103",
-      "id": "core_graph_node_execute_sql",
       "community": 0,
-      "norm_label": "node_execute_sql()"
+      "norm_label": "node_execute_sql()",
+      "id": "core_graph_node_execute_sql"
     },
     {
       "label": "node_semantic_validate()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L120",
-      "id": "core_graph_node_semantic_validate",
       "community": 0,
-      "norm_label": "node_semantic_validate()"
+      "norm_label": "node_semantic_validate()",
+      "id": "core_graph_node_semantic_validate"
     },
     {
       "label": "decide_after_syntax_validation()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L149",
-      "id": "core_graph_decide_after_syntax_validation",
       "community": 0,
-      "norm_label": "decide_after_syntax_validation()"
+      "norm_label": "decide_after_syntax_validation()",
+      "id": "core_graph_decide_after_syntax_validation"
     },
     {
       "label": "decide_after_execution()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L157",
-      "id": "core_graph_decide_after_execution",
       "community": 0,
-      "norm_label": "decide_after_execution()"
+      "norm_label": "decide_after_execution()",
+      "id": "core_graph_decide_after_execution"
     },
     {
       "label": "decide_after_semantic_validation()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L165",
-      "id": "core_graph_decide_after_semantic_validation",
       "community": 0,
-      "norm_label": "decide_after_semantic_validation()"
+      "norm_label": "decide_after_semantic_validation()",
+      "id": "core_graph_decide_after_semantic_validation"
     },
     {
       "label": "build_workflow()",
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L173",
-      "id": "core_graph_build_workflow",
       "community": 24,
-      "norm_label": "build_workflow()"
+      "norm_label": "build_workflow()",
+      "id": "core_graph_build_workflow"
     },
     {
       "label": "LangGraph Workflow Definition  Connects individual agents into a cohesive cycle,",
       "file_type": "rationale",
       "source_file": "core/graph.py",
       "source_location": "L1",
-      "id": "core_graph_rationale_1",
       "community": 0,
-      "norm_label": "langgraph workflow definition  connects individual agents into a cohesive cycle,"
+      "norm_label": "langgraph workflow definition  connects individual agents into a cohesive cycle,",
+      "id": "core_graph_rationale_1"
     },
     {
       "label": "Conditional Edge routing after checking SQL syntax and safety.",
       "file_type": "rationale",
       "source_file": "core/graph.py",
       "source_location": "L150",
-      "id": "core_graph_rationale_150",
       "community": 0,
-      "norm_label": "conditional edge routing after checking sql syntax and safety."
+      "norm_label": "conditional edge routing after checking sql syntax and safety.",
+      "id": "core_graph_rationale_150"
     },
     {
       "label": "Conditional Edge routing after executing SQL query.",
       "file_type": "rationale",
       "source_file": "core/graph.py",
       "source_location": "L158",
-      "id": "core_graph_rationale_158",
       "community": 0,
-      "norm_label": "conditional edge routing after executing sql query."
+      "norm_label": "conditional edge routing after executing sql query.",
+      "id": "core_graph_rationale_158"
     },
     {
       "label": "Conditional Edge routing after semantic verification.",
       "file_type": "rationale",
       "source_file": "core/graph.py",
       "source_location": "L166",
-      "id": "core_graph_rationale_166",
       "community": 0,
-      "norm_label": "conditional edge routing after semantic verification."
+      "norm_label": "conditional edge routing after semantic verification.",
+      "id": "core_graph_rationale_166"
     },
     {
       "label": "Compiles and returns the LangGraph application.",
       "file_type": "rationale",
       "source_file": "core/graph.py",
       "source_location": "L174",
-      "id": "core_graph_rationale_174",
       "community": 24,
-      "norm_label": "compiles and returns the langgraph application."
+      "norm_label": "compiles and returns the langgraph application.",
+      "id": "core_graph_rationale_174"
     },
     {
       "label": "llm.py",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L1",
-      "id": "core_llm_py",
-      "community": 3,
-      "norm_label": "llm.py"
+      "community": 24,
+      "norm_label": "llm.py",
+      "id": "core_llm_py"
     },
     {
       "label": "get_active_callbacks()",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L13",
-      "id": "core_llm_get_active_callbacks",
-      "community": 3,
-      "norm_label": "get_active_callbacks()"
+      "community": 24,
+      "norm_label": "get_active_callbacks()",
+      "id": "core_llm_get_active_callbacks"
     },
     {
       "label": "BaseCallbackHandler",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L13",
-      "id": "core_llm_py_basecallbackhandler",
       "community": 24,
-      "norm_label": "basecallbackhandler"
+      "norm_label": "basecallbackhandler",
+      "id": "core_llm_py_basecallbackhandler"
     },
     {
       "label": "register_thread_callbacks()",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L19",
-      "id": "core_llm_register_thread_callbacks",
       "community": 24,
-      "norm_label": "register_thread_callbacks()"
+      "norm_label": "register_thread_callbacks()",
+      "id": "core_llm_register_thread_callbacks"
     },
     {
       "label": "clear_thread_callbacks()",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L23",
-      "id": "core_llm_clear_thread_callbacks",
       "community": 24,
-      "norm_label": "clear_thread_callbacks()"
+      "norm_label": "clear_thread_callbacks()",
+      "id": "core_llm_clear_thread_callbacks"
     },
     {
       "label": "get_llm()",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L31",
-      "id": "core_llm_get_llm",
       "community": 3,
-      "norm_label": "get_llm()"
+      "norm_label": "get_llm()",
+      "id": "core_llm_get_llm"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L31",
-      "id": "core_llm_py_str",
       "community": 3,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "core_llm_py_str"
     },
     {
       "label": "float",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L31",
-      "id": "float",
       "community": 3,
-      "norm_label": "float"
+      "norm_label": "float",
+      "id": "float"
     },
     {
       "label": "ChatGoogleGenerativeAI",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L31",
-      "id": "chatgooglegenerativeai",
       "community": 3,
-      "norm_label": "chatgooglegenerativeai"
+      "norm_label": "chatgooglegenerativeai",
+      "id": "chatgooglegenerativeai"
     },
     {
       "label": "extract_text()",
       "file_type": "code",
       "source_file": "core/llm.py",
       "source_location": "L57",
-      "id": "core_llm_extract_text",
       "community": 3,
-      "norm_label": "extract_text()"
+      "norm_label": "extract_text()",
+      "id": "core_llm_extract_text"
     },
     {
       "label": "Returns the list of active callbacks for the current thread.",
       "file_type": "rationale",
       "source_file": "core/llm.py",
       "source_location": "L14",
-      "id": "core_llm_rationale_14",
-      "community": 3,
-      "norm_label": "returns the list of active callbacks for the current thread."
+      "community": 24,
+      "norm_label": "returns the list of active callbacks for the current thread.",
+      "id": "core_llm_rationale_14"
     },
     {
       "label": "Registers callbacks for the current thread.",
       "file_type": "rationale",
       "source_file": "core/llm.py",
       "source_location": "L20",
-      "id": "core_llm_rationale_20",
       "community": 24,
-      "norm_label": "registers callbacks for the current thread."
+      "norm_label": "registers callbacks for the current thread.",
+      "id": "core_llm_rationale_20"
     },
     {
       "label": "Clears callbacks for the current thread.",
       "file_type": "rationale",
       "source_file": "core/llm.py",
       "source_location": "L24",
-      "id": "core_llm_rationale_24",
       "community": 24,
-      "norm_label": "clears callbacks for the current thread."
+      "norm_label": "clears callbacks for the current thread.",
+      "id": "core_llm_rationale_24"
     },
     {
       "label": "Returns a configured ChatGoogleGenerativeAI instance.      Args:         model:",
       "file_type": "rationale",
       "source_file": "core/llm.py",
       "source_location": "L32",
-      "id": "core_llm_rationale_32",
       "community": 3,
-      "norm_label": "returns a configured chatgooglegenerativeai instance.      args:         model:"
+      "norm_label": "returns a configured chatgooglegenerativeai instance.      args:         model:",
+      "id": "core_llm_rationale_32"
     },
     {
       "label": "Safely extracts string content from an LLM response or AIMessage.     Handles st",
       "file_type": "rationale",
       "source_file": "core/llm.py",
       "source_location": "L58",
-      "id": "core_llm_rationale_58",
       "community": 3,
-      "norm_label": "safely extracts string content from an llm response or aimessage.     handles st"
+      "norm_label": "safely extracts string content from an llm response or aimessage.     handles st",
+      "id": "core_llm_rationale_58"
     },
     {
       "label": "state.py",
       "file_type": "code",
       "source_file": "core/state.py",
       "source_location": "L1",
-      "id": "core_state_py",
       "community": 3,
-      "norm_label": "state.py"
+      "norm_label": "state.py",
+      "id": "core_state_py"
     },
     {
       "label": "SQLAgentState",
       "file_type": "code",
       "source_file": "core/state.py",
       "source_location": "L10",
-      "id": "core_state_sqlagentstate",
       "community": 0,
-      "norm_label": "sqlagentstate"
+      "norm_label": "sqlagentstate",
+      "id": "core_state_sqlagentstate"
     },
     {
       "label": "TypedDict",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "id": "typeddict",
       "community": 0,
-      "norm_label": "typeddict"
+      "norm_label": "typeddict",
+      "id": "typeddict"
     },
     {
       "label": "LangGraph State Definition  Represents the memory passed between nodes during ex",
       "file_type": "rationale",
       "source_file": "core/state.py",
       "source_location": "L1",
-      "id": "core_state_rationale_1",
       "community": 3,
-      "norm_label": "langgraph state definition  represents the memory passed between nodes during ex"
+      "norm_label": "langgraph state definition  represents the memory passed between nodes during ex",
+      "id": "core_state_rationale_1"
     },
     {
       "label": "benchmark_runner.py",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L1",
-      "id": "evaluation_benchmark_runner_py",
       "community": 24,
-      "norm_label": "benchmark_runner.py"
+      "norm_label": "benchmark_runner.py",
+      "id": "evaluation_benchmark_runner_py"
     },
     {
       "label": "TokenUsageTracker",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L113",
-      "id": "evaluation_benchmark_runner_tokenusagetracker",
       "community": 24,
-      "norm_label": "tokenusagetracker"
+      "norm_label": "tokenusagetracker",
+      "id": "evaluation_benchmark_runner_tokenusagetracker"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L117",
-      "id": "evaluation_benchmark_runner_tokenusagetracker_init",
       "community": 24,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "evaluation_benchmark_runner_tokenusagetracker_init"
     },
     {
       "label": ".on_llm_end()",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L123",
-      "id": "evaluation_benchmark_runner_tokenusagetracker_on_llm_end",
       "community": 24,
-      "norm_label": ".on_llm_end()"
+      "norm_label": ".on_llm_end()",
+      "id": "evaluation_benchmark_runner_tokenusagetracker_on_llm_end"
     },
     {
       "label": "run_benchmarks()",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L150",
-      "id": "evaluation_benchmark_runner_run_benchmarks",
       "community": 24,
-      "norm_label": "run_benchmarks()"
+      "norm_label": "run_benchmarks()",
+      "id": "evaluation_benchmark_runner_run_benchmarks"
     },
     {
       "label": "BenchmarkSummary",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L150",
-      "id": "benchmarksummary",
       "community": 24,
-      "norm_label": "benchmarksummary"
+      "norm_label": "benchmarksummary",
+      "id": "benchmarksummary"
     },
     {
       "label": "BenchmarkResult",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L150",
-      "id": "benchmarkresult",
       "community": 24,
-      "norm_label": "benchmarkresult"
+      "norm_label": "benchmarkresult",
+      "id": "benchmarkresult"
     },
     {
       "label": "write_reports()",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L339",
-      "id": "evaluation_benchmark_runner_write_reports",
       "community": 24,
-      "norm_label": "write_reports()"
+      "norm_label": "write_reports()",
+      "id": "evaluation_benchmark_runner_write_reports"
     },
     {
       "label": "render_dashboard()",
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L390",
-      "id": "evaluation_benchmark_runner_render_dashboard",
       "community": 24,
-      "norm_label": "render_dashboard()"
+      "norm_label": "render_dashboard()",
+      "id": "evaluation_benchmark_runner_render_dashboard"
     },
     {
       "label": "NL2SQL Evaluation Benchmark Runner  Compiles and executes the LangGraph SQLAgent",
       "file_type": "rationale",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L1",
-      "id": "evaluation_benchmark_runner_rationale_1",
       "community": 24,
-      "norm_label": "nl2sql evaluation benchmark runner  compiles and executes the langgraph sqlagent"
+      "norm_label": "nl2sql evaluation benchmark runner  compiles and executes the langgraph sqlagent",
+      "id": "evaluation_benchmark_runner_rationale_1"
     },
     {
       "label": "LangChain Callback handler to transparently capture token usage.",
       "file_type": "rationale",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L114",
-      "id": "evaluation_benchmark_runner_rationale_114",
       "community": 24,
-      "norm_label": "langchain callback handler to transparently capture token usage."
+      "norm_label": "langchain callback handler to transparently capture token usage.",
+      "id": "evaluation_benchmark_runner_rationale_114"
     },
     {
       "label": "Orchestrates the execution of all benchmark cases, captures metrics,     and log",
       "file_type": "rationale",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L151",
-      "id": "evaluation_benchmark_runner_rationale_151",
       "community": 24,
-      "norm_label": "orchestrates the execution of all benchmark cases, captures metrics,     and log"
+      "norm_label": "orchestrates the execution of all benchmark cases, captures metrics,     and log",
+      "id": "evaluation_benchmark_runner_rationale_151"
     },
     {
       "label": "Saves full run logs to file system and updates failed_queries.json",
       "file_type": "rationale",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L340",
-      "id": "evaluation_benchmark_runner_rationale_340",
       "community": 24,
-      "norm_label": "saves full run logs to file system and updates failed_queries.json"
+      "norm_label": "saves full run logs to file system and updates failed_queries.json",
+      "id": "evaluation_benchmark_runner_rationale_340"
     },
     {
       "label": "Prints a rich ANSI console dashboard summarizing the run.",
       "file_type": "rationale",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L391",
-      "id": "evaluation_benchmark_runner_rationale_391",
       "community": 24,
-      "norm_label": "prints a rich ansi console dashboard summarizing the run."
+      "norm_label": "prints a rich ansi console dashboard summarizing the run.",
+      "id": "evaluation_benchmark_runner_rationale_391"
     },
     {
       "label": "failed_queries.json",
       "file_type": "code",
       "source_file": "evaluation/failed_queries.json",
       "source_location": "L1",
-      "id": "evaluation_failed_queries_json",
       "community": 41,
-      "norm_label": "failed_queries.json"
+      "norm_label": "failed_queries.json",
+      "id": "evaluation_failed_queries_json"
     },
     {
       "label": "run_history.json",
       "file_type": "code",
       "source_file": "evaluation/run_history.json",
       "source_location": "L1",
-      "id": "evaluation_run_history_json",
       "community": 42,
-      "norm_label": "run_history.json"
+      "norm_label": "run_history.json",
+      "id": "evaluation_run_history_json"
     },
     {
       "label": "agent.py",
       "file_type": "code",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L1",
-      "id": "features_intent_clarification_agent_py",
       "community": 3,
-      "norm_label": "agent.py"
+      "norm_label": "agent.py",
+      "id": "features_intent_clarification_agent_py"
     },
     {
       "label": "is_ambiguous()",
       "file_type": "code",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L47",
-      "id": "intent_clarification_agent_is_ambiguous",
       "community": 3,
-      "norm_label": "is_ambiguous()"
+      "norm_label": "is_ambiguous()",
+      "id": "intent_clarification_agent_is_ambiguous"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L47",
-      "id": "features_intent_clarification_agent_py_str",
       "community": 3,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "features_intent_clarification_agent_py_str"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L47",
-      "id": "features_intent_clarification_agent_py_bool",
       "community": 3,
-      "norm_label": "bool"
+      "norm_label": "bool",
+      "id": "features_intent_clarification_agent_py_bool"
     },
     {
       "label": "get_matched_vague_terms()",
       "file_type": "code",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L61",
-      "id": "intent_clarification_agent_get_matched_vague_terms",
       "community": 3,
-      "norm_label": "get_matched_vague_terms()"
+      "norm_label": "get_matched_vague_terms()",
+      "id": "intent_clarification_agent_get_matched_vague_terms"
     },
     {
       "label": "clarify_intent()",
       "file_type": "code",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L78",
-      "id": "intent_clarification_agent_clarify_intent",
       "community": 3,
-      "norm_label": "clarify_intent()"
+      "norm_label": "clarify_intent()",
+      "id": "intent_clarification_agent_clarify_intent"
     },
     {
       "label": "Intent Clarification Agent  Detects and resolves ambiguous natural language quer",
       "file_type": "rationale",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L1",
-      "id": "intent_clarification_agent_rationale_1",
       "community": 3,
-      "norm_label": "intent clarification agent  detects and resolves ambiguous natural language quer"
+      "norm_label": "intent clarification agent  detects and resolves ambiguous natural language quer",
+      "id": "intent_clarification_agent_rationale_1"
     },
     {
       "label": "Checks whether a user query contains vague or ambiguous terms     that need clar",
       "file_type": "rationale",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L48",
-      "id": "intent_clarification_agent_rationale_48",
       "community": 3,
-      "norm_label": "checks whether a user query contains vague or ambiguous terms     that need clar"
+      "norm_label": "checks whether a user query contains vague or ambiguous terms     that need clar",
+      "id": "intent_clarification_agent_rationale_48"
     },
     {
       "label": "Returns a list of vague/ambiguous terms found in the query.      Args:         q",
       "file_type": "rationale",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L62",
-      "id": "intent_clarification_agent_rationale_62",
       "community": 3,
-      "norm_label": "returns a list of vague/ambiguous terms found in the query.      args:         q"
+      "norm_label": "returns a list of vague/ambiguous terms found in the query.      args:         q",
+      "id": "intent_clarification_agent_rationale_62"
     },
     {
       "label": "Clarifies an ambiguous natural language query using the LLM.      If the query c",
       "file_type": "rationale",
       "source_file": "features/intent_clarification/agent.py",
       "source_location": "L79",
-      "id": "intent_clarification_agent_rationale_79",
       "community": 3,
-      "norm_label": "clarifies an ambiguous natural language query using the llm.      if the query c"
+      "norm_label": "clarifies an ambiguous natural language query using the llm.      if the query c",
+      "id": "intent_clarification_agent_rationale_79"
     },
     {
       "label": "agent.py",
       "file_type": "code",
       "source_file": "features/sql_generation/agent.py",
       "source_location": "L1",
-      "id": "features_sql_generation_agent_py",
       "community": 3,
-      "norm_label": "agent.py"
+      "norm_label": "agent.py",
+      "id": "features_sql_generation_agent_py"
     },
     {
       "label": "generate_sql()",
       "file_type": "code",
       "source_file": "features/sql_generation/agent.py",
       "source_location": "L21",
-      "id": "sql_generation_agent_generate_sql",
       "community": 3,
-      "norm_label": "generate_sql()"
+      "norm_label": "generate_sql()",
+      "id": "sql_generation_agent_generate_sql"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "features/sql_generation/agent.py",
       "source_location": "L21",
-      "id": "features_sql_generation_agent_py_str",
       "community": 3,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "features_sql_generation_agent_py_str"
     },
     {
       "label": "QueryPlan",
       "file_type": "code",
       "source_file": "features/sql_generation/agent.py",
       "source_location": "L21",
-      "id": "queryplan",
       "community": 3,
-      "norm_label": "queryplan"
+      "norm_label": "queryplan",
+      "id": "queryplan"
     },
     {
       "label": "SQL Generation Agent  Converts a structured query execution plan into a raw SQL",
       "file_type": "rationale",
       "source_file": "features/sql_generation/agent.py",
       "source_location": "L1",
-      "id": "sql_generation_agent_rationale_1",
       "community": 3,
-      "norm_label": "sql generation agent  converts a structured query execution plan into a raw sql"
+      "norm_label": "sql generation agent  converts a structured query execution plan into a raw sql",
+      "id": "sql_generation_agent_rationale_1"
     },
     {
       "label": "Generates a SQL SELECT statement based on a query execution plan and     databas",
       "file_type": "rationale",
       "source_file": "features/sql_generation/agent.py",
       "source_location": "L22",
-      "id": "sql_generation_agent_rationale_22",
       "community": 3,
-      "norm_label": "generates a sql select statement based on a query execution plan and     databas"
+      "norm_label": "generates a sql select statement based on a query execution plan and     databas",
+      "id": "sql_generation_agent_rationale_22"
     },
     {
       "label": "agent.py",
       "file_type": "code",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L1",
-      "id": "features_validation_correction_agent_py",
       "community": 23,
-      "norm_label": "agent.py"
+      "norm_label": "agent.py",
+      "id": "features_validation_correction_agent_py"
     },
     {
       "label": "validate_sql_safety()",
       "file_type": "code",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L22",
-      "id": "validation_correction_agent_validate_sql_safety",
       "community": 23,
-      "norm_label": "validate_sql_safety()"
+      "norm_label": "validate_sql_safety()",
+      "id": "validation_correction_agent_validate_sql_safety"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L22",
-      "id": "features_validation_correction_agent_py_str",
       "community": 23,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "features_validation_correction_agent_py_str"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L22",
-      "id": "features_validation_correction_agent_py_bool",
       "community": 23,
-      "norm_label": "bool"
+      "norm_label": "bool",
+      "id": "features_validation_correction_agent_py_bool"
     },
     {
       "label": "correct_sql()",
       "file_type": "code",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L61",
-      "id": "validation_correction_agent_correct_sql",
       "community": 23,
-      "norm_label": "correct_sql()"
+      "norm_label": "correct_sql()",
+      "id": "validation_correction_agent_correct_sql"
     },
     {
       "label": "SQLCorrectionResult",
       "file_type": "code",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L61",
-      "id": "sqlcorrectionresult",
       "community": 23,
-      "norm_label": "sqlcorrectionresult"
+      "norm_label": "sqlcorrectionresult",
+      "id": "sqlcorrectionresult"
     },
     {
       "label": "Validation & Correction Agent  Validates SQL syntax and safety using SQLGlot. Co",
       "file_type": "rationale",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L1",
-      "id": "validation_correction_agent_rationale_1",
       "community": 23,
-      "norm_label": "validation & correction agent  validates sql syntax and safety using sqlglot. co"
+      "norm_label": "validation & correction agent  validates sql syntax and safety using sqlglot. co",
+      "id": "validation_correction_agent_rationale_1"
     },
     {
       "label": "Parses the SQL query with SQLGlot to ensure it is syntactically valid     and st",
       "file_type": "rationale",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L23",
-      "id": "validation_correction_agent_rationale_23",
       "community": 23,
-      "norm_label": "parses the sql query with sqlglot to ensure it is syntactically valid     and st"
+      "norm_label": "parses the sql query with sqlglot to ensure it is syntactically valid     and st",
+      "id": "validation_correction_agent_rationale_23"
     },
     {
       "label": "Calls the LLM to fix a broken SQL query based on the schema and error message.",
       "file_type": "rationale",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L62",
-      "id": "validation_correction_agent_rationale_62",
       "community": 23,
-      "norm_label": "calls the llm to fix a broken sql query based on the schema and error message."
+      "norm_label": "calls the llm to fix a broken sql query based on the schema and error message.",
+      "id": "validation_correction_agent_rationale_62"
     },
     {
       "label": "prompt.py",
       "file_type": "code",
       "source_file": "features/validation_correction/prompt.py",
       "source_location": "L1",
-      "id": "features_validation_correction_prompt_py",
       "community": 19,
-      "norm_label": "prompt.py"
+      "norm_label": "prompt.py",
+      "id": "features_validation_correction_prompt_py"
     },
     {
       "label": "semantic_validator.py",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
       "source_location": "L1",
-      "id": "features_validation_correction_semantic_validator_py",
       "community": 23,
-      "norm_label": "semantic_validator.py"
+      "norm_label": "semantic_validator.py",
+      "id": "features_validation_correction_semantic_validator_py"
     },
     {
       "label": "validate_sql_semantics()",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
       "source_location": "L45",
-      "id": "validation_correction_semantic_validator_validate_sql_semantics",
       "community": 23,
-      "norm_label": "validate_sql_semantics()"
+      "norm_label": "validate_sql_semantics()",
+      "id": "validation_correction_semantic_validator_validate_sql_semantics"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
       "source_location": "L45",
-      "id": "features_validation_correction_semantic_validator_py_str",
       "community": 23,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "features_validation_correction_semantic_validator_py_str"
     },
     {
       "label": "Any",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
       "source_location": "L45",
-      "id": "features_validation_correction_semantic_validator_py_any",
       "community": 23,
-      "norm_label": "any"
+      "norm_label": "any",
+      "id": "features_validation_correction_semantic_validator_py_any"
     },
     {
       "label": "SemanticValidationResult",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
       "source_location": "L45",
-      "id": "semanticvalidationresult",
       "community": 23,
-      "norm_label": "semanticvalidationresult"
+      "norm_label": "semanticvalidationresult",
+      "id": "semanticvalidationresult"
     },
     {
       "label": "Validates the semantic and logical correctness of a SQL query by comparing it",
       "file_type": "rationale",
       "source_file": "features/validation_correction/semantic_validator.py",
       "source_location": "L51",
-      "id": "validation_correction_semantic_validator_rationale_51",
       "community": 23,
-      "norm_label": "validates the semantic and logical correctness of a sql query by comparing it"
+      "norm_label": "validates the semantic and logical correctness of a sql query by comparing it",
+      "id": "validation_correction_semantic_validator_rationale_51"
     },
     {
       "label": "app.py",
       "file_type": "code",
       "source_file": "frontend/app.py",
       "source_location": "L1",
-      "id": "frontend_app_py",
       "community": 20,
-      "norm_label": "app.py"
+      "norm_label": "app.py",
+      "id": "frontend_app_py"
     },
     {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "observability/__init__.py",
       "source_location": "L1",
-      "id": "observability_init_py",
       "community": 0,
-      "norm_label": "__init__.py"
+      "norm_label": "__init__.py",
+      "id": "observability_init_py"
     },
     {
       "label": "Observability Package Initialization",
       "file_type": "rationale",
       "source_file": "observability/__init__.py",
       "source_location": "L1",
-      "id": "observability_init_rationale_1",
       "community": 0,
-      "norm_label": "observability package initialization"
+      "norm_label": "observability package initialization",
+      "id": "observability_init_rationale_1"
     },
     {
       "label": "logger.py",
       "file_type": "code",
       "source_file": "observability/logger.py",
       "source_location": "L1",
-      "id": "observability_logger_py",
       "community": 8,
-      "norm_label": "logger.py"
+      "norm_label": "logger.py",
+      "id": "observability_logger_py"
     },
     {
       "label": "ColoredFormatter",
       "file_type": "code",
       "source_file": "observability/logger.py",
       "source_location": "L21",
-      "id": "observability_logger_coloredformatter",
       "community": 8,
-      "norm_label": "coloredformatter"
+      "norm_label": "coloredformatter",
+      "id": "observability_logger_coloredformatter"
     },
     {
       "label": ".format()",
       "file_type": "code",
       "source_file": "observability/logger.py",
       "source_location": "L23",
-      "id": "observability_logger_coloredformatter_format",
       "community": 8,
-      "norm_label": ".format()"
+      "norm_label": ".format()",
+      "id": "observability_logger_coloredformatter_format"
     },
     {
       "label": "LogRecord",
       "file_type": "code",
       "source_file": "observability/logger.py",
       "source_location": "L23",
-      "id": "logrecord",
       "community": 8,
-      "norm_label": "logrecord"
+      "norm_label": "logrecord",
+      "id": "logrecord"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "observability/logger.py",
       "source_location": "L23",
-      "id": "observability_logger_py_str",
       "community": 8,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "observability_logger_py_str"
     },
     {
       "label": "setup_logger()",
       "file_type": "code",
       "source_file": "observability/logger.py",
       "source_location": "L52",
-      "id": "observability_logger_setup_logger",
       "community": 8,
-      "norm_label": "setup_logger()"
+      "norm_label": "setup_logger()",
+      "id": "observability_logger_setup_logger"
     },
     {
       "label": "int",
       "file_type": "code",
       "source_file": "observability/logger.py",
       "source_location": "L52",
-      "id": "observability_logger_py_int",
       "community": 8,
-      "norm_label": "int"
+      "norm_label": "int",
+      "id": "observability_logger_py_int"
     },
     {
       "label": "Logger",
       "file_type": "code",
       "source_file": "observability/logger.py",
       "source_location": "L52",
-      "id": "logger",
       "community": 8,
-      "norm_label": "logger"
+      "norm_label": "logger",
+      "id": "logger"
     },
     {
       "label": "Observability Structured Logger  Defines a custom structured logging setup that",
       "file_type": "rationale",
       "source_file": "observability/logger.py",
       "source_location": "L1",
-      "id": "observability_logger_rationale_1",
       "community": 8,
-      "norm_label": "observability structured logger  defines a custom structured logging setup that"
+      "norm_label": "observability structured logger  defines a custom structured logging setup that",
+      "id": "observability_logger_rationale_1"
     },
     {
       "label": "Custom formatter to inject console colors depending on log levels and names.",
       "file_type": "rationale",
       "source_file": "observability/logger.py",
       "source_location": "L22",
-      "id": "observability_logger_rationale_22",
       "community": 8,
-      "norm_label": "custom formatter to inject console colors depending on log levels and names."
+      "norm_label": "custom formatter to inject console colors depending on log levels and names.",
+      "id": "observability_logger_rationale_22"
     },
     {
       "label": "Sets up a colored structured logger instance.          Args:         name: Name",
       "file_type": "rationale",
       "source_file": "observability/logger.py",
       "source_location": "L53",
-      "id": "observability_logger_rationale_53",
       "community": 8,
-      "norm_label": "sets up a colored structured logger instance.          args:         name: name"
+      "norm_label": "sets up a colored structured logger instance.          args:         name: name",
+      "id": "observability_logger_rationale_53"
     },
     {
       "label": "metrics.py",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L1",
-      "id": "observability_metrics_py",
       "community": 0,
-      "norm_label": "metrics.py"
+      "norm_label": "metrics.py",
+      "id": "observability_metrics_py"
     },
     {
       "label": "TokenAccumulatorCallback",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L16",
-      "id": "observability_metrics_tokenaccumulatorcallback",
       "community": 24,
-      "norm_label": "tokenaccumulatorcallback"
+      "norm_label": "tokenaccumulatorcallback",
+      "id": "observability_metrics_tokenaccumulatorcallback"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L21",
-      "id": "observability_metrics_tokenaccumulatorcallback_init",
       "community": 24,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "observability_metrics_tokenaccumulatorcallback_init"
     },
     {
       "label": ".on_llm_end()",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L27",
-      "id": "observability_metrics_tokenaccumulatorcallback_on_llm_end",
       "community": 24,
-      "norm_label": ".on_llm_end()"
+      "norm_label": ".on_llm_end()",
+      "id": "observability_metrics_tokenaccumulatorcallback_on_llm_end"
     },
     {
       "label": "Any",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L27",
-      "id": "observability_metrics_py_any",
       "community": 0,
-      "norm_label": "any"
+      "norm_label": "any",
+      "id": "observability_metrics_py_any"
     },
     {
       "label": "init_metrics_state()",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L54",
-      "id": "observability_metrics_init_metrics_state",
       "community": 0,
-      "norm_label": "init_metrics_state()"
+      "norm_label": "init_metrics_state()",
+      "id": "observability_metrics_init_metrics_state"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L54",
-      "id": "observability_metrics_py_str",
       "community": 0,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "observability_metrics_py_str"
     },
     {
       "label": "track_latency()",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L72",
-      "id": "observability_metrics_track_latency",
       "community": 0,
-      "norm_label": "track_latency()"
+      "norm_label": "track_latency()",
+      "id": "observability_metrics_track_latency"
     },
     {
       "label": "record_validation()",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L89",
-      "id": "observability_metrics_record_validation",
       "community": 0,
-      "norm_label": "record_validation()"
+      "norm_label": "record_validation()",
+      "id": "observability_metrics_record_validation"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L89",
-      "id": "observability_metrics_py_bool",
       "community": 0,
-      "norm_label": "bool"
+      "norm_label": "bool",
+      "id": "observability_metrics_py_bool"
     },
     {
       "label": "record_correction()",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L114",
-      "id": "observability_metrics_record_correction",
       "community": 0,
-      "norm_label": "record_correction()"
+      "norm_label": "record_correction()",
+      "id": "observability_metrics_record_correction"
     },
     {
       "label": "int",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L114",
-      "id": "observability_metrics_py_int",
       "community": 0,
-      "norm_label": "int"
+      "norm_label": "int",
+      "id": "observability_metrics_py_int"
     },
     {
       "label": "record_execution()",
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L145",
-      "id": "observability_metrics_record_execution",
       "community": 0,
-      "norm_label": "record_execution()"
+      "norm_label": "record_execution()",
+      "id": "observability_metrics_record_execution"
     },
     {
       "label": "Observability Metrics Tracking Framework  Implements reusable context managers,",
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L1",
-      "id": "observability_metrics_rationale_1",
       "community": 0,
-      "norm_label": "observability metrics tracking framework  implements reusable context managers,"
+      "norm_label": "observability metrics tracking framework  implements reusable context managers,",
+      "id": "observability_metrics_rationale_1"
     },
     {
       "label": "LangChain callback handler that intercepts LLM execution endpoints      and thre",
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L17",
-      "id": "observability_metrics_rationale_17",
       "community": 24,
-      "norm_label": "langchain callback handler that intercepts llm execution endpoints      and thre"
+      "norm_label": "langchain callback handler that intercepts llm execution endpoints      and thre",
+      "id": "observability_metrics_rationale_17"
     },
     {
       "label": "Called at the end of LLM generation to extract and add tokens.",
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L28",
-      "id": "observability_metrics_rationale_28",
       "community": 24,
-      "norm_label": "called at the end of llm generation to extract and add tokens."
+      "norm_label": "called at the end of llm generation to extract and add tokens.",
+      "id": "observability_metrics_rationale_28"
     },
     {
       "label": "Initializes the observability state container inside the LangGraph state.",
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L55",
-      "id": "observability_metrics_rationale_55",
       "community": 0,
-      "norm_label": "initializes the observability state container inside the langgraph state."
+      "norm_label": "initializes the observability state container inside the langgraph state.",
+      "id": "observability_metrics_rationale_55"
     },
     {
       "label": "Context manager to dynamically measure the execution time of a graph node.",
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L73",
-      "id": "observability_metrics_rationale_73",
       "community": 0,
-      "norm_label": "context manager to dynamically measure the execution time of a graph node."
+      "norm_label": "context manager to dynamically measure the execution time of a graph node.",
+      "id": "observability_metrics_rationale_73"
     },
     {
       "label": "Records the outcome of a validation check (syntax or semantic).          Args:",
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L96",
-      "id": "observability_metrics_rationale_96",
       "community": 0,
-      "norm_label": "records the outcome of a validation check (syntax or semantic).          args:"
+      "norm_label": "records the outcome of a validation check (syntax or semantic).          args:",
+      "id": "observability_metrics_rationale_96"
     },
     {
       "label": "Appends a detailed log of a query repair/correction attempt to the loop history.",
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L122",
-      "id": "observability_metrics_rationale_122",
       "community": 0,
-      "norm_label": "appends a detailed log of a query repair/correction attempt to the loop history."
+      "norm_label": "appends a detailed log of a query repair/correction attempt to the loop history.",
+      "id": "observability_metrics_rationale_122"
     },
     {
       "label": "Records PostgreSQL execution parameters.          Args:         state: The curre",
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L151",
-      "id": "observability_metrics_rationale_151",
       "community": 0,
-      "norm_label": "records postgresql execution parameters.          args:         state: the curre"
+      "norm_label": "records postgresql execution parameters.          args:         state: the curre",
+      "id": "observability_metrics_rationale_151"
     },
     {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "retrieval/__init__.py",
       "source_location": "L1",
-      "id": "retrieval_init_py",
       "community": 2,
-      "norm_label": "__init__.py"
+      "norm_label": "__init__.py",
+      "id": "retrieval_init_py"
     },
     {
       "label": "Retrieval Module Initialization",
       "file_type": "rationale",
       "source_file": "retrieval/__init__.py",
       "source_location": "L1",
-      "id": "retrieval_init_rationale_1",
       "community": 2,
-      "norm_label": "retrieval module initialization"
+      "norm_label": "retrieval module initialization",
+      "id": "retrieval_init_rationale_1"
     },
     {
       "label": "metadata.json",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L1",
-      "id": "retrieval_index_cache_metadata_json",
       "community": 29,
-      "norm_label": "metadata.json"
+      "norm_label": "metadata.json",
+      "id": "retrieval_index_cache_metadata_json"
     },
     {
       "label": "table_names",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L2",
-      "id": "index_cache_metadata_table_names",
       "community": 29,
-      "norm_label": "table_names"
+      "norm_label": "table_names",
+      "id": "index_cache_metadata_table_names"
     },
     {
       "label": "db_metadata",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L10",
-      "id": "index_cache_metadata_db_metadata",
       "community": 29,
-      "norm_label": "db_metadata"
+      "norm_label": "db_metadata",
+      "id": "index_cache_metadata_db_metadata"
     },
     {
       "label": "categories",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L11",
-      "id": "index_cache_metadata_db_metadata_categories",
       "community": 29,
-      "norm_label": "categories"
+      "norm_label": "categories",
+      "id": "index_cache_metadata_db_metadata_categories"
     },
     {
       "label": "columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L12",
-      "id": "index_cache_metadata_categories_columns",
       "community": 29,
-      "norm_label": "columns"
+      "norm_label": "columns",
+      "id": "index_cache_metadata_categories_columns"
     },
     {
       "label": "pk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L32",
-      "id": "index_cache_metadata_categories_pk_columns",
       "community": 29,
-      "norm_label": "pk_columns"
+      "norm_label": "pk_columns",
+      "id": "index_cache_metadata_categories_pk_columns"
     },
     {
       "label": "fk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L35",
-      "id": "index_cache_metadata_categories_fk_columns",
       "community": 29,
-      "norm_label": "fk_columns"
+      "norm_label": "fk_columns",
+      "id": "index_cache_metadata_categories_fk_columns"
     },
     {
       "label": "products",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L37",
-      "id": "index_cache_metadata_db_metadata_products",
       "community": 29,
-      "norm_label": "products"
+      "norm_label": "products",
+      "id": "index_cache_metadata_db_metadata_products"
     },
     {
       "label": "columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L38",
-      "id": "index_cache_metadata_products_columns",
       "community": 29,
-      "norm_label": "columns"
+      "norm_label": "columns",
+      "id": "index_cache_metadata_products_columns"
     },
     {
       "label": "pk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L76",
-      "id": "index_cache_metadata_products_pk_columns",
       "community": 29,
-      "norm_label": "pk_columns"
+      "norm_label": "pk_columns",
+      "id": "index_cache_metadata_products_pk_columns"
     },
     {
       "label": "fk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L79",
-      "id": "index_cache_metadata_products_fk_columns",
       "community": 29,
-      "norm_label": "fk_columns"
+      "norm_label": "fk_columns",
+      "id": "index_cache_metadata_products_fk_columns"
     },
     {
       "label": "users",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L83",
-      "id": "index_cache_metadata_db_metadata_users",
       "community": 29,
-      "norm_label": "users"
+      "norm_label": "users",
+      "id": "index_cache_metadata_db_metadata_users"
     },
     {
       "label": "columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L84",
-      "id": "index_cache_metadata_users_columns",
       "community": 29,
-      "norm_label": "columns"
+      "norm_label": "columns",
+      "id": "index_cache_metadata_users_columns"
     },
     {
       "label": "pk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L134",
-      "id": "index_cache_metadata_users_pk_columns",
       "community": 29,
-      "norm_label": "pk_columns"
+      "norm_label": "pk_columns",
+      "id": "index_cache_metadata_users_pk_columns"
     },
     {
       "label": "fk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L137",
-      "id": "index_cache_metadata_users_fk_columns",
       "community": 29,
-      "norm_label": "fk_columns"
+      "norm_label": "fk_columns",
+      "id": "index_cache_metadata_users_fk_columns"
     },
     {
       "label": "orders",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L139",
-      "id": "index_cache_metadata_db_metadata_orders",
       "community": 29,
-      "norm_label": "orders"
+      "norm_label": "orders",
+      "id": "index_cache_metadata_db_metadata_orders"
     },
     {
       "label": "columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L140",
-      "id": "index_cache_metadata_orders_columns",
       "community": 29,
-      "norm_label": "columns"
+      "norm_label": "columns",
+      "id": "index_cache_metadata_orders_columns"
     },
     {
       "label": "pk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L172",
-      "id": "index_cache_metadata_orders_pk_columns",
       "community": 29,
-      "norm_label": "pk_columns"
+      "norm_label": "pk_columns",
+      "id": "index_cache_metadata_orders_pk_columns"
     },
     {
       "label": "fk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L175",
-      "id": "index_cache_metadata_orders_fk_columns",
       "community": 29,
-      "norm_label": "fk_columns"
+      "norm_label": "fk_columns",
+      "id": "index_cache_metadata_orders_fk_columns"
     },
     {
       "label": "order_items",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L179",
-      "id": "index_cache_metadata_db_metadata_order_items",
       "community": 29,
-      "norm_label": "order_items"
+      "norm_label": "order_items",
+      "id": "index_cache_metadata_db_metadata_order_items"
     },
     {
       "label": "columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L180",
-      "id": "index_cache_metadata_order_items_columns",
       "community": 29,
-      "norm_label": "columns"
+      "norm_label": "columns",
+      "id": "index_cache_metadata_order_items_columns"
     },
     {
       "label": "pk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L212",
-      "id": "index_cache_metadata_order_items_pk_columns",
       "community": 29,
-      "norm_label": "pk_columns"
+      "norm_label": "pk_columns",
+      "id": "index_cache_metadata_order_items_pk_columns"
     },
     {
       "label": "fk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L215",
-      "id": "index_cache_metadata_order_items_fk_columns",
       "community": 29,
-      "norm_label": "fk_columns"
+      "norm_label": "fk_columns",
+      "id": "index_cache_metadata_order_items_fk_columns"
     },
     {
       "label": "reviews",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L220",
-      "id": "index_cache_metadata_db_metadata_reviews",
       "community": 29,
-      "norm_label": "reviews"
+      "norm_label": "reviews",
+      "id": "index_cache_metadata_db_metadata_reviews"
     },
     {
       "label": "columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L221",
-      "id": "index_cache_metadata_reviews_columns",
       "community": 29,
-      "norm_label": "columns"
+      "norm_label": "columns",
+      "id": "index_cache_metadata_reviews_columns"
     },
     {
       "label": "pk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L253",
-      "id": "index_cache_metadata_reviews_pk_columns",
       "community": 29,
-      "norm_label": "pk_columns"
+      "norm_label": "pk_columns",
+      "id": "index_cache_metadata_reviews_pk_columns"
     },
     {
       "label": "fk_columns",
       "file_type": "code",
       "source_file": "retrieval/index_cache/metadata.json",
       "source_location": "L256",
-      "id": "index_cache_metadata_reviews_fk_columns",
       "community": 29,
-      "norm_label": "fk_columns"
+      "norm_label": "fk_columns",
+      "id": "index_cache_metadata_reviews_fk_columns"
     },
     {
       "label": "schema_retriever.py",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L1",
-      "id": "retrieval_schema_retriever_py",
       "community": 2,
-      "norm_label": "schema_retriever.py"
+      "norm_label": "schema_retriever.py",
+      "id": "retrieval_schema_retriever_py"
     },
     {
       "label": "SchemaRetriever",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L34",
-      "id": "retrieval_schema_retriever_schemaretriever",
       "community": 2,
-      "norm_label": "schemaretriever"
+      "norm_label": "schemaretriever",
+      "id": "retrieval_schema_retriever_schemaretriever"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L39",
-      "id": "retrieval_schema_retriever_schemaretriever_init",
       "community": 2,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "retrieval_schema_retriever_schemaretriever_init"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L39",
-      "id": "retrieval_schema_retriever_py_str",
       "community": 2,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "retrieval_schema_retriever_py_str"
     },
     {
       "label": "int",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L39",
-      "id": "retrieval_schema_retriever_py_int",
       "community": 2,
-      "norm_label": "int"
+      "norm_label": "int",
+      "id": "retrieval_schema_retriever_py_int"
     },
     {
       "label": "._indices_exist()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L80",
-      "id": "retrieval_schema_retriever_schemaretriever_indices_exist",
       "community": 2,
-      "norm_label": "._indices_exist()"
+      "norm_label": "._indices_exist()",
+      "id": "retrieval_schema_retriever_schemaretriever_indices_exist"
     },
     {
       "label": "bool",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L80",
-      "id": "retrieval_schema_retriever_py_bool",
       "community": 2,
-      "norm_label": "bool"
+      "norm_label": "bool",
+      "id": "retrieval_schema_retriever_py_bool"
     },
     {
       "label": "._normalize_vectors()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L85",
-      "id": "retrieval_schema_retriever_schemaretriever_normalize_vectors",
       "community": 2,
-      "norm_label": "._normalize_vectors()"
+      "norm_label": "._normalize_vectors()",
+      "id": "retrieval_schema_retriever_schemaretriever_normalize_vectors"
     },
     {
       "label": "ndarray",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L85",
-      "id": "ndarray",
       "community": 2,
-      "norm_label": "ndarray"
+      "norm_label": "ndarray",
+      "id": "ndarray"
     },
     {
       "label": "._extract_db_metadata()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L91",
-      "id": "retrieval_schema_retriever_schemaretriever_extract_db_metadata",
       "community": 2,
-      "norm_label": "._extract_db_metadata()"
+      "norm_label": "._extract_db_metadata()",
+      "id": "retrieval_schema_retriever_schemaretriever_extract_db_metadata"
     },
     {
       "label": "Any",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L91",
-      "id": "retrieval_schema_retriever_py_any",
       "community": 2,
-      "norm_label": "any"
+      "norm_label": "any",
+      "id": "retrieval_schema_retriever_py_any"
     },
     {
       "label": ".build_and_cache()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L128",
-      "id": "retrieval_schema_retriever_schemaretriever_build_and_cache",
       "community": 2,
-      "norm_label": ".build_and_cache()"
+      "norm_label": ".build_and_cache()",
+      "id": "retrieval_schema_retriever_schemaretriever_build_and_cache"
     },
     {
       "label": ".save_indices()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L181",
-      "id": "retrieval_schema_retriever_schemaretriever_save_indices",
       "community": 2,
-      "norm_label": ".save_indices()"
+      "norm_label": ".save_indices()",
+      "id": "retrieval_schema_retriever_schemaretriever_save_indices"
     },
     {
       "label": ".load_indices()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L206",
-      "id": "retrieval_schema_retriever_schemaretriever_load_indices",
       "community": 2,
-      "norm_label": ".load_indices()"
+      "norm_label": ".load_indices()",
+      "id": "retrieval_schema_retriever_schemaretriever_load_indices"
     },
     {
       "label": ".retrieve()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L228",
-      "id": "retrieval_schema_retriever_schemaretriever_retrieve",
       "community": 2,
-      "norm_label": ".retrieve()"
+      "norm_label": ".retrieve()",
+      "id": "retrieval_schema_retriever_schemaretriever_retrieve"
     },
     {
       "label": "get_schema_retriever()",
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L318",
-      "id": "retrieval_schema_retriever_get_schema_retriever",
       "community": 2,
-      "norm_label": "get_schema_retriever()"
+      "norm_label": "get_schema_retriever()",
+      "id": "retrieval_schema_retriever_get_schema_retriever"
     },
     {
       "label": "FAISS-Based Database Schema Retriever  Dynamically reflects database metadata us",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L1",
-      "id": "retrieval_schema_retriever_rationale_1",
       "community": 2,
-      "norm_label": "faiss-based database schema retriever  dynamically reflects database metadata us"
+      "norm_label": "faiss-based database schema retriever  dynamically reflects database metadata us",
+      "id": "retrieval_schema_retriever_rationale_1"
     },
     {
       "label": "Reflects the database schema and performs embedding-based retrieval of      rele",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L35",
-      "id": "retrieval_schema_retriever_rationale_35",
       "community": 2,
-      "norm_label": "reflects the database schema and performs embedding-based retrieval of      rele"
+      "norm_label": "reflects the database schema and performs embedding-based retrieval of      rele",
+      "id": "retrieval_schema_retriever_rationale_35"
     },
     {
       "label": "Checks if index files exist in the cache directory.",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L81",
-      "id": "retrieval_schema_retriever_rationale_81",
       "community": 2,
-      "norm_label": "checks if index files exist in the cache directory."
+      "norm_label": "checks if index files exist in the cache directory.",
+      "id": "retrieval_schema_retriever_rationale_81"
     },
     {
       "label": "Normalizes vectors to unit length for Cosine Similarity inside IndexFlatIP.",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L86",
-      "id": "retrieval_schema_retriever_rationale_86",
       "community": 2,
-      "norm_label": "normalizes vectors to unit length for cosine similarity inside indexflatip."
+      "norm_label": "normalizes vectors to unit length for cosine similarity inside indexflatip.",
+      "id": "retrieval_schema_retriever_rationale_86"
     },
     {
       "label": "Uses SQLAlchemy inspector to reflect tables, columns, primary keys,          and",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L92",
-      "id": "retrieval_schema_retriever_rationale_92",
       "community": 2,
-      "norm_label": "uses sqlalchemy inspector to reflect tables, columns, primary keys,          and"
+      "norm_label": "uses sqlalchemy inspector to reflect tables, columns, primary keys,          and",
+      "id": "retrieval_schema_retriever_rationale_92"
     },
     {
       "label": "Extracts DB metadata, generates semantic documents, computes embeddings,",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L129",
-      "id": "retrieval_schema_retriever_rationale_129",
       "community": 2,
-      "norm_label": "extracts db metadata, generates semantic documents, computes embeddings,"
+      "norm_label": "extracts db metadata, generates semantic documents, computes embeddings,",
+      "id": "retrieval_schema_retriever_rationale_129"
     },
     {
       "label": "Saves current indices and reflected metadata to local cache directory.",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L182",
-      "id": "retrieval_schema_retriever_rationale_182",
       "community": 2,
-      "norm_label": "saves current indices and reflected metadata to local cache directory."
+      "norm_label": "saves current indices and reflected metadata to local cache directory.",
+      "id": "retrieval_schema_retriever_rationale_182"
     },
     {
       "label": "Loads indices and metadata from the local cache directory.",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L207",
-      "id": "retrieval_schema_retriever_rationale_207",
       "community": 2,
-      "norm_label": "loads indices and metadata from the local cache directory."
+      "norm_label": "loads indices and metadata from the local cache directory.",
+      "id": "retrieval_schema_retriever_rationale_207"
     },
     {
       "label": "Executes embedding similarity query over table indices and filters column",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L229",
-      "id": "retrieval_schema_retriever_rationale_229",
       "community": 2,
-      "norm_label": "executes embedding similarity query over table indices and filters column"
+      "norm_label": "executes embedding similarity query over table indices and filters column",
+      "id": "retrieval_schema_retriever_rationale_229"
     },
     {
       "label": "Returns the global SchemaRetriever singleton instance.",
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L319",
-      "id": "retrieval_schema_retriever_rationale_319",
       "community": 2,
-      "norm_label": "returns the global schemaretriever singleton instance."
+      "norm_label": "returns the global schemaretriever singleton instance.",
+      "id": "retrieval_schema_retriever_rationale_319"
     },
     {
       "label": "planner.py",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L1",
-      "id": "schemas_planner_py",
-      "community": 5,
-      "norm_label": "planner.py"
+      "community": 28,
+      "norm_label": "planner.py",
+      "id": "schemas_planner_py"
     },
     {
       "label": "TableRequirement",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L4",
-      "id": "schemas_planner_tablerequirement",
-      "community": 5,
-      "norm_label": "tablerequirement"
+      "community": 28,
+      "norm_label": "tablerequirement",
+      "id": "schemas_planner_tablerequirement"
     },
     {
       "label": ".normalize_table()",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L10",
-      "id": "schemas_planner_tablerequirement_normalize_table",
-      "community": 5,
-      "norm_label": ".normalize_table()"
+      "community": 28,
+      "norm_label": ".normalize_table()",
+      "id": "schemas_planner_tablerequirement_normalize_table"
     },
     {
       "label": "Any",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L10",
-      "id": "schemas_planner_py_any",
-      "community": 5,
-      "norm_label": "any"
+      "community": 28,
+      "norm_label": "any",
+      "id": "schemas_planner_py_any"
     },
     {
       "label": "JoinRequirement",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L18",
-      "id": "schemas_planner_joinrequirement",
-      "community": 5,
-      "norm_label": "joinrequirement"
+      "community": 28,
+      "norm_label": "joinrequirement",
+      "id": "schemas_planner_joinrequirement"
     },
     {
       "label": ".normalize_join()",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L26",
-      "id": "schemas_planner_joinrequirement_normalize_join",
-      "community": 5,
-      "norm_label": ".normalize_join()"
+      "community": 28,
+      "norm_label": ".normalize_join()",
+      "id": "schemas_planner_joinrequirement_normalize_join"
     },
     {
       "label": "FilterRequirement",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L32",
-      "id": "schemas_planner_filterrequirement",
-      "community": 5,
-      "norm_label": "filterrequirement"
+      "community": 28,
+      "norm_label": "filterrequirement",
+      "id": "schemas_planner_filterrequirement"
     },
     {
       "label": "AggregationRequirement",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L37",
-      "id": "schemas_planner_aggregationrequirement",
-      "community": 5,
-      "norm_label": "aggregationrequirement"
+      "community": 28,
+      "norm_label": "aggregationrequirement",
+      "id": "schemas_planner_aggregationrequirement"
     },
     {
       "label": "OrderByRequirement",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L42",
-      "id": "schemas_planner_orderbyrequirement",
-      "community": 5,
-      "norm_label": "orderbyrequirement"
+      "community": 28,
+      "norm_label": "orderbyrequirement",
+      "id": "schemas_planner_orderbyrequirement"
     },
     {
       "label": ".normalize_order_by()",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L48",
-      "id": "schemas_planner_orderbyrequirement_normalize_order_by",
-      "community": 5,
-      "norm_label": ".normalize_order_by()"
+      "community": 28,
+      "norm_label": ".normalize_order_by()",
+      "id": "schemas_planner_orderbyrequirement_normalize_order_by"
     },
     {
       "label": "QueryPlan",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L56",
-      "id": "schemas_planner_queryplan",
       "community": 3,
-      "norm_label": "queryplan"
+      "norm_label": "queryplan",
+      "id": "schemas_planner_queryplan"
     },
     {
       "label": ".normalize_plan()",
       "file_type": "code",
       "source_file": "schemas/planner.py",
       "source_location": "L71",
-      "id": "schemas_planner_queryplan_normalize_plan",
-      "community": 5,
-      "norm_label": ".normalize_plan()"
+      "community": 28,
+      "norm_label": ".normalize_plan()",
+      "id": "schemas_planner_queryplan_normalize_plan"
     },
     {
       "label": "A structured, step-by-step query execution plan that guides the SQL Generation A",
       "file_type": "rationale",
       "source_file": "schemas/planner.py",
       "source_location": "L57",
-      "id": "schemas_planner_rationale_57",
       "community": 3,
-      "norm_label": "a structured, step-by-step query execution plan that guides the sql generation a"
+      "norm_label": "a structured, step-by-step query execution plan that guides the sql generation a",
+      "id": "schemas_planner_rationale_57"
     },
     {
       "label": "validation.py",
       "file_type": "code",
       "source_file": "schemas/validation.py",
       "source_location": "L1",
-      "id": "schemas_validation_py",
       "community": 23,
-      "norm_label": "validation.py"
+      "norm_label": "validation.py",
+      "id": "schemas_validation_py"
     },
     {
       "label": "SemanticValidationResult",
       "file_type": "code",
       "source_file": "schemas/validation.py",
       "source_location": "L10",
-      "id": "schemas_validation_semanticvalidationresult",
       "community": 23,
-      "norm_label": "semanticvalidationresult"
+      "norm_label": "semanticvalidationresult",
+      "id": "schemas_validation_semanticvalidationresult"
     },
     {
       "label": "SQLCorrectionResult",
       "file_type": "code",
       "source_file": "schemas/validation.py",
       "source_location": "L28",
-      "id": "schemas_validation_sqlcorrectionresult",
       "community": 23,
-      "norm_label": "sqlcorrectionresult"
+      "norm_label": "sqlcorrectionresult",
+      "id": "schemas_validation_sqlcorrectionresult"
     },
     {
       "label": "Validation & Correction Pydantic Schemas  Defines structural models for SQL sema",
       "file_type": "rationale",
       "source_file": "schemas/validation.py",
       "source_location": "L1",
-      "id": "schemas_validation_rationale_1",
       "community": 23,
-      "norm_label": "validation & correction pydantic schemas  defines structural models for sql sema"
+      "norm_label": "validation & correction pydantic schemas  defines structural models for sql sema",
+      "id": "schemas_validation_rationale_1"
     },
     {
       "label": "Structured response representing the semantic correctness verification of a gene",
       "file_type": "rationale",
       "source_file": "schemas/validation.py",
       "source_location": "L11",
-      "id": "schemas_validation_rationale_11",
       "community": 23,
-      "norm_label": "structured response representing the semantic correctness verification of a gene"
+      "norm_label": "structured response representing the semantic correctness verification of a gene",
+      "id": "schemas_validation_rationale_11"
     },
     {
       "label": "Structured response representing the output of the query correction agent.",
       "file_type": "rationale",
       "source_file": "schemas/validation.py",
       "source_location": "L29",
-      "id": "schemas_validation_rationale_29",
       "community": 23,
-      "norm_label": "structured response representing the output of the query correction agent."
+      "norm_label": "structured response representing the output of the query correction agent.",
+      "id": "schemas_validation_rationale_29"
     },
     {
       "label": "test_correction_mock.py",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L1",
-      "id": "scratch_test_correction_mock_py",
       "community": 23,
-      "norm_label": "test_correction_mock.py"
+      "norm_label": "test_correction_mock.py",
+      "id": "scratch_test_correction_mock_py"
     },
     {
       "label": "MockAIMessage",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L20",
-      "id": "scratch_test_correction_mock_mockaimessage",
       "community": 23,
-      "norm_label": "mockaimessage"
+      "norm_label": "mockaimessage",
+      "id": "scratch_test_correction_mock_mockaimessage"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L22",
-      "id": "scratch_test_correction_mock_mockaimessage_init",
       "community": 23,
-      "norm_label": ".__init__()"
+      "norm_label": ".__init__()",
+      "id": "scratch_test_correction_mock_mockaimessage_init"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L22",
-      "id": "scratch_test_correction_mock_py_str",
       "community": 23,
-      "norm_label": "str"
+      "norm_label": "str",
+      "id": "scratch_test_correction_mock_py_str"
     },
     {
       "label": "TestValidationAndCorrectionMock",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L28",
-      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock",
       "community": 23,
-      "norm_label": "testvalidationandcorrectionmock"
+      "norm_label": "testvalidationandcorrectionmock",
+      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock"
     },
     {
       "label": ".setUp()",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L30",
-      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_setup",
       "community": 23,
-      "norm_label": ".setup()"
+      "norm_label": ".setup()",
+      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_setup"
     },
     {
       "label": ".test_semantic_validation_parsing()",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L37",
-      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_semantic_validation_parsing",
       "community": 23,
-      "norm_label": ".test_semantic_validation_parsing()"
+      "norm_label": ".test_semantic_validation_parsing()",
+      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_semantic_validation_parsing"
     },
     {
       "label": ".test_sql_correction_fallback_to_json()",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L72",
-      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_sql_correction_fallback_to_json",
       "community": 23,
-      "norm_label": ".test_sql_correction_fallback_to_json()"
+      "norm_label": ".test_sql_correction_fallback_to_json()",
+      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_sql_correction_fallback_to_json"
     },
     {
       "label": ".test_sql_correction_ast_success()",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L106",
-      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_sql_correction_ast_success",
       "community": 23,
-      "norm_label": ".test_sql_correction_ast_success()"
+      "norm_label": ".test_sql_correction_ast_success()",
+      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_sql_correction_ast_success"
     },
     {
       "label": ".test_record_correction_telemetry()",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L124",
-      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_record_correction_telemetry",
       "community": 0,
-      "norm_label": ".test_record_correction_telemetry()"
+      "norm_label": ".test_record_correction_telemetry()",
+      "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_record_correction_telemetry"
     },
     {
       "label": "Unit test suite using mock LLM responses to verify SQL validation, correction, a",
       "file_type": "rationale",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L1",
-      "id": "scratch_test_correction_mock_rationale_1",
       "community": 23,
-      "norm_label": "unit test suite using mock llm responses to verify sql validation, correction, a"
+      "norm_label": "unit test suite using mock llm responses to verify sql validation, correction, a",
+      "id": "scratch_test_correction_mock_rationale_1"
     },
     {
       "label": "A clean, realistic mock of a LangChain AIMessage response.",
       "file_type": "rationale",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L21",
-      "id": "scratch_test_correction_mock_rationale_21",
       "community": 23,
-      "norm_label": "a clean, realistic mock of a langchain aimessage response."
+      "norm_label": "a clean, realistic mock of a langchain aimessage response.",
+      "id": "scratch_test_correction_mock_rationale_21"
     },
     {
       "label": "Verify that validate_sql_semantics correctly parses and validates a JSON respons",
       "file_type": "rationale",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L38",
-      "id": "scratch_test_correction_mock_rationale_38",
       "community": 23,
-      "norm_label": "verify that validate_sql_semantics correctly parses and validates a json respons"
+      "norm_label": "verify that validate_sql_semantics correctly parses and validates a json respons",
+      "id": "scratch_test_correction_mock_rationale_38"
     },
     {
       "label": "Verify that correct_sql falls back to LLM JSON parsing on AST repair failure.",
       "file_type": "rationale",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L73",
-      "id": "scratch_test_correction_mock_rationale_73",
       "community": 23,
-      "norm_label": "verify that correct_sql falls back to llm json parsing on ast repair failure."
+      "norm_label": "verify that correct_sql falls back to llm json parsing on ast repair failure.",
+      "id": "scratch_test_correction_mock_rationale_73"
     },
     {
       "label": "Verify that correct_sql handles a successful AST clause repair directly.",
       "file_type": "rationale",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L107",
-      "id": "scratch_test_correction_mock_rationale_107",
       "community": 23,
-      "norm_label": "verify that correct_sql handles a successful ast clause repair directly."
+      "norm_label": "verify that correct_sql handles a successful ast clause repair directly.",
+      "id": "scratch_test_correction_mock_rationale_107"
     },
     {
       "label": "Verify that record_correction telemetry captures the thought process.",
       "file_type": "rationale",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L125",
-      "id": "scratch_test_correction_mock_rationale_125",
       "community": 0,
-      "norm_label": "verify that record_correction telemetry captures the thought process."
+      "norm_label": "verify that record_correction telemetry captures the thought process.",
+      "id": "scratch_test_correction_mock_rationale_125"
     },
     {
       "label": "test_pipeline_e2e.py",
       "file_type": "code",
       "source_file": "scratch/test_pipeline_e2e.py",
       "source_location": "L1",
-      "id": "scratch_test_pipeline_e2e_py",
       "community": 24,
-      "norm_label": "test_pipeline_e2e.py"
+      "norm_label": "test_pipeline_e2e.py",
+      "id": "scratch_test_pipeline_e2e_py"
     },
     {
       "label": "test_e2e_pipeline()",
       "file_type": "code",
       "source_file": "scratch/test_pipeline_e2e.py",
       "source_location": "L19",
-      "id": "scratch_test_pipeline_e2e_test_e2e_pipeline",
       "community": 24,
-      "norm_label": "test_e2e_pipeline()"
+      "norm_label": "test_e2e_pipeline()",
+      "id": "scratch_test_pipeline_e2e_test_e2e_pipeline"
     },
     {
       "label": "test_schema_retriever.py",
       "file_type": "code",
       "source_file": "scratch/test_schema_retriever.py",
       "source_location": "L1",
-      "id": "scratch_test_schema_retriever_py",
       "community": 2,
-      "norm_label": "test_schema_retriever.py"
+      "norm_label": "test_schema_retriever.py",
+      "id": "scratch_test_schema_retriever_py"
     },
     {
       "label": "run_retrieval_tests()",
       "file_type": "code",
       "source_file": "scratch/test_schema_retriever.py",
       "source_location": "L22",
-      "id": "scratch_test_schema_retriever_run_retrieval_tests",
       "community": 2,
-      "norm_label": "run_retrieval_tests()"
+      "norm_label": "run_retrieval_tests()",
+      "id": "scratch_test_schema_retriever_run_retrieval_tests"
     },
     {
       "label": "Test Schema Retriever  Isolated script to verify the FAISS-based schema retrieve",
       "file_type": "rationale",
       "source_file": "scratch/test_schema_retriever.py",
       "source_location": "L1",
-      "id": "scratch_test_schema_retriever_rationale_1",
       "community": 2,
-      "norm_label": "test schema retriever  isolated script to verify the faiss-based schema retrieve"
+      "norm_label": "test schema retriever  isolated script to verify the faiss-based schema retrieve",
+      "id": "scratch_test_schema_retriever_rationale_1"
     },
     {
       "label": "build_graph_offline.py",
@@ -3491,7 +3707,7 @@
       "file_type": "code",
       "source_file": "evaluation/execution_accuracy.py",
       "source_location": "L15",
-      "community": 5,
+      "community": 28,
       "norm_label": "any",
       "id": "any"
     },
@@ -3563,16 +3779,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": ".vscode/settings.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "vscode_settings_json",
-      "target": "vscode_settings_liveserver_settings_port",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
       "source_location": "L19",
       "weight": 1.0,
@@ -3634,6 +3840,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_enterprise_architecture_vision",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
       "source_location": "L451",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3669,6 +3885,26 @@
       "confidence_score": 1.0,
       "source": "ai_context_project_state_md",
       "target": "ai_context_project_state_in_progress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L550",
+      "weight": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_10_benchmark_expansion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L580",
+      "weight": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_11_production_governance_security",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3729,6 +3965,36 @@
       "confidence_score": 1.0,
       "source": "ai_context_project_state_md",
       "target": "ai_context_project_state_priority_6_observability_transparency_completed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L415",
+      "weight": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_7_provider_agnostic_llm_layer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L465",
+      "weight": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_8_enterprise_local_llm_support",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L500",
+      "weight": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_9_formal_error_taxonomy_engine",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3984,21 +4250,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L197",
+      "source_location": "L227",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_2_full_sql_regeneration_during_correction",
-      "target": "ai_context_project_state_goal_197"
+      "target": "ai_context_project_state_goal_227",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L187",
+      "source_location": "L217",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_2_full_sql_regeneration_during_correction",
-      "target": "ai_context_project_state_problem_187"
+      "target": "ai_context_project_state_problem_217",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4014,11 +4280,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L226",
+      "source_location": "L256",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_3_validation_is_mostly_syntax_level",
-      "target": "ai_context_project_state_goal_226"
+      "target": "ai_context_project_state_goal_256",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4034,31 +4300,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L230",
+      "source_location": "L260",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_goal_226",
-      "target": "ai_context_project_state_layer_1"
+      "source": "ai_context_project_state_goal_256",
+      "target": "ai_context_project_state_layer_1",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L234",
+      "source_location": "L264",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_goal_226",
-      "target": "ai_context_project_state_layer_2"
+      "source": "ai_context_project_state_goal_256",
+      "target": "ai_context_project_state_layer_2",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L238",
+      "source_location": "L268",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_goal_226",
-      "target": "ai_context_project_state_layer_3"
+      "source": "ai_context_project_state_goal_256",
+      "target": "ai_context_project_state_layer_3",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4074,21 +4340,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L255",
+      "source_location": "L285",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_4_no_real_schema_retrieval_layer",
-      "target": "ai_context_project_state_goal_255"
+      "target": "ai_context_project_state_goal_285",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L278",
+      "source_location": "L308",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_5_limited_observability",
-      "target": "ai_context_project_state_goal_278"
+      "target": "ai_context_project_state_goal_308",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4134,11 +4400,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L304",
+      "source_location": "L334",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_2_evaluation_framework_completed",
-      "target": "ai_context_project_state_objective_304"
+      "target": "ai_context_project_state_objective_334",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4164,61 +4430,41 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L326",
+      "source_location": "L356",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_3_semantic_validation",
-      "target": "ai_context_project_state_objective_326"
+      "target": "ai_context_project_state_objective_356",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L330",
+      "source_location": "L360",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_3_semantic_validation",
-      "target": "ai_context_project_state_status_330"
+      "target": "ai_context_project_state_status_360",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L340",
+      "source_location": "L370",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_4_clause_level_sql_repair",
-      "target": "ai_context_project_state_objective_340"
+      "target": "ai_context_project_state_objective_370",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L344",
+      "source_location": "L374",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_4_clause_level_sql_repair",
-      "target": "ai_context_project_state_status_344"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L354",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
-      "target": "ai_context_project_state_objective_354"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L358",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
-      "target": "ai_context_project_state_status_358"
+      "target": "ai_context_project_state_status_374",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4239,6 +4485,226 @@
       "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_6_observability_transparency_completed",
       "target": "ai_context_project_state_status_374"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L384",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
+      "target": "ai_context_project_state_objective_384",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L388",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
+      "target": "ai_context_project_state_status_388",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L400",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_6_observability_transparency_completed",
+      "target": "ai_context_project_state_objective_400",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L404",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_6_observability_transparency_completed",
+      "target": "ai_context_project_state_status_404",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L417",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_7_provider_agnostic_llm_layer",
+      "target": "ai_context_project_state_objective_417",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L431",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_7_provider_agnostic_llm_layer",
+      "target": "ai_context_project_state_required_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L442",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_7_provider_agnostic_llm_layer",
+      "target": "ai_context_project_state_requirements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L451",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_7_provider_agnostic_llm_layer",
+      "target": "ai_context_project_state_success_criteria",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L481",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_8_enterprise_local_llm_support",
+      "target": "ai_context_project_state_deployment_backends",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L494",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_8_enterprise_local_llm_support",
+      "target": "ai_context_project_state_enterprise_benefit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L467",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_8_enterprise_local_llm_support",
+      "target": "ai_context_project_state_objective_467",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L486",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_8_enterprise_local_llm_support",
+      "target": "ai_context_project_state_requirements_486",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L471",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_8_enterprise_local_llm_support",
+      "target": "ai_context_project_state_target_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L506",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine",
+      "target": "ai_context_project_state_error_categories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L544",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine",
+      "target": "ai_context_project_state_goal_544",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L502",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine",
+      "target": "ai_context_project_state_objective_502",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L556",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion",
+      "target": "ai_context_project_state_datasets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L574",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion",
+      "target": "ai_context_project_state_goal_574",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L563",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion",
+      "target": "ai_context_project_state_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L552",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion",
+      "target": "ai_context_project_state_objective_552",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L586",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_11_production_governance_security",
+      "target": "ai_context_project_state_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L582",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_11_production_governance_security",
+      "target": "ai_context_project_state_objective_582",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4279,6 +4745,16 @@
       "confidence_score": 1.0,
       "source": "ai_context_project_state_current_project_status",
       "target": "ai_context_project_state_main_focus_going_forward"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".vscode/settings.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vscode_settings_json",
+      "target": "vscode_settings_liveserver_settings_port"
     },
     {
       "relation": "contains",
@@ -4402,9 +4878,9 @@
       "source_file": "api/routes.py",
       "source_location": "L65",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "api_routes_queryrequest",
-      "target": "observability_metrics_tokenaccumulatorcallback",
-      "confidence_score": 0.5
+      "target": "observability_metrics_tokenaccumulatorcallback"
     },
     {
       "relation": "inherits",
@@ -4543,9 +5019,9 @@
       "source_file": "api/routes.py",
       "source_location": "L65",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "api_routes_queryresponse",
-      "target": "observability_metrics_tokenaccumulatorcallback",
-      "confidence_score": 0.5
+      "target": "observability_metrics_tokenaccumulatorcallback"
     },
     {
       "relation": "calls",
@@ -6525,9 +7001,9 @@
       "source_file": "features/sql_generation/agent.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "sql_generation_agent_generate_sql",
-      "target": "queryplan",
-      "confidence_score": 1.0
+      "target": "queryplan"
     },
     {
       "relation": "rationale_for",
@@ -6555,9 +7031,9 @@
       "source_file": "features/sql_generation/agent.py",
       "source_location": "L12",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "queryplan",
-      "target": "schemas_planner_queryplan",
-      "confidence_score": 0.5
+      "target": "schemas_planner_queryplan"
     },
     {
       "relation": "imports",
@@ -9954,5 +10430,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8569d5a1a4a518b4b27a76883c4cd54542ec842f"
+  "built_at_commit": "c3018da50950627ee93e39003f01b1b852d2f46d"
 }
