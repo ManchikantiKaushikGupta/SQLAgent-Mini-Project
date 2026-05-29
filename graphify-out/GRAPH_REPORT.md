@@ -1,16 +1,16 @@
 # Graph Report - SQLAgent-Mini-Project  (2026-05-29)
 
 ## Corpus Check
-- 61 files · ~119,705 words
+- 61 files · ~119,800 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 588 nodes · 941 edges · 56 communities (49 shown, 7 thin omitted)
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 98 edges (avg confidence: 0.5)
+- 574 nodes · 928 edges · 56 communities (49 shown, 7 thin omitted)
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 98 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f31cbb46`
+- Built from commit: `82c8da62`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -62,7 +62,7 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `LLMProvider` - 48 edges
-2. `get_llm()` - 23 edges
+2. `get_llm()` - 21 edges
 3. `init_metrics_state()` - 20 edges
 4. `GeminiProvider` - 18 edges
 5. `AnthropicProvider` - 17 edges
@@ -73,34 +73,34 @@
 10. `track_latency()` - 15 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `SQLAgentState` --uses--> `QueryPlan`  [INFERRED]
-  core/state.py → schemas/planner.py
-- `str` --uses--> `QueryPlan`  [INFERRED]
-  features/query_planning/agent.py → schemas/planner.py
-- `QueryPlan` --uses--> `QueryPlan`  [INFERRED]
-  features/query_planning/agent.py → schemas/planner.py
-- `str` --uses--> `QueryPlan`  [INFERRED]
-  features/sql_generation/agent.py → schemas/planner.py
-- `QueryPlan` --uses--> `QueryPlan`  [INFERRED]
-  features/sql_generation/agent.py → schemas/planner.py
+- `TestLLMProviders` --uses--> `AnthropicProvider`  [INFERRED]
+  scratch/test_providers.py → llm/anthropic_provider.py
+- `MockCallbackHandler` --uses--> `LLMProvider`  [INFERRED]
+  scratch/test_providers.py → llm/base.py
+- `TestLLMProviders` --uses--> `LLMProvider`  [INFERRED]
+  scratch/test_providers.py → llm/base.py
+- `TestLLMProviders` --uses--> `LLMProviderFactory`  [INFERRED]
+  scratch/test_providers.py → llm/factory.py
+- `TestLLMProviders` --uses--> `GeminiProvider`  [INFERRED]
+  scratch/test_providers.py → llm/gemini_provider.py
 
 ## Communities (56 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.10
-Nodes (40): decide_after_execution(), decide_after_semantic_validation(), decide_after_syntax_validation(), node_clarify_intent(), node_correct_sql(), node_execute_sql(), node_query_planning(), node_retrieve_schema() (+32 more)
+Cohesion: 0.09
+Nodes (45): decide_after_execution(), decide_after_semantic_validation(), decide_after_syntax_validation(), node_clarify_intent(), node_correct_sql(), node_execute_sql(), node_query_planning(), node_retrieve_schema() (+37 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.29
 Nodes (6): str, TestASTRepairEngine, detect_failing_clause(), Parses the error message string to detect which clause is failing.     Returns:, Surgically repairs a specific failing clause in a SQL query using SQLGlot AST ma, repair_sql_clause()
 
 ### Community 2 - "Community 2"
-Cohesion: 0.08
-Nodes (24): ndarray, Retrieval Module Initialization, Any, bool, int, str, FAISS-Based Database Schema Retriever  Dynamically reflects database metadata us, Extracts DB metadata, generates semantic documents, computes embeddings, (+16 more)
+Cohesion: 0.10
+Nodes (19): ndarray, Retrieval Module Initialization, get_schema_retriever(), Any, int, str, FAISS-Based Database Schema Retriever  Dynamically reflects database metadata us, Extracts DB metadata, generates semantic documents, computes embeddings, (+11 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.07
-Nodes (37): ChatGoogleGenerativeAI, extract_text(), get_llm(), Any, BaseChatModel, float, str, Returns a configured LangChain ChatModel instance from the active provider. (+29 more)
+Cohesion: 0.10
+Nodes (24): extract_text(), get_llm(), Any, BaseChatModel, float, str, Returns a configured LangChain ChatModel instance from the active provider., Safely extracts string content from an LLM response or AIMessage.     Handles st (+16 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.36
@@ -108,7 +108,7 @@ Nodes (8): Base, Category, Order, OrderItem, Product, Complex Database Seeder fo
 
 ### Community 5 - "Community 5"
 Cohesion: 0.20
-Nodes (9): Architecture Philosophy, Current Architecture, Enterprise Architecture Vision, Final Vision, High Priority Roadmap, Objective, PRIORITY 1 — Structured Outputs, Recommended Future Architecture (+1 more)
+Nodes (9): Architecture Philosophy, Current Architecture, Current Maturity, Current Project Status, Enterprise Architecture Vision, Final Vision, High Priority Roadmap, Main Focus Going Forward (+1 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.29
@@ -167,8 +167,8 @@ Cohesion: 0.40
 Nodes (5): Datasets, Goal, Metrics, Objective, PRIORITY 10 — Benchmark Expansion
 
 ### Community 37 - "Community 37"
-Cohesion: 0.40
-Nodes (5): Objective, PRIORITY 7 — Provider-Agnostic LLM Layer, Required Architecture, Requirements, Success Criteria
+Cohesion: 0.50
+Nodes (4): Implemented Architecture, Objective, PRIORITY 7 — Provider-Agnostic LLM Layer [COMPLETED], Requirements Fulfilled
 
 ### Community 38 - "Community 38"
 Cohesion: 0.50
@@ -176,7 +176,7 @@ Nodes (4): Error Categories, Goal, Objective, PRIORITY 9 — Formal Error Taxono
 
 ### Community 39 - "Community 39"
 Cohesion: 0.67
-Nodes (3): Current Maturity, Current Project Status, Main Focus Going Forward
+Nodes (3): Objective, PRIORITY 1 — Structured Outputs, Tasks
 
 ### Community 40 - "Community 40"
 Cohesion: 0.67
@@ -235,24 +235,24 @@ Cohesion: 0.25
 Nodes (6): Any, BaseChatModel, Embeddings, float, Instantiates ChatOpenAI pointed to vLLM's custom base URL., Instantiates OpenAIEmbeddings pointed to vLLM's custom base URL.
 
 ## Knowledge Gaps
-- **130 isolated node(s):** `int`, `str`, `liveServer.settings.port`, `float`, `BaseChatModel` (+125 more)
+- **126 isolated node(s):** `code:env (GOOGLE_API_KEY=your-api-key)`, `code:yaml (provider: gemini)`, `code:env (OPENAI_API_KEY=sk-...)`, `code:yaml (provider: openai)`, `code:env (ANTHROPIC_API_KEY=sk-ant-...)` (+121 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `get_llm()` connect `Community 3` to `Community 1`, `Community 45`, `Community 49`, `Community 50`, `Community 23`, `Community 24`?**
-  _High betweenness centrality (0.125) - this node is a cross-community bridge._
+- **Why does `get_llm()` connect `Community 3` to `Community 0`, `Community 1`, `Community 45`, `Community 49`, `Community 50`, `Community 23`, `Community 24`?**
+  _High betweenness centrality (0.123) - this node is a cross-community bridge._
 - **Why does `LLMProvider` connect `Community 47` to `Community 45`, `Community 48`, `Community 49`, `Community 50`, `Community 52`, `Community 53`, `Community 54`, `Community 55`?**
-  _High betweenness centrality (0.067) - this node is a cross-community bridge._
-- **Why does `get_provider()` connect `Community 45` to `Community 24`, `Community 2`, `Community 3`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+- **Why does `get_active_callbacks()` connect `Community 50` to `Community 3`, `Community 47`, `Community 52`, `Community 53`, `Community 54`, `Community 55`, `Community 24`?**
+  _High betweenness centrality (0.039) - this node is a cross-community bridge._
 - **Are the 36 inferred relationships involving `LLMProvider` (e.g. with `AnthropicProvider` and `Any`) actually correct?**
   _`LLMProvider` has 36 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 7 inferred relationships involving `GeminiProvider` (e.g. with `LLMProviderFactory` and `Any`) actually correct?**
   _`GeminiProvider` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 7 inferred relationships involving `AnthropicProvider` (e.g. with `LLMProvider` and `LLMProviderFactory`) actually correct?**
   _`AnthropicProvider` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `int`, `str`, `Complex Database Seeder for Presentation  Creates a realistic E-Commerce schema` to the rest of the system?**
-  _263 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `code:env (GOOGLE_API_KEY=your-api-key)`, `code:yaml (provider: gemini)`, `code:env (OPENAI_API_KEY=sk-...)` to the rest of the system?**
+  _249 weakly-connected nodes found - possible documentation gaps or missing edges._
