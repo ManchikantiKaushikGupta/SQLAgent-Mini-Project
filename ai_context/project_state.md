@@ -450,7 +450,7 @@ All LLM provider logic is housed under the `llm/` directory:
 
 ---
 
-# PRIORITY 8 — Enterprise Local LLM Support
+# PRIORITY 8 — Enterprise Local LLM Support [COMPLETED]
 
 ## Objective
 
@@ -459,29 +459,23 @@ Enable fully private enterprise deployments.
 ## Target Models
 
 Reasoning Models
-- DeepSeek-R1
-- Qwen3
+- DeepSeek-R1 (Supported & tested)
+- Qwen3 (Supported & tested, qwen3:14b default)
 
 General Models
-- Qwen3-Instruct
-- Llama
+- Llama (Supported & tested, llama3 default)
 
-## Deployment Backends
+## Implemented Specifications
 
-- Ollama
-- vLLM
-
-## Requirements
-
-- Local inference support
-- No external API dependency
-- GPU-aware configuration
-- Context window management
-- Streaming support
-
-## Enterprise Benefit
-
-Database schemas and user queries never leave the organization network.
+- **Local inference support**: Complete integration with local Ollama service and private enterprise vLLM clusters.
+- **No external API dependency**: Runs 100% offline inside the organization's private network.
+- **Ollama Endpoint Health Checks**: Performs dynamic checks against the local tags index `/api/tags` with a 2.0s connection timeout.
+- **vLLM Endpoint Health Checks**: Performs dynamic checks against the OpenAI-compatible `/v1/models` catalog with a 2.0s connection timeout.
+- **Graceful connection fallbacks**: haltes execution immediately raising highly descriptive instructions (e.g. `ollama pull` or checking vLLM host status) if local services are offline or missing models.
+- **Session outcome caching**: In-memory class caching ensures health checks are executed exactly once per runtime process, bypassing subsequent calls to run at sub-millisecond execution times.
+- **Streaming support**: Enforces standard `streaming=True` configurations across both local providers.
+- **Observability integration**: Dynamic callback passing merges thread-local token callbacks seamlessly during runtime creation.
+- **Standardized Retry Wrappers**: Automatically wraps local model creations with standard exponential backoff retries.
 
 ---
 

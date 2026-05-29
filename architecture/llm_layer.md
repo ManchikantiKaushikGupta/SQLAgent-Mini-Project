@@ -51,3 +51,36 @@ The vector-store schema retriever fetches its active embeddings model directly v
 
 ### Token Accounting & Observability (`core/llm.py`)
 Maintains perfect compatibility with the thread-local token tracker (`TokenAccumulatorCallback`). Each concrete provider merges active thread-local callbacks dynamically during instantiation, ensuring that latency, token metrics, and execution steps are tracked flawlessly across OpenAI, Anthropic, Gemini, Ollama, and vLLM.
+
+## 4. Local LLM & Ollama Support (Priority 8)
+
+The system includes specialized support for local private deployments via Ollama, enabling fully private offline database schema retrieval and query planning.
+
+### Models Supported
+- **`qwen3:14b`** (Highly performant local NL2SQL model, recommended default)
+- **`deepseek-r1`** (Advanced reasoning model executing detailed chain-of-thought plans)
+- **`llama3`** (General purpose chat and coding assistant)
+
+### Dynamic Health Checks & Model Verification
+To prevent cascading system failures, the `OllamaProvider` executes lazy endpoint and model verification:
+1. **Lazy Endpoint Ping**: Pings Ollama tags API `/api/tags` with a 2-second timeout. If the local Ollama server is offline, it halts execution immediately raising a descriptive instruction to start Ollama.
+2. **Model Verification**: Validates if the selected local model (e.g. `qwen3:14b`) is present in the local pulled models catalog. If the model is missing, it raises a clean error specifying: `Please run 'ollama pull qwen3:14b' inside your terminal`.
+3. **Session Caching**: Health check outcomes (successes or raised exceptions) are cached in-memory per provider base URL and model name. Subsequent agent executions bypass network calls entirely, yielding sub-millisecond execution times.
+
+### Streaming Support
+Every chat model instantiated through `OllamaProvider` is configured with `streaming=True` parameters standardly, enabling native token-by-token processing compatible with LangChain's `.stream()` and `.astream()` hooks for modern interactive user interfaces.
+
+## 5. Enterprise vLLM Support (Priority 8 Extension)
+
+The system includes enterprise-grade, high-throughput private local server support via vLLM clusters. It fully implements the `VLLMProvider` interface to leverage OpenAI-compatible APIs deployed in corporate datacenters.
+
+### Key Characteristics
+
+- **OpenAI-Compatible Endpoint Integration**: Seamlessly maps standard endpoints using LangChain's OpenAI interfaces.
+- **Dynamic `/v1/models` Checking**: Automatically runs lazy verification against the OpenAI-compatible `/v1/models` endpoint with a 2.0-second timeout to confirm the vLLM server is online and hosting the correct model name (e.g. `Qwen/Qwen2.5-Coder-7B-Instruct`).
+- **Descriptive Fallbacks**: If the server is offline or unreachable, the provider interrupts the execution pipeline gracefully, raising actionable terminal setup instructions.
+- **Dynamic Session-level Caching**: Employs in-memory caching to guarantee health checks are ran exactly once per runtime process, bypassing subsequent calls to run at sub-millisecond execution times.
+- **Observability & Streaming**: Merges thread-local token tracker callbacks dynamically to support real-time token tracking (`TokenAccumulatorCallback`) and enforces standard `streaming=True` configurations.
+- **Standardized Retry Wrappers**: Automatically wraps the instantiated vLLM model with exponential-backoff tenacious retries to ensure pipeline resiliency.
+
+

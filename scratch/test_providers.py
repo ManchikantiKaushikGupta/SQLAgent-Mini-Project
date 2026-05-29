@@ -101,7 +101,8 @@ class TestLLMProviders(unittest.TestCase):
         embeddings = provider.get_embeddings()
         self.assertEqual(embeddings.model, "models/gemini-embedding-2")
 
-    def test_ollama_provider_instantiation(self):
+    @patch("llm.ollama_provider.OllamaProvider.check_health")
+    def test_ollama_provider_instantiation(self, mock_check_health):
         """Verifies OllamaProvider configurations for local inference."""
         provider = OllamaProvider(model="llama3", base_url="http://localhost:11434")
         
@@ -111,8 +112,56 @@ class TestLLMProviders(unittest.TestCase):
         model = provider.get_chat_model(temperature=0.3)
         self.assertEqual(model.model, "llama3")
         self.assertEqual(model.temperature, 0.3)
+        mock_check_health.assert_called_once_with("llama3")
 
-    def test_vllm_provider_instantiation(self):
+    @patch("requests.get")
+    def test_ollama_health_check_healthy(self, mock_get):
+        """Verifies check_health passes when server responds with the matching model."""
+        # Clear cache for the test
+        OllamaProvider._verified_cache.clear()
+        
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"models": [{"name": "qwen3:14b"}, {"name": "llama3"}]}
+        mock_get.return_value = mock_response
+
+        provider = OllamaProvider(model="qwen3:14b", base_url="http://localhost:11434")
+        
+        # Should not raise any error
+        provider.check_health("qwen3:14b")
+        mock_get.assert_called_once_with("http://localhost:11434/api/tags", timeout=2.0)
+
+    @patch("requests.get")
+    def test_ollama_health_check_connection_error(self, mock_get):
+        """Verifies check_health raises ConnectionError when server is offline."""
+        OllamaProvider._verified_cache.clear()
+        import requests
+        mock_get.side_effect = requests.exceptions.ConnectionError()
+
+        provider = OllamaProvider(model="llama3", base_url="http://localhost:11434")
+        
+        with self.assertRaises(ConnectionError) as ctx:
+            provider.check_health("llama3")
+        self.assertIn("not running at http://localhost:11434", str(ctx.exception))
+
+    @patch("requests.get")
+    def test_ollama_health_check_missing_model(self, mock_get):
+        """Verifies check_health raises RuntimeError when the configured model is absent."""
+        OllamaProvider._verified_cache.clear()
+        
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"models": [{"name": "llama3"}]}
+        mock_get.return_value = mock_response
+
+        provider = OllamaProvider(model="deepseek-r1", base_url="http://localhost:11434")
+        
+        with self.assertRaises(RuntimeError) as ctx:
+            provider.check_health("deepseek-r1")
+        self.assertIn("model 'deepseek-r1' was not found", str(ctx.exception))
+
+    @patch("llm.vllm_provider.VLLMProvider.check_health")
+    def test_vllm_provider_instantiation(self, mock_check_health):
         """Verifies VLLMProvider pointed to OpenAI-compatible base URL."""
         provider = VLLMProvider(model="Qwen/Qwen2.5-Coder-7B-Instruct", base_url="http://localhost:8000/v1")
         
@@ -123,6 +172,51 @@ class TestLLMProviders(unittest.TestCase):
         self.assertEqual(model.model_name, "Qwen/Qwen2.5-Coder-7B-Instruct")
         self.assertEqual(model.temperature, 0.4)
         self.assertEqual(model.openai_api_base, "http://localhost:8000/v1")
+        mock_check_health.assert_called_once_with("Qwen/Qwen2.5-Coder-7B-Instruct")
+
+    @patch("requests.get")
+    def test_vllm_health_check_healthy(self, mock_get):
+        """Verifies vLLM check_health passes when server responds with the matching model."""
+        VLLMProvider._verified_cache.clear()
+        
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"data": [{"id": "Qwen/Qwen2.5-Coder-7B-Instruct"}]}
+        mock_get.return_value = mock_response
+
+        provider = VLLMProvider(model="Qwen/Qwen2.5-Coder-7B-Instruct", base_url="http://localhost:8000/v1")
+        
+        provider.check_health("Qwen/Qwen2.5-Coder-7B-Instruct")
+        mock_get.assert_called_once_with("http://localhost:8000/v1/models", timeout=2.0)
+
+    @patch("requests.get")
+    def test_vllm_health_check_connection_error(self, mock_get):
+        """Verifies vLLM check_health raises ConnectionError when server is offline."""
+        VLLMProvider._verified_cache.clear()
+        import requests
+        mock_get.side_effect = requests.exceptions.ConnectionError()
+
+        provider = VLLMProvider(model="Qwen/Qwen2.5-Coder-7B-Instruct", base_url="http://localhost:8000/v1")
+        
+        with self.assertRaises(ConnectionError) as ctx:
+            provider.check_health("Qwen/Qwen2.5-Coder-7B-Instruct")
+        self.assertIn("not running at http://localhost:8000/v1", str(ctx.exception))
+
+    @patch("requests.get")
+    def test_vllm_health_check_missing_model(self, mock_get):
+        """Verifies vLLM check_health raises RuntimeError when the configured model is absent."""
+        VLLMProvider._verified_cache.clear()
+        
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"data": [{"id": "some-other-model"}]}
+        mock_get.return_value = mock_response
+
+        provider = VLLMProvider(model="Qwen/Qwen2.5-Coder-7B-Instruct", base_url="http://localhost:8000/v1")
+        
+        with self.assertRaises(RuntimeError) as ctx:
+            provider.check_health("Qwen/Qwen2.5-Coder-7B-Instruct")
+        self.assertIn("model 'Qwen/Qwen2.5-Coder-7B-Instruct' was not found", str(ctx.exception))
 
     def test_apply_shared_retry(self):
         """Verifies that shared retry policies wrap models successfully."""

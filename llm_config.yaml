@@ -12,10 +12,10 @@
 # ==============================================================================
 
 # The active provider to route all reasoning agents and schema embeddings to
-provider: gemini
+provider: vllm
 
-# The primary model to use for agents (or comment out to use provider-specific defaults)
-# model: gemini-2.5-flash
+# The primary model to use for local/enterprise agents (e.g. Qwen/Qwen2.5-Coder-7B-Instruct)
+model: Qwen/Qwen2.5-Coder-7B-Instruct
 
 # Default sampling temperature (0.0 enforces maximum reasoning determinism)
 temperature: 0.0
@@ -35,7 +35,11 @@ anthropic:
   # api_key: "your-anthropic-api-key" # Or set via ANTHROPIC_API_KEY environment variable
 
 ollama:
-  model: llama3
+  # Examples of supported local models:
+  # - qwen3:14b      (High reasoning capabilities, default)
+  # - deepseek-r1    (CoT reasoning model)
+  # - llama3         (General purpose model)
+  model: qwen3:14b
   base_url: http://localhost:11434
 
 vllm:

@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\ai_context\\project_state.md": {
-    "mtime": 1780073135.7343578,
-    "ast_hash": "85fdbee2e26ade4181149a6aef297214",
+    "mtime": 1780074061.7838268,
+    "ast_hash": "d38a256426bdec57661c98565d7058f8",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\ai_context\\system_prompt.md": {
@@ -280,8 +280,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\ollama_provider.py": {
-    "mtime": 1780072572.5701334,
-    "ast_hash": "a99499b7bcb19407f084717ede502622",
+    "mtime": 1780073907.4895637,
+    "ast_hash": "bf674d407578b88669ed9384a117516e",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\openai_provider.py": {
@@ -290,18 +290,18 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\vllm_provider.py": {
-    "mtime": 1780072577.2273784,
-    "ast_hash": "e2c72777a699f2526d8d445692b709b9",
+    "mtime": 1780074322.3150656,
+    "ast_hash": "919aca29288c7f347eeab50e65968e17",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\test_providers.py": {
-    "mtime": 1780073097.3718503,
-    "ast_hash": "784c1e4145d76747be859cf25cd3f97c",
+    "mtime": 1780074335.5254471,
+    "ast_hash": "71a1706f97b988699b0eb31ce7432fb2",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm_config.yaml": {
-    "mtime": 1780072586.9424164,
-    "ast_hash": "c522a7f1302d33f98da3ea1be1179a99",
+    "mtime": 1780074327.1546543,
+    "ast_hash": "3b65d5e084230449c9a8dfab69398515",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\MIGRATION.md": {
@@ -310,8 +310,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\architecture\\llm_layer.md": {
-    "mtime": 1780072620.0024843,
-    "ast_hash": "95102fc8ccf52b303d799002eb1cdfc6",
+    "mtime": 1780074051.352283,
+    "ast_hash": "9a90e3a0d1c257570fc0f575845f4f35",
     "semantic_hash": ""
   }
 }
