@@ -234,7 +234,7 @@
       "source_file": "",
       "source_location": "",
       "id": "basemodel",
-      "community": 3,
+      "community": 28,
       "norm_label": "basemodel"
     },
     {
@@ -495,7 +495,7 @@
       "source_file": "core/llm.py",
       "source_location": "L31",
       "id": "core_llm_get_llm",
-      "community": 55,
+      "community": 3,
       "norm_label": "get_llm()"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "core/llm.py",
       "source_location": "L31",
       "id": "core_llm_py_str",
-      "community": 55,
+      "community": 3,
       "norm_label": "str"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "core/llm.py",
       "source_location": "L31",
       "id": "core_llm_py_float",
-      "community": 55,
+      "community": 3,
       "norm_label": "float"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "core/llm.py",
       "source_location": "L31",
       "id": "core_llm_py_basechatmodel",
-      "community": 55,
+      "community": 3,
       "norm_label": "basechatmodel"
     },
     {
@@ -576,7 +576,7 @@
       "source_file": "core/llm.py",
       "source_location": "L32",
       "id": "core_llm_rationale_32",
-      "community": 55,
+      "community": 3,
       "norm_label": "returns a configured langchain chatmodel instance from the active provider."
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "db/database.py",
       "source_location": "L1",
       "id": "db_database_py",
-      "community": 28,
+      "community": 0,
       "norm_label": "database.py"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "db/database.py",
       "source_location": "L28",
       "id": "db_database_get_db",
-      "community": 28,
+      "community": 0,
       "norm_label": "get_db()"
     },
     {
@@ -657,7 +657,7 @@
       "source_file": "db/database.py",
       "source_location": "L37",
       "id": "db_database_py_str",
-      "community": 28,
+      "community": 24,
       "norm_label": "str"
     },
     {
@@ -666,7 +666,7 @@
       "source_file": "db/database.py",
       "source_location": "L62",
       "id": "db_database_execute_sql_query",
-      "community": 28,
+      "community": 0,
       "norm_label": "execute_sql_query()"
     },
     {
@@ -675,7 +675,7 @@
       "source_file": "db/database.py",
       "source_location": "L1",
       "id": "db_database_rationale_1",
-      "community": 28,
+      "community": 0,
       "norm_label": "database connection and utilities.  handles postgresql connection setup using sq"
     },
     {
@@ -684,7 +684,7 @@
       "source_file": "db/database.py",
       "source_location": "L29",
       "id": "db_database_rationale_29",
-      "community": 28,
+      "community": 0,
       "norm_label": "yields a database session."
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "db/database.py",
       "source_location": "L63",
       "id": "db_database_rationale_63",
-      "community": 28,
+      "community": 0,
       "norm_label": "executes a raw sql select query against the postgresql database safely."
     },
     {
@@ -773,7 +773,7 @@
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L150",
-      "id": "benchmarksummary",
+      "id": "evaluation_benchmark_runner_py_benchmarksummary",
       "community": 24,
       "norm_label": "benchmarksummary"
     },
@@ -782,7 +782,7 @@
       "file_type": "code",
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L150",
-      "id": "benchmarkresult",
+      "id": "evaluation_benchmark_runner_py_benchmarkresult",
       "community": 24,
       "norm_label": "benchmarkresult"
     },
@@ -848,6 +848,60 @@
       "id": "evaluation_benchmark_runner_rationale_391",
       "community": 24,
       "norm_label": "prints a rich ansi console dashboard summarizing the run."
+    },
+    {
+      "label": "dataset_loaders.py",
+      "file_type": "code",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L1",
+      "id": "evaluation_dataset_loaders_py",
+      "community": 24,
+      "norm_label": "dataset_loaders.py"
+    },
+    {
+      "label": "load_dataset()",
+      "file_type": "code",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L20",
+      "id": "evaluation_dataset_loaders_load_dataset",
+      "community": 24,
+      "norm_label": "load_dataset()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L20",
+      "id": "evaluation_dataset_loaders_py_str",
+      "community": 24,
+      "norm_label": "str"
+    },
+    {
+      "label": "BenchmarkCase",
+      "file_type": "code",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L20",
+      "id": "evaluation_dataset_loaders_py_benchmarkcase",
+      "community": 24,
+      "norm_label": "benchmarkcase"
+    },
+    {
+      "label": "NL2SQL Dataset Loaders  Provides standardized loading methods for importing and",
+      "file_type": "rationale",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L1",
+      "id": "evaluation_dataset_loaders_rationale_1",
+      "community": 24,
+      "norm_label": "nl2sql dataset loaders  provides standardized loading methods for importing and"
+    },
+    {
+      "label": "Loads and parses a specified benchmark dataset JSON file into a list of     vali",
+      "file_type": "rationale",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L21",
+      "id": "evaluation_dataset_loaders_rationale_21",
+      "community": 24,
+      "norm_label": "loads and parses a specified benchmark dataset json file into a list of     vali"
     },
     {
       "label": "execution_accuracy.py",
@@ -949,6 +1003,186 @@
       "norm_label": "executes both the generated sql and reference sql on the database, and compares"
     },
     {
+      "label": "expanded_runner.py",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L1",
+      "id": "evaluation_expanded_runner_py",
+      "community": 24,
+      "norm_label": "expanded_runner.py"
+    },
+    {
+      "label": "TokenUsageTracker",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L39",
+      "id": "evaluation_expanded_runner_tokenusagetracker",
+      "community": 24,
+      "norm_label": "tokenusagetracker"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L43",
+      "id": "evaluation_expanded_runner_tokenusagetracker_init",
+      "community": 24,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".on_llm_end()",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L49",
+      "id": "evaluation_expanded_runner_tokenusagetracker_on_llm_end",
+      "community": 24,
+      "norm_label": ".on_llm_end()"
+    },
+    {
+      "label": "run_dataset_benchmark()",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "id": "evaluation_expanded_runner_run_dataset_benchmark",
+      "community": 24,
+      "norm_label": "run_dataset_benchmark()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "id": "evaluation_expanded_runner_py_str",
+      "community": 24,
+      "norm_label": "str"
+    },
+    {
+      "label": "BenchmarkCase",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "id": "evaluation_expanded_runner_py_benchmarkcase",
+      "community": 24,
+      "norm_label": "benchmarkcase"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "id": "evaluation_expanded_runner_py_any",
+      "community": 24,
+      "norm_label": "any"
+    },
+    {
+      "label": "BenchmarkSummary",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "id": "evaluation_expanded_runner_py_benchmarksummary",
+      "community": 24,
+      "norm_label": "benchmarksummary"
+    },
+    {
+      "label": "BenchmarkResult",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "id": "evaluation_expanded_runner_py_benchmarkresult",
+      "community": 24,
+      "norm_label": "benchmarkresult"
+    },
+    {
+      "label": "compile_failure_analysis()",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L261",
+      "id": "evaluation_expanded_runner_compile_failure_analysis",
+      "community": 24,
+      "norm_label": "compile_failure_analysis()"
+    },
+    {
+      "label": "write_dataset_reports()",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L355",
+      "id": "evaluation_expanded_runner_write_dataset_reports",
+      "community": 24,
+      "norm_label": "write_dataset_reports()"
+    },
+    {
+      "label": "print_summary_dashboard()",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L413",
+      "id": "evaluation_expanded_runner_print_summary_dashboard",
+      "community": 24,
+      "norm_label": "print_summary_dashboard()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L439",
+      "id": "evaluation_expanded_runner_main",
+      "community": 24,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Expanded NL2SQL Benchmark Runner  Orchestrates multi-dataset benchmark execution",
+      "file_type": "rationale",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L1",
+      "id": "evaluation_expanded_runner_rationale_1",
+      "community": 24,
+      "norm_label": "expanded nl2sql benchmark runner  orchestrates multi-dataset benchmark execution"
+    },
+    {
+      "label": "LangChain Callback handler to transparently capture token usage.",
+      "file_type": "rationale",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L40",
+      "id": "evaluation_expanded_runner_rationale_40",
+      "community": 24,
+      "norm_label": "langchain callback handler to transparently capture token usage."
+    },
+    {
+      "label": "Executes the agent pipeline against a single loaded dataset's test cases.",
+      "file_type": "rationale",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L83",
+      "id": "evaluation_expanded_runner_rationale_83",
+      "community": 24,
+      "norm_label": "executes the agent pipeline against a single loaded dataset's test cases."
+    },
+    {
+      "label": "Analyzes failed queries and generates a rich, diagnostic Markdown report.",
+      "file_type": "rationale",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L266",
+      "id": "evaluation_expanded_runner_rationale_266",
+      "community": 24,
+      "norm_label": "analyzes failed queries and generates a rich, diagnostic markdown report."
+    },
+    {
+      "label": "Persists evaluation runs to disk inside the /evaluation directory.",
+      "file_type": "rationale",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L361",
+      "id": "evaluation_expanded_runner_rationale_361",
+      "community": 24,
+      "norm_label": "persists evaluation runs to disk inside the /evaluation directory."
+    },
+    {
+      "label": "Renders an aggregate summary dashboard of all evaluated datasets in the terminal",
+      "file_type": "rationale",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L414",
+      "id": "evaluation_expanded_runner_rationale_414",
+      "community": 24,
+      "norm_label": "renders an aggregate summary dashboard of all evaluated datasets in the terminal"
+    },
+    {
       "label": "failed_queries.json",
       "file_type": "code",
       "source_file": "evaluation/failed_queries.json",
@@ -1037,6 +1271,33 @@
       "id": "evaluation_run_history_json",
       "community": 42,
       "norm_label": "run_history.json"
+    },
+    {
+      "label": "spider.json",
+      "file_type": "code",
+      "source_file": "evaluation/datasets/spider.json",
+      "source_location": "L1",
+      "id": "evaluation_datasets_spider_json",
+      "community": 61,
+      "norm_label": "spider.json"
+    },
+    {
+      "label": "spider_realistic.json",
+      "file_type": "code",
+      "source_file": "evaluation/datasets/spider_realistic.json",
+      "source_location": "L1",
+      "id": "evaluation_datasets_spider_realistic_json",
+      "community": 62,
+      "norm_label": "spider_realistic.json"
+    },
+    {
+      "label": "spider_syn.json",
+      "file_type": "code",
+      "source_file": "evaluation/datasets/spider_syn.json",
+      "source_location": "L1",
+      "id": "evaluation_datasets_spider_syn_json",
+      "community": 63,
+      "norm_label": "spider_syn.json"
     },
     {
       "label": "agent.py",
@@ -1332,7 +1593,7 @@
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L23",
       "id": "validation_correction_agent_validate_sql_safety",
-      "community": 58,
+      "community": 55,
       "norm_label": "validate_sql_safety()"
     },
     {
@@ -1341,7 +1602,7 @@
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L23",
       "id": "features_validation_correction_agent_py_str",
-      "community": 58,
+      "community": 55,
       "norm_label": "str"
     },
     {
@@ -1350,7 +1611,7 @@
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L23",
       "id": "features_validation_correction_agent_py_bool",
-      "community": 58,
+      "community": 55,
       "norm_label": "bool"
     },
     {
@@ -1386,7 +1647,7 @@
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L24",
       "id": "validation_correction_agent_rationale_24",
-      "community": 58,
+      "community": 55,
       "norm_label": "parses the sql query with sqlglot to ensure it is syntactically valid     and st"
     },
     {
@@ -1552,19 +1813,19 @@
       "norm_label": "semantic_validator.py"
     },
     {
-      "label": "validate_sql_semantics()",
+      "label": "run_rule_based_semantic_checks()",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L45",
-      "id": "validation_correction_semantic_validator_validate_sql_semantics",
+      "source_location": "L49",
+      "id": "validation_correction_semantic_validator_run_rule_based_semantic_checks",
       "community": 23,
-      "norm_label": "validate_sql_semantics()"
+      "norm_label": "run_rule_based_semantic_checks()"
     },
     {
       "label": "str",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L45",
+      "source_location": "L49",
       "id": "features_validation_correction_semantic_validator_py_str",
       "community": 23,
       "norm_label": "str"
@@ -1573,26 +1834,44 @@
       "label": "Any",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L45",
+      "source_location": "L49",
       "id": "features_validation_correction_semantic_validator_py_any",
       "community": 23,
       "norm_label": "any"
     },
     {
+      "label": "validate_sql_semantics()",
+      "file_type": "code",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L98",
+      "id": "validation_correction_semantic_validator_validate_sql_semantics",
+      "community": 23,
+      "norm_label": "validate_sql_semantics()"
+    },
+    {
       "label": "SemanticValidationResult",
       "file_type": "code",
       "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L45",
+      "source_location": "L98",
       "id": "semanticvalidationresult",
       "community": 23,
       "norm_label": "semanticvalidationresult"
     },
     {
+      "label": "Executes fast, deterministic semantic check rules to spot obvious logical mismat",
+      "file_type": "rationale",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L54",
+      "id": "validation_correction_semantic_validator_rationale_54",
+      "community": 23,
+      "norm_label": "executes fast, deterministic semantic check rules to spot obvious logical mismat"
+    },
+    {
       "label": "Validates the semantic and logical correctness of a SQL query by comparing it",
       "file_type": "rationale",
       "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L51",
-      "id": "validation_correction_semantic_validator_rationale_51",
+      "source_location": "L104",
+      "id": "validation_correction_semantic_validator_rationale_104",
       "community": 23,
       "norm_label": "validates the semantic and logical correctness of a sql query by comparing it"
     },
@@ -2673,7 +2952,7 @@
       "source_file": "observability/metrics.py",
       "source_location": "L27",
       "id": "observability_metrics_tokenaccumulatorcallback_on_llm_end",
-      "community": 24,
+      "community": 0,
       "norm_label": ".on_llm_end()"
     },
     {
@@ -2781,7 +3060,7 @@
       "source_file": "observability/metrics.py",
       "source_location": "L28",
       "id": "observability_metrics_rationale_28",
-      "community": 24,
+      "community": 0,
       "norm_label": "called at the end of llm generation to extract and add tokens."
     },
     {
@@ -3384,7 +3663,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L1",
       "id": "schemas_planner_py",
-      "community": 3,
+      "community": 28,
       "norm_label": "planner.py"
     },
     {
@@ -3393,7 +3672,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L4",
       "id": "schemas_planner_tablerequirement",
-      "community": 3,
+      "community": 28,
       "norm_label": "tablerequirement"
     },
     {
@@ -3402,7 +3681,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L10",
       "id": "schemas_planner_tablerequirement_normalize_table",
-      "community": 3,
+      "community": 28,
       "norm_label": ".normalize_table()"
     },
     {
@@ -3411,7 +3690,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L10",
       "id": "schemas_planner_py_any",
-      "community": 3,
+      "community": 28,
       "norm_label": "any"
     },
     {
@@ -3420,7 +3699,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L18",
       "id": "schemas_planner_joinrequirement",
-      "community": 3,
+      "community": 28,
       "norm_label": "joinrequirement"
     },
     {
@@ -3429,7 +3708,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L26",
       "id": "schemas_planner_joinrequirement_normalize_join",
-      "community": 3,
+      "community": 28,
       "norm_label": ".normalize_join()"
     },
     {
@@ -3438,41 +3717,50 @@
       "source_file": "schemas/planner.py",
       "source_location": "L32",
       "id": "schemas_planner_filterrequirement",
-      "community": 3,
+      "community": 28,
       "norm_label": "filterrequirement"
+    },
+    {
+      "label": ".normalize_filter()",
+      "file_type": "code",
+      "source_file": "schemas/planner.py",
+      "source_location": "L39",
+      "id": "schemas_planner_filterrequirement_normalize_filter",
+      "community": 28,
+      "norm_label": ".normalize_filter()"
     },
     {
       "label": "AggregationRequirement",
       "file_type": "code",
       "source_file": "schemas/planner.py",
-      "source_location": "L37",
+      "source_location": "L49",
       "id": "schemas_planner_aggregationrequirement",
-      "community": 3,
+      "community": 28,
       "norm_label": "aggregationrequirement"
     },
     {
       "label": "OrderByRequirement",
       "file_type": "code",
       "source_file": "schemas/planner.py",
-      "source_location": "L42",
+      "source_location": "L54",
       "id": "schemas_planner_orderbyrequirement",
-      "community": 3,
+      "community": 28,
       "norm_label": "orderbyrequirement"
     },
     {
       "label": ".normalize_order_by()",
       "file_type": "code",
       "source_file": "schemas/planner.py",
-      "source_location": "L48",
+      "source_location": "L60",
       "id": "schemas_planner_orderbyrequirement_normalize_order_by",
-      "community": 3,
+      "community": 28,
       "norm_label": ".normalize_order_by()"
     },
     {
       "label": "QueryPlan",
       "file_type": "code",
       "source_file": "schemas/planner.py",
-      "source_location": "L56",
+      "source_location": "L68",
       "id": "schemas_planner_queryplan",
       "community": 3,
       "norm_label": "queryplan"
@@ -3481,17 +3769,17 @@
       "label": ".normalize_plan()",
       "file_type": "code",
       "source_file": "schemas/planner.py",
-      "source_location": "L71",
+      "source_location": "L83",
       "id": "schemas_planner_queryplan_normalize_plan",
-      "community": 3,
+      "community": 28,
       "norm_label": ".normalize_plan()"
     },
     {
       "label": "A structured, step-by-step query execution plan that guides the SQL Generation A",
       "file_type": "rationale",
       "source_file": "schemas/planner.py",
-      "source_location": "L57",
-      "id": "schemas_planner_rationale_57",
+      "source_location": "L69",
+      "id": "schemas_planner_rationale_69",
       "community": 3,
       "norm_label": "a structured, step-by-step query execution plan that guides the sql generation a"
     },
@@ -3501,7 +3789,7 @@
       "source_file": "schemas/validation.py",
       "source_location": "L1",
       "id": "schemas_validation_py",
-      "community": 58,
+      "community": 57,
       "norm_label": "validation.py"
     },
     {
@@ -3519,7 +3807,7 @@
       "source_file": "schemas/validation.py",
       "source_location": "L30",
       "id": "schemas_validation_sqlcorrectionresult",
-      "community": 58,
+      "community": 55,
       "norm_label": "sqlcorrectionresult"
     },
     {
@@ -3528,7 +3816,7 @@
       "source_file": "schemas/validation.py",
       "source_location": "L1",
       "id": "schemas_validation_rationale_1",
-      "community": 58,
+      "community": 57,
       "norm_label": "validation & correction pydantic schemas  defines structural models for sql sema"
     },
     {
@@ -3546,7 +3834,7 @@
       "source_file": "schemas/validation.py",
       "source_location": "L31",
       "id": "schemas_validation_rationale_31",
-      "community": 58,
+      "community": 55,
       "norm_label": "structured response representing the output of the query correction agent."
     },
     {
@@ -3595,12 +3883,111 @@
       "norm_label": ".test_surgical_group_by_repair()"
     },
     {
+      "label": "test_benchmark_expansion.py",
+      "file_type": "code",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L1",
+      "id": "scratch_test_benchmark_expansion_py",
+      "community": 24,
+      "norm_label": "test_benchmark_expansion.py"
+    },
+    {
+      "label": "TestBenchmarkExpansion",
+      "file_type": "code",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L16",
+      "id": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
+      "community": 24,
+      "norm_label": "testbenchmarkexpansion"
+    },
+    {
+      "label": ".setUp()",
+      "file_type": "code",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L18",
+      "id": "scratch_test_benchmark_expansion_testbenchmarkexpansion_setup",
+      "community": 24,
+      "norm_label": ".setup()"
+    },
+    {
+      "label": ".test_load_valid_datasets()",
+      "file_type": "code",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L73",
+      "id": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_load_valid_datasets",
+      "community": 24,
+      "norm_label": ".test_load_valid_datasets()"
+    },
+    {
+      "label": ".test_load_invalid_dataset_raises_error()",
+      "file_type": "code",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L86",
+      "id": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_load_invalid_dataset_raises_error",
+      "community": 24,
+      "norm_label": ".test_load_invalid_dataset_raises_error()"
+    },
+    {
+      "label": ".test_compile_failure_analysis_report()",
+      "file_type": "code",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L91",
+      "id": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_compile_failure_analysis_report",
+      "community": 24,
+      "norm_label": ".test_compile_failure_analysis_report()"
+    },
+    {
+      "label": ".test_write_dataset_reports()",
+      "file_type": "code",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L103",
+      "id": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_write_dataset_reports",
+      "community": 24,
+      "norm_label": ".test_write_dataset_reports()"
+    },
+    {
+      "label": "Verify that load_dataset successfully parses Spider, Spider Realistic, and Spide",
+      "file_type": "rationale",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L74",
+      "id": "scratch_test_benchmark_expansion_rationale_74",
+      "community": 24,
+      "norm_label": "verify that load_dataset successfully parses spider, spider realistic, and spide"
+    },
+    {
+      "label": "Verify that load_dataset raises a ValueError for unknown dataset names.",
+      "file_type": "rationale",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L87",
+      "id": "scratch_test_benchmark_expansion_rationale_87",
+      "community": 24,
+      "norm_label": "verify that load_dataset raises a valueerror for unknown dataset names."
+    },
+    {
+      "label": "Verify that compile_failure_analysis categorizes SQL failures and generates mark",
+      "file_type": "rationale",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L92",
+      "id": "scratch_test_benchmark_expansion_rationale_92",
+      "community": 24,
+      "norm_label": "verify that compile_failure_analysis categorizes sql failures and generates mark"
+    },
+    {
+      "label": "Verify that write_dataset_reports successfully serializes JSON metrics and markd",
+      "file_type": "rationale",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L104",
+      "id": "scratch_test_benchmark_expansion_rationale_104",
+      "community": 24,
+      "norm_label": "verify that write_dataset_reports successfully serializes json metrics and markd"
+    },
+    {
       "label": "test_correction_mock.py",
       "file_type": "code",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L1",
       "id": "scratch_test_correction_mock_py",
-      "community": 23,
+      "community": 55,
       "norm_label": "test_correction_mock.py"
     },
     {
@@ -3609,7 +3996,7 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L21",
       "id": "scratch_test_correction_mock_mockaimessage",
-      "community": 23,
+      "community": 59,
       "norm_label": "mockaimessage"
     },
     {
@@ -3618,7 +4005,7 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L23",
       "id": "scratch_test_correction_mock_mockaimessage_init",
-      "community": 23,
+      "community": 59,
       "norm_label": ".__init__()"
     },
     {
@@ -3627,7 +4014,7 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L23",
       "id": "scratch_test_correction_mock_py_str",
-      "community": 23,
+      "community": 59,
       "norm_label": "str"
     },
     {
@@ -3654,7 +4041,7 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L38",
       "id": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_semantic_validation_parsing",
-      "community": 23,
+      "community": 59,
       "norm_label": ".test_semantic_validation_parsing()"
     },
     {
@@ -3690,7 +4077,7 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L1",
       "id": "scratch_test_correction_mock_rationale_1",
-      "community": 23,
+      "community": 55,
       "norm_label": "unit test suite using mock llm responses to verify sql validation, correction, a"
     },
     {
@@ -3699,7 +4086,7 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L22",
       "id": "scratch_test_correction_mock_rationale_22",
-      "community": 23,
+      "community": 59,
       "norm_label": "a clean, realistic mock of a langchain aimessage response."
     },
     {
@@ -3708,7 +4095,7 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L39",
       "id": "scratch_test_correction_mock_rationale_39",
-      "community": 23,
+      "community": 59,
       "norm_label": "verify that validate_sql_semantics correctly parses and validates a json respons"
     },
     {
@@ -4250,6 +4637,159 @@
       "id": "scratch_test_schema_retriever_rationale_1",
       "community": 2,
       "norm_label": "test schema retriever  isolated script to verify the faiss-based schema retrieve"
+    },
+    {
+      "label": "test_semantic_validator.py",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L1",
+      "id": "scratch_test_semantic_validator_py",
+      "community": 23,
+      "norm_label": "test_semantic_validator.py"
+    },
+    {
+      "label": "MockAIMessage",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L15",
+      "id": "scratch_test_semantic_validator_mockaimessage",
+      "community": 23,
+      "norm_label": "mockaimessage"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L17",
+      "id": "scratch_test_semantic_validator_mockaimessage_init",
+      "community": 23,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L17",
+      "id": "scratch_test_semantic_validator_py_str",
+      "community": 23,
+      "norm_label": "str"
+    },
+    {
+      "label": "TestSemanticValidatorHybrid",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L22",
+      "id": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "community": 23,
+      "norm_label": "testsemanticvalidatorhybrid"
+    },
+    {
+      "label": ".setUp()",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L24",
+      "id": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_setup",
+      "community": 23,
+      "norm_label": ".setup()"
+    },
+    {
+      "label": ".test_rule_based_filter_mismatch()",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L27",
+      "id": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_filter_mismatch",
+      "community": 23,
+      "norm_label": ".test_rule_based_filter_mismatch()"
+    },
+    {
+      "label": ".test_rule_based_aggregation_mismatch()",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L37",
+      "id": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_aggregation_mismatch",
+      "community": 23,
+      "norm_label": ".test_rule_based_aggregation_mismatch()"
+    },
+    {
+      "label": ".test_rule_based_limit_mismatch()",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L47",
+      "id": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_limit_mismatch",
+      "community": 23,
+      "norm_label": ".test_rule_based_limit_mismatch()"
+    },
+    {
+      "label": ".test_rule_based_empty_results()",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L58",
+      "id": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_empty_results",
+      "community": 23,
+      "norm_label": ".test_rule_based_empty_results()"
+    },
+    {
+      "label": ".test_hybrid_llm_validation_passes_alerts()",
+      "file_type": "code",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L69",
+      "id": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_hybrid_llm_validation_passes_alerts",
+      "community": 23,
+      "norm_label": ".test_hybrid_llm_validation_passes_alerts()"
+    },
+    {
+      "label": "Mock of LangChain AIMessage response.",
+      "file_type": "rationale",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L16",
+      "id": "scratch_test_semantic_validator_rationale_16",
+      "community": 23,
+      "norm_label": "mock of langchain aimessage response."
+    },
+    {
+      "label": "Verify that a missing filter literal triggers a rule violation warning alert.",
+      "file_type": "rationale",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L28",
+      "id": "scratch_test_semantic_validator_rationale_28",
+      "community": 23,
+      "norm_label": "verify that a missing filter literal triggers a rule violation warning alert."
+    },
+    {
+      "label": "Verify that missing AVG or SUM aggregate functions triggers a rule violation war",
+      "file_type": "rationale",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L38",
+      "id": "scratch_test_semantic_validator_rationale_38",
+      "community": 23,
+      "norm_label": "verify that missing avg or sum aggregate functions triggers a rule violation war"
+    },
+    {
+      "label": "Verify that missing LIMIT or ORDER BY on top-ranked intent triggers warning aler",
+      "file_type": "rationale",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L48",
+      "id": "scratch_test_semantic_validator_rationale_48",
+      "community": 23,
+      "norm_label": "verify that missing limit or order by on top-ranked intent triggers warning aler"
+    },
+    {
+      "label": "Verify that execution yielding exactly 0 rows triggers a warning alert for recor",
+      "file_type": "rationale",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L59",
+      "id": "scratch_test_semantic_validator_rationale_59",
+      "community": 23,
+      "norm_label": "verify that execution yielding exactly 0 rows triggers a warning alert for recor"
+    },
+    {
+      "label": "Verify that validate_sql_semantics successfully passes computed alerts to the LL",
+      "file_type": "rationale",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L70",
+      "id": "scratch_test_semantic_validator_rationale_70",
+      "community": 23,
+      "norm_label": "verify that validate_sql_semantics successfully passes computed alerts to the ll"
     },
     {
       "label": "MIGRATION.md",
@@ -4896,7 +5436,7 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L316",
       "id": "ai_context_project_state_priority_1_structured_outputs",
-      "community": 5,
+      "community": 40,
       "norm_label": "priority 1 \u2014 structured outputs"
     },
     {
@@ -4905,7 +5445,7 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L318",
       "id": "ai_context_project_state_objective",
-      "community": 5,
+      "community": 40,
       "norm_label": "objective"
     },
     {
@@ -4914,7 +5454,7 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L322",
       "id": "ai_context_project_state_tasks",
-      "community": 5,
+      "community": 40,
       "norm_label": "tasks"
     },
     {
@@ -4954,13 +5494,13 @@
       "norm_label": "metrics tracked"
     },
     {
-      "label": "PRIORITY 3 \u2014 Semantic Validation",
+      "label": "PRIORITY 3 \u2014 Semantic Validation [COMPLETED]",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
       "source_location": "L354",
-      "id": "ai_context_project_state_priority_3_semantic_validation",
+      "id": "ai_context_project_state_priority_3_semantic_validation_completed",
       "community": 31,
-      "norm_label": "priority 3 \u2014 semantic validation"
+      "norm_label": "priority 3 \u2014 semantic validation [completed]"
     },
     {
       "label": "Objective",
@@ -4984,7 +5524,7 @@
       "label": "PRIORITY 4 \u2014 Clause-Level SQL Repair",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L368",
+      "source_location": "L369",
       "id": "ai_context_project_state_priority_4_clause_level_sql_repair",
       "community": 35,
       "norm_label": "priority 4 \u2014 clause-level sql repair"
@@ -4993,8 +5533,8 @@
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L370",
-      "id": "ai_context_project_state_objective_370",
+      "source_location": "L371",
+      "id": "ai_context_project_state_objective_371",
       "community": 35,
       "norm_label": "objective"
     },
@@ -5002,8 +5542,8 @@
       "label": "Status",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L374",
-      "id": "ai_context_project_state_status_374",
+      "source_location": "L375",
+      "id": "ai_context_project_state_status_375",
       "community": 35,
       "norm_label": "status"
     },
@@ -5011,7 +5551,7 @@
       "label": "PRIORITY 5 \u2014 Schema Retrieval Layer [COMPLETED]",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L382",
+      "source_location": "L383",
       "id": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
       "community": 44,
       "norm_label": "priority 5 \u2014 schema retrieval layer [completed]"
@@ -5020,8 +5560,8 @@
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L384",
-      "id": "ai_context_project_state_objective_384",
+      "source_location": "L385",
+      "id": "ai_context_project_state_objective_385",
       "community": 44,
       "norm_label": "objective"
     },
@@ -5029,8 +5569,8 @@
       "label": "Status",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L388",
-      "id": "ai_context_project_state_status_388",
+      "source_location": "L389",
+      "id": "ai_context_project_state_status_389",
       "community": 44,
       "norm_label": "status"
     },
@@ -5038,7 +5578,7 @@
       "label": "PRIORITY 6 \u2014 Observability & Transparency [COMPLETED]",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L398",
+      "source_location": "L399",
       "id": "ai_context_project_state_priority_6_observability_transparency_completed",
       "community": 35,
       "norm_label": "priority 6 \u2014 observability & transparency [completed]"
@@ -5047,8 +5587,8 @@
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L400",
-      "id": "ai_context_project_state_objective_400",
+      "source_location": "L401",
+      "id": "ai_context_project_state_objective_401",
       "community": 35,
       "norm_label": "objective"
     },
@@ -5056,8 +5596,8 @@
       "label": "Status",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L404",
-      "id": "ai_context_project_state_status_404",
+      "source_location": "L405",
+      "id": "ai_context_project_state_status_405",
       "community": 35,
       "norm_label": "status"
     },
@@ -5065,7 +5605,7 @@
       "label": "PRIORITY 7 \u2014 Provider-Agnostic LLM Layer [COMPLETED]",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L415",
+      "source_location": "L416",
       "id": "ai_context_project_state_priority_7_provider_agnostic_llm_layer_completed",
       "community": 37,
       "norm_label": "priority 7 \u2014 provider-agnostic llm layer [completed]"
@@ -5074,8 +5614,8 @@
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L417",
-      "id": "ai_context_project_state_objective_417",
+      "source_location": "L418",
+      "id": "ai_context_project_state_objective_418",
       "community": 37,
       "norm_label": "objective"
     },
@@ -5083,7 +5623,7 @@
       "label": "Implemented Architecture",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L431",
+      "source_location": "L432",
       "id": "ai_context_project_state_implemented_architecture",
       "community": 37,
       "norm_label": "implemented architecture"
@@ -5092,7 +5632,7 @@
       "label": "Requirements Fulfilled",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L442",
+      "source_location": "L443",
       "id": "ai_context_project_state_requirements_fulfilled",
       "community": 37,
       "norm_label": "requirements fulfilled"
@@ -5101,7 +5641,7 @@
       "label": "PRIORITY 8 \u2014 Enterprise Local LLM Support [COMPLETED]",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L453",
+      "source_location": "L454",
       "id": "ai_context_project_state_priority_8_enterprise_local_llm_support_completed",
       "community": 34,
       "norm_label": "priority 8 \u2014 enterprise local llm support [completed]"
@@ -5110,8 +5650,8 @@
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L455",
-      "id": "ai_context_project_state_objective_455",
+      "source_location": "L456",
+      "id": "ai_context_project_state_objective_456",
       "community": 34,
       "norm_label": "objective"
     },
@@ -5119,7 +5659,7 @@
       "label": "Target Models",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L459",
+      "source_location": "L460",
       "id": "ai_context_project_state_target_models",
       "community": 34,
       "norm_label": "target models"
@@ -5128,7 +5668,7 @@
       "label": "Implemented Specifications",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L468",
+      "source_location": "L469",
       "id": "ai_context_project_state_implemented_specifications",
       "community": 34,
       "norm_label": "implemented specifications"
@@ -5137,7 +5677,7 @@
       "label": "PRIORITY 9 \u2014 Formal Error Taxonomy Engine [COMPLETED]",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L482",
+      "source_location": "L483",
       "id": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
       "community": 38,
       "norm_label": "priority 9 \u2014 formal error taxonomy engine [completed]"
@@ -5146,8 +5686,8 @@
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L484",
-      "id": "ai_context_project_state_objective_484",
+      "source_location": "L485",
+      "id": "ai_context_project_state_objective_485",
       "community": 38,
       "norm_label": "objective"
     },
@@ -5155,8 +5695,8 @@
       "label": "Status",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L488",
-      "id": "ai_context_project_state_status_488",
+      "source_location": "L489",
+      "id": "ai_context_project_state_status_489",
       "community": 38,
       "norm_label": "status"
     },
@@ -5164,7 +5704,7 @@
       "label": "Error Categories",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L496",
+      "source_location": "L497",
       "id": "ai_context_project_state_error_categories",
       "community": 38,
       "norm_label": "error categories"
@@ -5173,34 +5713,43 @@
       "label": "Goal",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L534",
-      "id": "ai_context_project_state_goal_534",
+      "source_location": "L535",
+      "id": "ai_context_project_state_goal_535",
       "community": 38,
       "norm_label": "goal"
     },
     {
-      "label": "PRIORITY 10 \u2014 Benchmark Expansion",
+      "label": "PRIORITY 10 \u2014 Benchmark Expansion [COMPLETED]",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L540",
-      "id": "ai_context_project_state_priority_10_benchmark_expansion",
+      "source_location": "L541",
+      "id": "ai_context_project_state_priority_10_benchmark_expansion_completed",
       "community": 36,
-      "norm_label": "priority 10 \u2014 benchmark expansion"
+      "norm_label": "priority 10 \u2014 benchmark expansion [completed]"
     },
     {
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L542",
-      "id": "ai_context_project_state_objective_542",
+      "source_location": "L543",
+      "id": "ai_context_project_state_objective_543",
       "community": 36,
       "norm_label": "objective"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L547",
+      "id": "ai_context_project_state_status_547",
+      "community": 36,
+      "norm_label": "status"
     },
     {
       "label": "Datasets",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L546",
+      "source_location": "L554",
       "id": "ai_context_project_state_datasets",
       "community": 36,
       "norm_label": "datasets"
@@ -5209,7 +5758,7 @@
       "label": "Metrics",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L553",
+      "source_location": "L561",
       "id": "ai_context_project_state_metrics",
       "community": 36,
       "norm_label": "metrics"
@@ -5218,8 +5767,8 @@
       "label": "Goal",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L564",
-      "id": "ai_context_project_state_goal_564",
+      "source_location": "L572",
+      "id": "ai_context_project_state_goal_572",
       "community": 36,
       "norm_label": "goal"
     },
@@ -5227,7 +5776,7 @@
       "label": "PRIORITY 11 \u2014 Production Governance & Security",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L570",
+      "source_location": "L578",
       "id": "ai_context_project_state_priority_11_production_governance_security",
       "community": 43,
       "norm_label": "priority 11 \u2014 production governance & security"
@@ -5236,8 +5785,8 @@
       "label": "Objective",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L572",
-      "id": "ai_context_project_state_objective_572",
+      "source_location": "L580",
+      "id": "ai_context_project_state_objective_580",
       "community": 43,
       "norm_label": "objective"
     },
@@ -5245,7 +5794,7 @@
       "label": "Features",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L576",
+      "source_location": "L584",
       "id": "ai_context_project_state_features",
       "community": 43,
       "norm_label": "features"
@@ -5254,7 +5803,7 @@
       "label": "Recommended Future Architecture",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L603",
+      "source_location": "L611",
       "id": "ai_context_project_state_recommended_future_architecture",
       "community": 5,
       "norm_label": "recommended future architecture"
@@ -5263,61 +5812,61 @@
       "label": "Important Development Rules",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L625",
+      "source_location": "L633",
       "id": "ai_context_project_state_important_development_rules",
-      "community": 40,
+      "community": 5,
       "norm_label": "important development rules"
     },
     {
       "label": "DO",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L627",
+      "source_location": "L635",
       "id": "ai_context_project_state_do",
-      "community": 40,
+      "community": 5,
       "norm_label": "do"
     },
     {
       "label": "DO NOT",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L635",
+      "source_location": "L643",
       "id": "ai_context_project_state_do_not",
-      "community": 40,
+      "community": 5,
       "norm_label": "do not"
     },
     {
       "label": "Current Project Status",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L644",
+      "source_location": "L652",
       "id": "ai_context_project_state_current_project_status",
-      "community": 60,
+      "community": 5,
       "norm_label": "current project status"
     },
     {
       "label": "Current Maturity",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L646",
+      "source_location": "L654",
       "id": "ai_context_project_state_current_maturity",
-      "community": 60,
+      "community": 5,
       "norm_label": "current maturity"
     },
     {
       "label": "Main Focus Going Forward",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L650",
+      "source_location": "L658",
       "id": "ai_context_project_state_main_focus_going_forward",
-      "community": 60,
+      "community": 5,
       "norm_label": "main focus going forward"
     },
     {
       "label": "Final Vision",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L664",
+      "source_location": "L672",
       "id": "ai_context_project_state_final_vision",
       "community": 5,
       "norm_label": "final vision"
@@ -5575,6 +6124,213 @@
       "norm_label": "key characteristics"
     },
     {
+      "label": "Validates the semantic and logical correctness of a SQL query by comparing it",
+      "file_type": "rationale",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L51",
+      "community": 23,
+      "norm_label": "validates the semantic and logical correctness of a sql query by comparing it",
+      "id": "validation_correction_semantic_validator_rationale_51"
+    },
+    {
+      "label": "A structured, step-by-step query execution plan that guides the SQL Generation A",
+      "file_type": "rationale",
+      "source_file": "schemas/planner.py",
+      "source_location": "L57",
+      "community": 3,
+      "norm_label": "a structured, step-by-step query execution plan that guides the sql generation a",
+      "id": "schemas_planner_rationale_57"
+    },
+    {
+      "label": "PRIORITY 3 \u2014 Semantic Validation",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L354",
+      "community": 31,
+      "norm_label": "priority 3 \u2014 semantic validation",
+      "id": "ai_context_project_state_priority_3_semantic_validation"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L370",
+      "community": 35,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_370"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L374",
+      "community": 35,
+      "norm_label": "status",
+      "id": "ai_context_project_state_status_374"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L384",
+      "community": 44,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_384"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L388",
+      "community": 44,
+      "norm_label": "status",
+      "id": "ai_context_project_state_status_388"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L400",
+      "community": 35,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_400"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L404",
+      "community": 35,
+      "norm_label": "status",
+      "id": "ai_context_project_state_status_404"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L417",
+      "community": 37,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_417"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L455",
+      "community": 34,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_455"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L484",
+      "community": 38,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_484"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L488",
+      "community": 38,
+      "norm_label": "status",
+      "id": "ai_context_project_state_status_488"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L534",
+      "community": 38,
+      "norm_label": "goal",
+      "id": "ai_context_project_state_goal_534"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L542",
+      "community": 36,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_542"
+    },
+    {
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L546",
+      "community": 36,
+      "norm_label": "status",
+      "id": "ai_context_project_state_status_546"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L571",
+      "community": 36,
+      "norm_label": "goal",
+      "id": "ai_context_project_state_goal_571"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L579",
+      "community": 43,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_579"
+    },
+    {
+      "label": "BenchmarkSummary",
+      "file_type": "code",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L150",
+      "community": 24,
+      "norm_label": "benchmarksummary",
+      "id": "benchmarksummary"
+    },
+    {
+      "label": "BenchmarkResult",
+      "file_type": "code",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L150",
+      "community": 24,
+      "norm_label": "benchmarkresult",
+      "id": "benchmarkresult"
+    },
+    {
+      "label": "PRIORITY 10 \u2014 Benchmark Expansion",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L540",
+      "community": 36,
+      "norm_label": "priority 10 \u2014 benchmark expansion",
+      "id": "ai_context_project_state_priority_10_benchmark_expansion"
+    },
+    {
+      "label": "Goal",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L564",
+      "community": 36,
+      "norm_label": "goal",
+      "id": "ai_context_project_state_goal_564"
+    },
+    {
+      "label": "Objective",
+      "file_type": "document",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L572",
+      "community": 43,
+      "norm_label": "objective",
+      "id": "ai_context_project_state_objective_572"
+    },
+    {
       "label": "PRIORITY 9 \u2014 Formal Error Taxonomy Engine",
       "file_type": "document",
       "source_file": "ai_context/project_state.md",
@@ -5669,7 +6425,7 @@
       "file_type": "rationale",
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L23",
-      "community": 58,
+      "community": 55,
       "norm_label": "parses the sql query with sqlglot to ensure it is syntactically valid     and st",
       "id": "validation_correction_agent_rationale_23"
     },
@@ -5723,7 +6479,7 @@
       "file_type": "rationale",
       "source_file": "schemas/validation.py",
       "source_location": "L29",
-      "community": 58,
+      "community": 55,
       "norm_label": "structured response representing the output of the query correction agent.",
       "id": "schemas_validation_rationale_29"
     },
@@ -5732,7 +6488,7 @@
       "file_type": "rationale",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L21",
-      "community": 23,
+      "community": 59,
       "norm_label": "a clean, realistic mock of a langchain aimessage response.",
       "id": "scratch_test_correction_mock_rationale_21"
     },
@@ -5741,7 +6497,7 @@
       "file_type": "rationale",
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L38",
-      "community": 23,
+      "community": 59,
       "norm_label": "verify that validate_sql_semantics correctly parses and validates a json respons",
       "id": "scratch_test_correction_mock_rationale_38"
     },
@@ -5795,7 +6551,7 @@
       "file_type": "code",
       "source_file": "evaluation/execution_accuracy.py",
       "source_location": "L15",
-      "community": 3,
+      "community": 28,
       "norm_label": "any",
       "id": "any"
     },
@@ -6293,9 +7049,9 @@
       "source_file": "schemas/error_taxonomy.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_error_taxonomy_sqlerrorclassification",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "inherits",
@@ -7191,9 +7947,9 @@
       "source_file": "core/graph.py",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_graph_rationale_151",
-      "target": "core_graph_decide_after_syntax_validation",
-      "confidence_score": 1.0
+      "target": "core_graph_decide_after_syntax_validation"
     },
     {
       "relation": "rationale_for",
@@ -7211,9 +7967,9 @@
       "source_file": "core/graph.py",
       "source_location": "L159",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_graph_rationale_159",
-      "target": "core_graph_decide_after_execution",
-      "confidence_score": 1.0
+      "target": "core_graph_decide_after_execution"
     },
     {
       "relation": "rationale_for",
@@ -7231,9 +7987,9 @@
       "source_file": "core/graph.py",
       "source_location": "L167",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_graph_rationale_167",
-      "target": "core_graph_decide_after_semantic_validation",
-      "confidence_score": 1.0
+      "target": "core_graph_decide_after_semantic_validation"
     },
     {
       "relation": "rationale_for",
@@ -7251,9 +8007,9 @@
       "source_file": "core/graph.py",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_graph_rationale_175",
-      "target": "core_graph_build_workflow",
-      "confidence_score": 1.0
+      "target": "core_graph_build_workflow"
     },
     {
       "relation": "imports",
@@ -7275,6 +8031,28 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_run_benchmarks",
+      "target": "core_graph_build_workflow"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L450",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_main",
+      "target": "core_graph_build_workflow"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
       "target": "core_graph_build_workflow"
     },
     {
@@ -7537,6 +8315,16 @@
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_tokenusagetracker",
+      "target": "core_llm_py_basecallbackhandler"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
       "source_file": "observability/metrics.py",
       "source_location": "L16",
       "weight": 1.0,
@@ -7584,6 +8372,28 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_run_benchmarks",
+      "target": "core_llm_register_thread_callbacks"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "core_llm_register_thread_callbacks"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
       "target": "core_llm_register_thread_callbacks"
     },
     {
@@ -7638,6 +8448,28 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_run_benchmarks",
+      "target": "core_llm_clear_thread_callbacks"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "core_llm_clear_thread_callbacks"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
       "target": "core_llm_clear_thread_callbacks"
     },
     {
@@ -7778,9 +8610,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_validation_correction_error_classifier_py",
-      "target": "core_llm_get_llm",
-      "confidence_score": 1.0
+      "target": "core_llm_get_llm"
     },
     {
       "relation": "imports",
@@ -7866,9 +8698,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L157",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_classify_sql_error",
-      "target": "core_llm_get_llm",
-      "confidence_score": 1.0
+      "target": "core_llm_get_llm"
     },
     {
       "relation": "calls",
@@ -7964,9 +8796,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_validation_correction_error_classifier_py",
-      "target": "core_llm_extract_text",
-      "confidence_score": 1.0
+      "target": "core_llm_extract_text"
     },
     {
       "relation": "calls",
@@ -8008,9 +8840,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L174",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_classify_sql_error",
-      "target": "core_llm_extract_text",
-      "confidence_score": 1.0
+      "target": "core_llm_extract_text"
     },
     {
       "relation": "contains",
@@ -8154,6 +8986,28 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_run_benchmarks",
+      "target": "db_database_get_database_schema"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L451",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_main",
+      "target": "db_database_get_database_schema"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
       "target": "db_database_get_database_schema"
     },
     {
@@ -8440,6 +9294,28 @@
       "target": "benchmarksummary"
     },
     {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_benchmark_runner_run_benchmarks",
+      "target": "evaluation_benchmark_runner_py_benchmarkresult"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_benchmark_runner_run_benchmarks",
+      "target": "evaluation_benchmark_runner_py_benchmarksummary"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -8479,7 +9355,7 @@
       "source_location": "L33",
       "weight": 0.8,
       "confidence_score": 0.5,
-      "source": "benchmarksummary",
+      "source": "evaluation_benchmark_runner_py_benchmarksummary",
       "target": "evaluation_metrics_benchmarkcase"
     },
     {
@@ -8489,7 +9365,7 @@
       "source_location": "L33",
       "weight": 0.8,
       "confidence_score": 0.5,
-      "source": "benchmarksummary",
+      "source": "evaluation_benchmark_runner_py_benchmarksummary",
       "target": "evaluation_metrics_benchmarkresult"
     },
     {
@@ -8499,7 +9375,7 @@
       "source_location": "L33",
       "weight": 0.8,
       "confidence_score": 0.5,
-      "source": "benchmarksummary",
+      "source": "evaluation_benchmark_runner_py_benchmarksummary",
       "target": "evaluation_metrics_benchmarksummary"
     },
     {
@@ -8507,22 +9383,22 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L366",
+      "source_location": "L390",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_render_dashboard",
-      "target": "benchmarksummary"
+      "target": "evaluation_benchmark_runner_py_benchmarksummary"
     },
     {
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L315",
+      "source_location": "L339",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_write_reports",
-      "target": "benchmarksummary"
+      "target": "evaluation_benchmark_runner_py_benchmarksummary"
     },
     {
       "relation": "uses",
@@ -8531,7 +9407,7 @@
       "source_location": "L33",
       "weight": 0.8,
       "confidence_score": 0.5,
-      "source": "benchmarkresult",
+      "source": "evaluation_benchmark_runner_py_benchmarkresult",
       "target": "evaluation_metrics_benchmarkcase"
     },
     {
@@ -8541,7 +9417,7 @@
       "source_location": "L33",
       "weight": 0.8,
       "confidence_score": 0.5,
-      "source": "benchmarkresult",
+      "source": "evaluation_benchmark_runner_py_benchmarkresult",
       "target": "evaluation_metrics_benchmarkresult"
     },
     {
@@ -8551,7 +9427,7 @@
       "source_location": "L33",
       "weight": 0.8,
       "confidence_score": 0.5,
-      "source": "benchmarkresult",
+      "source": "evaluation_benchmark_runner_py_benchmarkresult",
       "target": "evaluation_metrics_benchmarksummary"
     },
     {
@@ -8559,22 +9435,22 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L366",
+      "source_location": "L390",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_render_dashboard",
-      "target": "benchmarkresult"
+      "target": "evaluation_benchmark_runner_py_benchmarkresult"
     },
     {
       "relation": "references",
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L315",
+      "source_location": "L339",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_write_reports",
-      "target": "benchmarkresult"
+      "target": "evaluation_benchmark_runner_py_benchmarkresult"
     },
     {
       "relation": "rationale_for",
@@ -8587,6 +9463,28 @@
       "target": "evaluation_benchmark_runner_write_reports"
     },
     {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L315",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_benchmark_runner_write_reports",
+      "target": "benchmarkresult"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L315",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_benchmark_runner_write_reports",
+      "target": "benchmarksummary"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/benchmark_runner.py",
@@ -8595,6 +9493,166 @@
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_rationale_391",
       "target": "evaluation_benchmark_runner_render_dashboard"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L366",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_benchmark_runner_render_dashboard",
+      "target": "benchmarkresult"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L366",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_benchmark_runner_render_dashboard",
+      "target": "benchmarksummary"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_dataset_loaders_py",
+      "target": "evaluation_dataset_loaders_load_dataset"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_dataset_loaders_py",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_dataset_loaders_rationale_1",
+      "target": "evaluation_dataset_loaders_py"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_dataset_loaders_load_dataset",
+      "target": "evaluation_dataset_loaders_py_benchmarkcase"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_dataset_loaders_load_dataset",
+      "target": "evaluation_dataset_loaders_py_str"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_dataset_loaders_rationale_21",
+      "target": "evaluation_dataset_loaders_load_dataset"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L463",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_main",
+      "target": "evaluation_dataset_loaders_load_dataset"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_dataset_loaders_load_dataset"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_py",
+      "target": "evaluation_dataset_loaders_load_dataset"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_load_invalid_dataset_raises_error",
+      "target": "evaluation_dataset_loaders_load_dataset"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_load_valid_datasets",
+      "target": "evaluation_dataset_loaders_load_dataset"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L13",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_dataset_loaders_py_str",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/dataset_loaders.py",
+      "source_location": "L13",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_dataset_loaders_py_benchmarkcase",
+      "target": "evaluation_metrics_benchmarkcase"
     },
     {
       "relation": "contains",
@@ -8854,6 +9912,645 @@
       "target": "evaluation_execution_accuracy_evaluate_execution_accuracy"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_execution_accuracy_evaluate_execution_accuracy"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_execution_accuracy_evaluate_execution_accuracy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L261",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_expanded_runner_compile_failure_analysis"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L439",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_expanded_runner_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L413",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_expanded_runner_print_summary_dashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_expanded_runner_run_dataset_benchmark"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_expanded_runner_tokenusagetracker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L355",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_expanded_runner_write_dataset_reports"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_py",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_rationale_1",
+      "target": "evaluation_expanded_runner_py"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_rationale_40",
+      "target": "evaluation_expanded_runner_tokenusagetracker"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_expanded_runner_tokenusagetracker"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_tokenusagetracker",
+      "target": "evaluation_expanded_runner_tokenusagetracker_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_tokenusagetracker",
+      "target": "evaluation_expanded_runner_tokenusagetracker_on_llm_end"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_tokenusagetracker",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_tokenusagetracker",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_tokenusagetracker",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L464",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_main",
+      "target": "evaluation_expanded_runner_run_dataset_benchmark"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_rationale_83",
+      "target": "evaluation_expanded_runner_run_dataset_benchmark"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_expanded_runner_py_any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_expanded_runner_py_benchmarkcase"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_expanded_runner_py_benchmarkresult"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_expanded_runner_py_benchmarksummary"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_expanded_runner_py_str"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L241",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_run_dataset_benchmark",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L261",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_compile_failure_analysis",
+      "target": "evaluation_expanded_runner_py_str"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L413",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_print_summary_dashboard",
+      "target": "evaluation_expanded_runner_py_str"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_str",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_str",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_str",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L355",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_write_dataset_reports",
+      "target": "evaluation_expanded_runner_py_str"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarkcase",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarkcase",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarkcase",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_any",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_any",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_any",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L261",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_compile_failure_analysis",
+      "target": "evaluation_expanded_runner_py_benchmarksummary"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L413",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_print_summary_dashboard",
+      "target": "evaluation_expanded_runner_py_benchmarksummary"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarksummary",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarksummary",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarksummary",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L355",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_write_dataset_reports",
+      "target": "evaluation_expanded_runner_py_benchmarksummary"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L261",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_compile_failure_analysis",
+      "target": "evaluation_expanded_runner_py_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarkresult",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarkresult",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "evaluation_expanded_runner_py_benchmarkresult",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L355",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_write_dataset_reports",
+      "target": "evaluation_expanded_runner_py_benchmarkresult"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L467",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_main",
+      "target": "evaluation_expanded_runner_compile_failure_analysis"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L266",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_rationale_266",
+      "target": "evaluation_expanded_runner_compile_failure_analysis"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_py",
+      "target": "evaluation_expanded_runner_compile_failure_analysis"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_compile_failure_analysis_report",
+      "target": "evaluation_expanded_runner_compile_failure_analysis"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L470",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_main",
+      "target": "evaluation_expanded_runner_write_dataset_reports"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L361",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_rationale_361",
+      "target": "evaluation_expanded_runner_write_dataset_reports"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_py",
+      "target": "evaluation_expanded_runner_write_dataset_reports"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_write_dataset_reports",
+      "target": "evaluation_expanded_runner_write_dataset_reports"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L482",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_main",
+      "target": "evaluation_expanded_runner_print_summary_dashboard"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L414",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_expanded_runner_rationale_414",
+      "target": "evaluation_expanded_runner_print_summary_dashboard"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/metrics.py",
@@ -8894,6 +10591,26 @@
       "target": "evaluation_metrics_py"
     },
     {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarkresult",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarksummary",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/metrics.py",
@@ -8902,6 +10619,47 @@
       "confidence_score": 1.0,
       "source": "evaluation_metrics_rationale_12",
       "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_py",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L13",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarkresult",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarksummary",
+      "target": "evaluation_metrics_benchmarkresult"
     },
     {
       "relation": "rationale_for",
@@ -8914,6 +10672,47 @@
       "target": "evaluation_metrics_benchmarkresult"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_py",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L13",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarkresult",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarksummary",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/metrics.py",
@@ -8921,6 +10720,27 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_metrics_rationale_42",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_py",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L13",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
       "target": "evaluation_metrics_benchmarksummary"
     },
     {
@@ -9381,9 +11201,9 @@
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_validation_correction_agent_py",
-      "target": "validation_correction_error_classifier_classify_sql_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_classify_sql_error"
     },
     {
       "relation": "imports",
@@ -9433,9 +11253,9 @@
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_agent_rationale_24",
-      "target": "validation_correction_agent_validate_sql_safety",
-      "confidence_score": 1.0
+      "target": "validation_correction_agent_validate_sql_safety"
     },
     {
       "relation": "references",
@@ -9541,9 +11361,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "validation_correction_agent_correct_sql",
-      "confidence_score": 1.0
+      "target": "validation_correction_agent_correct_sql"
     },
     {
       "relation": "calls",
@@ -9596,9 +11416,9 @@
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_agent_correct_sql",
-      "target": "validation_correction_error_classifier_classify_sql_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_classify_sql_error"
     },
     {
       "relation": "calls",
@@ -9627,9 +11447,9 @@
       "source_file": "features/validation_correction/agent.py",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_agent_rationale_63",
-      "target": "validation_correction_agent_correct_sql",
-      "confidence_score": 1.0
+      "target": "validation_correction_agent_correct_sql"
     },
     {
       "relation": "uses",
@@ -9648,9 +11468,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_validation_correction_error_classifier_py",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "contains",
@@ -9658,9 +11478,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_validation_correction_error_classifier_py",
-      "target": "validation_correction_error_classifier_classify_sql_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_classify_sql_error"
     },
     {
       "relation": "contains",
@@ -9668,9 +11488,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_validation_correction_error_classifier_py",
-      "target": "validation_correction_error_classifier_fallback_classify_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_fallback_classify_error"
     },
     {
       "relation": "rationale_for",
@@ -9678,9 +11498,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_rationale_1",
-      "target": "features_validation_correction_error_classifier_py",
-      "confidence_score": 1.0
+      "target": "features_validation_correction_error_classifier_py"
     },
     {
       "relation": "imports",
@@ -9689,9 +11509,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "validation_correction_error_classifier_fallback_classify_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_fallback_classify_error"
     },
     {
       "relation": "calls",
@@ -9711,9 +11531,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_classify_sql_error",
-      "target": "validation_correction_error_classifier_fallback_classify_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_fallback_classify_error"
     },
     {
       "relation": "references",
@@ -9722,9 +11542,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_fallback_classify_error",
-      "target": "features_validation_correction_error_classifier_py_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "features_validation_correction_error_classifier_py_sqlerrorclassification"
     },
     {
       "relation": "references",
@@ -9733,9 +11553,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_fallback_classify_error",
-      "target": "features_validation_correction_error_classifier_py_str",
-      "confidence_score": 1.0
+      "target": "features_validation_correction_error_classifier_py_str"
     },
     {
       "relation": "calls",
@@ -9744,9 +11564,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_fallback_classify_error",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "rationale_for",
@@ -9754,9 +11574,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_rationale_63",
-      "target": "validation_correction_error_classifier_fallback_classify_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_fallback_classify_error"
     },
     {
       "relation": "uses",
@@ -9764,9 +11584,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L15",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "features_validation_correction_error_classifier_py_str",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "references",
@@ -9775,9 +11595,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_classify_sql_error",
-      "target": "features_validation_correction_error_classifier_py_str",
-      "confidence_score": 1.0
+      "target": "features_validation_correction_error_classifier_py_str"
     },
     {
       "relation": "uses",
@@ -9785,9 +11605,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L15",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "features_validation_correction_error_classifier_py_sqlerrorclassification",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "references",
@@ -9796,9 +11616,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_classify_sql_error",
-      "target": "features_validation_correction_error_classifier_py_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "features_validation_correction_error_classifier_py_sqlerrorclassification"
     },
     {
       "relation": "imports",
@@ -9807,9 +11627,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "validation_correction_error_classifier_classify_sql_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_classify_sql_error"
     },
     {
       "relation": "calls",
@@ -9828,9 +11648,9 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_error_classifier_rationale_139",
-      "target": "validation_correction_error_classifier_classify_sql_error",
-      "confidence_score": 1.0
+      "target": "validation_correction_error_classifier_classify_sql_error"
     },
     {
       "relation": "imports",
@@ -9839,9 +11659,9 @@
       "source_file": "features/validation_correction/repair_engine.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "features_validation_correction_repair_engine_py",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "contains",
@@ -9912,9 +11732,9 @@
       "source_file": "features/validation_correction/repair_engine.py",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_repair_engine_rationale_96",
-      "target": "validation_correction_repair_engine_detect_failing_clause",
-      "confidence_score": 1.0
+      "target": "validation_correction_repair_engine_detect_failing_clause"
     },
     {
       "relation": "calls",
@@ -9933,9 +11753,9 @@
       "source_file": "features/validation_correction/repair_engine.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "features_validation_correction_repair_engine_py_str",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "references",
@@ -9988,9 +11808,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "validation_correction_repair_engine_repair_sql_clause",
-      "confidence_score": 1.0
+      "target": "validation_correction_repair_engine_repair_sql_clause"
     },
     {
       "relation": "calls",
@@ -10009,9 +11829,9 @@
       "source_file": "features/validation_correction/repair_engine.py",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_repair_engine_rationale_133",
-      "target": "validation_correction_repair_engine_repair_sql_clause",
-      "confidence_score": 1.0
+      "target": "validation_correction_repair_engine_repair_sql_clause"
     },
     {
       "relation": "rationale_for",
@@ -10030,9 +11850,9 @@
       "source_file": "features/validation_correction/repair_engine.py",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "validation_correction_repair_engine_repair_sql_clause",
-      "target": "features_validation_correction_repair_engine_py_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "features_validation_correction_repair_engine_py_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -10040,9 +11860,9 @@
       "source_file": "features/validation_correction/repair_engine.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "features_validation_correction_repair_engine_py_sqlerrorclassification",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "imports",
@@ -10059,11 +11879,161 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "features_validation_correction_semantic_validator_py",
+      "target": "validation_correction_semantic_validator_run_rule_based_semantic_checks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "features/validation_correction/semantic_validator.py",
       "source_location": "L50",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "features_validation_correction_semantic_validator_py",
       "target": "validation_correction_semantic_validator_validate_sql_semantics"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_py",
+      "target": "validation_correction_semantic_validator_run_rule_based_semantic_checks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_aggregation_mismatch",
+      "target": "validation_correction_semantic_validator_run_rule_based_semantic_checks"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_empty_results",
+      "target": "validation_correction_semantic_validator_run_rule_based_semantic_checks"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_filter_mismatch",
+      "target": "validation_correction_semantic_validator_run_rule_based_semantic_checks"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_limit_mismatch",
+      "target": "validation_correction_semantic_validator_run_rule_based_semantic_checks"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "validation_correction_semantic_validator_rationale_54",
+      "target": "validation_correction_semantic_validator_run_rule_based_semantic_checks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "validation_correction_semantic_validator_run_rule_based_semantic_checks",
+      "target": "features_validation_correction_semantic_validator_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "validation_correction_semantic_validator_run_rule_based_semantic_checks",
+      "target": "features_validation_correction_semantic_validator_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "validation_correction_semantic_validator_validate_sql_semantics",
+      "target": "validation_correction_semantic_validator_run_rule_based_semantic_checks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "features_validation_correction_semantic_validator_py_str",
+      "target": "schemas_validation_semanticvalidationresult"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "validation_correction_semantic_validator_validate_sql_semantics",
+      "target": "features_validation_correction_semantic_validator_py_str"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "features_validation_correction_semantic_validator_py_any",
+      "target": "schemas_validation_semanticvalidationresult"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "validation_correction_semantic_validator_validate_sql_semantics",
+      "target": "features_validation_correction_semantic_validator_py_any"
     },
     {
       "relation": "imports",
@@ -10088,6 +12058,38 @@
       "target": "validation_correction_semantic_validator_validate_sql_semantics"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_py",
+      "target": "validation_correction_semantic_validator_validate_sql_semantics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_hybrid_llm_validation_passes_alerts",
+      "target": "validation_correction_semantic_validator_validate_sql_semantics"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "features/validation_correction/semantic_validator.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "validation_correction_semantic_validator_rationale_104",
+      "target": "validation_correction_semantic_validator_validate_sql_semantics",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "features/validation_correction/semantic_validator.py",
@@ -10110,28 +12112,6 @@
     },
     {
       "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "validation_correction_semantic_validator_validate_sql_semantics",
-      "target": "features_validation_correction_semantic_validator_py_any"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "validation_correction_semantic_validator_validate_sql_semantics",
-      "target": "features_validation_correction_semantic_validator_py_str"
-    },
-    {
-      "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "features/validation_correction/semantic_validator.py",
@@ -10140,26 +12120,6 @@
       "confidence_score": 1.0,
       "source": "validation_correction_semantic_validator_validate_sql_semantics",
       "target": "semanticvalidationresult"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L7",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "features_validation_correction_semantic_validator_py_str",
-      "target": "schemas_validation_semanticvalidationresult"
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "features/validation_correction/semantic_validator.py",
-      "source_location": "L7",
-      "weight": 0.8,
-      "confidence_score": 0.5,
-      "source": "features_validation_correction_semantic_validator_py_any",
-      "target": "schemas_validation_semanticvalidationresult"
     },
     {
       "relation": "uses",
@@ -13016,9 +14976,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "observability_metrics_init_metrics_state",
-      "confidence_score": 1.0
+      "target": "observability_metrics_init_metrics_state"
     },
     {
       "relation": "calls",
@@ -13166,9 +15126,9 @@
       "source_file": "observability/metrics.py",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "observability_metrics_rationale_123",
-      "target": "observability_metrics_record_correction",
-      "confidence_score": 1.0
+      "target": "observability_metrics_record_correction"
     },
     {
       "relation": "references",
@@ -13210,9 +15170,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "observability_metrics_record_correction",
-      "confidence_score": 1.0
+      "target": "observability_metrics_record_correction"
     },
     {
       "relation": "calls",
@@ -13263,9 +15223,9 @@
       "source_file": "observability/metrics.py",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "observability_metrics_rationale_164",
-      "target": "observability_metrics_record_execution",
-      "confidence_score": 1.0
+      "target": "observability_metrics_record_execution"
     },
     {
       "relation": "rationale_for",
@@ -13984,9 +15944,9 @@
       "source_file": "schemas/error_taxonomy.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_error_taxonomy_py",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "rationale_for",
@@ -13994,9 +15954,9 @@
       "source_file": "schemas/error_taxonomy.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_error_taxonomy_rationale_1",
-      "target": "schemas_error_taxonomy_py",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_py"
     },
     {
       "relation": "rationale_for",
@@ -14004,9 +15964,9 @@
       "source_file": "schemas/error_taxonomy.py",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_error_taxonomy_rationale_12",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "imports",
@@ -14015,9 +15975,9 @@
       "source_file": "schemas/validation.py",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_validation_py",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -14025,9 +15985,9 @@
       "source_file": "schemas/validation.py",
       "source_location": "L28",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "schemas_validation_semanticvalidationresult",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -14035,9 +15995,9 @@
       "source_file": "schemas/validation.py",
       "source_location": "L28",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "schemas_validation_sqlcorrectionresult",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -14045,9 +16005,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L15",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_correction_mock_mockaimessage",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "imports",
@@ -14056,9 +16016,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_correction_mock_py",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -14066,9 +16026,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L15",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_correction_mock_py_str",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -14076,9 +16036,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L15",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_correction_mock_testvalidationandcorrectionmock",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -14086,9 +16046,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_error_taxonomy_mockaimessage",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "imports",
@@ -14097,9 +16057,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 1.0
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -14107,9 +16067,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_error_taxonomy_py_str",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "uses",
@@ -14117,9 +16077,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L9",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "schemas_error_taxonomy_sqlerrorclassification",
-      "confidence_score": 0.5
+      "target": "schemas_error_taxonomy_sqlerrorclassification"
     },
     {
       "relation": "contains",
@@ -14218,6 +16178,17 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "schemas/planner.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "schemas_planner_filterrequirement_normalize_filter",
+      "target": "schemas_planner_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
       "source_location": "L26",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14255,6 +16226,16 @@
       "confidence_score": 1.0,
       "source": "schemas_planner_joinrequirement",
       "target": "schemas_planner_joinrequirement_normalize_join"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "schemas_planner_filterrequirement",
+      "target": "schemas_planner_filterrequirement_normalize_filter",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -14306,6 +16287,16 @@
       "confidence_score": 1.0,
       "source": "schemas_planner_rationale_57",
       "target": "schemas_planner_queryplan"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "schemas/planner.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "schemas_planner_rationale_69",
+      "target": "schemas_planner_queryplan",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -14411,6 +16402,47 @@
       "target": "schemas_validation_semanticvalidationresult"
     },
     {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "source": "scratch_test_semantic_validator_mockaimessage",
+      "target": "schemas_validation_semanticvalidationresult",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_py",
+      "target": "schemas_validation_semanticvalidationresult",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "source": "scratch_test_semantic_validator_py_str",
+      "target": "schemas_validation_semanticvalidationresult",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L9",
+      "weight": 0.8,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "target": "schemas_validation_semanticvalidationresult",
+      "confidence_score": 0.5
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "schemas/validation.py",
@@ -14426,9 +16458,9 @@
       "source_file": "schemas/validation.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_validation_rationale_31",
-      "target": "schemas_validation_sqlcorrectionresult",
-      "confidence_score": 1.0
+      "target": "schemas_validation_sqlcorrectionresult"
     },
     {
       "relation": "uses",
@@ -14477,9 +16509,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_error_taxonomy_mockaimessage",
-      "target": "schemas_validation_sqlcorrectionresult",
-      "confidence_score": 0.5
+      "target": "schemas_validation_sqlcorrectionresult"
     },
     {
       "relation": "imports",
@@ -14488,9 +16520,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "schemas_validation_sqlcorrectionresult",
-      "confidence_score": 1.0
+      "target": "schemas_validation_sqlcorrectionresult"
     },
     {
       "relation": "uses",
@@ -14498,9 +16530,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_error_taxonomy_py_str",
-      "target": "schemas_validation_sqlcorrectionresult",
-      "confidence_score": 0.5
+      "target": "schemas_validation_sqlcorrectionresult"
     },
     {
       "relation": "uses",
@@ -14508,9 +16540,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L10",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "schemas_validation_sqlcorrectionresult",
-      "confidence_score": 0.5
+      "target": "schemas_validation_sqlcorrectionresult"
     },
     {
       "relation": "contains",
@@ -14551,6 +16583,106 @@
       "confidence_score": 1.0,
       "source": "scratch_test_ast_repair_testastrepairengine",
       "target": "scratch_test_ast_repair_testastrepairengine_test_surgical_where_clause_repair"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_py",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_setup"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_compile_failure_analysis_report"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_load_invalid_dataset_raises_error"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_load_valid_datasets"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_write_dataset_reports"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_rationale_74",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_load_valid_datasets"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_rationale_87",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_load_invalid_dataset_raises_error"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_rationale_92",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_compile_failure_analysis_report"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_benchmark_expansion.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_benchmark_expansion_rationale_104",
+      "target": "scratch_test_benchmark_expansion_testbenchmarkexpansion_test_write_dataset_reports"
     },
     {
       "relation": "contains",
@@ -14608,9 +16740,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_correction_mock_rationale_22",
-      "target": "scratch_test_correction_mock_mockaimessage",
-      "confidence_score": 1.0
+      "target": "scratch_test_correction_mock_mockaimessage"
     },
     {
       "relation": "calls",
@@ -14711,9 +16843,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_correction_mock_rationale_39",
-      "target": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_semantic_validation_parsing",
-      "confidence_score": 1.0
+      "target": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_semantic_validation_parsing"
     },
     {
       "relation": "rationale_for",
@@ -14731,9 +16863,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_correction_mock_rationale_75",
-      "target": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_sql_correction_fallback_to_json",
-      "confidence_score": 1.0
+      "target": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_sql_correction_fallback_to_json"
     },
     {
       "relation": "rationale_for",
@@ -14751,9 +16883,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_correction_mock_rationale_117",
-      "target": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_sql_correction_ast_success",
-      "confidence_score": 1.0
+      "target": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_sql_correction_ast_success"
     },
     {
       "relation": "rationale_for",
@@ -14771,9 +16903,9 @@
       "source_file": "scratch/test_correction_mock.py",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_correction_mock_rationale_142",
-      "target": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_record_correction_telemetry",
-      "confidence_score": 1.0
+      "target": "scratch_test_correction_mock_testvalidationandcorrectionmock_test_record_correction_telemetry"
     },
     {
       "relation": "contains",
@@ -14781,9 +16913,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "scratch_test_error_taxonomy_mockaimessage",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_mockaimessage"
     },
     {
       "relation": "contains",
@@ -14791,9 +16923,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_py",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine"
     },
     {
       "relation": "method",
@@ -14801,9 +16933,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_mockaimessage",
-      "target": "scratch_test_error_taxonomy_mockaimessage_init",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_mockaimessage_init"
     },
     {
       "relation": "rationale_for",
@@ -14811,9 +16943,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_rationale_21",
-      "target": "scratch_test_error_taxonomy_mockaimessage",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_mockaimessage"
     },
     {
       "relation": "calls",
@@ -14822,9 +16954,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L189",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_fallback",
-      "target": "scratch_test_error_taxonomy_mockaimessage",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_mockaimessage"
     },
     {
       "relation": "calls",
@@ -14833,9 +16965,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_llm_based_error_classification",
-      "target": "scratch_test_error_taxonomy_mockaimessage",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_mockaimessage"
     },
     {
       "relation": "calls",
@@ -14844,9 +16976,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_taxonomy_aware_clause_repair",
-      "target": "scratch_test_error_taxonomy_mockaimessage",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_mockaimessage"
     },
     {
       "relation": "references",
@@ -14855,9 +16987,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_mockaimessage_init",
-      "target": "scratch_test_error_taxonomy_py_str",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_py_str"
     },
     {
       "relation": "method",
@@ -14865,9 +16997,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_setup",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_setup"
     },
     {
       "relation": "method",
@@ -14875,9 +17007,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_ast",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_ast"
     },
     {
       "relation": "method",
@@ -14885,9 +17017,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_fallback",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_fallback"
     },
     {
       "relation": "method",
@@ -14895,9 +17027,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_fallback_classification_matching",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_fallback_classification_matching"
     },
     {
       "relation": "method",
@@ -14905,9 +17037,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_llm_based_error_classification",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_llm_based_error_classification"
     },
     {
       "relation": "method",
@@ -14915,9 +17047,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_taxonomy_aware_clause_repair",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_taxonomy_aware_clause_repair"
     },
     {
       "relation": "method",
@@ -14925,9 +17057,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L210",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_testerrortaxonomyengine",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_telemetry_taxonomy_storage",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_telemetry_taxonomy_storage"
     },
     {
       "relation": "rationale_for",
@@ -14935,9 +17067,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_rationale_36",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_fallback_classification_matching",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_fallback_classification_matching"
     },
     {
       "relation": "rationale_for",
@@ -14945,9 +17077,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_rationale_84",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_llm_based_error_classification",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_llm_based_error_classification"
     },
     {
       "relation": "rationale_for",
@@ -14955,9 +17087,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L116",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_rationale_116",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_taxonomy_aware_clause_repair",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_taxonomy_aware_clause_repair"
     },
     {
       "relation": "rationale_for",
@@ -14965,9 +17097,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L148",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_rationale_148",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_ast",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_ast"
     },
     {
       "relation": "rationale_for",
@@ -14975,9 +17107,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_rationale_176",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_fallback",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_fallback"
     },
     {
       "relation": "rationale_for",
@@ -14985,9 +17117,9 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L211",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_error_taxonomy_rationale_211",
-      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_telemetry_taxonomy_storage",
-      "confidence_score": 1.0
+      "target": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_telemetry_taxonomy_storage"
     },
     {
       "relation": "contains",
@@ -15363,6 +17495,178 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_py",
+      "target": "scratch_test_semantic_validator_mockaimessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_py",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_mockaimessage",
+      "target": "scratch_test_semantic_validator_mockaimessage_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_rationale_16",
+      "target": "scratch_test_semantic_validator_mockaimessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_hybrid_llm_validation_passes_alerts",
+      "target": "scratch_test_semantic_validator_mockaimessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_mockaimessage_init",
+      "target": "scratch_test_semantic_validator_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_hybrid_llm_validation_passes_alerts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_aggregation_mismatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_empty_results",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_filter_mismatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_testsemanticvalidatorhybrid",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_limit_mismatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_rationale_28",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_filter_mismatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_rationale_38",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_aggregation_mismatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_rationale_48",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_limit_mismatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_rationale_59",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_rule_based_empty_results",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_semantic_validator.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "scratch_test_semantic_validator_rationale_70",
+      "target": "scratch_test_semantic_validator_testsemanticvalidatorhybrid_test_hybrid_llm_validation_passes_alerts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "MIGRATION.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -15734,6 +18038,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
+      "source_location": "L540",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_10_benchmark_expansion_completed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
       "source_location": "L580",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -15769,6 +18083,16 @@
       "confidence_score": 1.0,
       "source": "ai_context_project_state_md",
       "target": "ai_context_project_state_priority_3_semantic_validation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L354",
+      "weight": 1.0,
+      "source": "ai_context_project_state_md",
+      "target": "ai_context_project_state_priority_3_semantic_validation_completed",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -15836,9 +18160,9 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L482",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ai_context_project_state_md",
-      "target": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
-      "confidence_score": 1.0
+      "target": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed"
     },
     {
       "relation": "contains",
@@ -16276,6 +18600,26 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L356",
       "weight": 1.0,
+      "source": "ai_context_project_state_priority_3_semantic_validation_completed",
+      "target": "ai_context_project_state_objective_356",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L360",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_3_semantic_validation_completed",
+      "target": "ai_context_project_state_status_360",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L356",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_3_semantic_validation",
       "target": "ai_context_project_state_objective_356"
@@ -16304,6 +18648,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
+      "source_location": "L371",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_4_clause_level_sql_repair",
+      "target": "ai_context_project_state_objective_371",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
       "source_location": "L374",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -16314,21 +18668,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L370",
+      "source_location": "L375",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_priority_6_observability_transparency_completed",
-      "target": "ai_context_project_state_objective_370"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L374",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_priority_6_observability_transparency_completed",
-      "target": "ai_context_project_state_status_374"
+      "source": "ai_context_project_state_priority_4_clause_level_sql_repair",
+      "target": "ai_context_project_state_status_375",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16344,11 +18688,41 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
+      "source_location": "L385",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
+      "target": "ai_context_project_state_objective_385",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
       "source_location": "L388",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
       "target": "ai_context_project_state_status_388"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L389",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_5_schema_retrieval_layer_completed",
+      "target": "ai_context_project_state_status_389",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L370",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_6_observability_transparency_completed",
+      "target": "ai_context_project_state_objective_370"
     },
     {
       "relation": "contains",
@@ -16364,11 +18738,41 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
+      "source_location": "L401",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_6_observability_transparency_completed",
+      "target": "ai_context_project_state_objective_401",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L374",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_6_observability_transparency_completed",
+      "target": "ai_context_project_state_status_374"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
       "source_location": "L404",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_6_observability_transparency_completed",
       "target": "ai_context_project_state_status_404"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L405",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_6_observability_transparency_completed",
+      "target": "ai_context_project_state_status_405",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16389,6 +18793,16 @@
       "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_7_provider_agnostic_llm_layer_completed",
       "target": "ai_context_project_state_objective_417"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L418",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_7_provider_agnostic_llm_layer_completed",
+      "target": "ai_context_project_state_objective_418",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16424,6 +18838,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
+      "source_location": "L456",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_8_enterprise_local_llm_support_completed",
+      "target": "ai_context_project_state_objective_456",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
       "source_location": "L459",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -16436,9 +18860,9 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L496",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
-      "target": "ai_context_project_state_error_categories",
-      "confidence_score": 1.0
+      "target": "ai_context_project_state_error_categories"
     },
     {
       "relation": "contains",
@@ -16446,28 +18870,18 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L534",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
-      "target": "ai_context_project_state_goal_534",
-      "confidence_score": 1.0
+      "target": "ai_context_project_state_goal_534"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L484",
+      "source_location": "L535",
       "weight": 1.0,
       "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
-      "target": "ai_context_project_state_objective_484",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L488",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
-      "target": "ai_context_project_state_status_488",
+      "target": "ai_context_project_state_goal_535",
       "confidence_score": 1.0
     },
     {
@@ -16477,8 +18891,38 @@
       "source_location": "L484",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine",
+      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
       "target": "ai_context_project_state_objective_484"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L485",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
+      "target": "ai_context_project_state_objective_485",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L488",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
+      "target": "ai_context_project_state_status_488"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L489",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine_completed",
+      "target": "ai_context_project_state_status_489",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16494,6 +18938,86 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
+      "source_location": "L553",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion_completed",
+      "target": "ai_context_project_state_datasets"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L571",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion_completed",
+      "target": "ai_context_project_state_goal_571"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L572",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion_completed",
+      "target": "ai_context_project_state_goal_572",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L560",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion_completed",
+      "target": "ai_context_project_state_metrics"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L542",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion_completed",
+      "target": "ai_context_project_state_objective_542"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L543",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion_completed",
+      "target": "ai_context_project_state_objective_543",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L546",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion_completed",
+      "target": "ai_context_project_state_status_546"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L547",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion_completed",
+      "target": "ai_context_project_state_status_547",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
       "source_location": "L556",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -16504,51 +19028,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
-      "source_location": "L556",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_priority_10_benchmark_expansion",
-      "target": "ai_context_project_state_goal_556"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L564",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_10_benchmark_expansion",
-      "target": "ai_context_project_state_goal_564",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
       "source_location": "L563",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_10_benchmark_expansion",
       "target": "ai_context_project_state_metrics"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L534",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ai_context_project_state_priority_10_benchmark_expansion",
-      "target": "ai_context_project_state_objective_534"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ai_context/project_state.md",
-      "source_location": "L542",
-      "weight": 1.0,
-      "source": "ai_context_project_state_priority_10_benchmark_expansion",
-      "target": "ai_context_project_state_objective_542",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16576,8 +19060,28 @@
       "source_file": "ai_context/project_state.md",
       "source_location": "L572",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ai_context_project_state_priority_11_production_governance_security",
-      "target": "ai_context_project_state_objective_572",
+      "target": "ai_context_project_state_objective_572"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L579",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_11_production_governance_security",
+      "target": "ai_context_project_state_objective_579"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L580",
+      "weight": 1.0,
+      "source": "ai_context_project_state_priority_11_production_governance_security",
+      "target": "ai_context_project_state_objective_580",
       "confidence_score": 1.0
     },
     {
@@ -16894,6 +19398,56 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "ai_context/project_state.md",
+      "source_location": "L484",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_9_formal_error_taxonomy_engine",
+      "target": "ai_context_project_state_objective_484"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L542",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion",
+      "target": "ai_context_project_state_objective_542"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L556",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion",
+      "target": "ai_context_project_state_goal_556"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L564",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion",
+      "target": "ai_context_project_state_goal_564"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
+      "source_location": "L534",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ai_context_project_state_priority_10_benchmark_expansion",
+      "target": "ai_context_project_state_objective_534"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ai_context/project_state.md",
       "source_location": "L526",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -16902,5 +19456,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ed81aba067f151d62f8c89725aa6853fdb270e38"
+  "built_at_commit": "c9ae90ce5ecf0e76b85ccc0dcb8c2be37a5e0082"
 }

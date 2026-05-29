@@ -34,6 +34,18 @@ class FilterRequirement(BaseModel):
     operator: str = Field(..., description="The operator to use (e.g. '=', '!=', '>', '<', 'LIKE', 'IN', 'IS NULL')")
     value: str = Field(..., description="The value or value description to compare against (e.g. 'active', 5)")
 
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_filter(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            if "value" in data and not isinstance(data["value"], str):
+                if isinstance(data["value"], bool):
+                    data["value"] = "true" if data["value"] else "false"
+                else:
+                    data["value"] = str(data["value"])
+        return data
+
+
 class AggregationRequirement(BaseModel):
     expression: str = Field(..., description="The aggregation expression (e.g. SUM(orders.amount), COUNT(users.id))")
     alias: str = Field(..., description="Alias to use for the aggregation (e.g. total_amount, user_count)")

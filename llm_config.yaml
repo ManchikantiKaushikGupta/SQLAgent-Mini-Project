@@ -12,10 +12,10 @@
 # ==============================================================================
 
 # The active provider to route all reasoning agents and schema embeddings to
-provider: vllm
+provider: gemini
 
 # The primary model to use for local/enterprise agents (e.g. Qwen/Qwen2.5-Coder-7B-Instruct)
-model: Qwen/Qwen2.5-Coder-7B-Instruct
+# model: Qwen/Qwen2.5-Coder-7B-Instruct
 
 # Default sampling temperature (0.0 enforces maximum reasoning determinism)
 temperature: 0.0

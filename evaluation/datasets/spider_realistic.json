@@ -1,0 +1,37 @@
+[
+  {
+    "id": "spider_real_01",
+    "query": "Find premium members who live in New York",
+    "reference_sql": "SELECT id, first_name, last_name FROM users WHERE city = 'New York' AND is_premium = true",
+    "difficulty": "simple",
+    "order_sensitive": false
+  },
+  {
+    "id": "spider_real_02",
+    "query": "Which categories are under the Electronics division?",
+    "reference_sql": "SELECT id, name FROM categories WHERE department = 'Electronics'",
+    "difficulty": "simple",
+    "order_sensitive": false
+  },
+  {
+    "id": "spider_real_03",
+    "query": "What is the typical price for items in the Electronics department?",
+    "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+    "difficulty": "medium",
+    "order_sensitive": false
+  },
+  {
+    "id": "spider_real_04",
+    "query": "For every individual product, retrieve the rating count, showing its catalog ID and description name.",
+    "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+    "difficulty": "medium",
+    "order_sensitive": false
+  },
+  {
+    "id": "spider_real_05",
+    "query": "Identify product titles that have collected 3 or more perfect 5-star ratings.",
+    "reference_sql": "SELECT p.name FROM products p JOIN reviews r ON p.id = r.product_id WHERE r.rating = 5 GROUP BY p.id, p.name HAVING COUNT(r.id) >= 3",
+    "difficulty": "complex",
+    "order_sensitive": false
+  }
+]

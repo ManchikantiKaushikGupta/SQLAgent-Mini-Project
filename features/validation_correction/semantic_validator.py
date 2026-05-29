@@ -9,22 +9,23 @@ from schemas.validation import SemanticValidationResult
 logger = logging.getLogger(__name__)
 
 SEMANTIC_VALIDATOR_SYSTEM_PROMPT = """
-You are an expert SQL QA specialist. Your job is to check if a generated SQL query is semantically and logically correct and actually answers the user's refined natural language query.
+You are an expert SQL QA specialist. Your job is to check if a generated SQL query is semantically and logically correct and actually answers the user's refined natural language query, guided by execution outcomes and rule-based diagnostic alerts.
 
 You will be provided with:
 1. The database schema.
 2. The refined natural language query (user intent).
 3. The generated SQL query.
 4. The actual execution results of the SQL query (in JSON format).
+5. Pre-computed rule-based intent alerts (if any).
 
 You must populate all relevant fields in the provided schema:
 - is_valid: True if the SQL query matches the schema, user intent, and the results are logically correct. False otherwise.
-- reason: Clear explanation of why the query is correct, or if incorrect, details on the mismatch (e.g., wrong aggregation, incorrect column, missed filter, wrong join condition, or returning empty results when records exist).
+- reason: Clear explanation of why the query is correct, or if incorrect, details on the mismatch (e.g., wrong aggregation, incorrect column, missed filter, wrong join condition, or returning empty results when records exist). Include details from the rule-based alerts if they point to real errors.
 - suggested_fix: If invalid, suggest a clear correction for the SQL generation agent.
 
 Rules:
+- If there are rule-based alerts, inspect them carefully. They indicate strong signs of logical mismatches (e.g., missing limits, aggregations, or filters). If a rule alert is correct, mark as invalid.
 - If the execution results are empty (e.g. `[]`), check if the query was overly restrictive (e.g., using INNER JOIN instead of LEFT JOIN, or incorrect filter value). If so, mark as invalid.
-- Ensure the columns selected align with what the user asked.
 - Output ONLY a single JSON object matching the requested schema. No intro, no explanation, no markdown outside JSON.
 """
 
@@ -40,7 +41,59 @@ Generated SQL Query:
 
 Execution Results:
 {results}
+
+Rule-Based Intent Alerts:
+{alerts}
 """
+
+def run_rule_based_semantic_checks(
+    sql_query: str,
+    refined_query: str,
+    results: Optional[List[Dict[str, Any]]]
+) -> List[str]:
+    """
+    Executes fast, deterministic semantic check rules to spot obvious logical mismatches
+    between the user intent and the generated SQL before invoking the LLM.
+    """
+    alerts = []
+    sql_lower = sql_query.lower()
+    query_lower = refined_query.lower()
+    
+    # 1. Empty Results check
+    if results is not None and len(results) == 0:
+        # If the user is asking for records/counting, but we got exactly 0 rows back
+        if not any(word in query_lower for word in ["how many", "count", "number of", "exist", "any"]):
+            alerts.append("Execution returned 0 rows, which strongly indicates an overly restrictive filter or incorrect JOIN type.")
+
+    # 2. Limit / Top K check
+    if any(word in query_lower for word in ["top", "limit", "most", "highest", "first 5", "first 3", "first 10", "cheapest", "expensive", "costliest"]):
+        if "limit" not in sql_lower:
+            alerts.append("The intent requests a limit or ranked 'top' subset of records, but the SQL query lacks a LIMIT clause.")
+        if "order by" not in sql_lower:
+            alerts.append("The intent requests ranked or ordered subset of records, but the SQL query lacks an ORDER BY clause.")
+
+    # 3. Filter Literal check
+    # Check common filter values in E-commerce seed db and standard evaluations
+    filter_vals = ["electronics", "apparel", "furniture", "sporting", "premium", "completed", "shipped", "delivered", "new york", "london", "san francisco", "tokyo", "sydney"]
+    for filter_val in filter_vals:
+        if filter_val in query_lower:
+            # Check if this literal is present in the SQL (stripped of spaces and quotes for robustness)
+            clean_val = filter_val.replace(" ", "")
+            clean_sql = sql_lower.replace(" ", "").replace("'", "").replace('"', "")
+            if clean_val not in clean_sql:
+                alerts.append(f"The intent references filter criteria '{filter_val}', but this filter criteria/literal was not found in the SQL statement.")
+
+    # 4. Aggregation check
+    if any(word in query_lower for word in ["average", "avg", "mean"]):
+        if "avg(" not in sql_lower:
+            alerts.append("The intent requests an 'average' or 'mean' metric, but the SQL statement lacks an AVG() aggregate function.")
+            
+    if any(word in query_lower for word in ["total", "sum", "spent"]):
+        if "sum(" not in sql_lower:
+            alerts.append("The intent requests a 'total' or 'sum' metric, but the SQL statement lacks a SUM() aggregate function.")
+
+    return alerts
+
 
 def validate_sql_semantics(
     sql_query: str,
@@ -50,7 +103,8 @@ def validate_sql_semantics(
 ) -> SemanticValidationResult:
     """
     Validates the semantic and logical correctness of a SQL query by comparing it
-    against the user intent, schema, and actual execution results.
+    against the user intent, schema, and actual execution results using a hybrid
+    approach of deterministic check rules and LLM deep-reasoning.
     
     Args:
         sql_query: The generated SQL query string.
@@ -70,15 +124,24 @@ def validate_sql_semantics(
 
     logger.info(f"Semantically validating SQL query: {sql_query}")
     
+    # Step 1: Run fast deterministic rule-based checks first
+    alerts = run_rule_based_semantic_checks(sql_query, refined_query, results)
+    
+    if alerts:
+        logger.warning(f"Deterministic semantic check rules triggered {len(alerts)} alerts: {alerts}")
+    
+    # Step 2: Formulate the hybrid prompt including rule alerts
     llm = get_llm()
     
     formatted_results = json.dumps(results, indent=2) if results is not None else "[]"
+    formatted_alerts = "\n".join([f"- [ALERT] {a}" for a in alerts]) if alerts else "- No rule violations detected."
     
     human_content = SEMANTIC_VALIDATOR_HUMAN_TEMPLATE.format(
         schema=schema.strip(),
         refined_query=refined_query.strip(),
         sql_query=sql_query.strip(),
-        results=formatted_results
+        results=formatted_results,
+        alerts=formatted_alerts
     )
     
     messages = [

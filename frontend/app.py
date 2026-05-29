@@ -69,7 +69,7 @@ with st.sidebar:
 st.title("DataSense AI Telemetry Portal")
 st.markdown("Ask natural language questions to analyze database schemas and monitor step diagnostics in real-time.")
 
-tab_chat, tab_obs = st.tabs(["💬 Chat Workspace", "📊 Observability Dashboard"])
+tab_chat, tab_obs, tab_bench = st.tabs(["💬 Chat Workspace", "📊 Observability Dashboard", "📈 Benchmark Analytics"])
 
 # Setup session state metrics
 if "messages" not in st.session_state:
@@ -352,4 +352,214 @@ with tab_obs:
                         
                     st.markdown("**Surgically Corrected Query (AST Patch):**")
                     st.code(item.get("corrected_sql"), language="sql")
+
+
+# ---------------------------------------------------------------------------
+# TAB 3: Benchmark Analytics
+# ---------------------------------------------------------------------------
+with tab_bench:
+    import os
+    import json
+
+    st.subheader("📈 Multi-Dataset NL2SQL Benchmark Analytics")
+    st.markdown("Monitor historical execution metrics, failure taxonomy diagnostic breakdowns, latency distributions, and token API cost metrics.")
+
+    # 1. Dataset Selection
+    dataset_options = {
+        "Baseline E-Commerce": "run_history.json",
+        "Spider": "run_history_spider.json",
+        "Spider Realistic": "run_history_spider_realistic.json",
+        "Spider SYN": "run_history_spider_syn.json"
+    }
+
+    selected_dataset = st.selectbox("🎯 Select Evaluation Target Benchmark:", list(dataset_options.keys()))
+    file_name = dataset_options[selected_dataset]
+
+    eval_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "evaluation"))
+    file_path = os.path.join(eval_dir, file_name)
+
+    if not os.path.exists(file_path):
+        st.info(f"💡 **No Benchmark Run Log Found**: Run the evaluations via `python evaluation/expanded_runner.py --dataset {selected_dataset.lower().replace(' ', '_')}` (or `python evaluation/benchmark_runner.py` for Baseline) to generate metrics telemetry.")
+    else:
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                history_data = json.load(f)
+
+            if not history_data:
+                st.warning("The run history file exists but has no records.")
+            else:
+                # Get the most recent run
+                latest_run = history_data[0]
+                summary = latest_run.get("summary", {})
+                results = latest_run.get("results", [])
+
+                # Render run metadata
+                st.markdown(f"#### 🏷️ Latest Run ID: `{summary.get('run_id', 'N/A')}` | Timestamp: `{summary.get('timestamp', 'N/A')}`")
+
+                # --- KPI Metrics Panel ---
+                acc = summary.get("execution_accuracy_pct", 0.0)
+                passed = summary.get("passed_cases", 0)
+                total = summary.get("total_cases", 0)
+                avg_lat = summary.get("average_latency_seconds", 0.0)
+                avg_tok = summary.get("avg_tokens_per_query", 0.0)
+                tot_tok = summary.get("total_tokens", 0)
+
+                # Cost estimation for Gemini 3.5 Flash:
+                # Input tokens: $0.075 per 1,000,000 tokens ($0.000000075 per token)
+                # Output tokens: $0.30 per 1,000,000 tokens ($0.00000030 per token)
+                total_cost = 0.0
+                for r in results:
+                    p_tok = r.get("prompt_tokens", 0)
+                    c_tok = r.get("completion_tokens", 0)
+                    total_cost += (p_tok * 0.000000075) + (c_tok * 0.00000030)
+
+                kpi_cols = st.columns(5)
+
+                with kpi_cols[0]:
+                    accuracy_str = f"{acc:.1f}%"
+                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Execution Accuracy</p><h2 style='margin:0.2rem 0;color:#10b981;'>{accuracy_str}</h2><p style='color:#8f95b2;margin:0;'>{passed} / {total} cases</p></div>", unsafe_allow_html=True)
+                with kpi_cols[1]:
+                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Avg Latency</p><h2 style='margin:0.2rem 0;'>{avg_lat:.2f} s</h2><p style='color:#8f95b2;margin:0;'>per NL Query</p></div>", unsafe_allow_html=True)
+                with kpi_cols[2]:
+                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Avg Token Size</p><h2 style='margin:0.2rem 0;'>{avg_tok:,.0f}</h2><p style='color:#8f95b2;margin:0;'>tokens / query</p></div>", unsafe_allow_html=True)
+                with kpi_cols[3]:
+                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Run API Cost</p><h2 style='margin:0.2rem 0;color:#3b82f6;'>${total_cost:.5f}</h2><p style='color:#8f95b2;margin:0;'>for {total} queries</p></div>", unsafe_allow_html=True)
+                with kpi_cols[4]:
+                    corr_success = summary.get("correction_success_rate_pct", 0.0)
+                    corr_passed = summary.get("queries_corrected_successfully", 0)
+                    corr_total = summary.get("queries_needing_correction", 0)
+                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Correction Rate</p><h2 style='margin:0.2rem 0;'>{corr_success:.1f}%</h2><p style='color:#8f95b2;margin:0;'>{corr_passed} / {corr_total} repaired</p></div>", unsafe_allow_html=True)
+
+                st.divider()
+
+                # --- Views Section ---
+                col_left, col_right = st.columns(2)
+
+                with col_left:
+                    # View 1: Execution Accuracy & Difficulty Breakdown
+                    st.markdown("#### 🏆 Execution Accuracy by Difficulty")
+                    diff_stats = summary.get("difficulty_breakdown", {})
+                    if diff_stats:
+                        df_diff = pd.DataFrame([
+                            {
+                                "Difficulty Tier": d.capitalize(),
+                                "Total Cases": stats.get("total", 0),
+                                "Passed Cases": stats.get("passed", 0),
+                                "Accuracy (%)": stats.get("accuracy_pct", 0.0)
+                            }
+                            for d, stats in diff_stats.items()
+                        ])
+                        st.dataframe(df_diff, hide_index=True, use_container_width=True)
+                        st.bar_chart(df_diff, x="Difficulty Tier", y="Accuracy (%)", use_container_width=True)
+                    else:
+                        st.info("No difficulty breakdown stats available.")
+
+                with col_right:
+                    # View 2: Failure Taxonomy Analysis & Categories
+                    st.markdown("#### 🔍 Failure Diagnostics & Taxonomy Breakdown")
+                    failed_results = [r for r in results if not r.get("success", False)]
+
+                    if not failed_results:
+                        st.success("🎉 **Perfect Run!** Zero failed queries encountered. The safety validation and semantic validation passed flawlessly.")
+                    else:
+                        # Define failure categories
+                        error_patterns = {
+                            "SchemaError": ["column", "table", "relation", "alias", "schema"],
+                            "JoinError": ["join", "on clause", "ambiguous"],
+                            "AggregationError": ["group by", "aggregate", "non-aggregated"],
+                            "FilterError": ["where", "filter", "operator", "syntax for type", "invalid input syntax"],
+                            "LimitError": ["limit", "offset"],
+                            "SemanticError": ["row count mismatch", "data cells do not match", "semantic validation error", "semantic validation exception"]
+                        }
+
+                        classification_counts = {k: 0 for k in error_patterns.keys()}
+                        classification_counts["UnknownError"] = 0
+
+                        for r in failed_results:
+                            matched = False
+                            err_msg = (r.get("error_message") or "").lower()
+
+                            for cat, keywords in error_patterns.items():
+                                if any(kw in err_msg for kw in keywords):
+                                    classification_counts[cat] += 1
+                                    matched = True
+                                    break
+                            if not matched:
+                                classification_counts["UnknownError"] += 1
+
+                        df_errors = pd.DataFrame([
+                            {"Error Category": k, "Failures count": v}
+                            for k, v in classification_counts.items() if v > 0
+                        ])
+
+                        if not df_errors.empty:
+                            st.dataframe(df_errors, hide_index=True, use_container_width=True)
+                            st.bar_chart(df_errors, x="Error Category", y="Failures count", horizontal=True, use_container_width=True)
+                        else:
+                            st.info("Failed queries found but could not be categorized.")
+
+                st.divider()
+
+                # --- Latency & Token side-by-side ---
+                col_lat, col_tok = st.columns(2)
+
+                with col_lat:
+                    # View 3: Latency distributions
+                    st.markdown("#### ⏱️ Query Latency Distributions")
+                    df_res = pd.DataFrame([
+                        {
+                            "Case ID": r.get("case_id"),
+                            "Latency (s)": r.get("latency_seconds", 0.0),
+                            "Status": "PASS" if r.get("success", False) else "FAIL"
+                        }
+                        for r in results
+                    ])
+                    st.bar_chart(df_res, x="Case ID", y="Latency (s)", use_container_width=True)
+
+                    # Latency stats
+                    latencies_list = [r.get("latency_seconds", 0.0) for r in results]
+                    if latencies_list:
+                        min_lat = min(latencies_list)
+                        max_lat = max(latencies_list)
+                        st.caption(f"⏱️ **Min Latency**: `{min_lat:.2f} s` | **Max Latency**: `{max_lat:.2f} s` | **Avg Latency**: `{avg_lat:.2f} s`")
+
+                with col_tok:
+                    # View 4: Token usage & Cost Projections
+                    st.markdown("#### 💸 Token Usage & Projections")
+                    df_tokens = pd.DataFrame([
+                        {
+                            "Case ID": r.get("case_id"),
+                            "Tokens Used": r.get("total_tokens", 0),
+                            "Cost ($)": (r.get("prompt_tokens", 0) * 0.000000075) + (r.get("completion_tokens", 0) * 0.00000030)
+                        }
+                        for r in results
+                    ])
+                    st.bar_chart(df_tokens, x="Case ID", y="Tokens Used", use_container_width=True)
+
+                    # Cost projections
+                    cost_100 = total_cost * (100 / total) if total > 0 else 0.0
+                    cost_1000 = total_cost * (1000 / total) if total > 0 else 0.0
+                    st.caption(f"💰 **Total Cost**: `${total_cost:.5f}` | **Projected Cost/100 queries**: `${cost_100:.4f}` | **Projected Cost/1,000 queries**: `${cost_1000:.3f}`")
+
+                st.divider()
+
+                # --- Failed Queries Explanatory Table ---
+                st.markdown("#### ❌ Failed Query Diagnostic List")
+                if failed_results:
+                    df_failed_render = pd.DataFrame([
+                        {
+                            "Case ID": r.get("case_id"),
+                            "NL Query": r.get("query"),
+                            "Error Details": r.get("error_message"),
+                            "Retries": r.get("retry_count", 0),
+                            "Tokens": r.get("total_tokens", 0)
+                        }
+                        for r in failed_results
+                    ])
+                    st.dataframe(df_failed_render, hide_index=True, use_container_width=True)
+                else:
+                    st.success("Passed all benchmark test cases successfully!")
+
+        except Exception as file_err:
+            st.error(f"Error loading or parsing benchmark run logs: {file_err}")
 

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "spider_01",
+    "query": "Show users from New York that have premium accounts",
+    "reference_sql": "SELECT id, first_name, last_name FROM users WHERE city = 'New York' AND is_premium = true",
+    "difficulty": "simple",
+    "order_sensitive": false
+  },
+  {
+    "id": "spider_02",
+    "query": "List the categories in the Electronics department",
+    "reference_sql": "SELECT id, name FROM categories WHERE department = 'Electronics'",
+    "difficulty": "simple",
+    "order_sensitive": false
+  },
+  {
+    "id": "spider_03",
+    "query": "Find the average price of products in the Electronics department",
+    "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+    "difficulty": "medium",
+    "order_sensitive": false
+  },
+  {
+    "id": "spider_04",
+    "query": "How many reviews were written for each product? Show product id and name.",
+    "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+    "difficulty": "medium",
+    "order_sensitive": false
+  },
+  {
+    "id": "spider_05",
+    "query": "Show the names of products that have at least 3 reviews with a rating of 5",
+    "reference_sql": "SELECT p.name FROM products p JOIN reviews r ON p.id = r.product_id WHERE r.rating = 5 GROUP BY p.id, p.name HAVING COUNT(r.id) >= 3",
+    "difficulty": "complex",
+    "order_sensitive": false
+  }
+]

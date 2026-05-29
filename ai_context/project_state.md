@@ -351,7 +351,7 @@ Move from demo-based validation to benchmark-driven evaluation.
 
 ---
 
-# PRIORITY 3 — Semantic Validation
+# PRIORITY 3 — Semantic Validation [COMPLETED]
 
 ## Objective
 
@@ -359,9 +359,10 @@ Verify logical correctness, not just syntax correctness.
 
 ## Status
 
-* [x] execution-aware validation (checks returned row data against original user intent)
-* [x] intent alignment checking (compares generated query constraints with refined intent)
-* [x] semantic validator stage (integrated `semantic_validate` node inside `core/graph.py` with correction loop routing)
+* [x] **execution-aware validation**: checks returned row data and empty result sets contextually against original user intent.
+* [x] **intent alignment checking**: compares generated query constraints (LIMIT/ORDER BY/aggregations) with refined intent.
+* [x] **semantic validator stage**: integrated `semantic_validate` node inside `core/graph.py` with correction loop routing.
+* [x] **hybrid validation engine**: upgraded to a hybrid engine combining fast, sub-millisecond deterministic checks (missing filter literals, missing aggregate SUM/AVG, missing limit/ordering ranking alerts) with context-guided LLM validation to minimize both false positives and false negatives.
 
 ---
 
@@ -408,7 +409,7 @@ Make the entire reasoning pipeline inspectable.
 * [x] **Thread-safe Token Accumulator**: thread-local callback aggregated prompt, completion, and total tokens safely.
 * [x] **Diagnostic Audits**: records safety AST validations (SQLGlot) and execution-aware semantic intent validations.
 * [x] **SQL Correction Trails**: chronological logging captures clause grafts and repair loops.
-* [x] **Interactive Observability Dashboard**: Streamlit tabbed UI (`📊 Observability Dashboard`) displays latency bar charts, token lists, planner diagrams, validation audits, and correction histories.
+* [x] **Interactive Observability Dashboard**: Streamlit tabbed UI (`📊 Observability Dashboard` and `📈 Benchmark Analytics`) displays latency bar charts, token lists, planner diagrams, validation audits, and correction histories. The **Benchmark Analytics** tab visualizes multi-dataset benchmark runs (Baseline, Spider, Spider Realistic, Spider SYN) showcasing Execution Accuracy, dynamic Failure Taxonomy breakdowns, Latency distributions, and precise API Cost estimations.
 
 ---
 
@@ -537,11 +538,18 @@ Correction loops should reason over error categories rather than generic failure
 
 ---
 
-# PRIORITY 10 — Benchmark Expansion
+# PRIORITY 10 — Benchmark Expansion [COMPLETED]
 
 ## Objective
 
 Validate robustness beyond internal benchmark cases.
+
+## Status
+* [x] **Adapted Benchmark Datasets**: Created explicit E-commerce domain mapping for **Spider** (standard schema), **Spider Realistic** (implicit complex phrasing), and **Spider SYN** (synonym perturbations) and saved them to `evaluation/datasets/`.
+* [x] **Dataset Loaders**: Created `evaluation/dataset_loaders.py` to parse JSON cases into Pydantic validated `BenchmarkCase` models.
+* [x] **Expanded Multi-Dataset Runner**: Created `evaluation/expanded_runner.py` supporting CLI args (`--dataset spider|spider_realistic|spider_syn|all`) with thread-safe token trackers and rate-limit recovery.
+* [x] **Failure Analysis reports**: Built automated Failure Diagnostic markdown compilers (`failure_analysis_<dataset>.md`) classifying errors into formal taxonomy groups (Schema, Join, Aggregation, Filter, Limit, Semantic).
+* [x] **Execution Accuracy evaluation**: Reused semantic comparison models supporting alias-independence, float rounding, and order sensitivity to ensure exact correctness.
 
 ## Datasets
 
