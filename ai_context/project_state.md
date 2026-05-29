@@ -66,6 +66,36 @@ Final SQL Response
 
 ---
 
+# Enterprise Architecture Vision
+
+The framework must support both cloud-hosted and fully private deployments.
+
+The architecture should remain model-provider agnostic.
+
+Supported deployment modes:
+
+1. Development Mode
+   - Gemini
+   - OpenAI
+   - Anthropic
+
+2. Enterprise Cloud Mode
+   - Gemini Enterprise
+   - Azure OpenAI
+   - Anthropic Enterprise
+
+3. Private Deployment Mode
+   - Ollama
+   - vLLM
+   - Local GPU clusters
+
+4. Air-Gapped Deployment Mode
+   - No internet access
+   - Self-hosted models only
+   - All inference performed inside enterprise infrastructure
+
+The same LangGraph workflow must operate identically across all deployment modes.
+
 # Current Tech Stack
 
 ## Core
@@ -382,6 +412,204 @@ Make the entire reasoning pipeline inspectable.
 
 ---
 
+# PRIORITY 7 — Provider-Agnostic LLM Layer
+
+## Objective
+
+Decouple agent logic from specific LLM vendors.
+
+The system should support:
+
+- Gemini
+- OpenAI
+- Anthropic
+- Ollama
+- vLLM
+
+without requiring modifications to agent implementations.
+
+## Required Architecture
+
+llm/
+├── base.py
+├── gemini_provider.py
+├── openai_provider.py
+├── anthropic_provider.py
+├── ollama_provider.py
+├── vllm_provider.py
+└── factory.py
+
+## Requirements
+
+- Unified provider interface
+- Runtime provider selection
+- Config-based model switching
+- Shared token accounting
+- Shared observability hooks
+- Shared retry policies
+
+## Success Criteria
+
+Changing:
+
+provider: gemini
+
+to
+
+provider: ollama
+
+must require zero code changes.
+
+---
+
+# PRIORITY 8 — Enterprise Local LLM Support
+
+## Objective
+
+Enable fully private enterprise deployments.
+
+## Target Models
+
+Reasoning Models
+- DeepSeek-R1
+- Qwen3
+
+General Models
+- Qwen3-Instruct
+- Llama
+
+## Deployment Backends
+
+- Ollama
+- vLLM
+
+## Requirements
+
+- Local inference support
+- No external API dependency
+- GPU-aware configuration
+- Context window management
+- Streaming support
+
+## Enterprise Benefit
+
+Database schemas and user queries never leave the organization network.
+
+---
+
+# PRIORITY 9 — Formal Error Taxonomy Engine
+
+## Objective
+
+Replace heuristic clause classification with taxonomy-guided correction.
+
+## Error Categories
+
+Schema Errors
+- Missing tables
+- Missing columns
+- Invalid aliases
+
+Join Errors
+- Missing joins
+- Incorrect join conditions
+
+Aggregation Errors
+- Missing GROUP BY
+- Incorrect aggregates
+
+Filter Errors
+- Incorrect predicates
+- Wrong comparison operators
+
+Ordering Errors
+- Incorrect ORDER BY
+
+Limit Errors
+- Incorrect LIMIT values
+
+Subquery Errors
+- Correlated subquery issues
+- Nested query issues
+
+Set Operation Errors
+- UNION
+- INTERSECT
+- EXCEPT
+
+Semantic Errors
+- Intent mismatch
+- Incorrect business logic
+
+## Goal
+
+Correction loops should reason over error categories rather than generic failure messages.
+
+---
+
+# PRIORITY 10 — Benchmark Expansion
+
+## Objective
+
+Validate robustness beyond internal benchmark cases.
+
+## Datasets
+
+- Spider
+- Spider Realistic
+- Spider SYN
+- BIRD (optional)
+
+## Metrics
+
+Primary Metric:
+- Execution Accuracy
+
+Secondary Metrics:
+- Correction Success Rate
+- Semantic Validation Accuracy
+- Latency
+- Token Cost
+
+## Goal
+
+Every architectural change must be benchmark validated.
+
+---
+
+# PRIORITY 11 — Production Governance & Security
+
+## Objective
+
+Prepare framework for enterprise adoption.
+
+## Features
+
+Role-Based Access Control
+- Query permissions
+- Table permissions
+- Column permissions
+
+Audit Logging
+- Query history
+- SQL history
+- User actions
+
+PII Protection
+- Sensitive column detection
+- Query redaction
+
+Safety Controls
+- SELECT-only enforcement
+- Dangerous query detection
+- Data leakage prevention
+
+Compliance Readiness
+- GDPR-aware deployment
+- Enterprise audit support
+
+---
+
 # Recommended Future Architecture
 
 User Query
@@ -445,6 +673,17 @@ instead of increasing agent count or orchestration complexity.
 
 # Final Vision
 
-The final system should become:
+SQLAgent should evolve into:
 
-"A reliable, explainable, evaluation-driven NL2SQL orchestration framework combining structured reasoning, deterministic validation, semantic correctness checking, and iterative SQL repair."
+"A provider-agnostic, enterprise-ready NL2SQL orchestration framework capable of operating with both cloud-hosted and self-hosted LLMs, combining structured reasoning, semantic validation, taxonomy-guided correction, deterministic safeguards, benchmark-driven evaluation, and enterprise-grade observability."
+
+Key Characteristics:
+
+- Explainable
+- Auditable
+- Secure
+- Model-agnostic
+- Enterprise deployable
+- Benchmark validated
+- Cost aware
+- Privacy preserving
