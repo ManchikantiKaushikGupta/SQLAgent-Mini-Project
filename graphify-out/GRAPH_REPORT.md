@@ -1,16 +1,16 @@
 # Graph Report - SQLAgent-Mini-Project  (2026-05-29)
 
 ## Corpus Check
-- 61 files · ~121,063 words
+- 64 files · ~123,642 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 613 nodes · 981 edges · 54 communities (47 shown, 7 thin omitted)
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 98 edges (avg confidence: 0.5)
+- 650 nodes · 1063 edges · 61 communities (53 shown, 8 thin omitted)
+- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 113 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `51a101a8`
+- Built from commit: `ed81aba0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -57,48 +57,55 @@
 - [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
+- [[_COMMUNITY_Community 54|Community 54]]
+- [[_COMMUNITY_Community 55|Community 55]]
+- [[_COMMUNITY_Community 56|Community 56]]
+- [[_COMMUNITY_Community 57|Community 57]]
+- [[_COMMUNITY_Community 58|Community 58]]
+- [[_COMMUNITY_Community 59|Community 59]]
+- [[_COMMUNITY_Community 60|Community 60]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `LLMProvider` - 48 edges
-2. `TestLLMProviders` - 23 edges
-3. `OllamaProvider` - 22 edges
-4. `VLLMProvider` - 22 edges
-5. `get_llm()` - 21 edges
-6. `init_metrics_state()` - 20 edges
-7. `GeminiProvider` - 18 edges
-8. `AnthropicProvider` - 17 edges
-9. `OpenAIProvider` - 17 edges
-10. `track_latency()` - 15 edges
+2. `get_llm()` - 23 edges
+3. `TestLLMProviders` - 23 edges
+4. `init_metrics_state()` - 22 edges
+5. `OllamaProvider` - 21 edges
+6. `VLLMProvider` - 21 edges
+7. `SQLErrorClassification` - 21 edges
+8. `correct_sql()` - 18 edges
+9. `GeminiProvider` - 18 edges
+10. `SQLCorrectionResult` - 18 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `SQLCorrectionResult` --uses--> `SQLCorrectionResult`  [INFERRED]
+  features/validation_correction/agent.py → schemas/validation.py
+- `SQLErrorClassification` --uses--> `SQLErrorClassification`  [INFERRED]
+  features/validation_correction/repair_engine.py → schemas/error_taxonomy.py
 - `SQLAgentState` --uses--> `QueryPlan`  [INFERRED]
   core/state.py → schemas/planner.py
 - `str` --uses--> `QueryPlan`  [INFERRED]
   features/query_planning/agent.py → schemas/planner.py
 - `QueryPlan` --uses--> `QueryPlan`  [INFERRED]
   features/query_planning/agent.py → schemas/planner.py
-- `str` --uses--> `QueryPlan`  [INFERRED]
-  features/sql_generation/agent.py → schemas/planner.py
-- `QueryPlan` --uses--> `QueryPlan`  [INFERRED]
-  features/sql_generation/agent.py → schemas/planner.py
 
-## Communities (54 total, 7 thin omitted)
+## Communities (61 total, 8 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.09
-Nodes (45): decide_after_execution(), decide_after_semantic_validation(), decide_after_syntax_validation(), node_clarify_intent(), node_correct_sql(), node_execute_sql(), node_query_planning(), node_retrieve_schema() (+37 more)
+Cohesion: 0.07
+Nodes (52): decide_after_execution(), decide_after_semantic_validation(), decide_after_syntax_validation(), node_clarify_intent(), node_correct_sql(), node_execute_sql(), node_query_planning(), node_retrieve_schema() (+44 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.29
-Nodes (6): str, TestASTRepairEngine, detect_failing_clause(), Parses the error message string to detect which clause is failing.     Returns:, Surgically repairs a specific failing clause in a SQL query using SQLGlot AST ma, repair_sql_clause()
+Cohesion: 0.25
+Nodes (6): Any, BaseChatModel, Embeddings, float, Instantiates ChatAnthropic with registered thread-local callbacks., Anthropic does not offer a native text embeddings API in LangChain.         We f
 
 ### Community 2 - "Community 2"
 Cohesion: 0.09
 Nodes (20): ndarray, Retrieval Module Initialization, get_schema_retriever(), Any, bool, int, str, FAISS-Based Database Schema Retriever  Dynamically reflects database metadata us (+12 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.07
-Nodes (34): ABC, extract_text(), get_llm(), Any, BaseChatModel, float, str, Returns a configured LangChain ChatModel instance from the active provider. (+26 more)
+Cohesion: 0.09
+Nodes (24): Any, BaseModel, LangGraph State Definition  Represents the memory passed between nodes during ex, QueryPlan, str, QueryPlan, str, generate_query_plan() (+16 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.36
@@ -125,16 +132,16 @@ Cohesion: 0.10
 Nodes (21): 1. Unstructured LLM Outputs, 2. Full SQL Regeneration During Correction, 3. Validation Is Mostly Syntax-Level, 4. No Real Schema Retrieval Layer, 5. Limited Observability, Critical Weaknesses To Address, Current Problem, Current Validation (+13 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.10
-Nodes (26): bool, str, Any, str, Validation & Correction Pydantic Schemas  Defines structural models for SQL sema, Structured response representing the semantic correctness verification of a gene, Structured response representing the output of the query correction agent., SemanticValidationResult (+18 more)
+Cohesion: 0.16
+Nodes (14): Any, str, Structured response representing the semantic correctness verification of a gene, SemanticValidationResult, MockAIMessage, str, Unit test suite using mock LLM responses to verify SQL validation, correction, a, A clean, realistic mock of a LangChain AIMessage response. (+6 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.08
-Nodes (36): ask_database(), QueryRequest, QueryResponse, FastAPI Routes  Defines endpoints for the SQLAgent application., Takes a natural language query, runs it through the SQLAgent graph,     and retu, BenchmarkResult, BenchmarkSummary, build_workflow() (+28 more)
+Nodes (37): ask_database(), QueryRequest, QueryResponse, FastAPI Routes  Defines endpoints for the SQLAgent application., Takes a natural language query, runs it through the SQLAgent graph,     and retu, BenchmarkResult, BenchmarkSummary, build_workflow() (+29 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.10
-Nodes (25): Any, BaseModel, bool, execute_sql_query(), get_db(), str, Database connection and utilities.  Handles PostgreSQL connection setup using SQ, Yields a database session. (+17 more)
+Cohesion: 0.17
+Nodes (17): bool, execute_sql_query(), get_db(), str, Database connection and utilities.  Handles PostgreSQL connection setup using SQ, Yields a database session., Executes a raw SQL SELECT query against the PostgreSQL database safely., compare_results() (+9 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.07
@@ -153,8 +160,8 @@ Cohesion: 0.33
 Nodes (6): Backend, Core, Current Tech Stack, Frontend, LLM Providers, SQL Tooling
 
 ### Community 34 - "Community 34"
-Cohesion: 0.29
-Nodes (8): Deployment Backends, Enterprise Benefit, Implemented Specifications, Objective, PRIORITY 8 — Enterprise Local LLM Support, PRIORITY 8 — Enterprise Local LLM Support [COMPLETED], Requirements, Target Models
+Cohesion: 0.50
+Nodes (4): Implemented Specifications, Objective, PRIORITY 8 — Enterprise Local LLM Support [COMPLETED], Target Models
 
 ### Community 35 - "Community 35"
 Cohesion: 0.40
@@ -170,11 +177,11 @@ Nodes (4): Implemented Architecture, Objective, PRIORITY 7 — Provider-Agnostic
 
 ### Community 38 - "Community 38"
 Cohesion: 0.33
-Nodes (6): Error Categories, Goal, Goal, Objective, Objective, PRIORITY 9 — Formal Error Taxonomy Engine
+Nodes (7): Error Categories, Goal, Goal, Objective, PRIORITY 9 — Formal Error Taxonomy Engine, PRIORITY 9 — Formal Error Taxonomy Engine [COMPLETED], Status
 
 ### Community 39 - "Community 39"
-Cohesion: 0.67
-Nodes (3): Current Maturity, Current Project Status, Main Focus Going Forward
+Cohesion: 0.14
+Nodes (9): MockAIMessage, str, Verify AST clause repair with taxonomy classification context., Verify taxonomy integration in correct_sql when AST repair succeeds., Verify taxonomy integration in correct_sql when AST fails and falls back to full, Mock of LangChain AIMessage response., Verify rule-based taxonomy heuristics on common SQL failures., Verify LLM-driven structured error classification parsing. (+1 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.67
@@ -190,59 +197,83 @@ Nodes (3): Objective, PRIORITY 5 — Schema Retrieval Layer [COMPLETED], Status
 
 ### Community 45 - "Community 45"
 Cohesion: 0.18
-Nodes (23): AnthropicProvider, Concrete provider implementation for Anthropic Claude., LLMProviderFactory, load_config(), Any, LLMProvider, str, LLM Provider Factory  Manages runtime config loading from yaml or env variables (+15 more)
+Nodes (26): BaseCallbackHandler, AnthropicProvider, Concrete provider implementation for Anthropic Claude., get_provider(), LLMProviderFactory, load_config(), Any, LLMProvider (+18 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.09
 Nodes (21): 1. Quick Start (Configuring a Provider), 2. Setting Up Local / Private Deployment Mode, 3. Developer Notes, Anthropic Claude, code:env (GOOGLE_API_KEY=your-api-key), code:bash (python -m vllm.entrypoints.openai.api_server --model Qwen/Qw), code:yaml (provider: vllm), code:yaml (vllm:) (+13 more)
 
 ### Community 47 - "Community 47"
-Cohesion: 0.15
-Nodes (10): Any, BaseChatModel, Embeddings, float, str, Instantiates ChatOpenAI pointed to vLLM's custom base URL.         Runs lazy hea, Instantiates OpenAIEmbeddings pointed to vLLM's custom base URL and runs validat, Instantiates ChatOpenAI pointed to vLLM's custom base URL. (+2 more)
+Cohesion: 0.18
+Nodes (8): Any, BaseChatModel, Embeddings, float, str, Instantiates ChatOpenAI pointed to vLLM's custom base URL.         Runs lazy hea, Instantiates OpenAIEmbeddings pointed to vLLM's custom base URL and runs validat, Pings the vLLM local endpoint and checks if the configured model is hosted.
 
 ### Community 48 - "Community 48"
-Cohesion: 0.11
-Nodes (10): Verifies VLLMProvider pointed to OpenAI-compatible base URL., Verifies VLLMProvider pointed to OpenAI-compatible base URL., Verifies VLLMProvider pointed to OpenAI-compatible base URL., Verifies vLLM check_health passes when server responds with the matching model., Verifies vLLM check_health raises ConnectionError when server is offline., Verifies vLLM check_health raises RuntimeError when the configured model is abse, Verifies factory correctly loads defaults from environment variables when YAML i, Verifies OpenAIProvider instantiates standard OpenAI classes. (+2 more)
+Cohesion: 0.07
+Nodes (14): Verifies OllamaProvider configurations for local inference., Verifies check_health passes when server responds with the matching model., Verifies check_health raises ConnectionError when server is offline., Verifies check_health raises RuntimeError when the configured model is absent., Verifies VLLMProvider pointed to OpenAI-compatible base URL., Verifies vLLM check_health passes when server responds with the matching model., Verifies vLLM check_health raises ConnectionError when server is offline., Verifies vLLM check_health raises RuntimeError when the configured model is abse (+6 more)
 
 ### Community 49 - "Community 49"
-Cohesion: 0.25
-Nodes (6): Any, BaseChatModel, Embeddings, float, Instantiates and returns a configured LangChain ChatModel.          Args:, Instantiates and returns a configured LangChain Embeddings model.          Args:
+Cohesion: 0.14
+Nodes (11): ABC, apply_shared_retry(), Any, BaseChatModel, Embeddings, float, int, LLM Provider Base Interface  Defines the abstract contract for all model provide (+3 more)
 
 ### Community 50 - "Community 50"
-Cohesion: 0.07
-Nodes (24): get_active_callbacks(), Returns the list of active callbacks for the current thread., Any, BaseChatModel, Embeddings, float, str, Anthropic LLM Provider Implementation  Configures ChatAnthropic and handles fall (+16 more)
+Cohesion: 0.10
+Nodes (17): get_active_callbacks(), Returns the list of active callbacks for the current thread., Anthropic LLM Provider Implementation  Configures ChatAnthropic and handles fall, LLMProvider, Abstract interface defining the contract for provider-agnostic model creation., str, Gemini LLM Provider Implementation  Configures ChatGoogleGenerativeAI and Google, Ollama LLM Provider Implementation  Configures ChatOllama and OllamaEmbeddings f (+9 more)
 
 ### Community 51 - "Community 51"
-Cohesion: 0.12
-Nodes (15): 1. Design Philosophy, 2. Directory Layout, 3. Core Components, 4. Local LLM & Ollama Support (Priority 8), Abstract Provider (`llm/base.py`), code:text (llm/), code:yaml (provider: gemini), Configuration (`llm_config.yaml`) (+7 more)
+Cohesion: 0.11
+Nodes (17): 1. Design Philosophy, 2. Directory Layout, 3. Core Components, 4. Local LLM & Ollama Support (Priority 8), 5. Enterprise vLLM Support (Priority 8 Extension), Abstract Provider (`llm/base.py`), code:text (llm/), code:yaml (provider: gemini) (+9 more)
 
 ### Community 52 - "Community 52"
 Cohesion: 0.25
 Nodes (6): Any, BaseChatModel, Embeddings, float, Instantiates ChatGoogleGenerativeAI with registered thread-local callbacks., Instantiates GoogleGenerativeAIEmbeddings.
 
 ### Community 53 - "Community 53"
-Cohesion: 0.09
-Nodes (18): OllamaProvider, Any, BaseChatModel, Embeddings, float, str, Instantiates ChatOllama with registered thread-local callbacks and streaming., Instantiates OllamaEmbeddings and runs validation checks. (+10 more)
+Cohesion: 0.18
+Nodes (8): Any, BaseChatModel, Embeddings, float, str, Instantiates ChatOllama with registered thread-local callbacks and streaming., Instantiates OllamaEmbeddings and runs validation checks., Pings the Ollama local endpoint and checks if the configured model is already pu
+
+### Community 55 - "Community 55"
+Cohesion: 0.18
+Nodes (13): extract_text(), get_llm(), Any, BaseChatModel, float, str, Returns a configured LangChain ChatModel instance from the active provider., Safely extracts string content from an LLM response or AIMessage.     Handles st (+5 more)
+
+### Community 56 - "Community 56"
+Cohesion: 0.21
+Nodes (9): SQLErrorClassification, str, TestASTRepairEngine, detect_failing_clause(), Surgically repairs a specific failing clause in a SQL query using SQLGlot AST ma, Parses the error message string to detect which clause is failing.     Returns:, Surgically repairs a specific failing clause in a SQL query using SQLGlot AST ma, Parses the error message string to detect which clause is failing.     Returns: (+1 more)
+
+### Community 57 - "Community 57"
+Cohesion: 0.26
+Nodes (10): SQLErrorClassification, str, SQL Error Taxonomy Pydantic Schemas  Defines the formal representation of SQL sy, Structured classification of a SQL error within the formal error taxonomy., SQLErrorClassification, classify_sql_error(), fallback_classify_error(), SQL Error Taxonomy Classifier Module  Uses LLM-based structured diagnostics to c (+2 more)
+
+### Community 58 - "Community 58"
+Cohesion: 0.22
+Nodes (9): bool, str, Validation & Correction Pydantic Schemas  Defines structural models for SQL sema, Structured response representing the output of the query correction agent., Structured response representing the output of the query correction agent., SQLCorrectionResult, Parses the SQL query with SQLGlot to ensure it is syntactically valid     and st, Parses the SQL query with SQLGlot to ensure it is syntactically valid     and st (+1 more)
+
+### Community 59 - "Community 59"
+Cohesion: 0.25
+Nodes (5): Verify that correct_sql handles a successful AST clause repair directly., Verify that correct_sql handles a successful AST clause repair directly., Verify that correct_sql falls back to LLM JSON parsing on AST repair failure., Verify that correct_sql falls back to LLM JSON parsing on AST repair failure., TestValidationAndCorrectionMock
+
+### Community 60 - "Community 60"
+Cohesion: 0.67
+Nodes (3): Current Maturity, Current Project Status, Main Focus Going Forward
 
 ## Knowledge Gaps
-- **134 isolated node(s):** `int`, `str`, `liveServer.settings.port`, `float`, `BaseChatModel` (+129 more)
+- **132 isolated node(s):** `int`, `str`, `liveServer.settings.port`, `float`, `BaseChatModel` (+127 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `get_llm()` connect `Community 3` to `Community 0`, `Community 1`, `Community 45`, `Community 50`, `Community 23`?**
-  _High betweenness centrality (0.126) - this node is a cross-community bridge._
-- **Why does `LLMProvider` connect `Community 50` to `Community 3`, `Community 45`, `Community 47`, `Community 48`, `Community 49`, `Community 52`, `Community 53`?**
-  _High betweenness centrality (0.066) - this node is a cross-community bridge._
-- **Why does `get_provider()` connect `Community 3` to `Community 2`, `Community 45`?**
-  _High betweenness centrality (0.039) - this node is a cross-community bridge._
+- **Why does `get_llm()` connect `Community 55` to `Community 0`, `Community 3`, `Community 45`, `Community 49`, `Community 50`, `Community 23`, `Community 24`, `Community 57`, `Community 56`?**
+  _High betweenness centrality (0.145) - this node is a cross-community bridge._
+- **Why does `LLMProvider` connect `Community 50` to `Community 1`, `Community 45`, `Community 47`, `Community 48`, `Community 49`, `Community 52`, `Community 53`, `Community 54`?**
+  _High betweenness centrality (0.062) - this node is a cross-community bridge._
+- **Why does `correct_sql()` connect `Community 55` to `Community 0`, `Community 39`, `Community 23`, `Community 56`, `Community 57`, `Community 58`, `Community 59`?**
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **Are the 36 inferred relationships involving `LLMProvider` (e.g. with `AnthropicProvider` and `Any`) actually correct?**
   _`LLMProvider` has 36 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 7 inferred relationships involving `TestLLMProviders` (e.g. with `AnthropicProvider` and `LLMProvider`) actually correct?**
   _`TestLLMProviders` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 7 inferred relationships involving `OllamaProvider` (e.g. with `LLMProviderFactory` and `Any`) actually correct?**
   _`OllamaProvider` has 7 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 7 inferred relationships involving `VLLMProvider` (e.g. with `LLMProviderFactory` and `Any`) actually correct?**
-  _`VLLMProvider` has 7 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `int`, `str`, `Complex Database Seeder for Presentation  Creates a realistic E-Commerce schema` to the rest of the system?**
+  _291 weakly-connected nodes found - possible documentation gaps or missing edges._

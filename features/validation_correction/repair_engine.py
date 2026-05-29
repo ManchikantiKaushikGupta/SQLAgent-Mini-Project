@@ -3,13 +3,14 @@ import re
 import logging
 import sqlglot
 from sqlglot import exp
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Any
 from langchain_core.messages import SystemMessage, HumanMessage
 from core.llm import get_llm
+from schemas.error_taxonomy import SQLErrorClassification
 
 logger = logging.getLogger(__name__)
 
-# System instructions to enforce single clause output
+# Legacy System instructions to enforce single clause output (for backward compatibility)
 CLAUSE_REPAIR_SYSTEM_PROMPT = """
 You are an expert SQL clause repair assistant. 
 Your job is to repair a SPECIFIC clause of a SQL query that failed a validation or execution check.
@@ -46,6 +47,51 @@ Error Message:
 Failing Clause to Correct: {clause_type_upper}
 """
 
+# New Taxonomy-Aware System Prompts
+TAXONOMY_AWARE_CLAUSE_REPAIR_SYSTEM_PROMPT = """
+You are an expert SQL clause repair assistant. 
+Your job is to repair a SPECIFIC clause of a SQL query that failed a validation or execution check, guided by a formal error taxonomy classification.
+
+You will be provided with:
+1. The database schema.
+2. The original natural language query (user intent).
+3. The failed SQL query.
+4. The exact error message.
+5. The formal error classification (category, subcategory, description, and suggested fix).
+6. The specific clause type to repair.
+
+Rules:
+- Generate ONLY the corrected {clause_type_upper} clause.
+- Output ONLY the single raw clause string. For example, if repairing WHERE, output a string like:
+  WHERE users.status = 'active'
+- Do NOT generate a full SELECT query.
+- Do NOT include any explanations, markdown code blocks, or introductory text.
+- Refer strictly to table and column names in the schema.
+"""
+
+TAXONOMY_AWARE_CLAUSE_REPAIR_HUMAN_TEMPLATE = """
+Database Schema:
+{schema}
+
+User Intent:
+{original_query}
+
+Failed SQL Query:
+{failed_sql}
+
+Error Message:
+{error_message}
+
+Formal Error Classification:
+- Category: {error_category}
+- Subcategory: {error_subcategory}
+- Diagnostics: {error_description}
+- Recommended Fix: {suggested_fix}
+
+Failing Clause to Correct: {clause_type_upper}
+"""
+
+
 def detect_failing_clause(error_message: str) -> Optional[str]:
     """
     Parses the error message string to detect which clause is failing.
@@ -76,11 +122,13 @@ def detect_failing_clause(error_message: str) -> Optional[str]:
         
     return None
 
+
 def repair_sql_clause(
     failed_sql: str,
     error_message: str,
     schema: str,
-    original_query: str
+    original_query: str,
+    classification: Optional[SQLErrorClassification] = None
 ) -> Optional[str]:
     """
     Surgically repairs a specific failing clause in a SQL query using SQLGlot AST manipulation.
@@ -90,6 +138,7 @@ def repair_sql_clause(
         error_message: The error generated.
         schema: The database schema.
         original_query: The user intent.
+        classification: The optional Pydantic SQLErrorClassification model to guide the repair.
         
     Returns:
         The corrected SQL query string, or None if AST repair is not applicable or fails.
@@ -101,26 +150,52 @@ def repair_sql_clause(
         logger.warning(f"Failed to parse failed SQL into AST for clause repair: {e}. Falling back to full regeneration.")
         return None
 
-    # Step 2: Classify which clause is failing
-    clause_type = detect_failing_clause(error_message)
+    # Step 2: Determine which clause is failing (from classification or fallback)
+    clause_type = None
+    if classification is not None and classification.failing_clause is not None:
+        # Map taxonomy failing clauses to supported AST grafting types
+        tax_clause = classification.failing_clause
+        if tax_clause in ("group", "joins", "where", "limit", "order"):
+            clause_type = tax_clause
+        else:
+            logger.info(f"Taxonomy clause '{tax_clause}' is not supported by surgical AST grafting. Falling back to full correction.")
+            return None
+    else:
+        clause_type = detect_failing_clause(error_message)
+
     if not clause_type:
         logger.info("Could not determine specific failing SQL clause type. Falling back to full query correction.")
         return None
         
     clause_type_upper = clause_type.upper() if clause_type != "joins" else "JOIN"
-    logger.info(f"Failing clause detected: '{clause_type_upper}'. Commencing surgical clause patch...")
+    logger.info(f"Failing clause target: '{clause_type_upper}'. Commencing surgical clause patch...")
 
     # Step 3: Call the LLM to get ONLY the repaired clause
     llm = get_llm()
     
-    system_content = CLAUSE_REPAIR_SYSTEM_PROMPT.format(clause_type_upper=clause_type_upper)
-    human_content = CLAUSE_REPAIR_HUMAN_TEMPLATE.format(
-        schema=schema.strip(),
-        original_query=original_query.strip(),
-        failed_sql=failed_sql.strip(),
-        error_message=error_message.strip(),
-        clause_type_upper=clause_type_upper
-    )
+    # Use taxonomy-aware prompt if classification is provided
+    if classification is not None:
+        system_content = TAXONOMY_AWARE_CLAUSE_REPAIR_SYSTEM_PROMPT.format(clause_type_upper=clause_type_upper)
+        human_content = TAXONOMY_AWARE_CLAUSE_REPAIR_HUMAN_TEMPLATE.format(
+            schema=schema.strip(),
+            original_query=original_query.strip(),
+            failed_sql=failed_sql.strip(),
+            error_message=error_message.strip(),
+            error_category=classification.category,
+            error_subcategory=classification.subcategory,
+            error_description=classification.description,
+            suggested_fix=classification.suggested_fix,
+            clause_type_upper=clause_type_upper
+        )
+    else:
+        system_content = CLAUSE_REPAIR_SYSTEM_PROMPT.format(clause_type_upper=clause_type_upper)
+        human_content = CLAUSE_REPAIR_HUMAN_TEMPLATE.format(
+            schema=schema.strip(),
+            original_query=original_query.strip(),
+            failed_sql=failed_sql.strip(),
+            error_message=error_message.strip(),
+            clause_type_upper=clause_type_upper
+        )
     
     messages = [
         SystemMessage(content=system_content),

@@ -479,11 +479,19 @@ General Models
 
 ---
 
-# PRIORITY 9 — Formal Error Taxonomy Engine
+# PRIORITY 9 — Formal Error Taxonomy Engine [COMPLETED]
 
 ## Objective
 
 Replace heuristic clause classification with taxonomy-guided correction.
+
+## Status
+
+* [x] **Pydantic taxonomy schemas**: added `schemas/error_taxonomy.py` defining formal `SQLErrorClassification` schema for type-safe taxonomy representation.
+* [x] **LLM-based Diagnostics Classifier**: added `features/validation_correction/error_classifier.py` leveraging structured LLM diagnostics and robust rule-based keyword fallback heuristics.
+* [x] **Taxonomy-aware surgical repair**: updated `repair_sql_clause` in `features/validation_correction/repair_engine.py` to ingest formal classification models and leverage taxonomy-guided clause patches.
+* [x] **Taxonomy-aware fallback loop**: updated validation correction fallback prompts in `features/validation_correction/prompt.py` and recovery logic in `features/validation_correction/agent.py` to incorporate diagnostic categories and fix suggestions.
+* [x] **Structured Observability events**: extended history logs inside `observability/metrics.py` to automatically serialize and persist error classification taxonomy telemetry in `state["metrics"]["correction_history"]`.
 
 ## Error Categories
 

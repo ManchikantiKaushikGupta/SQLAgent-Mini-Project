@@ -12,6 +12,7 @@ from unittest.mock import MagicMock, patch
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from schemas.validation import SemanticValidationResult, SQLCorrectionResult
+from schemas.error_taxonomy import SQLErrorClassification
 from features.validation_correction.semantic_validator import validate_sql_semantics
 from features.validation_correction.agent import correct_sql, validate_sql_safety
 from observability.metrics import record_correction, init_metrics_state
@@ -67,10 +68,18 @@ class TestValidationAndCorrectionMock(unittest.TestCase):
         self.assertEqual(result.reason, "The query uses an unquoted string literal for the filter value.")
         self.assertEqual(result.suggested_fix, "Change John to 'John'")
 
+    @patch("features.validation_correction.agent.classify_sql_error")
     @patch("features.validation_correction.agent.repair_sql_clause")
     @patch("features.validation_correction.agent.get_llm")
-    def test_sql_correction_fallback_to_json(self, mock_get_llm, mock_repair_sql_clause):
+    def test_sql_correction_fallback_to_json(self, mock_get_llm, mock_repair_sql_clause, mock_classify):
         """Verify that correct_sql falls back to LLM JSON parsing on AST repair failure."""
+        mock_classify.return_value = SQLErrorClassification(
+            category="FilterError",
+            subcategory="Invalid literal",
+            description="Testing fallback mock",
+            failing_clause="where",
+            suggested_fix="Fix literal"
+        )
         # AST clause repair returns None to trigger fallback
         mock_repair_sql_clause.return_value = None
 
@@ -102,9 +111,17 @@ class TestValidationAndCorrectionMock(unittest.TestCase):
         self.assertEqual(result.corrected_sql, "SELECT id, name, email FROM users WHERE name = 'John';")
 
 
+    @patch("features.validation_correction.agent.classify_sql_error")
     @patch("features.validation_correction.agent.repair_sql_clause")
-    def test_sql_correction_ast_success(self, mock_repair_sql_clause):
+    def test_sql_correction_ast_success(self, mock_repair_sql_clause, mock_classify):
         """Verify that correct_sql handles a successful AST clause repair directly."""
+        mock_classify.return_value = SQLErrorClassification(
+            category="FilterError",
+            subcategory="Invalid literal",
+            description="Testing AST success mock",
+            failing_clause="where",
+            suggested_fix="Fix literal"
+        )
         expected_sql = "SELECT id, name, email FROM users WHERE name = 'John';"
         mock_repair_sql_clause.return_value = expected_sql
 

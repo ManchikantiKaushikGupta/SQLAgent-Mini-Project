@@ -17,6 +17,7 @@ from features.validation_correction.prompt import (
 
 from schemas.validation import SQLCorrectionResult
 from features.validation_correction.repair_engine import repair_sql_clause
+from features.validation_correction.error_classifier import classify_sql_error
 
 
 def validate_sql_safety(sql: str, dialect: str = "postgres") -> bool:
@@ -80,24 +81,34 @@ def correct_sql(failed_sql: str, error_message: str, schema: str, original_query
     import json
     logger = logging.getLogger(__name__)
 
-    # Try AST-based clause repair first
+    # Diagnose the SQL error using the formal taxonomy engine
+    classification = classify_sql_error(
+        failed_sql=failed_sql,
+        error_message=error_message,
+        schema=schema,
+        original_query=original_query
+    )
+
+    # Try AST-based surgical clause repair first
     try:
         repaired_sql = repair_sql_clause(
             failed_sql=failed_sql,
             error_message=error_message,
             schema=schema,
-            original_query=original_query
+            original_query=original_query,
+            classification=classification
         )
         if repaired_sql:
             logger.info("Successfully repaired SQL using surgical clause-level AST grafting.")
             return SQLCorrectionResult(
                 thought_process="Surgically repaired SQL using clause-level AST grafting.",
-                corrected_sql=repaired_sql
+                corrected_sql=repaired_sql,
+                error_classification=classification
             )
     except Exception as re_err:
         logger.warning(f"AST-based surgical clause repair failed: {re_err}. Falling back to full query correction.")
 
-    logger.info("Executing full SQL query regeneration fallback...")
+    logger.info("Executing taxonomy-aware full SQL query regeneration fallback...")
     llm = get_llm()
 
     human_content = VALIDATION_CORRECTION_HUMAN_TEMPLATE.format(
@@ -105,6 +116,10 @@ def correct_sql(failed_sql: str, error_message: str, schema: str, original_query
         query=original_query.strip(),
         failed_sql=failed_sql.strip(),
         error_message=error_message.strip(),
+        error_category=classification.category,
+        error_subcategory=classification.subcategory,
+        error_description=classification.description,
+        suggested_fix=classification.suggested_fix
     )
 
     messages = [
@@ -133,6 +148,8 @@ def correct_sql(failed_sql: str, error_message: str, schema: str, original_query
         result = SQLCorrectionResult.model_validate(data)
     else:
         result = SQLCorrectionResult.parse_obj(data)
+
+    result.error_classification = classification
 
     logger.info(
         f"SQL correction completed successfully. "

@@ -95,7 +95,8 @@ def node_correct_sql(state: SQLAgentState):
         failed_sql=failed_sql,
         error_message=error_msg,
         corrected_sql=corrected_sql,
-        thought_process=thought_process
+        thought_process=thought_process,
+        error_classification=correction_result.error_classification
     )
     return {"sql_query": corrected_sql, "retry_count": current_retries + 1, "error_message": None, "metrics": state["metrics"]}
 

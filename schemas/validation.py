@@ -25,6 +25,8 @@ class SemanticValidationResult(BaseModel):
     )
 
 
+from schemas.error_taxonomy import SQLErrorClassification
+
 class SQLCorrectionResult(BaseModel):
     """
     Structured response representing the output of the query correction agent.
@@ -37,3 +39,5 @@ class SQLCorrectionResult(BaseModel):
         ..., 
         description="The finalized, fully corrected raw SELECT SQL statement."
     )
+    error_classification: Optional[SQLErrorClassification] = None
+

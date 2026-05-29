@@ -117,7 +117,8 @@ def record_correction(
     failed_sql: str,
     error_message: str,
     corrected_sql: str,
-    thought_process: str = ""
+    thought_process: str = "",
+    error_classification: Optional[Any] = None
 ) -> None:
     """
     Appends a detailed log of a query repair/correction attempt to the loop history.
@@ -129,14 +130,26 @@ def record_correction(
         error_message: Compiler/DB validation exception text.
         corrected_sql: The repaired SQL statement.
         thought_process: The repair reasoning explaining the repair action.
+        error_classification: An optional SQLErrorClassification model or dictionary representing the diagnosed error taxonomy.
     """
     init_metrics_state(state)
+    
+    classification_dict = None
+    if error_classification is not None:
+        if hasattr(error_classification, "model_dump"):
+            classification_dict = error_classification.model_dump()
+        elif hasattr(error_classification, "dict"):
+            classification_dict = error_classification.dict()
+        elif isinstance(error_classification, dict):
+            classification_dict = error_classification
+
     state["metrics"]["correction_history"].append({
         "attempt": attempt_number,
         "failed_sql": failed_sql,
         "error_message": error_message,
         "corrected_sql": corrected_sql,
         "thought_process": thought_process,
+        "error_taxonomy": classification_dict,
         "timestamp": time.strftime("%H:%M:%S")
     })
 
