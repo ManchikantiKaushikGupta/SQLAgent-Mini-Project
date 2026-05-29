@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\llm.py": {
-    "mtime": 1779978383.8295834,
-    "ast_hash": "fa895935d5c53ab5bf20ec495b603923",
+    "mtime": 1780072592.62664,
+    "ast_hash": "1f0cb5ea839356056c78ba41f7b8bc87",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\state.py": {
@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\retrieval\\schema_retriever.py": {
-    "mtime": 1779977613.522221,
-    "ast_hash": "ed5600ea50402e5619800648fd5e32d9",
+    "mtime": 1780072602.2602954,
+    "ast_hash": "aaad9dfc928639d801cbf14d86cc66ff",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\retrieval\\__init__.py": {
@@ -257,6 +257,61 @@
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\.vscode\\settings.json": {
     "mtime": 1779985057.047846,
     "ast_hash": "19751b2a32e46d1ba1477f357123a898",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\anthropic_provider.py": {
+    "mtime": 1780072568.0188253,
+    "ast_hash": "97703b33d33e08e2de7fd42d43e2b705",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\base.py": {
+    "mtime": 1780072554.4130983,
+    "ast_hash": "8be69eaf9610aacd7d10a98762bc18b0",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\factory.py": {
+    "mtime": 1780072582.4083002,
+    "ast_hash": "055d490d107f462ae7db7535561a3726",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\gemini_provider.py": {
+    "mtime": 1780072558.9789062,
+    "ast_hash": "f5c4aeaba7e8a29a8318623fac10bf6f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\ollama_provider.py": {
+    "mtime": 1780072572.5701334,
+    "ast_hash": "a99499b7bcb19407f084717ede502622",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\openai_provider.py": {
+    "mtime": 1780072563.4554188,
+    "ast_hash": "23b4a74565bcebb5c5a2f64468d9bb57",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\vllm_provider.py": {
+    "mtime": 1780072577.2273784,
+    "ast_hash": "e2c72777a699f2526d8d445692b709b9",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\test_providers.py": {
+    "mtime": 1780073097.3718503,
+    "ast_hash": "784c1e4145d76747be859cf25cd3f97c",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm_config.yaml": {
+    "mtime": 1780072586.9424164,
+    "ast_hash": "c522a7f1302d33f98da3ea1be1179a99",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\MIGRATION.md": {
+    "mtime": 1780072625.152366,
+    "ast_hash": "d83da8e6ff40e4938394c273b49724fc",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\architecture\\llm_layer.md": {
+    "mtime": 1780072620.0024843,
+    "ast_hash": "95102fc8ccf52b303d799002eb1cdfc6",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,44 @@
+# ==============================================================================
+# SQLAgent LLM Provider Configuration
+# ==============================================================================
+# Change the active provider below. Supported providers are:
+# - gemini: Google Gemini (default)
+# - openai: OpenAI ChatGPT models
+# - anthropic: Anthropic Claude models
+# - ollama: Local inference via Ollama
+# - vllm: Private enterprise inference via vLLM
+#
+# Changes to this file are loaded dynamically at runtime for each NL2SQL request.
+# ==============================================================================
+
+# The active provider to route all reasoning agents and schema embeddings to
+provider: gemini
+
+# The primary model to use for agents (or comment out to use provider-specific defaults)
+# model: gemini-2.5-flash
+
+# Default sampling temperature (0.0 enforces maximum reasoning determinism)
+temperature: 0.0
+
+# ------------------------------------------------------------------------------
+# Provider-Specific Configurations
+# ------------------------------------------------------------------------------
+gemini:
+  model: gemini-2.5-flash
+
+openai:
+  model: gpt-4o
+  # api_key: "your-openai-api-key"   # Or set via OPENAI_API_KEY environment variable
+
+anthropic:
+  model: claude-3-5-sonnet-20241022
+  # api_key: "your-anthropic-api-key" # Or set via ANTHROPIC_API_KEY environment variable
+
+ollama:
+  model: llama3
+  base_url: http://localhost:11434
+
+vllm:
+  model: Qwen/Qwen2.5-Coder-7B-Instruct
+  base_url: http://localhost:8000/v1
+  # api_key: "dummy-key"

@@ -412,13 +412,13 @@ Make the entire reasoning pipeline inspectable.
 
 ---
 
-# PRIORITY 7 — Provider-Agnostic LLM Layer
+# PRIORITY 7 — Provider-Agnostic LLM Layer [COMPLETED]
 
 ## Objective
 
 Decouple agent logic from specific LLM vendors.
 
-The system should support:
+The system supports:
 
 - Gemini
 - OpenAI
@@ -428,37 +428,25 @@ The system should support:
 
 without requiring modifications to agent implementations.
 
-## Required Architecture
+## Implemented Architecture
 
-llm/
-├── base.py
-├── gemini_provider.py
-├── openai_provider.py
-├── anthropic_provider.py
-├── ollama_provider.py
-├── vllm_provider.py
-└── factory.py
+All LLM provider logic is housed under the `llm/` directory:
+- [base.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/base.py): Abstract `LLMProvider` interface and standardized tenacity retry policies.
+- [gemini_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/gemini_provider.py): Google Gemini provider integration.
+- [openai_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/openai_provider.py): OpenAI provider integration.
+- [anthropic_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/anthropic_provider.py): Anthropic Claude provider integration with fallback embeddings logic.
+- [ollama_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/ollama_provider.py): Ollama local provider integration.
+- [vllm_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/vllm_provider.py): Private enterprise vLLM OpenAI-compatible cluster provider integration.
+- [factory.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/factory.py): Provider factory loading dynamically from `llm_config.yaml`.
 
-## Requirements
+## Requirements Fulfilled
 
-- Unified provider interface
-- Runtime provider selection
-- Config-based model switching
-- Shared token accounting
-- Shared observability hooks
-- Shared retry policies
-
-## Success Criteria
-
-Changing:
-
-provider: gemini
-
-to
-
-provider: ollama
-
-must require zero code changes.
+- **Unified provider interface**: Standardized chat and embedding model endpoints across providers.
+- **Runtime provider selection**: Reads from `llm_config.yaml` or falls back to environment variables.
+- **Config-based model switching**: Changes in `llm_config.yaml` require zero code changes and are parsed dynamically on each agent invocation.
+- **Shared token accounting**: Hooks seamlessly into the existing thread-local `TokenAccumulatorCallback` callbacks system.
+- **Shared observability hooks**: Passes thread-local callbacks automatically to all instantiated provider models.
+- **Shared retry policies**: Automatically wraps every model in standard exponential backoff retries.
 
 ---
 

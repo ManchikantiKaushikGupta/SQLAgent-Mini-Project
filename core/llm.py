@@ -1,7 +1,7 @@
 import os
 import threading
-from typing import List, Optional
-from langchain_google_genai import ChatGoogleGenerativeAI
+from typing import List, Optional, Any
+from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.callbacks import BaseCallbackHandler
 from dotenv import load_dotenv
 
@@ -25,36 +25,37 @@ def clear_thread_callbacks():
     if hasattr(_thread_locals, "callbacks"):
         _thread_locals.callbacks = []
 
-# Allow model to be overridden via environment variable
+# Retained for absolute backward compatibility
 DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
-def get_llm(model: str = DEFAULT_MODEL, temperature: float = 0.0) -> ChatGoogleGenerativeAI:
+def get_llm(model: Optional[str] = None, temperature: float = 0.0) -> BaseChatModel:
     """
-    Returns a configured ChatGoogleGenerativeAI instance.
+    Returns a configured LangChain ChatModel instance from the active provider.
 
     Args:
-        model: The Gemini model to use. Defaults to the GEMINI_MODEL env var,
-               falling back to 'gemini-2.5-flash'.
+        model: Optional model name to override the default.
         temperature: Sampling temperature. 0.0 for deterministic outputs.
 
     Returns:
-        A ready-to-use LangChain LLM instance.
+        A ready-to-use LangChain BaseChatModel instance.
     """
-    api_key = os.getenv("GOOGLE_API_KEY")
-    if not api_key:
-        raise ValueError("GOOGLE_API_KEY not found. Please set it in your .env file.")
+    from llm.factory import get_provider
+    from llm.base import apply_shared_retry
 
-    active_callbacks = get_active_callbacks()
+    provider = get_provider()
+    
+    kwargs = {}
+    # Only pass model override if explicitly provided (and not DEFAULT_MODEL default check)
+    if model and model != DEFAULT_MODEL:
+        kwargs["model"] = model
 
-    return ChatGoogleGenerativeAI(
-        model=model,
-        temperature=temperature,
-        google_api_key=api_key,
-        callbacks=active_callbacks if active_callbacks else None,
-    )
+    chat_model = provider.get_chat_model(temperature=temperature, **kwargs)
+    
+    # Apply standard exponential backoff retries to all providers
+    return apply_shared_retry(chat_model)
 
 
-def extract_text(response) -> str:
+def extract_text(response: Any) -> str:
     """
     Safely extracts string content from an LLM response or AIMessage.
     Handles standard string payloads and complex multi-part dictionary/list payloads.
@@ -76,4 +77,3 @@ def extract_text(response) -> str:
         return "".join(text_parts).strip()
         
     return str(content).strip()
-

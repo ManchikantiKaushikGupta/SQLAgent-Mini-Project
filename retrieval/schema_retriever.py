@@ -13,7 +13,6 @@ import faiss
 import numpy as np
 from typing import Dict, List, Any, Optional, Set
 from sqlalchemy import inspect
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from db.database import engine
 from dotenv import load_dotenv
 
@@ -38,7 +37,7 @@ class SchemaRetriever:
     """
     def __init__(
         self,
-        embedding_model_name: str = "models/gemini-embedding-2",
+        embedding_model_name: Optional[str] = None,
         top_k_tables: int = 3,
         top_m_columns: int = 4,
         cache_dir: str = "retrieval/index_cache"
@@ -47,15 +46,15 @@ class SchemaRetriever:
         self.top_m_columns = top_m_columns
         self.cache_dir = os.path.abspath(cache_dir)
         
-        # Initialize Google GenAI Embeddings
-        api_key = os.getenv("GOOGLE_API_KEY")
-        if not api_key:
-            raise ValueError("GOOGLE_API_KEY not found. Please configure it in your .env file.")
+        # Initialize provider-agnostic Embeddings dynamically
+        from llm.factory import get_provider
+        provider = get_provider()
+        
+        kwargs = {}
+        if embedding_model_name:
+            kwargs["model"] = embedding_model_name
             
-        self.embeddings_model = GoogleGenerativeAIEmbeddings(
-            model=embedding_model_name,
-            google_api_key=api_key
-        )
+        self.embeddings_model = provider.get_embeddings(**kwargs)
         
         # Core State
         self.db_metadata: Dict[str, Any] = {}
