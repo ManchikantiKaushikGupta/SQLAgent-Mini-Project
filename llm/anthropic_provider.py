@@ -10,7 +10,7 @@ from typing import Any, Optional
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.embeddings import Embeddings
 
-from llm.base import LLMProvider
+from llm.base import LLMProvider, resolve_callbacks
 
 logger = logging.getLogger("SQLAgent.LLM")
 
@@ -38,13 +38,7 @@ class AnthropicProvider(LLMProvider):
                 "pip install langchain-anthropic"
             )
 
-        from core.llm import get_active_callbacks
-
-        active_callbacks = get_active_callbacks()
-        callbacks = kwargs.pop("callbacks", [])
-        if active_callbacks:
-            callbacks.extend(active_callbacks)
-
+        callbacks = resolve_callbacks(**kwargs)
         model_name = kwargs.pop("model", self.model)
 
         return ChatAnthropic(
@@ -54,6 +48,7 @@ class AnthropicProvider(LLMProvider):
             callbacks=callbacks if callbacks else None,
             **kwargs
         )
+
 
     def get_embeddings(self, **kwargs: Any) -> Embeddings:
         """

@@ -6,6 +6,8 @@ queries, and fetching database schema context dynamically for the AI.
 """
 
 import os
+import threading
+from typing import Optional
 from sqlalchemy import create_engine, MetaData, text
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
@@ -24,6 +26,10 @@ engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 metadata = MetaData()
 
+# Thread-safe in-memory cache for reflected database schema
+_schema_cache: Optional[str] = None
+_schema_cache_lock = threading.Lock()
+
 
 def get_db():
     """Yields a database session."""
@@ -34,29 +40,53 @@ def get_db():
         db.close()
 
 
+def clear_schema_cache() -> None:
+    """Clears the reflected database schema cache to force re-reflection on next access."""
+    global _schema_cache
+    with _schema_cache_lock:
+        _schema_cache = None
+
+
 def get_database_schema() -> str:
     """
     Extracts table names, columns, and data types from the connected PostgreSQL database.
     This string is used by the various AI agents to understand the domain.
+    Utilizes a thread-safe in-memory cache to prevent redundant reflection calls.
 
     Returns:
         A formatted string describing the database schema.
     """
-    try:
-        metadata.reflect(bind=engine)
-        schema_lines = []
-        for table_name, table in metadata.tables.items():
-            schema_lines.append(f"Table: {table_name}")
-            for column in table.columns:
-                schema_lines.append(f"  - {column.name} ({column.type})")
-            schema_lines.append("")
-        
-        if not schema_lines:
-            return "No tables found in the database."
-        
-        return "\n".join(schema_lines)
-    except Exception as e:
-        return f"Error retrieving schema: {str(e)}"
+    global _schema_cache
+    
+    # Fast path without lock acquisition
+    if _schema_cache is not None:
+        return _schema_cache
+
+    with _schema_cache_lock:
+        # Double check lock pattern
+        if _schema_cache is not None:
+            return _schema_cache
+
+        try:
+            # Recreate or clear MetaData to reflect the latest state correctly if required
+            metadata.clear()
+            metadata.reflect(bind=engine)
+            schema_lines = []
+            for table_name, table in metadata.tables.items():
+                schema_lines.append(f"Table: {table_name}")
+                for column in table.columns:
+                    schema_lines.append(f"  - {column.name} ({column.type})")
+                schema_lines.append("")
+            
+            if not schema_lines:
+                _schema_cache = "No tables found in the database."
+            else:
+                _schema_cache = "\n".join(schema_lines)
+                
+            return _schema_cache
+        except Exception as e:
+            return f"Error retrieving schema: {str(e)}"
+
 
 
 def execute_sql_query(query: str) -> list[dict]:

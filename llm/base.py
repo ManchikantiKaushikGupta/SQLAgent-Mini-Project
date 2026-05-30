@@ -71,3 +71,30 @@ def apply_shared_retry(model: BaseChatModel, max_retries: int = 3) -> BaseChatMo
         logger.warning(f"Failed to apply standard LangChain retry wrapper: {e}. Returning raw model.")
     
     return model
+
+
+def resolve_callbacks(**kwargs: Any) -> list:
+    """
+    Extracts and merges thread-local active callbacks with explicit keyword-passed callbacks.
+
+    Args:
+        **kwargs: Arbitrary keyword arguments.
+
+    Returns:
+        A list of resolved callback handlers.
+    """
+    from core.llm import get_active_callbacks
+
+    active_callbacks = get_active_callbacks()
+    callbacks = kwargs.pop("callbacks", None) or []
+    if not isinstance(callbacks, list):
+        callbacks = [callbacks]
+    else:
+        # Create a shallow copy to prevent side effects on user-passed lists
+        callbacks = list(callbacks)
+
+    if active_callbacks:
+        callbacks.extend(active_callbacks)
+
+    return callbacks
+

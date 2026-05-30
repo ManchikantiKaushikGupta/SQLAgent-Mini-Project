@@ -155,6 +155,8 @@ The same LangGraph workflow must operate identically across all deployment modes
 * PostgreSQL connection setup
 * FastAPI backend
 * Streamlit UI
+* Thread-safe in-memory database schema reflection cache
+* Consolidated LLM provider callbacks engine to resolve technical debt
 
 ---
 
@@ -448,6 +450,7 @@ All LLM provider logic is housed under the `llm/` directory:
 - **Shared token accounting**: Hooks seamlessly into the existing thread-local `TokenAccumulatorCallback` callbacks system.
 - **Shared observability hooks**: Passes thread-local callbacks automatically to all instantiated provider models.
 - **Shared retry policies**: Automatically wraps every model in standard exponential backoff retries.
+- **Consolidated Callback Parsing**: Replaced duplicated active callback resolution boilerplate across all concrete model providers with a unified `resolve_callbacks` base utility helper.
 
 ---
 

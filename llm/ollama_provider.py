@@ -13,7 +13,7 @@ from typing import Any, Optional, Dict
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.embeddings import Embeddings
 
-from llm.base import LLMProvider
+from llm.base import LLMProvider, resolve_callbacks
 
 logger = logging.getLogger("SQLAgent.LLM")
 
@@ -23,6 +23,7 @@ class OllamaProvider(LLMProvider):
     Concrete provider implementation for Ollama local models.
     Supports cached connection verification and streaming configurations.
     """
+
 
     # Class-level cache to hold health check outcomes: (base_url, model_name) -> True or Exception
     _verified_cache: Dict[tuple[str, str], Any] = {}
@@ -121,12 +122,7 @@ class OllamaProvider(LLMProvider):
         # Run health check to verify endpoint and model presence
         self.check_health(model_name)
 
-        from core.llm import get_active_callbacks
-
-        active_callbacks = get_active_callbacks()
-        callbacks = kwargs.pop("callbacks", [])
-        if active_callbacks:
-            callbacks.extend(active_callbacks)
+        callbacks = resolve_callbacks(**kwargs)
 
         # Support streaming parameters
         kwargs.setdefault("streaming", True)
