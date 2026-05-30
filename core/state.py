@@ -17,4 +17,7 @@ class SQLAgentState(TypedDict):
     retry_count: int           # The number of times the agent tried to correct a query
     final_result: Optional[Any]  # Target for the database execution results
     metrics: Optional[Dict[str, Any]] # Observability metrics (latency, tokens, validation, corrections, execution)
+    user_role: Optional[str]   # The security role of the user (e.g. admin, manager, analyst, restricted_user)
+    username: Optional[str]    # The name or identifier of the user executing the query
+    security_error: Optional[str] # Detailed security exception details if any policy is breached
 

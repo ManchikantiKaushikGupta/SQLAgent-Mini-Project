@@ -23,6 +23,7 @@ from observability import (
     record_correction,
     record_execution
 )
+from core.security import get_security_manager, SecurityException
 
 MAX_RETRIES = 3
 
@@ -31,9 +32,12 @@ logger.setLevel(logging.INFO)
 
 def node_clarify_intent(state: SQLAgentState):
     init_metrics_state(state)
+    sec_mgr = get_security_manager()
+    # Redact input PII before passing to intent clarification and downstream agents
+    state["original_query"] = sec_mgr.redactor.redact_text(state["original_query"])
     with track_latency(state, "intent_clarification"):
         refined = clarify_intent(state["original_query"], state.get("db_schema", ""))
-    return {"refined_query": refined, "metrics": state["metrics"]}
+    return {"original_query": state["original_query"], "refined_query": refined, "metrics": state["metrics"]}
 
 def node_retrieve_schema(state: SQLAgentState):
     query = state.get("refined_query") or state["original_query"]
@@ -43,11 +47,19 @@ def node_retrieve_schema(state: SQLAgentState):
         try:
             from retrieval.schema_retriever import get_schema_retriever
             retriever = get_schema_retriever()
-            pruned_schema = retriever.retrieve(query)
+            retrieved = retriever.retrieve(query)
+            
+            # Prune retrieved schema based on RBAC role
+            role = state.get("user_role") or "restricted_user"
+            sec_mgr = get_security_manager()
+            pruned_schema = sec_mgr.prune_schema_for_role(retrieved, role)
             state["db_schema"] = pruned_schema
         except Exception as e:
             logger.error(f"Error during schema retrieval: {e}. Falling back to original schema.")
-            pruned_schema = state.get("db_schema", "")
+            role = state.get("user_role") or "restricted_user"
+            sec_mgr = get_security_manager()
+            pruned_schema = sec_mgr.prune_schema_for_role(state.get("db_schema", ""), role)
+            state["db_schema"] = pruned_schema
     return {"db_schema": pruned_schema, "metrics": state["metrics"]}
 
 def node_query_planning(state: SQLAgentState):
@@ -67,10 +79,27 @@ def node_validate_sql(state: SQLAgentState):
     init_metrics_state(state)
     with track_latency(state, "syntax_validation"):
         try:
-            # Validates syntax and safety via SQLGlot
+            # 1. Validates syntax and safety via SQLGlot
             validate_sql_safety(sql, dialect="postgres")
-            record_validation(state, "syntax", True, "SQL syntax and safety checks passed successfully.")
-            return {"error_message": None, "metrics": state["metrics"]}
+            
+            # 2. Validate RBAC permissions and apply limit clamping
+            role = state.get("user_role") or "restricted_user"
+            username = state.get("username") or "anonymous"
+            sec_mgr = get_security_manager()
+            safe_sql = sec_mgr.validate_sql_security(sql, role_name=role, username=username)
+            
+            record_validation(state, "syntax", True, "SQL syntax, RBAC, and limit checks passed successfully.")
+            return {"sql_query": safe_sql, "error_message": None, "security_error": None, "metrics": state["metrics"]}
+        except SecurityException as sec_err:
+            # Terminal security violation: abort the correction retry loops!
+            logger.error(f"Terminal Security Violation: {sec_err}")
+            record_validation(state, "syntax", False, f"Security Exception: {sec_err}")
+            return {
+                "error_message": f"Security Exception: {sec_err}",
+                "security_error": str(sec_err),
+                "retry_count": MAX_RETRIES,  # Aborts correction path
+                "metrics": state["metrics"]
+            }
         except Exception as e:
             record_validation(state, "syntax", False, str(e))
             return {"error_message": str(e), "metrics": state["metrics"]}
@@ -112,8 +141,24 @@ def node_execute_sql(state: SQLAgentState):
         try:
             # Connects to PostgreSQL and fetches results mapping
             results = execute_sql_query(sql)
-            record_execution(state, True, len(results) if results else 0)
-            return {"final_result": results, "error_message": None, "metrics": state["metrics"]}
+            
+            # Redact/mask results if role is not authorized to see raw PII
+            role = state.get("user_role") or "restricted_user"
+            sec_mgr = get_security_manager()
+            role_perms = sec_mgr.get_role_permissions(role)
+            redacted_results = sec_mgr.redactor.redact_results(results, role_perms)
+            
+            record_execution(state, True, len(redacted_results) if redacted_results else 0)
+            
+            # Emit structured execution completed audit event
+            sec_mgr.audit_logger.log_event(
+                action="query_execution_completed",
+                role=role,
+                username=state.get("username"),
+                details={"sql": sql, "row_count": len(redacted_results)}
+            )
+            
+            return {"final_result": redacted_results, "error_message": None, "metrics": state["metrics"]}
         except Exception as e:
             record_execution(state, False, error=str(e))
             return {"final_result": None, "error_message": str(e), "metrics": state["metrics"]}

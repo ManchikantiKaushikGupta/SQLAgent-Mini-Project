@@ -27,9 +27,10 @@ class OllamaProvider(LLMProvider):
     # Class-level cache to hold health check outcomes: (base_url, model_name) -> True or Exception
     _verified_cache: Dict[tuple[str, str], Any] = {}
 
-    def __init__(self, model: str = "llama3", base_url: Optional[str] = None):
+    def __init__(self, model: str = "llama3", base_url: Optional[str] = None, embeddings_model: Optional[str] = None):
         self.model = model
         self.base_url = base_url or os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+        self.embeddings_model = embeddings_model
 
     def check_health(self, model_name: str) -> None:
         """
@@ -154,7 +155,7 @@ class OllamaProvider(LLMProvider):
                     "pip install langchain-ollama"
                 )
 
-        model_name = kwargs.pop("model", self.model)
+        model_name = kwargs.pop("model", self.embeddings_model or self.model)
         
         # Run health check
         self.check_health(model_name)

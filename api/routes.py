@@ -25,6 +25,8 @@ except Exception as e:
 
 class QueryRequest(BaseModel):
     query: str
+    user_role: Optional[str] = None
+    username: Optional[str] = None
 
 
 class QueryResponse(BaseModel):
@@ -50,6 +52,20 @@ async def ask_database(request: QueryRequest):
 
     schema = get_database_schema()
 
+    # Initialize the Security Manager to log query_request
+    from core.security import get_security_manager
+    sec_mgr = get_security_manager()
+    role = request.user_role or sec_mgr.config.default_role
+    username = request.username or "anonymous"
+
+    # Emit dynamic audit event for API entry
+    sec_mgr.audit_logger.log_event(
+        action="query_request",
+        role=role,
+        username=username,
+        details={"query": request.query}
+    )
+
     initial_state = {
         "original_query": request.query,
         "db_schema": schema,
@@ -58,7 +74,10 @@ async def ask_database(request: QueryRequest):
         "sql_query": "",
         "error_message": None,
         "retry_count": 0,
-        "final_result": None
+        "final_result": None,
+        "user_role": role,
+        "username": username,
+        "security_error": None
     }
 
     from core.llm import register_thread_callbacks, clear_thread_callbacks

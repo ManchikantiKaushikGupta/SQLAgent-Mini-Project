@@ -43,10 +43,12 @@ def load_config() -> Dict[str, Any]:
     provider = os.getenv("LLM_PROVIDER", "gemini").lower()
     model = os.getenv("LLM_MODEL")
     temperature = float(os.getenv("LLM_TEMPERATURE", "0.0"))
+    air_gapped = os.getenv("AIR_GAPPED", "false").lower() in ("true", "1", "yes")
 
     config = {
         "provider": provider,
         "temperature": temperature,
+        "air_gapped": air_gapped,
     }
     if model:
         config["model"] = model
@@ -76,6 +78,17 @@ class LLMProviderFactory:
         provider_name = config.get("provider", "gemini").lower()
         model = config.get("model")
         
+        # Enforce Air-Gapped checks
+        air_gapped = config.get("air_gapped", False)
+        if os.getenv("AIR_GAPPED", "").lower() in ("true", "1", "yes"):
+            air_gapped = True
+
+        if air_gapped and provider_name in ("gemini", "openai", "anthropic"):
+            raise ValueError(
+                f"Cannot load cloud LLM provider '{provider_name}' in Air-Gapped Deployment Mode. "
+                "In air-gapped mode, only local/self-hosted providers ('ollama', 'vllm') are permitted."
+            )
+
         # Extrapolate provider-specific configs if nested in the YAML config
         provider_specific = config.get(provider_name, {})
 
@@ -97,13 +110,15 @@ class LLMProviderFactory:
         elif provider_name == "ollama":
             return OllamaProvider(
                 model=model or provider_specific.get("model", "llama3"),
-                base_url=provider_specific.get("base_url")
+                base_url=provider_specific.get("base_url"),
+                embeddings_model=provider_specific.get("embeddings_model")
             )
         elif provider_name == "vllm":
             return VLLMProvider(
                 base_url=provider_specific.get("base_url"),
                 model=model or provider_specific.get("model", "Qwen/Qwen2.5-Coder-7B-Instruct"),
-                api_key=provider_specific.get("api_key")
+                api_key=provider_specific.get("api_key"),
+                embeddings_model=provider_specific.get("embeddings_model")
             )
         else:
             raise ValueError(

@@ -14,6 +14,9 @@
 # The active provider to route all reasoning agents and schema embeddings to
 provider: gemini
 
+# Whether to force Air-Gapped Mode (disables all cloud providers, requires local Ollama/vLLM)
+air_gapped: false
+
 # The primary model to use for local/enterprise agents (e.g. Qwen/Qwen2.5-Coder-7B-Instruct)
 # model: Qwen/Qwen2.5-Coder-7B-Instruct
 
@@ -40,9 +43,12 @@ ollama:
   # - deepseek-r1    (CoT reasoning model)
   # - llama3         (General purpose model)
   model: qwen3:14b
+  embeddings_model: nomic-embed-text
   base_url: http://localhost:11434
 
 vllm:
   model: Qwen/Qwen2.5-Coder-7B-Instruct
+  embeddings_model: BAAI/bge-large-en-v1.5
   base_url: http://localhost:8000/v1
   # api_key: "dummy-key"
+

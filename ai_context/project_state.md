@@ -575,36 +575,46 @@ Every architectural change must be benchmark validated.
 
 ---
 
-# PRIORITY 11 — Production Governance & Security
+# PRIORITY 11 — Production Governance & Security [COMPLETED]
 
 ## Objective
 
-Prepare framework for enterprise adoption.
+Prepare framework for enterprise adoption by introducing bulletproof safeguards at planning, validation, execution, and output stages.
 
-## Features
+## Status
 
-Role-Based Access Control
-- Query permissions
-- Table permissions
-- Column permissions
+* [x] **Role-Based Access Control (RBAC)**: added Pydantic-validated permission structures in [security.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/core/security.py) defining table and column allowances for enterprise roles (`admin`, `manager`, `analyst`, `restricted_user`). Enforces `restricted_user` as a secure default.
+* [x] **Dynamic Schema Pruning**: automatically filters reflected and retrieved schema inputs matching the user's role. Shielding internal database objects from LLM discoverability prevents planning-stage data leakage.
+* [x] **Surgical SQL AST Guard**: parses all generated queries via SQLGlot. Blocks DDL/DML bypasses, prevents system table access, enforces role table/column checks, and dynamically clamps or injects query limits matching the role's maximum threshold.
+* [x] **GDPR-ready PII Redaction**: regex-redacts phone and email identifiers from natural language inputs before LLM invocations. Masks returned PII field cells (e.g., `email`, `first_name`, `last_name`) dynamically in execution result sets for non-admin roles.
+* [x] **Structured Audit Logging**: appends comprehensive, thread-safe JSON records of governance events (`query_request`, `sql_validation_passed`, `security_violation`, `query_execution_completed`) inside `observability/audit_log.json`.
+* [x] **Automated Security Suite**: added unit and E2E graph security checks in [test_security.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/scratch/test_security.py) verifying all policies and ensuring zero external API dependencies.
 
-Audit Logging
-- Query history
-- SQL history
-- User actions
+## Features Met
 
-PII Protection
-- Sensitive column detection
-- Query redaction
+- Table and Column RBAC
+- SELECT-only, Metadata, & System Table guards
+- Automatic Limit clamps & injection
+- PII query scrubbing and result cell masking
+- Persistence of structured logs in `observability/audit_log.json`
+- Secure terminal correction loops (aborts retry on security violations)
 
-Safety Controls
-- SELECT-only enforcement
-- Dangerous query detection
-- Data leakage prevention
+---
 
-Compliance Readiness
-- GDPR-aware deployment
-- Enterprise audit support
+# PRIORITY 12 — Air-Gapped Deployment Mode [COMPLETED]
+
+## Objective
+
+Deliver a highly secure, private, 100% offline NL2SQL execution framework for enterprise deployments, ensuring no internet access is required and data metadata is strictly isolated.
+
+## Status
+
+* [x] **Air-Gapped Config Toggles**: added `air_gapped: false/true` and `embeddings_model` parameters inside [llm_config.yaml](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm_config.yaml) to decouple local chat models from embedding model parameters.
+* [x] **Cloud Provider Interceptions**: updated [factory.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/factory.py) to parse the air-gapped configuration and dynamically reject any load attempts for Gemini, OpenAI, or Anthropic.
+* [x] **Local Provider Upgrades**: modified Ollama and vLLM providers to support separate custom `embeddings_model` parameter bindings.
+* [x] **Startup Fail-Fast Checks**: implemented [core/air_gap.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/core/air_gap.py) validating local ports, pings, and checking pulled chat and embedding models presence at startup via FastAPI `lifespan` hook in [api/app.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/api/app.py).
+* [x] **Network Socket Shield Verification**: created [verify_offline.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/scratch/verify_offline.py) overriding `socket.socket.connect` to actively intercept and reject any external routing.
+* [x] **Enterprise DevOps Workflow Guide**: compiled comprehensive setup, weights pre-loading, Docker HA vLLM serving, indexing, and runtime troubleshooting documentation in [air_gapped_deployment.md](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/architecture/air_gapped_deployment.md).
 
 ---
 

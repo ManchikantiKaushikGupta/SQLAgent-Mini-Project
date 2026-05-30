@@ -31,11 +31,13 @@ class VLLMProvider(LLMProvider):
         self,
         base_url: Optional[str] = None,
         model: str = "Qwen/Qwen2.5-Coder-7B-Instruct",
-        api_key: Optional[str] = None
+        api_key: Optional[str] = None,
+        embeddings_model: Optional[str] = None
     ):
         self.base_url = base_url or os.getenv("VLLM_BASE_URL", "http://localhost:8000/v1")
         self.model = model
         self.api_key = api_key or os.getenv("VLLM_API_KEY", "dummy-key")
+        self.embeddings_model = embeddings_model
 
     def check_health(self, model_name: str) -> None:
         """
@@ -153,7 +155,7 @@ class VLLMProvider(LLMProvider):
                 "pip install langchain-openai"
             )
 
-        model_name = kwargs.pop("model", "text-embedding-3-small")
+        model_name = kwargs.pop("model", self.embeddings_model or "text-embedding-3-small")
         
         # Run health check
         self.check_health(self.model)

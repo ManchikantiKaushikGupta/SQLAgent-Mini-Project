@@ -20,18 +20,18 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\api\\app.py": {
-    "mtime": 1777473579.522997,
-    "ast_hash": "e1d77160c4786b08e3c5f38b02b6514d",
+    "mtime": 1780162960.4325864,
+    "ast_hash": "e43808bee8529ef2a4261bdd8670bb7f",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\api\\routes.py": {
-    "mtime": 1779980878.8497436,
-    "ast_hash": "df1fe7605834146756e2b46316362777",
+    "mtime": 1780158664.0747807,
+    "ast_hash": "0034fee79d9c0689a9a979a213a7cb16",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\graph.py": {
-    "mtime": 1780074817.809311,
-    "ast_hash": "9af77a02f6894c3b24212017a797a42e",
+    "mtime": 1780162499.6539097,
+    "ast_hash": "075cfe573067457a1a71495e9b8411f3",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\llm.py": {
@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\state.py": {
-    "mtime": 1779980142.4605725,
-    "ast_hash": "a58e86843ac88adf0ed12ec5fc2edd67",
+    "mtime": 1780158636.2754745,
+    "ast_hash": "bd4f5fa71aaee7d79e6aa3fb9793b2b3",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\db\\database.py": {
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\ai_context\\project_state.md": {
-    "mtime": 1780077317.4657805,
-    "ast_hash": "0488feae75f7d161594c40919f64492c",
+    "mtime": 1780163704.8471007,
+    "ast_hash": "c7253127a4618b2a286815d0c442b87f",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\ai_context\\system_prompt.md": {
@@ -270,8 +270,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\factory.py": {
-    "mtime": 1780072582.4083002,
-    "ast_hash": "055d490d107f462ae7db7535561a3726",
+    "mtime": 1780162936.3391514,
+    "ast_hash": "053b42fbac7e2cd47f16ffa3749e9311",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\gemini_provider.py": {
@@ -280,8 +280,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\ollama_provider.py": {
-    "mtime": 1780073907.4895637,
-    "ast_hash": "bf674d407578b88669ed9384a117516e",
+    "mtime": 1780162940.856035,
+    "ast_hash": "e36807d488636e44697565e606c631a8",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\openai_provider.py": {
@@ -290,8 +290,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm\\vllm_provider.py": {
-    "mtime": 1780074322.3150656,
-    "ast_hash": "919aca29288c7f347eeab50e65968e17",
+    "mtime": 1780162945.6349058,
+    "ast_hash": "ec3e180ece1cb0d5f956bfd7c355fd98",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\test_providers.py": {
@@ -300,8 +300,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\llm_config.yaml": {
-    "mtime": 1780076823.5537982,
-    "ast_hash": "9b25f0f5129ef57a0844e956eee27e60",
+    "mtime": 1780162930.153901,
+    "ast_hash": "15d62573f5a8748c6eef07f1faa7ee8b",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\MIGRATION.md": {
@@ -362,6 +362,36 @@
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\test_semantic_validator.py": {
     "mtime": 1780076969.119636,
     "ast_hash": "04dd3d63825b44aa93fecd41de5ab8d7",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\security.py": {
+    "mtime": 1780158814.6076694,
+    "ast_hash": "1d63dad1ccc1348094be307125d89cdb",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\observability\\audit_log.json": {
+    "mtime": 1780163670.5051408,
+    "ast_hash": "ec7de848ef4e58d63a47c0fee9d46b0f",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\test_security.py": {
+    "mtime": 1780162472.976217,
+    "ast_hash": "3503ecd2d58f553bda5fb53f5fa03d37",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\air_gap.py": {
+    "mtime": 1780162953.958207,
+    "ast_hash": "1859c3cefa953c6a0e8434e4fa6c4966",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\verify_offline.py": {
+    "mtime": 1780163630.250487,
+    "ast_hash": "92ecefdd9f763df22dd8890511d905ec",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\architecture\\air_gapped_deployment.md": {
+    "mtime": 1780163681.5819163,
+    "ast_hash": "b296ac989e8a0a6340e19e32999c078c",
     "semantic_hash": ""
   }
 }
