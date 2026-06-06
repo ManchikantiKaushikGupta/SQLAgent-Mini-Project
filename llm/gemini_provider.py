@@ -18,7 +18,7 @@ class GeminiProvider(LLMProvider):
     Concrete provider implementation for Google Gemini.
     """
 
-    def __init__(self, api_key: Optional[str] = None, model: str = "gemini-2.5-flash"):
+    def __init__(self, api_key: Optional[str] = None, model: str = "gemini-3.1-flash-lite"):
         self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
         if not self.api_key:
             raise ValueError("GOOGLE_API_KEY not found. Please configure it in your .env file or configuration.")

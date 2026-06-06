@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from typing import Any, Dict
 
-API_URL = "http://localhost:8000/api/v1/ask"
+API_URL = "http://127.0.0.1:8000/api/v1/ask"
 
 # 1. Page Configuration
 st.set_page_config(page_title="DataSense AI - Telemetry Portal", page_icon="📊", layout="wide")
@@ -52,6 +52,16 @@ with st.sidebar:
     st.title("💡 DataSense AI")
     st.markdown("Navigate and query your enterprise database using natural language.")
     st.divider()
+
+    st.markdown("### 👤 User Governance Role")
+    user_role = st.selectbox(
+        "Select Role:",
+        options=["restricted_user", "analyst", "manager", "admin"],
+        index=0,
+        help="Enforces Table/Column RBAC permission controls on the AI graph."
+    )
+    username = st.text_input("Username:", value="anonymous")
+    st.divider()
     
     st.markdown("### 💬 Example Queries")
     st.info("Show the top 3 users by total order amount, ordered descending")
@@ -62,7 +72,7 @@ with st.sidebar:
     st.markdown("### 📊 Observability Specs")
     st.caption("- **Orchestration**: LangGraph")
     st.caption("- **Retrieval**: FAISS (`IndexFlatIP`)")
-    st.caption("- **LLM Engine**: Gemini 3.5 Flash")
+    st.caption("- **LLM Engine**: Gemini 3.1 Flash Lite")
     st.caption("- **Telemetry**: In-Memory + Disk Cache")
 
 # 4. Main App Layout - Setup Tabs
@@ -115,7 +125,14 @@ with tab_chat:
         with st.chat_message("assistant", avatar="✨"):
             with st.spinner("Analyzing schema and generating optimized SQL..."):
                 try:
-                    response = requests.post(API_URL, json={"query": prompt})
+                    response = requests.post(
+                        API_URL,
+                        json={
+                            "query": prompt,
+                            "user_role": user_role,
+                            "username": username
+                        }
+                    )
                     response.raise_for_status()
                     data = response.json()
                     

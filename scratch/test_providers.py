@@ -58,9 +58,9 @@ class TestLLMProviders(unittest.TestCase):
     def test_gemini_provider_instantiation(self):
         """Verifies GeminiProvider is correctly constructed and configured."""
         os.environ["GOOGLE_API_KEY"] = "mock-google-key"
-        provider = GeminiProvider(model="gemini-2.5-flash")
+        provider = GeminiProvider(model="gemini-3.1-flash-lite")
         
-        self.assertEqual(provider.model, "gemini-2.5-flash")
+        self.assertEqual(provider.model, "gemini-3.1-flash-lite")
         self.assertEqual(provider.api_key, "mock-google-key")
 
         # Test model creation with callback attachment
@@ -68,7 +68,7 @@ class TestLLMProviders(unittest.TestCase):
         register_thread_callbacks([mock_callback])
 
         model = provider.get_chat_model(temperature=0.0)
-        self.assertEqual(model.model, "gemini-2.5-flash")
+        self.assertEqual(model.model, "gemini-3.1-flash-lite")
         self.assertEqual(model.temperature, 0.0)
         self.assertIn(mock_callback, model.callbacks)
 

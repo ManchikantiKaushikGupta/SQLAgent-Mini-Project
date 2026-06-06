@@ -2,10 +2,10 @@
 echo Starting SQLAgent-Mini-Project...
 
 echo Starting FastAPI Backend...
-start "FastAPI Backend" cmd /k "uvicorn api.app:app --reload --port 8000"
+start "FastAPI Backend" cmd /k ".venv\Scripts\uvicorn api.app:app --reload --port 8000"
 
 echo Starting Streamlit Frontend...
-start "Streamlit Frontend" cmd /k "streamlit run frontend/app.py"
+start "Streamlit Frontend" cmd /k ".venv\Scripts\streamlit run frontend/app.py --server.port 8503"
 
 echo Both services are starting in separate windows.
 echo You can close this window now.

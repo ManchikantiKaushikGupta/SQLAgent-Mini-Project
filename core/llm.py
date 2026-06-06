@@ -26,7 +26,7 @@ def clear_thread_callbacks():
         _thread_locals.callbacks = []
 
 # Retained for absolute backward compatibility
-DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
 
 def get_llm(model: Optional[str] = None, temperature: float = 0.0) -> BaseChatModel:
     """

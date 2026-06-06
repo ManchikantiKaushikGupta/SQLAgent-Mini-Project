@@ -95,7 +95,7 @@ class LLMProviderFactory:
         if provider_name == "gemini":
             return GeminiProvider(
                 api_key=provider_specific.get("api_key"),
-                model=model or provider_specific.get("model", os.getenv("GEMINI_MODEL", "gemini-2.5-flash"))
+                model=model or provider_specific.get("model", os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite"))
             )
         elif provider_name == "openai":
             return OpenAIProvider(
