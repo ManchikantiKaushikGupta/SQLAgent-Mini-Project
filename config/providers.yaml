@@ -1,0 +1,38 @@
+# ==============================================================================
+# SQLAgent Local & Enterprise LLM Provider Configuration Override
+# ==============================================================================
+# This configuration overrides and extends the root-level 'llm_config.yaml'.
+# Set 'provider: lmstudio' to use local LM Studio.
+# ==============================================================================
+
+# Active LLM provider
+provider: lmstudio
+
+# Enforce Air-Gapped Mode (blocks cloud APIs, permits ollama, vllm, lmstudio)
+air_gapped: false
+
+# Global temperature (0.0 for reasoning determinism)
+temperature: 0.0
+
+# ------------------------------------------------------------------------------
+# Model Routing Overrides
+# ------------------------------------------------------------------------------
+# Customize which model is routed to each agent.
+# Note: Caller agents automatically fall back to these models.
+# ------------------------------------------------------------------------------
+planner_model: qwen3-14b
+generator_model: qwen3-8b
+validator_model: qwen3-14b
+clarification_model: qwen3-8b
+classifier_model: qwen3-8b
+repair_model: qwen3-14b
+
+# ------------------------------------------------------------------------------
+# LM Studio Provider Configuration
+# ------------------------------------------------------------------------------
+lmstudio:
+  enabled: true
+  base_url: http://localhost:1234/v1
+  api_key: lm-studio
+  model: qwen3-14b
+  embeddings_model: text-embedding-3-small

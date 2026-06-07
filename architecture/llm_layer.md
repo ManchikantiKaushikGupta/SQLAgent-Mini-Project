@@ -84,3 +84,16 @@ The system includes enterprise-grade, high-throughput private local server suppo
 - **Standardized Retry Wrappers**: Automatically wraps the instantiated vLLM model with exponential-backoff tenacious retries to ensure pipeline resiliency.
 
 
+## 6. Local LM Studio Support (Priority 8 Extension)
+
+The framework includes dedicated support for local inference via LM Studio. It implements the `LMStudioProvider` using standard OpenAI-compatible libraries from LangChain, facilitating secure offline development.
+
+### Key Characteristics
+- **OpenAI-Compatible Local Endpoint**: Defaults to `http://localhost:1234/v1` with `lm-studio` API keys (optional/configurable).
+- **Dynamic Model Verification**: Queries `/v1/models` to confirm the LM Studio server is running and hosting the requested model name.
+- **Session-Level Health Caching**: Pings the endpoint once and caches results to guarantee sub-millisecond overhead during runtime agent routing.
+- **Dynamic Stack-Based Agent Routing**: Automatically routes specific models to different agents based on stack frames inspection in `get_llm()` (e.g., `planner_model`, `generator_model`, `validator_model`).
+- **Observability & Streaming**: Supports standard token accumulators and native streaming configurations.
+
+
+

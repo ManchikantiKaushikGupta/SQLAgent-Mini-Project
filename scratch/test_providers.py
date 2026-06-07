@@ -22,6 +22,7 @@ from llm.openai_provider import OpenAIProvider
 from llm.anthropic_provider import AnthropicProvider
 from llm.ollama_provider import OllamaProvider
 from llm.vllm_provider import VLLMProvider
+from llm.lmstudio_provider import LMStudioProvider
 from core.llm import get_llm, register_thread_callbacks, clear_thread_callbacks
 
 
@@ -217,6 +218,100 @@ class TestLLMProviders(unittest.TestCase):
         with self.assertRaises(RuntimeError) as ctx:
             provider.check_health("Qwen/Qwen2.5-Coder-7B-Instruct")
         self.assertIn("model 'Qwen/Qwen2.5-Coder-7B-Instruct' was not found", str(ctx.exception))
+
+    @patch("llm.lmstudio_provider.LMStudioProvider.check_health")
+    def test_lmstudio_provider_instantiation(self, mock_check_health):
+        """Verifies LMStudioProvider configuration for local inference."""
+        provider = LMStudioProvider(model="qwen3-14b", base_url="http://localhost:1234/v1")
+        
+        self.assertEqual(provider.model, "qwen3-14b")
+        self.assertEqual(provider.base_url, "http://localhost:1234/v1")
+        self.assertEqual(provider.api_key, "lm-studio")  # Default API key
+
+        model = provider.get_chat_model(temperature=0.5)
+        self.assertEqual(model.model_name, "qwen3-14b")
+        self.assertEqual(model.temperature, 0.5)
+        self.assertEqual(model.openai_api_base, "http://localhost:1234/v1")
+        mock_check_health.assert_called_once_with("qwen3-14b")
+
+    @patch("requests.get")
+    def test_lmstudio_health_check_healthy(self, mock_get):
+        """Verifies LM Studio check_health passes when server responds with the matching model."""
+        LMStudioProvider._verified_cache.clear()
+        
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"data": [{"id": "qwen3-14b"}]}
+        mock_get.return_value = mock_response
+
+        provider = LMStudioProvider(model="qwen3-14b", base_url="http://localhost:1234/v1")
+        
+        provider.check_health("qwen3-14b")
+        mock_get.assert_called_once_with(
+            "http://localhost:1234/v1/models",
+            headers={"Authorization": "Bearer lm-studio"},
+            timeout=2.0
+        )
+
+    @patch("requests.get")
+    def test_lmstudio_health_check_connection_error(self, mock_get):
+        """Verifies LM Studio check_health raises ConnectionError when server is offline."""
+        LMStudioProvider._verified_cache.clear()
+        import requests
+        mock_get.side_effect = requests.exceptions.ConnectionError()
+
+        provider = LMStudioProvider(model="qwen3-14b", base_url="http://localhost:1234/v1")
+        
+        with self.assertRaises(ConnectionError) as ctx:
+            provider.check_health("qwen3-14b")
+        self.assertIn("LM Studio service is not running at http://localhost:1234/v1", str(ctx.exception))
+
+    @patch("requests.get")
+    def test_lmstudio_health_check_missing_model(self, mock_get):
+        """Verifies LM Studio check_health raises RuntimeError when the configured model is absent."""
+        LMStudioProvider._verified_cache.clear()
+        
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"data": [{"id": "some-other-model"}]}
+        mock_get.return_value = mock_response
+
+        provider = LMStudioProvider(model="qwen3-14b", base_url="http://localhost:1234/v1")
+        
+        with self.assertRaises(RuntimeError) as ctx:
+            provider.check_health("qwen3-14b")
+        self.assertIn("model 'qwen3-14b' was not found in the loaded models catalog", str(ctx.exception))
+
+    @patch("llm.lmstudio_provider.LMStudioProvider.check_health")
+    def test_lmstudio_factory_registration(self, mock_check_health):
+        """Verifies factory registration and structured configuration parsing for lmstudio."""
+        config = {
+            "provider": "lmstudio",
+            "model": "custom-model",
+            "lmstudio": {
+                "base_url": "http://127.0.0.1:9999/v1",
+                "api_key": "my-key"
+            }
+        }
+        provider = LLMProviderFactory.create_provider(config)
+        self.assertIsInstance(provider, LMStudioProvider)
+        self.assertEqual(provider.model, "custom-model")
+        self.assertEqual(provider.base_url, "http://127.0.0.1:9999/v1")
+        self.assertEqual(provider.api_key, "my-key")
+
+    @patch("llm.lmstudio_provider.LMStudioProvider.check_health")
+    def test_lmstudio_env_selection(self, mock_check_health):
+        """Verifies provider selection via environment variables."""
+        os.environ["LLM_PROVIDER"] = "lmstudio"
+        os.environ["LMSTUDIO_BASE_URL"] = "http://localhost:5555/v1"
+        os.environ["LMSTUDIO_API_KEY"] = "env-key"
+        os.environ["LMSTUDIO_MODEL"] = "qwen-env"
+
+        provider = get_provider()
+        self.assertIsInstance(provider, LMStudioProvider)
+        self.assertEqual(provider.model, "qwen-env")
+        self.assertEqual(provider.base_url, "http://localhost:5555/v1")
+        self.assertEqual(provider.api_key, "env-key")
 
     def test_apply_shared_retry(self):
         """Verifies that shared retry policies wrap models successfully."""

@@ -75,8 +75,10 @@ class TestOfflineIntegrity(unittest.TestCase):
         # Clear health check verified caches to prevent carryover
         from llm.ollama_provider import OllamaProvider
         from llm.vllm_provider import VLLMProvider
+        from llm.lmstudio_provider import LMStudioProvider
         OllamaProvider._verified_cache.clear()
         VLLMProvider._verified_cache.clear()
+        LMStudioProvider._verified_cache.clear()
 
     def tearDown(self):
         # Restore environment variables
@@ -258,6 +260,48 @@ class TestOfflineIntegrity(unittest.TestCase):
 
         from llm.vllm_provider import VLLMProvider
         VLLMProvider._verified_cache.clear()
+
+        with patch("llm.factory.load_config", return_value=mock_load.return_value):
+            validate_air_gap_environment()
+
+    @patch("core.air_gap.load_config")
+    @patch("requests.get")
+    def test_lmstudio_offline_readiness(self, mock_get, mock_load):
+        """Verify LM Studio checks both chat model and embeddings model presence."""
+        mock_load.return_value = {
+            "provider": "lmstudio",
+            "air_gapped": True,
+            "lmstudio": {
+                "model": "qwen3-14b",
+                "embeddings_model": "text-embedding-3-small",
+                "base_url": "http://localhost:1234/v1",
+                "api_key": "lm-studio"
+            }
+        }
+
+        # 1. Test case: server is down (raises ConnectionError)
+        mock_get.side_effect = requests.exceptions.ConnectionError()
+        with patch("llm.factory.load_config", return_value=mock_load.return_value):
+            with self.assertRaises(ConnectionError) as ctx:
+                validate_air_gap_environment()
+            self.assertIn("LM Studio service is not running", str(ctx.exception))
+
+        # Reset
+        mock_get.side_effect = None
+
+        # 2. Test case: models are present (passes)
+        mock_resp_ok = MagicMock()
+        mock_resp_ok.status_code = 200
+        mock_resp_ok.json.return_value = {
+            "data": [
+                {"id": "qwen3-14b"},
+                {"id": "text-embedding-3-small"}
+            ]
+        }
+        mock_get.return_value = mock_resp_ok
+
+        from llm.lmstudio_provider import LMStudioProvider
+        LMStudioProvider._verified_cache.clear()
 
         with patch("llm.factory.load_config", return_value=mock_load.return_value):
             validate_air_gap_environment()

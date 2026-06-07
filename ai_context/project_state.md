@@ -87,6 +87,7 @@ Supported deployment modes:
 3. Private Deployment Mode
    - Ollama
    - vLLM
+   - LM Studio
    - Local GPU clusters
 
 4. Air-Gapped Deployment Mode
@@ -428,6 +429,7 @@ The system supports:
 - Anthropic
 - Ollama
 - vLLM
+- LM Studio
 
 without requiring modifications to agent implementations.
 
@@ -440,7 +442,8 @@ All LLM provider logic is housed under the `llm/` directory:
 - [anthropic_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/anthropic_provider.py): Anthropic Claude provider integration with fallback embeddings logic.
 - [ollama_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/ollama_provider.py): Ollama local provider integration.
 - [vllm_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/vllm_provider.py): Private enterprise vLLM OpenAI-compatible cluster provider integration.
-- [factory.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/factory.py): Provider factory loading dynamically from `llm_config.yaml`.
+- [lmstudio_provider.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/lmstudio_provider.py): LM Studio local provider integration.
+- [factory.py](file:///c:/Users/manch/OneDrive/Documents/SQLAgent-Mini-Project/llm/factory.py): Provider factory loading dynamically from `config/providers.yaml` and `llm_config.yaml`.
 
 ## Requirements Fulfilled
 
@@ -471,13 +474,14 @@ General Models
 
 ## Implemented Specifications
 
-- **Local inference support**: Complete integration with local Ollama service and private enterprise vLLM clusters.
+- **Local inference support**: Complete integration with local Ollama service, private enterprise vLLM clusters, and LM Studio server.
 - **No external API dependency**: Runs 100% offline inside the organization's private network.
 - **Ollama Endpoint Health Checks**: Performs dynamic checks against the local tags index `/api/tags` with a 2.0s connection timeout.
 - **vLLM Endpoint Health Checks**: Performs dynamic checks against the OpenAI-compatible `/v1/models` catalog with a 2.0s connection timeout.
-- **Graceful connection fallbacks**: haltes execution immediately raising highly descriptive instructions (e.g. `ollama pull` or checking vLLM host status) if local services are offline or missing models.
+- **LM Studio Endpoint Health Checks**: Performs dynamic checks against the local `/v1/models` catalog with a 2.0s connection timeout.
+- **Graceful connection fallbacks**: halts execution immediately raising highly descriptive instructions (e.g. `ollama pull` or checking local host status) if local services are offline or missing models.
 - **Session outcome caching**: In-memory class caching ensures health checks are executed exactly once per runtime process, bypassing subsequent calls to run at sub-millisecond execution times.
-- **Streaming support**: Enforces standard `streaming=True` configurations across both local providers.
+- **Streaming support**: Enforces standard `streaming=True` configurations across all local providers.
 - **Observability integration**: Dynamic callback passing merges thread-local token callbacks seamlessly during runtime creation.
 - **Standardized Retry Wrappers**: Automatically wraps local model creations with standard exponential backoff retries.
 

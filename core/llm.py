@@ -39,13 +39,49 @@ def get_llm(model: Optional[str] = None, temperature: float = 0.0) -> BaseChatMo
     Returns:
         A ready-to-use LangChain BaseChatModel instance.
     """
-    from llm.factory import get_provider
+    import inspect
+    from llm.factory import get_provider, load_config
     from llm.base import apply_shared_retry
+
+    # Resolve dynamic agent-specific routed models if not explicitly passed
+    if not model or model == DEFAULT_MODEL:
+        frame = inspect.currentframe()
+        caller_role = None
+        try:
+            while frame:
+                module_name = frame.f_globals.get("__name__", "")
+                if "intent_clarification" in module_name:
+                    caller_role = "clarification_model"
+                    break
+                elif "query_planning" in module_name:
+                    caller_role = "planner_model"
+                    break
+                elif "sql_generation" in module_name:
+                    caller_role = "generator_model"
+                    break
+                elif "semantic_validator" in module_name:
+                    caller_role = "validator_model"
+                    break
+                elif "error_classifier" in module_name:
+                    caller_role = "classifier_model"
+                    break
+                elif "repair_engine" in module_name:
+                    caller_role = "repair_model"
+                    break
+                frame = frame.f_back
+        finally:
+            del frame
+
+        if caller_role:
+            config = load_config()
+            routed_model = config.get(caller_role)
+            if routed_model:
+                model = routed_model
 
     provider = get_provider()
     
     kwargs = {}
-    # Only pass model override if explicitly provided (and not DEFAULT_MODEL default check)
+    # Only pass model override if explicitly provided (and not DEFAULT_MODEL check)
     if model and model != DEFAULT_MODEL:
         kwargs["model"] = model
 

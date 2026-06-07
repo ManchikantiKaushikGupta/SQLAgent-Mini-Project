@@ -72,7 +72,17 @@ with st.sidebar:
     st.markdown("### 📊 Observability Specs")
     st.caption("- **Orchestration**: LangGraph")
     st.caption("- **Retrieval**: FAISS (`IndexFlatIP`)")
-    st.caption("- **LLM Engine**: Gemini 3.1 Flash Lite")
+    
+    try:
+        from llm.factory import get_provider
+        prov = get_provider()
+        prov_name = prov.__class__.__name__.replace("Provider", "")
+        model_name = getattr(prov, "model", "Unknown")
+        llm_engine_display = f"{prov_name} ({model_name})"
+    except Exception:
+        llm_engine_display = "Gemini 3.1 Flash Lite"
+        
+    st.caption(f"- **LLM Engine**: {llm_engine_display}")
     st.caption("- **Telemetry**: In-Memory + Disk Cache")
 
 # 4. Main App Layout - Setup Tabs

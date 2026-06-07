@@ -13,6 +13,7 @@ from typing import Dict, Any
 from llm.factory import load_config, get_provider
 from llm.ollama_provider import OllamaProvider
 from llm.vllm_provider import VLLMProvider
+from llm.lmstudio_provider import LMStudioProvider
 
 logger = logging.getLogger("SQLAgent.AirGap")
 logger.setLevel(logging.INFO)
@@ -103,6 +104,16 @@ def validate_air_gap_environment() -> None:
         # Validate vLLM embeddings model if present
         if provider.embeddings_model:
             logger.info(f"Checking vLLM embeddings model: '{provider.embeddings_model}' at {provider.base_url}")
+            provider.check_health(provider.embeddings_model)
+            
+    elif isinstance(provider, LMStudioProvider):
+        # Validate LM Studio service and chat model
+        logger.info(f"Checking LM Studio chat model: '{provider.model}' at {provider.base_url}")
+        provider.check_health(provider.model)
+        
+        # Validate LM Studio embeddings model if present
+        if provider.embeddings_model:
+            logger.info(f"Checking LM Studio embeddings model: '{provider.embeddings_model}' at {provider.base_url}")
             provider.check_health(provider.embeddings_model)
     else:
         raise ValueError(
