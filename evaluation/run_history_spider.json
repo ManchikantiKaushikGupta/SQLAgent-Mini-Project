@@ -1,0 +1,365 @@
+[
+  {
+    "summary": {
+      "run_id": "run_spider_1b3d2d",
+      "timestamp": "2026-06-11T22:19:35.151318",
+      "total_cases": 5,
+      "passed_cases": 3,
+      "failed_cases": 2,
+      "execution_accuracy_pct": 60.0,
+      "average_latency_seconds": 603.6556838989258,
+      "total_tokens": 0,
+      "avg_tokens_per_query": 0.0,
+      "total_retries": 3,
+      "queries_needing_correction": 1,
+      "queries_corrected_successfully": 1,
+      "correction_success_rate_pct": 100.0,
+      "difficulty_breakdown": {
+        "simple": {
+          "passed": 2,
+          "total": 2,
+          "accuracy_pct": 100.0
+        },
+        "medium": {
+          "passed": 0,
+          "total": 2,
+          "accuracy_pct": 0.0
+        },
+        "complex": {
+          "passed": 1,
+          "total": 1,
+          "accuracy_pct": 100.0
+        }
+      }
+    },
+    "results": [
+      {
+        "case_id": "spider_01",
+        "query": "Show users from New York that have premium accounts",
+        "reference_sql": "SELECT id, first_name, last_name FROM users WHERE city = 'New York' AND is_premium = true",
+        "generated_sql": "SELECT * FROM users WHERE city = 'New York' AND is_premium = true;",
+        "success": true,
+        "error_message": "Security Exception: Security Violation: Unauthorized table access. Role 'restricted_user' is not allowed to query 'users'.",
+        "latency_seconds": 463.0534951686859,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 3,
+        "corrected_successfully": true,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_02",
+        "query": "List the categories in the Electronics department",
+        "reference_sql": "SELECT id, name FROM categories WHERE department = 'Electronics'",
+        "generated_sql": "SELECT id, name FROM categories WHERE department = 'Electronics' LIMIT 50",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 557.0379302501678,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 3,
+        "returned_rows": 3
+      },
+      {
+        "case_id": "spider_03",
+        "query": "Find the average price of products in the Electronics department",
+        "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+        "generated_sql": null,
+        "success": false,
+        "error_message": "Pipeline Crash: 1 validation error for QueryPlan\nfilters.0.value\n  Field required [type=missing, input_value={'column': 'category_id',...lectronics category ID'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+        "latency_seconds": 172.60719108581543,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_04",
+        "query": "How many reviews were written for each product? Show product id and name.",
+        "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+        "generated_sql": "SELECT products.id, products.name, COUNT(reviews.id) AS review_count FROM products INNER JOIN reviews ON products.id = reviews.product_id GROUP BY products.id, products.name LIMIT 50",
+        "success": false,
+        "error_message": "Row count mismatch: generated returned 40 rows, reference returned 60 rows.",
+        "latency_seconds": 526.8549699783325,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 60,
+        "returned_rows": 40
+      },
+      {
+        "case_id": "spider_05",
+        "query": "Show the names of products that have at least 3 reviews with a rating of 5",
+        "reference_sql": "SELECT p.name FROM products p JOIN reviews r ON p.id = r.product_id WHERE r.rating = 5 GROUP BY p.id, p.name HAVING COUNT(r.id) >= 3",
+        "generated_sql": "SELECT products.name, COUNT(*) AS review_count FROM products INNER JOIN reviews ON products.id = reviews.product_id WHERE reviews.rating = 5 GROUP BY products.id HAVING COUNT(*) >= 3 LIMIT 50",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 1298.7248330116272,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 0,
+        "returned_rows": 0
+      }
+    ]
+  },
+  {
+    "summary": {
+      "run_id": "run_spider_e68a80",
+      "timestamp": "2026-06-11T21:37:20.186914",
+      "total_cases": 5,
+      "passed_cases": 4,
+      "failed_cases": 1,
+      "execution_accuracy_pct": 80.0,
+      "average_latency_seconds": 485.9392105579376,
+      "total_tokens": 0,
+      "avg_tokens_per_query": 0.0,
+      "total_retries": 3,
+      "queries_needing_correction": 1,
+      "queries_corrected_successfully": 1,
+      "correction_success_rate_pct": 100.0,
+      "difficulty_breakdown": {
+        "simple": {
+          "passed": 2,
+          "total": 2,
+          "accuracy_pct": 100.0
+        },
+        "medium": {
+          "passed": 1,
+          "total": 2,
+          "accuracy_pct": 50.0
+        },
+        "complex": {
+          "passed": 1,
+          "total": 1,
+          "accuracy_pct": 100.0
+        }
+      }
+    },
+    "results": [
+      {
+        "case_id": "spider_01",
+        "query": "Show users from New York that have premium accounts",
+        "reference_sql": "SELECT id, first_name, last_name FROM users WHERE city = 'New York' AND is_premium = true",
+        "generated_sql": "SELECT * FROM users WHERE city = 'New York' AND is_premium = true;",
+        "success": true,
+        "error_message": "Security Exception: Security Violation: Unauthorized table access. Role 'restricted_user' is not allowed to query 'users'.",
+        "latency_seconds": 457.03618264198303,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 3,
+        "corrected_successfully": true,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_02",
+        "query": "List the categories in the Electronics department",
+        "reference_sql": "SELECT id, name FROM categories WHERE department = 'Electronics'",
+        "generated_sql": "SELECT id, name FROM categories WHERE department = 'Electronics' LIMIT 50",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 189.9846920967102,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 3,
+        "returned_rows": 3
+      },
+      {
+        "case_id": "spider_03",
+        "query": "Find the average price of products in the Electronics department",
+        "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+        "generated_sql": "SELECT AVG(products.price) AS average_price FROM products INNER JOIN categories ON products.category_id = categories.id WHERE categories.department = 'Electronics' LIMIT 50",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 398.56298327445984,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 1,
+        "returned_rows": 1
+      },
+      {
+        "case_id": "spider_04",
+        "query": "How many reviews were written for each product? Show product id and name.",
+        "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+        "generated_sql": "SELECT products.id, products.name, COUNT(reviews.id) AS review_count FROM products LEFT JOIN reviews ON products.id = reviews.product_id GROUP BY products.id, products.name LIMIT 50",
+        "success": false,
+        "error_message": "Row count mismatch: generated returned 50 rows, reference returned 60 rows.",
+        "latency_seconds": 695.0356810092926,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 60,
+        "returned_rows": 50
+      },
+      {
+        "case_id": "spider_05",
+        "query": "Show the names of products that have at least 3 reviews with a rating of 5",
+        "reference_sql": "SELECT p.name FROM products p JOIN reviews r ON p.id = r.product_id WHERE r.rating = 5 GROUP BY p.id, p.name HAVING COUNT(r.id) >= 3",
+        "generated_sql": "SELECT products.name, products.id, COUNT(reviews.id) AS review_count FROM products INNER JOIN reviews ON products.id = reviews.product_id WHERE reviews.rating = 5 GROUP BY products.name, products.id HAVING COUNT(reviews.id) >= 3 LIMIT 50",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 689.0765137672424,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 0,
+        "returned_rows": 0
+      }
+    ]
+  },
+  {
+    "summary": {
+      "run_id": "run_spider_435a44",
+      "timestamp": "2026-06-11T21:01:56.011235",
+      "total_cases": 5,
+      "passed_cases": 0,
+      "failed_cases": 5,
+      "execution_accuracy_pct": 0.0,
+      "average_latency_seconds": 207.57412571907042,
+      "total_tokens": 0,
+      "avg_tokens_per_query": 0.0,
+      "total_retries": 0,
+      "queries_needing_correction": 0,
+      "queries_corrected_successfully": 0,
+      "correction_success_rate_pct": 100.0,
+      "difficulty_breakdown": {
+        "simple": {
+          "passed": 0,
+          "total": 2,
+          "accuracy_pct": 0.0
+        },
+        "medium": {
+          "passed": 0,
+          "total": 2,
+          "accuracy_pct": 0.0
+        },
+        "complex": {
+          "passed": 0,
+          "total": 1,
+          "accuracy_pct": 0.0
+        }
+      }
+    },
+    "results": [
+      {
+        "case_id": "spider_01",
+        "query": "Show users from New York that have premium accounts",
+        "reference_sql": "SELECT id, first_name, last_name FROM users WHERE city = 'New York' AND is_premium = true",
+        "generated_sql": null,
+        "success": false,
+        "error_message": "Pipeline Crash: Local LM Studio model 'qwen3-8b' was not found in the loaded models catalog. Available loaded models: ['openai/gpt-oss-20b', 'text-embedding-nomic-embed-text-v1.5', 'qwen/qwen3-14b', 'qwen/qwen3.5-9b']. Please verify that your LM Studio server has loaded the correct model.",
+        "latency_seconds": 4.674832344055176,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_02",
+        "query": "List the categories in the Electronics department",
+        "reference_sql": "SELECT id, name FROM categories WHERE department = 'Electronics'",
+        "generated_sql": "SELECT id, name, department FROM categories WHERE department = 'Electronics' LIMIT 50",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 566.1768672466278,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 3,
+        "returned_rows": 3
+      },
+      {
+        "case_id": "spider_03",
+        "query": "Find the average price of products in the Electronics department",
+        "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+        "generated_sql": null,
+        "success": false,
+        "error_message": "Pipeline Crash: 1 validation error for QueryPlan\njoins.0.on_condition\n  Field required [type=missing, input_value={'left_table': 'products'...ory_id = categories.id'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+        "latency_seconds": 226.7322895526886,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_04",
+        "query": "How many reviews were written for each product? Show product id and name.",
+        "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+        "generated_sql": null,
+        "success": false,
+        "error_message": "Pipeline Crash: Local LM Studio model 'qwen3-8b' was not found in the loaded models catalog. Available loaded models: ['openai/gpt-oss-20b', 'text-embedding-nomic-embed-text-v1.5', 'qwen/qwen3-14b', 'qwen/qwen3.5-9b']. Please verify that your LM Studio server has loaded the correct model.",
+        "latency_seconds": 0.011178970336914062,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_05",
+        "query": "Show the names of products that have at least 3 reviews with a rating of 5",
+        "reference_sql": "SELECT p.name FROM products p JOIN reviews r ON p.id = r.product_id WHERE r.rating = 5 GROUP BY p.id, p.name HAVING COUNT(r.id) >= 3",
+        "generated_sql": null,
+        "success": false,
+        "error_message": "Pipeline Crash: 1 validation error for QueryPlan\njoins.0.on_condition\n  Field required [type=missing, input_value={'left_table': 'products'...d = reviews.product_id'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+        "latency_seconds": 240.27546048164368,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      }
+    ]
+  }
+]

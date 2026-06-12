@@ -20,12 +20,12 @@ temperature: 0.0
 # Customize which model is routed to each agent.
 # Note: Caller agents automatically fall back to these models.
 # ------------------------------------------------------------------------------
-planner_model: qwen3-14b
-generator_model: qwen3-8b
-validator_model: qwen3-14b
-clarification_model: qwen3-8b
-classifier_model: qwen3-8b
-repair_model: qwen3-14b
+planner_model: qwen3.5-9b
+generator_model: qwen3.5-9b
+validator_model: qwen3.5-9b
+clarification_model: qwen3.5-9b
+classifier_model: qwen3.5-9b
+repair_model: qwen3.5-9b
 
 # ------------------------------------------------------------------------------
 # LM Studio Provider Configuration
@@ -34,5 +34,5 @@ lmstudio:
   enabled: true
   base_url: http://localhost:1234/v1
   api_key: lm-studio
-  model: qwen3-14b
-  embeddings_model: text-embedding-3-small
+  model: qwen3.5-9b
+  embeddings_model: text-embedding-nomic-embed-text-v1.5

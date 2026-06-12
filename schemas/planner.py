@@ -27,6 +27,10 @@ class JoinRequirement(BaseModel):
         if isinstance(data, dict):
             if "condition" in data and "on_condition" not in data:
                 data["on_condition"] = data["condition"]
+            elif "join_condition" in data and "on_condition" not in data:
+                data["on_condition"] = data["join_condition"]
+            elif "on" in data and "on_condition" not in data:
+                data["on_condition"] = data["on"]
         return data
 
 class FilterRequirement(BaseModel):
@@ -38,6 +42,13 @@ class FilterRequirement(BaseModel):
     @classmethod
     def normalize_filter(cls, data: Any) -> Any:
         if isinstance(data, dict):
+            if "value_description" in data and "value" not in data:
+                data["value"] = data["value_description"]
+            elif "description" in data and "value" not in data:
+                data["value"] = data["description"]
+            elif "expected_value" in data and "value" not in data:
+                data["value"] = data["expected_value"]
+
             if "value" in data and not isinstance(data["value"], str):
                 if isinstance(data["value"], bool):
                     data["value"] = "true" if data["value"] else "false"

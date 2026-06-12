@@ -146,7 +146,7 @@ class LMStudioProvider(LLMProvider):
 
     def get_embeddings(self, **kwargs: Any) -> Embeddings:
         """
-        Instantiates OpenAIEmbeddings pointed to LM Studio's custom base URL and runs validation checks.
+        Instantiates LMStudioEmbeddings pointed to LM Studio's custom base URL and runs validation checks.
         """
         try:
             from langchain_openai import OpenAIEmbeddings
@@ -161,7 +161,19 @@ class LMStudioProvider(LLMProvider):
         # Run health check
         self.check_health(self.model)
 
-        return OpenAIEmbeddings(
+        class LMStudioEmbeddings(OpenAIEmbeddings):
+            """
+            Subclass of OpenAIEmbeddings that bypasses tiktoken tokenization,
+            sending raw text strings to LM Studio's embeddings endpoint.
+            """
+            def embed_documents(self, texts: list[str]) -> list[list[float]]:
+                response = self.client.create(input=texts, model=self.model)
+                return [data.embedding for data in response.data]
+
+            def embed_query(self, text: str) -> list[float]:
+                return self.embed_documents([text])[0]
+
+        return LMStudioEmbeddings(
             model=model_name,
             openai_api_base=self.base_url,
             openai_api_key=self.api_key,

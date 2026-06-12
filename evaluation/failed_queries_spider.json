@@ -1,0 +1,22 @@
+[
+  {
+    "case_id": "spider_03",
+    "query": "Find the average price of products in the Electronics department",
+    "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+    "generated_sql": null,
+    "error_message": "Pipeline Crash: 1 validation error for QueryPlan\nfilters.0.value\n  Field required [type=missing, input_value={'column': 'category_id',...lectronics category ID'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+    "latency_seconds": 172.60719108581543,
+    "retry_count": 0,
+    "tokens_used": 0
+  },
+  {
+    "case_id": "spider_04",
+    "query": "How many reviews were written for each product? Show product id and name.",
+    "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+    "generated_sql": "SELECT products.id, products.name, COUNT(reviews.id) AS review_count FROM products INNER JOIN reviews ON products.id = reviews.product_id GROUP BY products.id, products.name LIMIT 50",
+    "error_message": "Row count mismatch: generated returned 40 rows, reference returned 60 rows.",
+    "latency_seconds": 526.8549699783325,
+    "retry_count": 0,
+    "tokens_used": 0
+  }
+]

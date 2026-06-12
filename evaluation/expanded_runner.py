@@ -107,7 +107,8 @@ def run_dataset_benchmark(
             "sql_query": "",
             "error_message": None,
             "retry_count": 0,
-            "final_result": None
+            "final_result": None,
+            "user_role": "admin"
         }
         
         # Time the execution
