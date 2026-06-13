@@ -1,6 +1,369 @@
 [
   {
     "summary": {
+      "run_id": "run_spider_c70ba9",
+      "timestamp": "2026-06-13T19:14:22.423276",
+      "total_cases": 5,
+      "passed_cases": 5,
+      "failed_cases": 0,
+      "execution_accuracy_pct": 100.0,
+      "average_latency_seconds": 339.22337617874143,
+      "total_tokens": 0,
+      "avg_tokens_per_query": 0.0,
+      "total_retries": 1,
+      "queries_needing_correction": 1,
+      "queries_corrected_successfully": 1,
+      "correction_success_rate_pct": 100.0,
+      "difficulty_breakdown": {
+        "simple": {
+          "passed": 2,
+          "total": 2,
+          "accuracy_pct": 100.0
+        },
+        "medium": {
+          "passed": 2,
+          "total": 2,
+          "accuracy_pct": 100.0
+        },
+        "complex": {
+          "passed": 1,
+          "total": 1,
+          "accuracy_pct": 100.0
+        }
+      }
+    },
+    "results": [
+      {
+        "case_id": "spider_01",
+        "query": "Show users from New York that have premium accounts",
+        "reference_sql": "SELECT id, first_name, last_name FROM users WHERE city = 'New York' AND is_premium = true",
+        "generated_sql": "SELECT id, email, city, country, is_premium FROM users WHERE city = 'New York' AND is_premium = TRUE LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 329.0218708515167,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_02",
+        "query": "List the categories in the Electronics department",
+        "reference_sql": "SELECT id, name FROM categories WHERE department = 'Electronics'",
+        "generated_sql": "SELECT id, name FROM categories WHERE department = 'Electronics' LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 284.3452088832855,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 3,
+        "returned_rows": 3
+      },
+      {
+        "case_id": "spider_03",
+        "query": "Find the average price of products in the Electronics department",
+        "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+        "generated_sql": "SELECT AVG(products.price) AS average_price FROM products INNER JOIN categories ON products.category_id = categories.id WHERE categories.department = 'Electronics' LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 285.5919415950775,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 1,
+        "returned_rows": 1
+      },
+      {
+        "case_id": "spider_04",
+        "query": "How many reviews were written for each product? Show product id and name.",
+        "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+        "generated_sql": "SELECT products.id, products.name, COUNT(reviews.id) AS review_count FROM products LEFT JOIN reviews ON products.id = reviews.product_id GROUP BY products.id, products.name LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 249.1478133201599,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 60,
+        "returned_rows": 60
+      },
+      {
+        "case_id": "spider_05",
+        "query": "Show the names of products that have at least 3 reviews with a rating of 5",
+        "reference_sql": "SELECT p.name FROM products p JOIN reviews r ON p.id = r.product_id WHERE r.rating = 5 GROUP BY p.id, p.name HAVING COUNT(r.id) >= 3",
+        "generated_sql": "SELECT products.name, COUNT(*) AS review_count FROM products INNER JOIN reviews ON products.id = reviews.product_id WHERE reviews.rating = 5 GROUP BY products.id, products.name HAVING COUNT(*) >= 3 LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 548.0100462436676,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 1,
+        "corrected_successfully": true,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      }
+    ]
+  },
+  {
+    "summary": {
+      "run_id": "run_spider_b53805",
+      "timestamp": "2026-06-13T17:48:37.032251",
+      "total_cases": 5,
+      "passed_cases": 4,
+      "failed_cases": 1,
+      "execution_accuracy_pct": 80.0,
+      "average_latency_seconds": 991.3500878810883,
+      "total_tokens": 0,
+      "avg_tokens_per_query": 0.0,
+      "total_retries": 2,
+      "queries_needing_correction": 2,
+      "queries_corrected_successfully": 2,
+      "correction_success_rate_pct": 100.0,
+      "difficulty_breakdown": {
+        "simple": {
+          "passed": 2,
+          "total": 2,
+          "accuracy_pct": 100.0
+        },
+        "medium": {
+          "passed": 1,
+          "total": 2,
+          "accuracy_pct": 50.0
+        },
+        "complex": {
+          "passed": 1,
+          "total": 1,
+          "accuracy_pct": 100.0
+        }
+      }
+    },
+    "results": [
+      {
+        "case_id": "spider_01",
+        "query": "Show users from New York that have premium accounts",
+        "reference_sql": "SELECT id, first_name, last_name FROM users WHERE city = 'New York' AND is_premium = true",
+        "generated_sql": "SELECT id, email, city, country, is_premium FROM users WHERE city = 'New York' AND is_premium = TRUE LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 1815.5386765003204,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 1,
+        "corrected_successfully": true,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_02",
+        "query": "List the categories in the Electronics department",
+        "reference_sql": "SELECT id, name FROM categories WHERE department = 'Electronics'",
+        "generated_sql": "SELECT id, name FROM categories WHERE department = 'Electronics' LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 298.9473888874054,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 3,
+        "returned_rows": 3
+      },
+      {
+        "case_id": "spider_03",
+        "query": "Find the average price of products in the Electronics department",
+        "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+        "generated_sql": "SELECT AVG(p.price) AS average_price FROM products AS p INNER JOIN categories AS c ON p.category_id = c.id WHERE c.department = 'Electronics' LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 239.974134683609,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 1,
+        "returned_rows": 1
+      },
+      {
+        "case_id": "spider_04",
+        "query": "How many reviews were written for each product? Show product id and name.",
+        "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+        "generated_sql": "SELECT products.id, products.name, COUNT(reviews.id) AS review_count FROM products LEFT JOIN reviews ON products.id = reviews.product_id GROUP BY products.id LIMIT 1000",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 1184.378511428833,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 60,
+        "returned_rows": 60
+      },
+      {
+        "case_id": "spider_05",
+        "query": "Show the names of products that have at least 3 reviews with a rating of 5",
+        "reference_sql": "SELECT p.name FROM products p JOIN reviews r ON p.id = r.product_id WHERE r.rating = 5 GROUP BY p.id, p.name HAVING COUNT(r.id) >= 3",
+        "generated_sql": "SELECT products.id, products.name, COUNT(*) AS review_count FROM products INNER JOIN reviews ON products.id = reviews.product_id WHERE reviews.rating = 5 GROUP BY products.id HAVING COUNT(*) >= 3 LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 1417.9117279052734,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 1,
+        "corrected_successfully": true,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      }
+    ]
+  },
+  {
+    "summary": {
+      "run_id": "run_spider_edb9fb",
+      "timestamp": "2026-06-13T15:40:55.364343",
+      "total_cases": 5,
+      "passed_cases": 2,
+      "failed_cases": 3,
+      "execution_accuracy_pct": 40.0,
+      "average_latency_seconds": 1492.0814753532409,
+      "total_tokens": 0,
+      "avg_tokens_per_query": 0.0,
+      "total_retries": 4,
+      "queries_needing_correction": 2,
+      "queries_corrected_successfully": 1,
+      "correction_success_rate_pct": 50.0,
+      "difficulty_breakdown": {
+        "simple": {
+          "passed": 1,
+          "total": 2,
+          "accuracy_pct": 50.0
+        },
+        "medium": {
+          "passed": 0,
+          "total": 2,
+          "accuracy_pct": 0.0
+        },
+        "complex": {
+          "passed": 1,
+          "total": 1,
+          "accuracy_pct": 100.0
+        }
+      }
+    },
+    "results": [
+      {
+        "case_id": "spider_01",
+        "query": "Show users from New York that have premium accounts",
+        "reference_sql": "SELECT id, first_name, last_name FROM users WHERE city = 'New York' AND is_premium = true",
+        "generated_sql": "SELECT * FROM users WHERE city = 'New York' AND is_premium = TRUE LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 743.4395656585693,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 0,
+        "returned_rows": 0
+      },
+      {
+        "case_id": "spider_02",
+        "query": "List the categories in the Electronics department",
+        "reference_sql": "SELECT id, name FROM categories WHERE department = 'Electronics'",
+        "generated_sql": "SELECT categories.name FROM categories WHERE categories.department = 'Electronics' LIMIT 1000",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 374.6425988674164,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 3,
+        "returned_rows": 3
+      },
+      {
+        "case_id": "spider_03",
+        "query": "Find the average price of products in the Electronics department",
+        "reference_sql": "SELECT AVG(p.price) FROM products p JOIN categories c ON p.category_id = c.id WHERE c.department = 'Electronics'",
+        "generated_sql": "SELECT AVG(price) AS average_price FROM products WHERE name = 'Electronics' LIMIT 1000",
+        "success": false,
+        "error_message": "Semantic Validation Error: The query is semantically incorrect for multiple reasons: 1) The user asks for 'Electronics department' but there is no 'department' column in the products schema - only a 'category_id' foreign key exists. 2) The WHERE clause filters by `name = 'Electronics'` which incorrectly treats 'Electronics' as a product name rather than a category/dept identifier. 3) The execution result shows null/empty results confirming no products have name='Electronics'. 4) To correctly answer this query, the SQL would need to either: (a) join with a categories table if one exists, or (b) filter by category_id if category names are stored in a separate lookup. The current approach fundamentally misunderstands how department/category information is structured in this schema. Suggested fix: SELECT AVG(p.price) AS average_price FROM products p LEFT JOIN categories c ON p.category_id = c.id WHERE c.name = 'Electronics' OR c.department = 'Electronics'",
+        "latency_seconds": 3335.431066274643,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 3,
+        "corrected_successfully": false,
+        "initial_sql_valid": false,
+        "expected_rows": 1,
+        "returned_rows": 1
+      },
+      {
+        "case_id": "spider_04",
+        "query": "How many reviews were written for each product? Show product id and name.",
+        "reference_sql": "SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN reviews r ON p.id = r.product_id GROUP BY p.id, p.name",
+        "generated_sql": "SELECT products.id, products.name, COUNT(reviews.id) AS review_count FROM products INNER JOIN reviews ON products.id = reviews.product_id GROUP BY products.id LIMIT 1000",
+        "success": false,
+        "error_message": "Row count mismatch: generated returned 40 rows, reference returned 60 rows.",
+        "latency_seconds": 1410.8885412216187,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 60,
+        "returned_rows": 40
+      },
+      {
+        "case_id": "spider_05",
+        "query": "Show the names of products that have at least 3 reviews with a rating of 5",
+        "reference_sql": "SELECT p.name FROM products p JOIN reviews r ON p.id = r.product_id WHERE r.rating = 5 GROUP BY p.id, p.name HAVING COUNT(r.id) >= 3",
+        "generated_sql": "SELECT products.name, COUNT(*) AS review_count FROM products INNER JOIN reviews ON products.id = reviews.product_id WHERE reviews.rating = 5 GROUP BY products.name, products.id HAVING COUNT(*) >= 3 LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 1596.0056047439575,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 1,
+        "corrected_successfully": true,
+        "initial_sql_valid": false,
+        "expected_rows": 0,
+        "returned_rows": 0
+      }
+    ]
+  },
+  {
+    "summary": {
       "run_id": "run_spider_1b3d2d",
       "timestamp": "2026-06-11T22:19:35.151318",
       "total_cases": 5,

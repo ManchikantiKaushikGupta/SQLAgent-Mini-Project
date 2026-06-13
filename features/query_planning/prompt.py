@@ -21,6 +21,9 @@ Rules:
 - Always reference exact table names and column names from the schema.
 - Do NOT write any SQL statement (e.g. SELECT * FROM ...). Write structured components instead.
 - If an aspect (like join or filter) does not apply, skip or leave it empty — do not force it.
+- Carefully choose the JOIN type (INNER, LEFT, RIGHT, FULL):
+  * Prefer LEFT JOIN when the query requests "each", "every", "all", or "any" of a main entity (e.g., "each product", "every user") alongside a count or aggregate of a related optional table, ensuring that main entities with zero related records are still included in the results (e.g. products with 0 reviews).
+  * Use INNER JOIN only when the user intent explicitly requires matching records to exist in both tables.
 """
 
 QUERY_PLANNING_HUMAN_TEMPLATE = """

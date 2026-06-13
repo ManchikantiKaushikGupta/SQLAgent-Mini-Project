@@ -36,8 +36,8 @@ def normalize_results(
     normalized = []
     for row in rows:
         if ignore_column_names:
-            # Order values by key sorting to ensure consistent column mapping
-            row_values = tuple(row[k] for k in sorted(row.keys()))
+            # Order values by selection order to ensure consistent column mapping regardless of alias spelling
+            row_values = tuple(row[k] for k in row.keys())
         else:
             row_values = tuple((k, row[k]) for k in sorted(row.keys()))
             

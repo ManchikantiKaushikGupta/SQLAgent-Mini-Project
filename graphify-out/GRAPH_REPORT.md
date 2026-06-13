@@ -1,16 +1,16 @@
-# Graph Report - SQLAgent-Mini-Project  (2026-06-11)
+# Graph Report - SQLAgent-Mini-Project  (2026-06-13)
 
 ## Corpus Check
-- 84 files · ~68,685 words
+- 84 files · ~70,927 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 959 nodes · 1597 edges · 82 communities (76 shown, 6 thin omitted)
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 171 edges (avg confidence: 0.5)
+- 951 nodes · 1571 edges · 74 communities (69 shown, 5 thin omitted)
+- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 163 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a2d1b40e`
+- Built from commit: `65ddb9f4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -29,7 +29,6 @@
 - [[_COMMUNITY_Community 11|Community 11]]
 - [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 13|Community 13]]
-- [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 23|Community 23]]
 - [[_COMMUNITY_Community 24|Community 24]]
 - [[_COMMUNITY_Community 25|Community 25]]
@@ -63,22 +62,15 @@
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 58|Community 58]]
-- [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
 - [[_COMMUNITY_Community 67|Community 67]]
-- [[_COMMUNITY_Community 68|Community 68]]
 - [[_COMMUNITY_Community 71|Community 71]]
 - [[_COMMUNITY_Community 73|Community 73]]
 - [[_COMMUNITY_Community 74|Community 74]]
 - [[_COMMUNITY_Community 75|Community 75]]
-- [[_COMMUNITY_Community 76|Community 76]]
 - [[_COMMUNITY_Community 77|Community 77]]
-- [[_COMMUNITY_Community 78|Community 78]]
-- [[_COMMUNITY_Community 79|Community 79]]
-- [[_COMMUNITY_Community 80|Community 80]]
-- [[_COMMUNITY_Community 81|Community 81]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `LLMProvider` - 55 edges
@@ -88,15 +80,15 @@
 5. `VLLMProvider` - 26 edges
 6. `get_llm()` - 24 edges
 7. `init_metrics_state()` - 22 edges
-8. `BenchmarkCase` - 21 edges
-9. `SQLErrorClassification` - 21 edges
-10. `BenchmarkResult` - 20 edges
+8. `SQLErrorClassification` - 21 edges
+9. `BenchmarkCase` - 19 edges
+10. `BenchmarkResult` - 18 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `SQLCorrectionResult` --uses--> `SQLCorrectionResult`  [INFERRED]
+  features/validation_correction/agent.py → schemas/validation.py
 - `SQLErrorClassification` --uses--> `SQLErrorClassification`  [INFERRED]
   features/validation_correction/repair_engine.py → schemas/error_taxonomy.py
-- `TestProductionSecurity` --uses--> `SecurityException`  [INFERRED]
-  scratch/test_security.py → core/security.py
 - `TestProductionSecurity` --uses--> `RolePermissions`  [INFERRED]
   scratch/test_security.py → core/security.py
 - `SQLAgentState` --uses--> `QueryPlan`  [INFERRED]
@@ -104,11 +96,11 @@
 - `str` --uses--> `QueryPlan`  [INFERRED]
   features/query_planning/agent.py → schemas/planner.py
 
-## Communities (82 total, 6 thin omitted)
+## Communities (74 total, 5 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.07
-Nodes (55): decide_after_execution(), decide_after_semantic_validation(), decide_after_syntax_validation(), node_clarify_intent(), node_correct_sql(), node_execute_sql(), node_query_planning(), node_retrieve_schema() (+47 more)
+Cohesion: 0.08
+Nodes (51): decide_after_execution(), decide_after_semantic_validation(), decide_after_syntax_validation(), node_clarify_intent(), node_correct_sql(), node_execute_sql(), node_query_planning(), node_retrieve_schema() (+43 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.07
@@ -119,8 +111,8 @@ Cohesion: 0.09
 Nodes (20): ndarray, Retrieval Module Initialization, get_schema_retriever(), Any, bool, int, str, FAISS-Based Database Schema Retriever  Dynamically reflects database metadata us (+12 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.11
-Nodes (18): LangGraph State Definition  Represents the memory passed between nodes during ex, QueryPlan, str, QueryPlan, str, generate_query_plan(), Query Planning Agent  Converts a refined natural language query into a structure, Generates a structured, step-by-step SQL query plan from a refined     natural l (+10 more)
+Cohesion: 0.12
+Nodes (16): int, str, int, apply_shared_retry(), Any, BaseChatModel, Embeddings, float (+8 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.36
@@ -135,8 +127,8 @@ Cohesion: 0.29
 Nodes (6): 1. Intent Clarification Agent, 2. Query Planning Agent, 3. SQL Generation Agent, 4. Validation & Correction Agent, Multi-Agent System Design, System Flow
 
 ### Community 7 - "Community 7"
-Cohesion: 0.12
-Nodes (16): int, str, int, apply_shared_retry(), Any, BaseChatModel, Embeddings, float (+8 more)
+Cohesion: 0.29
+Nodes (6): disable_socket_shield(), enable_socket_shield(), 8. Run end-to-end SQLAgent graph while strict socket shield is ACTIVE., Enables the offline socket blocking interceptor., Disables the offline socket blocking interceptor., Verify that socket shield blocks external internet while allowing localhost.
 
 ### Community 8 - "Community 8"
 Cohesion: 0.22
@@ -159,8 +151,8 @@ Cohesion: 0.12
 Nodes (18): Any, str, Structured response representing the semantic correctness verification of a gene, SemanticValidationResult, MockAIMessage, str, Mock of LangChain AIMessage response., Verify that a missing filter literal triggers a rule violation warning alert. (+10 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.19
-Nodes (21): BaseModel, BenchmarkSummary, compile_failure_analysis(), Any, BenchmarkCase, BenchmarkResult, BenchmarkSummary, str (+13 more)
+Cohesion: 0.07
+Nodes (52): BaseCallbackHandler, BenchmarkCase, clear_thread_callbacks(), BaseCallbackHandler, Registers callbacks for the current thread., Clears callbacks for the current thread., register_thread_callbacks(), BenchmarkResult (+44 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.09
@@ -203,12 +195,12 @@ Cohesion: 0.40
 Nodes (5): Error Categories, Goal, Objective, PRIORITY 9 — Formal Error Taxonomy Engine [COMPLETED], Status
 
 ### Community 39 - "Community 39"
-Cohesion: 0.14
-Nodes (9): MockAIMessage, str, Verify AST clause repair with taxonomy classification context., Verify taxonomy integration in correct_sql when AST repair succeeds., Verify taxonomy integration in correct_sql when AST fails and falls back to full, Mock of LangChain AIMessage response., Verify rule-based taxonomy heuristics on common SQL failures., Verify LLM-driven structured error classification parsing. (+1 more)
+Cohesion: 0.12
+Nodes (18): SQLErrorClassification, str, SQL Error Taxonomy Pydantic Schemas  Defines the formal representation of SQL sy, Structured classification of a SQL error within the formal error taxonomy., SQLErrorClassification, MockAIMessage, str, Verify AST clause repair with taxonomy classification context. (+10 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.11
-Nodes (15): lifespan(), FastAPI Application Setup  Provides an entry point for running the API backend., is_air_gap_enabled(), Air-Gapped Deployment Mode Validation Engine  Validates the offline integrity of, Checks if Air-Gapped Deployment Mode is enabled via environment variables     or, Validates that the current environment complies with Air-Gapped Deployment Mode., validate_air_gap_environment(), FastAPI (+7 more)
+Nodes (14): is_air_gap_enabled(), Checks if Air-Gapped Deployment Mode is enabled via environment variables     or, Validates that the current environment complies with Air-Gapped Deployment Mode., validate_air_gap_environment(), guarded_socket_connect(), Air-Gapped Operation & Offline Verification Test Suite  Validates the full offli, Verify is_air_gap_enabled accurately checks env and yaml., Verify that cloud providers are rejected immediately in air-gapped mode. (+6 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.50
@@ -219,8 +211,8 @@ Cohesion: 0.67
 Nodes (3): Objective, PRIORITY 5 — Schema Retrieval Layer [COMPLETED], Status
 
 ### Community 45 - "Community 45"
-Cohesion: 0.16
-Nodes (31): bool, AnthropicProvider, Concrete provider implementation for Anthropic Claude., get_provider(), LLMProviderFactory, load_config(), Any, LLMProvider (+23 more)
+Cohesion: 0.15
+Nodes (31): bool, Air-Gapped Deployment Mode Validation Engine  Validates the offline integrity of, AnthropicProvider, Concrete provider implementation for Anthropic Claude., get_provider(), LLMProviderFactory, load_config(), Any (+23 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.09
@@ -260,7 +252,7 @@ Nodes (3): Objective, PRIORITY 1 — Structured Outputs, Tasks
 
 ### Community 55 - "Community 55"
 Cohesion: 0.18
-Nodes (14): bool, str, Structured response representing the output of the query correction agent., Structured response representing the output of the query correction agent., SQLCorrectionResult, Unit test suite using mock LLM responses to verify SQL validation, correction, a, SQLCorrectionResult, correct_sql() (+6 more)
+Nodes (11): BaseModel, bool, str, Validation & Correction Pydantic Schemas  Defines structural models for SQL sema, Structured response representing the output of the query correction agent., Structured response representing the output of the query correction agent., SQLCorrectionResult, Unit test suite using mock LLM responses to verify SQL validation, correction, a (+3 more)
 
 ### Community 56 - "Community 56"
 Cohesion: 0.21
@@ -274,37 +266,29 @@ Nodes (11): MockAIMessage, str, Verify that correct_sql handles a successful AST
 Cohesion: 0.67
 Nodes (3): DO, DO NOT, Important Development Rules
 
-### Community 59 - "Community 59"
-Cohesion: 0.21
-Nodes (11): SQLErrorClassification, str, SQL Error Taxonomy Pydantic Schemas  Defines the formal representation of SQL sy, Structured classification of a SQL error within the formal error taxonomy., SQLErrorClassification, Validation & Correction Pydantic Schemas  Defines structural models for SQL sema, classify_sql_error(), fallback_classify_error() (+3 more)
-
 ### Community 60 - "Community 60"
-Cohesion: 0.14
-Nodes (17): 1. Case: `spider_01` (Category: **UnknownError**), 1. Case: `spider_03` (Category: **SchemaError**), 1. Case: `spider_04` (Category: **SemanticError**), 2. Case: `spider_02` (Category: **UnknownError**), 2. Case: `spider_04` (Category: **SemanticError**), 3. Case: `spider_03` (Category: **SchemaError**), 4. Case: `spider_04` (Category: **UnknownError**), 5. Case: `spider_05` (Category: **SchemaError**) (+9 more)
+Cohesion: 0.17
+Nodes (15): 1. Case: `spider_02` (Category: **UnknownError**), 1. Case: `spider_03` (Category: **SchemaError**), 1. Case: `spider_04` (Category: **UnknownError**), 2. Case: `spider_03` (Category: **SchemaError**), 2. Case: `spider_04` (Category: **SemanticError**), 3. Case: `spider_04` (Category: **SemanticError**), code:sql (SELECT p.id, p.name, COUNT(r.id) FROM products p LEFT JOIN r), code:sql (SELECT products.id, products.name, COUNT(reviews.id) AS revi) (+7 more)
 
 ### Community 64 - "Community 64"
 Cohesion: 0.67
 Nodes (3): Objective, PRIORITY 6 — Observability & Transparency [COMPLETED], Status
 
 ### Community 65 - "Community 65"
-Cohesion: 0.12
-Nodes (12): Embeddings, Any, Embeddings, Instantiates GoogleGenerativeAIEmbeddings., Any, BaseChatModel, Embeddings, float (+4 more)
+Cohesion: 0.11
+Nodes (14): BaseChatModel, Embeddings, float, Any, Embeddings, Instantiates GoogleGenerativeAIEmbeddings., Any, BaseChatModel (+6 more)
 
 ### Community 67 - "Community 67"
 Cohesion: 0.25
 Nodes (7): action, details, error, sql, role, timestamp, username
 
-### Community 68 - "Community 68"
-Cohesion: 0.20
-Nodes (12): ask_database(), QueryRequest, QueryResponse, FastAPI Routes  Defines endpoints for the SQLAgent application., Takes a natural language query, runs it through the SQLAgent graph,     and retu, clear_thread_callbacks(), BaseCallbackHandler, Registers callbacks for the current thread. (+4 more)
-
 ### Community 71 - "Community 71"
-Cohesion: 0.25
-Nodes (8): extract_text(), get_llm(), Any, BaseChatModel, float, str, Returns a configured LangChain ChatModel instance from the active provider., Safely extracts string content from an LLM response or AIMessage.     Handles st
+Cohesion: 0.15
+Nodes (14): extract_text(), get_llm(), Any, BaseChatModel, float, str, Returns a configured LangChain ChatModel instance from the active provider., Safely extracts string content from an LLM response or AIMessage.     Handles st (+6 more)
 
 ### Community 73 - "Community 73"
-Cohesion: 0.16
-Nodes (14): BenchmarkResult, BenchmarkSummary, BenchmarkResult, NL2SQL Evaluation Benchmark Runner  Compiles and executes the LangGraph SQLAgent, LangChain Callback handler to transparently capture token usage., Orchestrates the execution of all benchmark cases, captures metrics,     and log, Saves full run logs to file system and updates failed_queries.json, Saves full run logs to file system and updates failed_queries.json (+6 more)
+Cohesion: 0.13
+Nodes (16): LangGraph State Definition  Represents the memory passed between nodes during ex, QueryPlan, str, QueryPlan, str, generate_query_plan(), Query Planning Agent  Converts a refined natural language query into a structure, Generates a structured, step-by-step SQL query plan from a refined     natural l (+8 more)
 
 ### Community 74 - "Community 74"
 Cohesion: 0.67
@@ -314,44 +298,24 @@ Nodes (3): Objective, PRIORITY 3 — Semantic Validation [COMPLETED], Status
 Cohesion: 0.67
 Nodes (3): Objective, PRIORITY 12 — Air-Gapped Deployment Mode [COMPLETED], Status
 
-### Community 76 - "Community 76"
-Cohesion: 0.19
-Nodes (12): build_workflow(), Compiles and returns the LangGraph application., get_database_schema(), Extracts table names, columns, and data types from the connected PostgreSQL data, main(), print_summary_dashboard(), Expanded NL2SQL Benchmark Runner  Orchestrates multi-dataset benchmark execution, Renders an aggregate summary dashboard of all evaluated datasets in the terminal (+4 more)
-
 ### Community 77 - "Community 77"
-Cohesion: 0.12
-Nodes (8): 4. Verify column-level RBAC restrictions (e.g. Analyst accessing email)., 5. Verify SQL limits are clamped or injected based on role threshold., 6. Verify returned database records are masked for sensitive fields., 7. Verify security actions write clean events to observability/audit_log.json., 1. Verify PII in user questions is properly redacted before hitting LLMs., 2. Verify schema pruning removes unauthorized tables and columns by role., 3. Verify SELECT-only, system table protection, and table-level RBAC., TestProductionSecurity
-
-### Community 78 - "Community 78"
-Cohesion: 0.20
-Nodes (7): load_dataset(), BenchmarkCase, str, NL2SQL Dataset Loaders  Provides standardized loading methods for importing and, Loads and parses a specified benchmark dataset JSON file into a list of     vali, Verify that load_dataset successfully parses Spider, Spider Realistic, and Spide, Verify that load_dataset raises a ValueError for unknown dataset names.
-
-### Community 79 - "Community 79"
-Cohesion: 0.29
-Nodes (6): disable_socket_shield(), enable_socket_shield(), 8. Run end-to-end SQLAgent graph while strict socket shield is ACTIVE., Enables the offline socket blocking interceptor., Disables the offline socket blocking interceptor., Verify that socket shield blocks external internet while allowing localhost.
-
-### Community 80 - "Community 80"
-Cohesion: 0.40
-Nodes (3): BaseCallbackHandler, LangChain Callback handler to transparently capture token usage., TokenUsageTracker
-
-### Community 81 - "Community 81"
-Cohesion: 0.40
-Nodes (4): Persists evaluation runs to disk inside the /evaluation directory., Persists evaluation runs to disk inside the /evaluation directory., write_dataset_reports(), Verify that write_dataset_reports successfully serializes JSON metrics and markd
+Cohesion: 0.06
+Nodes (29): lifespan(), FastAPI Application Setup  Provides an entry point for running the API backend., ask_database(), QueryRequest, QueryResponse, FastAPI Routes  Defines endpoints for the SQLAgent application., Takes a natural language query, runs it through the SQLAgent graph,     and retu, build_workflow() (+21 more)
 
 ## Knowledge Gaps
-- **199 isolated node(s):** `int`, `str`, `liveServer.settings.port`, `float`, `BaseChatModel` (+194 more)
+- **202 isolated node(s):** `int`, `str`, `liveServer.settings.port`, `float`, `BaseChatModel` (+197 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `get_llm()` connect `Community 71` to `Community 0`, `Community 3`, `Community 68`, `Community 7`, `Community 45`, `Community 49`, `Community 23`, `Community 55`, `Community 56`, `Community 59`?**
-  _High betweenness centrality (0.088) - this node is a cross-community bridge._
-- **Why does `LLMProvider` connect `Community 49` to `Community 65`, `Community 7`, `Community 45`, `Community 47`, `Community 48`, `Community 53`?**
+- **Why does `get_llm()` connect `Community 71` to `Community 0`, `Community 3`, `Community 39`, `Community 73`, `Community 45`, `Community 49`, `Community 23`, `Community 56`?**
+  _High betweenness centrality (0.089) - this node is a cross-community bridge._
+- **Why does `LLMProvider` connect `Community 49` to `Community 65`, `Community 3`, `Community 45`, `Community 47`, `Community 48`, `Community 53`?**
   _High betweenness centrality (0.052) - this node is a cross-community bridge._
-- **Why does `build_workflow()` connect `Community 76` to `Community 0`, `Community 68`, `Community 73`, `Community 45`, `Community 79`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `build_workflow()` connect `Community 77` to `Community 0`, `Community 24`, `Community 40`, `Community 7`?**
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Are the 42 inferred relationships involving `LLMProvider` (e.g. with `AnthropicProvider` and `Any`) actually correct?**
   _`LLMProvider` has 42 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 8 inferred relationships involving `TestLLMProviders` (e.g. with `AnthropicProvider` and `LLMProvider`) actually correct?**

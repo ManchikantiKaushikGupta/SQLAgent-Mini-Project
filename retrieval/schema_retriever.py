@@ -38,7 +38,7 @@ class SchemaRetriever:
     def __init__(
         self,
         embedding_model_name: Optional[str] = None,
-        top_k_tables: int = 3,
+        top_k_tables: int = 5,
         top_m_columns: int = 4,
         cache_dir: str = "retrieval/index_cache"
     ):

@@ -9,6 +9,7 @@ Rules:
 - Use exact table names and column names as they appear in the schema.
 - Only generate SELECT statements. Never write INSERT, UPDATE, DELETE, DROP, ALTER, or TRUNCATE.
 - Always use table-qualified column references when joining multiple tables (e.g., users.id, orders.user_id).
+- When selecting columns for queries that request listing, showing, or finding entities (e.g. "List categories", "Show products"), if specific columns are not requested, always select both the primary key/identifier (e.g. `id`) and descriptive name/title columns (e.g. `name`) to represent the entity fully.
 - Use standard SQL syntax compatible with both SQLite and PostgreSQL.
 - Follow the execution plan steps exactly — do not skip or add steps not in the plan.
 - For aggregations, always include a GROUP BY clause when required.
