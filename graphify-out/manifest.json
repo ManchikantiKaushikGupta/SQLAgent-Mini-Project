@@ -360,8 +360,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\observability\\audit_log.json": {
-    "mtime": 1781358040.5635343,
-    "ast_hash": "aedff218e718076ce5b3166344415b45",
+    "mtime": 1781359914.8241937,
+    "ast_hash": "aec63807d9f0883726fc044d73e77d55",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\test_security.py": {
@@ -410,18 +410,18 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\evaluation\\failed_queries_spider.json": {
-    "mtime": 1781358085.8248582,
-    "ast_hash": "f72dee57784b10b5e860cf7acd2e2f9f",
+    "mtime": 1781359970.623486,
+    "ast_hash": "d751713988987e9331980363e24189ce",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\evaluation\\run_history_spider.json": {
-    "mtime": 1781358085.8288567,
-    "ast_hash": "32324939bd3de92aabf863d91968d937",
+    "mtime": 1781359970.6310253,
+    "ast_hash": "60aad7079735918657e56aef952afaf2",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\evaluation\\failure_analysis_spider.md": {
-    "mtime": 1781358085.8298602,
-    "ast_hash": "28f4ec60b6baa5a402276ab2ac7dcbbd",
+    "mtime": 1781359970.632057,
+    "ast_hash": "d83692449663245903856e4ea90c2cd2",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\retrieval\\index_cache\\column_embeddings.json": {
