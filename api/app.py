@@ -52,6 +52,10 @@ app.include_router(router, prefix="/api/v1")
 static_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "static"))
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
+# Mount the public directory (logos, assets)
+public_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public"))
+app.mount("/public", StaticFiles(directory=public_dir), name="public")
+
 @app.get("/")
 def serve_spa():
     index_path = os.path.join(static_dir, "index.html")

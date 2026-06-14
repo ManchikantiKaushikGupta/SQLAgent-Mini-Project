@@ -92,22 +92,22 @@ body {
 }
 
 .logo-icon {
-    width: 28px;
-    height: 28px;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-highlight));
-    border-radius: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 0 16px rgba(45,140,255,0.35);
+    overflow: hidden;
 }
 
-.logo-icon svg {
-    width: 15px;
-    height: 15px;
-    stroke: white;
-    stroke-width: 2.5;
+.logo-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 7px;
+    display: block;
 }
 
 .logo-text {
