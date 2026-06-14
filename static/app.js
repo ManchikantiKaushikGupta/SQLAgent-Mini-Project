@@ -11,16 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
         currentRole: 'restricted_user',
         currentUsername: 'anonymous',
         providerOverride: 'Default',
-        modelOverride: null
+        modelOverride: null,
+        hasMessages: false
     };
 
     // DOM Elements
     const navButtons = document.querySelectorAll('.nav-menu .nav-btn');
     const pageViews = document.querySelectorAll('.page-view');
     const chatHistory = document.getElementById('chat-history');
+    const chatWelcome = document.getElementById('chat-welcome');
     const chatInput = document.getElementById('chat-input');
     const chatSendBtn = document.getElementById('chat-send-btn');
     const exampleBtns = document.querySelectorAll('.example-chats .example-btn');
+    const welcomeChips = document.querySelectorAll('.welcome-chip');
     
     // Header/Settings Sync Elements
     const activeEngineBadge = document.getElementById('active-engine-badge');
@@ -202,6 +205,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const USER_AVATAR_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
     const AI_AVATAR_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`;
 
+    function hideWelcome() {
+        if (!appState.hasMessages && chatWelcome) {
+            appState.hasMessages = true;
+            chatWelcome.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+            chatWelcome.style.opacity = '0';
+            chatWelcome.style.transform = 'translateY(-8px)';
+            setTimeout(() => { chatWelcome.style.display = 'none'; }, 260);
+        }
+    }
+
     function appendMessage(sender, content, extraElements = null) {
         const msgDiv = document.createElement('div');
         msgDiv.classList.add('chat-msg', sender);
@@ -229,6 +242,17 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(() => { chatHistory.scrollTop = chatHistory.scrollHeight; });
     }
 
+    // Welcome chip click handlers
+    welcomeChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const query = chip.getAttribute('data-query');
+            chatInput.value = query;
+            chatInput.style.height = 'auto';
+            chatInput.style.height = `${chatInput.scrollHeight}px`;
+            handleQuerySubmit();
+        });
+    });
+
     async function handleQuerySubmit() {
         const query = chatInput.value.trim();
         if (!query) return;
@@ -236,6 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear input & auto shrink textarea
         chatInput.value = '';
         chatInput.style.height = 'auto';
+
+        // Hide welcome screen on first message
+        hideWelcome();
 
         // Add User Bubble
         appendMessage('user', query);
