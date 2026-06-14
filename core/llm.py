@@ -5,10 +5,13 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.callbacks import BaseCallbackHandler
 from dotenv import load_dotenv
 
+from llm.factory import provider_override, model_override
+
 load_dotenv(override=True)
 
 # Thread-local storage for callbacks
 _thread_locals = threading.local()
+
 
 def get_active_callbacks() -> List[BaseCallbackHandler]:
     """Returns the list of active callbacks for the current thread."""
@@ -77,6 +80,11 @@ def get_llm(model: Optional[str] = None, temperature: float = 0.0) -> BaseChatMo
             routed_model = config.get(caller_role)
             if routed_model:
                 model = routed_model
+
+    # If a dynamic model override is active, prioritize it
+    active_model_name = model_override.get()
+    if active_model_name:
+        model = active_model_name
 
     provider = get_provider()
     

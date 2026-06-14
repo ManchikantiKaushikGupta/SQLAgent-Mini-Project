@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataSense AI - Telemetry Portal</title>
+    <meta name="description" content="DataSense AI — NL2SQL telemetry workspace for querying databases and monitoring live performance diagnostics.">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232d8cff'/><path d='M28 70 L50 30 L72 70' stroke='white' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                    </svg>
+                </div>
+                <span class="logo-text">DataSense</span>
+                <span class="logo-sub">AI</span>
+            </div>
+
+            <div class="search-box">
+                <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input type="text" class="search-input" placeholder="Search..." disabled>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Navigation</div>
+                <nav class="nav-menu">
+                    <button class="nav-btn active" data-page="chats" id="nav-chats">
+                        <span class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </span>
+                        <span class="nav-label">Chats</span>
+                    </button>
+                    <button class="nav-btn" data-page="observability" id="nav-observability">
+                        <span class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </span>
+                        <span class="nav-label">Observability</span>
+                    </button>
+                    <button class="nav-btn" data-page="benchmarks" id="nav-benchmarks">
+                        <span class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </span>
+                        <span class="nav-label">Benchmarks</span>
+                    </button>
+                    <button class="nav-btn" data-page="settings" id="nav-settings">
+                        <span class="nav-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 19.07a10 10 0 0 1 0-14.14"/>
+                                <path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
+                            </svg>
+                        </span>
+                        <span class="nav-label">Settings</span>
+                    </button>
+                </nav>
+            </div>
+
+            <div class="sidebar-section sidebar-chats-section">
+                <div class="sidebar-heading">Example Chats</div>
+                <div class="example-chats">
+                    <button class="example-btn" data-query="Show the top 3 users by total order amount, ordered descending">
+                        <span class="example-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </span>
+                        <span class="example-text">Top Customers</span>
+                    </button>
+                    <button class="example-btn" data-query="Get all reviews for Laptop Model B2">
+                        <span class="example-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </span>
+                        <span class="example-text">Product Reviews</span>
+                    </button>
+                    <button class="example-btn active-chat" data-query="Which category department has the highest number of products?">
+                        <span class="example-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </span>
+                        <span class="example-text">Category Analysis</span>
+                        <span class="example-more-btn" title="Options">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="sidebar-footer-card">
+                <div class="footer-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                </div>
+                <div class="footer-card-text">
+                    <div class="footer-card-title">Update the plan</div>
+                    <div class="footer-card-desc">Feel the power of AI</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN AREA -->
+        <main class="main-content">
+            <!-- PAGE: CHATS -->
+            <section id="page-chats" class="page-view active">
+                <header class="chat-header">
+                    <div class="chat-header-left">
+                        <div class="chat-header-title">
+                            <svg class="header-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                            DataSense AI Telemetry Workspace
+                        </div>
+                        <div class="chat-header-subtitle">Query database schemas and monitor live performance telemetries.</div>
+                    </div>
+                    <div class="chat-header-right">
+                        <span class="header-badge bg-blue" id="active-engine-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                            Engine: LOADING...
+                        </span>
+                        <span class="header-badge bg-grey" id="active-user-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            RESTRICTED_USER (anonymous)
+                        </span>
+                        <img class="header-avatar" id="header-avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=anonymous" alt="Avatar">
+                    </div>
+                </header>
+
+                <div class="chat-history-container" id="chat-history">
+                    <!-- Dynamic chat speech bubbles injected by JS -->
+                </div>
+
+                <div class="chat-input-wrapper">
+                    <div class="chat-input-pill">
+                        <span class="pill-decor-icon" title="Attach">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+                            </svg>
+                        </span>
+                        <span class="pill-decor-icon" title="Suggest">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                        </span>
+                        <textarea class="chat-input-textarea" id="chat-input" placeholder="Ask me something..." rows="1"></textarea>
+                        <span class="pill-decor-icon mic-icon" title="Voice">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>
+                            </svg>
+                        </span>
+                        <button class="chat-send-btn" id="chat-send-btn" aria-label="Send message">
+                            <svg class="send-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE: OBSERVABILITY -->
+            <section id="page-observability" class="page-view">
+                <header class="view-header">
+                    <h1>
+                        <svg class="view-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                        Observability Diagnostics
+                    </h1>
+                    <p class="view-subtitle">Monitor execution latency pipeline, structural query plans, and validator loops.</p>
+                </header>
+
+                <div id="obs-no-data" class="content-panel info-box">
+                    <span class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>No Active Telemetry:</strong> Please execute a query inside the <strong>Chats</strong> workspace to inspect live diagnostics.
+                    </div>
+                </div>
+
+                <div id="obs-data-view" class="hidden">
+                    <div class="kpi-container" id="obs-kpis">
+                        <!-- KPI Cards injected here -->
+                    </div>
+
+                    <div class="panel-row">
+                        <div class="content-panel flex-3">
+                            <h3>
+                                <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                Stage-wise Latency Timeline
+                            </h3>
+                            <div class="charts-container" id="obs-latency-bars">
+                                <!-- Horizontal latency progress bars -->
+                            </div>
+                        </div>
+                        <div class="content-panel flex-2">
+                            <h3>
+                                <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                                Token Usage Breakdown
+                            </h3>
+                            <table class="data-table" id="obs-tokens-table">
+                                <thead>
+                                    <tr>
+                                        <th>Token Type</th>
+                                        <th>Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel-row">
+                        <div class="content-panel flex-1">
+                            <h3>
+                                <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                                </svg>
+                                Structural Query Plan (Planner Output)
+                            </h3>
+                            <div class="diag-details" id="obs-query-plan-details">
+                                <!-- planner thought process -->
+                            </div>
+                        </div>
+                        <div class="content-panel flex-1">
+                            <h3>
+                                <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                Dynamic Schema Retrieval Audits
+                            </h3>
+                            <div class="diag-details" id="obs-schema-retrieval-details">
+                                <!-- faiss retrieval metrics -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-panel">
+                        <h3>
+                            <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                            Generated SQL Query &amp; Validations
+                        </h3>
+                        <pre class="code-block" id="obs-sql-code"><code></code></pre>
+
+                        <div class="validation-row" id="obs-validation-results">
+                            <!-- validation outcome badges -->
+                        </div>
+                    </div>
+
+                    <div class="content-panel hidden" id="obs-correction-panel">
+                        <h3>
+                            <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                            AST SQL Correction &amp; Repair Trails
+                        </h3>
+                        <div class="repair-history" id="obs-repair-history">
+                            <!-- Retries loops -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE: BENCHMARKS -->
+            <section id="page-benchmarks" class="page-view">
+                <header class="view-header">
+                    <h1>
+                        <svg class="view-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                        Multi-Dataset NL2SQL Benchmarks
+                    </h1>
+                    <p class="view-subtitle">Historical latency distributions, projected API cost models, and failure taxonomies.</p>
+                </header>
+
+                <div class="content-panel" style="margin-bottom:1.5rem;">
+                    <label for="benchmark-dataset-select" class="form-label">
+                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+                        </svg>
+                        Select Evaluation Target Benchmark:
+                    </label>
+                    <select class="form-select" id="benchmark-dataset-select">
+                        <option value="run_history.json">Baseline E-Commerce</option>
+                        <option value="run_history_spider.json">Spider</option>
+                        <option value="run_history_spider_realistic.json">Spider Realistic</option>
+                        <option value="run_history_spider_syn.json">Spider SYN</option>
+                    </select>
+                </div>
+
+                <div id="bench-no-data" class="content-panel info-box hidden">
+                    <span class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>No Benchmark Logs:</strong> The target JSON history log does not exist. Run evaluations in your shell to populate metrics.
+                    </div>
+                </div>
+
+                <div id="bench-data-view">
+                    <div class="kpi-container" id="bench-kpis">
+                        <!-- Benchmark KPIs injected here -->
+                    </div>
+
+                    <div class="panel-row">
+                        <div class="content-panel flex-1">
+                            <h3>
+                                <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="8" r="7"/>
+                                </svg>
+                                Execution Accuracy by Difficulty
+                            </h3>
+                            <div class="charts-container" id="bench-difficulty-bars"></div>
+                        </div>
+                        <div class="content-panel flex-1">
+                            <h3>
+                                <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                </svg>
+                                Failure Diagnostics &amp; Taxonomy Breakdown
+                            </h3>
+                            <div class="charts-container" id="bench-error-bars"></div>
+                        </div>
+                    </div>
+
+                    <div class="panel-row">
+                        <div class="content-panel flex-1">
+                            <h3>
+                                <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                Query Latency Distributions (Case Logs)
+                            </h3>
+                            <div class="latency-distribution-wrapper" id="bench-latency-dist">
+                                <!-- dynamic bars -->
+                            </div>
+                        </div>
+                        <div class="content-panel flex-1">
+                            <h3>
+                                <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                                Token Usage &amp; Projections
+                            </h3>
+                            <div class="projections-wrapper" id="bench-token-projections">
+                                <!-- cost metrics -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-panel">
+                        <h3>
+                            <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+                            </svg>
+                            Failed Query Diagnostic List
+                        </h3>
+                        <div class="table-scroll-wrapper">
+                            <table class="data-table" id="bench-failures-table">
+                                <thead>
+                                    <tr>
+                                        <th>Case ID</th>
+                                        <th>NL Query</th>
+                                        <th>Error Details</th>
+                                        <th>Retries</th>
+                                        <th>Tokens</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE: SETTINGS -->
+            <section id="page-settings" class="page-view">
+                <header class="view-header">
+                    <h1>
+                        <svg class="view-header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 19.07a10 10 0 0 1 0-14.14"/>
+                            <path d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
+                        </svg>
+                        Telemetry &amp; System Configurations
+                    </h1>
+                    <p class="view-subtitle">Adjust governance role models, swap target provider overrides, and check dynamic index keys.</p>
+                </header>
+
+                <div class="content-panel">
+                    <div class="form-group">
+                        <label for="settings-role" class="form-label">
+                            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                            Governance Role Policy:
+                        </label>
+                        <select class="form-select" id="settings-role">
+                            <option value="restricted_user">restricted_user</option>
+                            <option value="analyst">analyst</option>
+                            <option value="manager">manager</option>
+                            <option value="admin">admin</option>
+                        </select>
+                        <span class="form-help">Enforces Table/Column RBAC permission controls on the AI graph.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settings-username" class="form-label">Active Username Session:</label>
+                        <input type="text" class="form-input" id="settings-username" value="anonymous">
+                    </div>
+
+                    <hr class="form-divider">
+
+                    <div class="form-group">
+                        <label for="settings-provider" class="form-label">
+                            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                            LLM Provider Pathway Override:
+                        </label>
+                        <select class="form-select" id="settings-provider">
+                            <option value="Default">Default</option>
+                            <option value="gemini">gemini</option>
+                            <option value="openai">openai</option>
+                            <option value="anthropic">anthropic</option>
+                            <option value="ollama">ollama</option>
+                            <option value="vllm">vllm</option>
+                            <option value="lmstudio">lmstudio</option>
+                        </select>
+                        <span class="form-help">Override the globally configured LLM provider for this session.</span>
+                    </div>
+
+                    <div class="form-group hidden" id="settings-model-group">
+                        <label for="settings-model" class="form-label">Model Name:</label>
+                        <select class="form-select" id="settings-model"></select>
+                    </div>
+
+                    <hr class="form-divider">
+
+                    <h3>
+                        <svg class="panel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                        Observability Specs &amp; Index Details
+                    </h3>
+                    <div class="specs-grid">
+                        <div>
+                            <strong>Workflow Engine:</strong> LangGraph (Hierarchical State Graph)
+                        </div>
+                        <div>
+                            <strong>Embedding Engine:</strong> FAISS (IndexFlatIP - Cosine Similarity)
+                        </div>
+                        <div>
+                            <strong>Default System Provider:</strong> <span id="system-default-engine">LOADING...</span>
+                        </div>
+                        <div>
+                            <strong>Telemetry Log Target:</strong> Memory Buffer + Audit JSON Log
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

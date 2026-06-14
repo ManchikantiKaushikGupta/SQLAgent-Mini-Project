@@ -27,6 +27,8 @@ class QueryRequest(BaseModel):
     query: str
     user_role: Optional[str] = None
     username: Optional[str] = None
+    provider: Optional[str] = None
+    model: Optional[str] = None
 
 
 class QueryResponse(BaseModel):
@@ -36,6 +38,8 @@ class QueryResponse(BaseModel):
     results: Optional[List[Dict[str, Any]]]
     error: Optional[str]
     metrics: Optional[Dict[str, Any]] = None
+    active_provider: Optional[str] = None
+    active_model: Optional[str] = None
 
 
 @router.post("/ask", response_model=QueryResponse)
@@ -80,11 +84,16 @@ async def ask_database(request: QueryRequest):
         "security_error": None
     }
 
-    from core.llm import register_thread_callbacks, clear_thread_callbacks
+    from core.llm import register_thread_callbacks, clear_thread_callbacks, provider_override, model_override
     from observability.metrics import TokenAccumulatorCallback
+    from llm.factory import load_config
     
     tokens_tracker = TokenAccumulatorCallback()
     register_thread_callbacks([tokens_tracker])
+
+    # Establish request-scoped LLM overrides if specified
+    provider_token = provider_override.set(request.provider if request.provider else None)
+    model_token = model_override.set(request.model if request.model else None)
 
     try:
         # Run the graph until the end
@@ -109,6 +118,16 @@ async def ask_database(request: QueryRequest):
                 else:
                     metrics["query_plan"] = plan
 
+        # Retrieve the dynamically resolved provider/model configured/used for this execution
+        config = load_config()
+        final_provider = config.get("provider", "gemini")
+        final_model = config.get("model")
+        if not final_model:
+            prov_specific = config.get(final_provider, {})
+            if isinstance(prov_specific, dict):
+                final_model = prov_specific.get("model", "Unknown")
+            else:
+                final_model = "Unknown"
 
         return QueryResponse(
             original_query=result_state.get("original_query", ""),
@@ -116,11 +135,57 @@ async def ask_database(request: QueryRequest):
             sql_query=result_state.get("sql_query"),
             results=result_state.get("final_result"),
             error=result_state.get("error_message"),
-            metrics=metrics
+            metrics=metrics,
+            active_provider=final_provider,
+            active_model=final_model
         )
     except Exception as e:
         logger.error(f"Error executing query graph: {e}")
         raise HTTPException(status_code=500, detail=str(e))
     finally:
+        provider_override.reset(provider_token)
+        model_override.reset(model_token)
         clear_thread_callbacks()
+
+
+@router.get("/config")
+def get_config():
+    """
+    Returns the current LLM configurations and dynamic schema settings.
+    """
+    from llm.factory import load_config
+    try:
+        config = load_config()
+        return config
+    except Exception as e:
+        logger.error(f"Error loading config: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/benchmarks/{filename}")
+def get_benchmark(filename: str):
+    """
+    Serves the selected benchmark JSON log file from the evaluation directory.
+    """
+    import os
+    from fastapi.responses import FileResponse
+    
+    # Restrict filenames to prevent directory traversal
+    allowed_files = [
+        "run_history.json",
+        "run_history_spider.json",
+        "run_history_spider_realistic.json",
+        "run_history_spider_syn.json",
+        "failed_queries.json",
+        "failed_queries_spider.json"
+    ]
+    if filename not in allowed_files:
+        raise HTTPException(status_code=400, detail="Invalid benchmark file name.")
+        
+    eval_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "evaluation"))
+    file_path = os.path.join(eval_dir, filename)
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="Benchmark history log file not found.")
+        
+    return FileResponse(file_path)
 

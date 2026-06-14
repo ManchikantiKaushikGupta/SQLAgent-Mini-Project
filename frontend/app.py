@@ -1,78 +1,664 @@
 import streamlit as st
 import requests
 import pandas as pd
+import os
+import json
 from typing import Any, Dict
 
-API_URL = "http://127.0.0.1:8000/api/v1/ask"
+API_URL = "http://127.0.0.1:8001/api/v1/ask"
 
 # 1. Page Configuration
-st.set_page_config(page_title="DataSense AI - Telemetry Portal", page_icon="📊", layout="wide")
+st.set_page_config(
+    page_title="DataSense AI - Telemetry Portal",
+    page_icon="💎",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-# 2. Custom Sleek CSS for Modern AI Look (Glows, glassmorphism, no headers)
-st.markdown("""
+# 2. Session State Initialization
+if "messages" not in st.session_state:
+    st.session_state.messages = [
+        {
+            "role": "assistant",
+            "content": "Hello! I am your AI SQL Agent. Ask me any analytical question, and I'll generate the query plan, prune the schema via FAISS, write the SQL, and display live metrics diagnostics!"
+        }
+    ]
+
+if "last_metrics" not in st.session_state:
+    st.session_state.last_metrics = None
+
+if "active_page" not in st.session_state:
+    st.session_state.active_page = "chats"
+
+if "user_role" not in st.session_state:
+    st.session_state.user_role = "restricted_user"
+
+if "username" not in st.session_state:
+    st.session_state.username = "anonymous"
+
+if "selected_provider" not in st.session_state:
+    st.session_state.selected_provider = "Default"
+
+if "selected_model" not in st.session_state:
+    st.session_state.selected_model = None
+
+if "prefilled_query" not in st.session_state:
+    st.session_state.prefilled_query = None
+
+
+# 3. Dynamic Styles and DOM Tagging Scripts
+# Inject Google Font and VOXA dark theme colors
+active_page = st.session_state.active_page
+
+st.markdown(f"""
     <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
-        .block-container {
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-        }
-        .stTabs [data-baseweb="tab-list"] {
-            gap: 2rem;
-            background-color: #1a1c24;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            border: 1px solid #2d313f;
-        }
-        .stTabs [data-baseweb="tab"] {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #8f95b2;
-        }
-        .stTabs [data-baseweb="tab"]:hover {
+        /* Hide default Streamlit elements */
+        footer {{visibility: hidden !important;}}
+        #MainMenu {{visibility: hidden !important;}}
+        
+        /* Load Space Grotesk Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        /* Global Font & Layout Overrides */
+        html, body, [class*="css"], .stText, .stMarkdown, p, h1, h2, h3, h4, h5, h6, span, button, input, label, select, textarea, div.stSelectbox, div.stTextInput {{
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }}
+        
+        .block-container {{
+            padding-top: 1.5rem !important;
+            padding-bottom: 2rem !important;
+            max-width: 1200px;
+            margin: 0 auto;
+        }}
+        
+        /* Premium Background Gradient (Radial Glow) */
+        [data-testid="stAppViewContainer"] {{
+            background: radial-gradient(circle at 85% 15%, #0d1e30 0%, #040404 70%) !important;
+            color: #ffffff !important;
+        }}
+        
+        [data-testid="stSidebar"] {{
+            background-color: #040404 !important;
+            border-right: 1px solid #171717 !important;
+            padding-top: 1rem !important;
+        }}
+        
+        [data-testid="stHeader"] {{
+            background-color: transparent !important;
+            backdrop-filter: blur(8px) !important;
+            border-bottom: none !important;
+        }}
+        
+        [data-testid="stSidebarCollapseButton"] {{
+            color: #ffffff !important;
+        }}
+        
+        /* Sidebar VOXA Custom Layout & Typography */
+        .logo-container {{
+            padding: 0.5rem 0.5rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }}
+        .logo-text {{
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
             color: #ffffff;
-        }
-        .stTabs [aria-selected="true"] {
-            color: #4f46e5 !important;
-            border-bottom-color: #4f46e5 !important;
-        }
-        .kpi-card {
-            background-color: #161821;
-            border: 1px solid #252836;
-            padding: 1.2rem;
-            border-radius: 0.5rem;
-            text-align: center;
-        }
+            font-family: 'Space Grotesk', sans-serif;
+        }}
+        .logo-sub {{
+            font-size: 0.7rem;
+            background: linear-gradient(90deg, #6ec0ff 0%, #2d8cff 100%);
+            color: #040404;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 700;
+            letter-spacing: 0px;
+        }}
+        
+        .search-box {{
+            background-color: #171717;
+            border: 1px solid #2d2d2d;
+            border-radius: 12px;
+            padding: 0.5rem 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }}
+        .search-icon {{
+            color: #8f95b2;
+            font-size: 0.9rem;
+        }}
+        .search-input {{
+            background: transparent !important;
+            border: none !important;
+            color: #ffffff !important;
+            font-size: 0.85rem !important;
+            width: 100% !important;
+            padding: 0 !important;
+            outline: none !important;
+        }}
+        
+        .sidebar-heading {{
+            color: #8f95b2;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 1.2rem 0.8rem 0.4rem 0.8rem;
+        }}
+        
+        .sidebar-divider {{
+            border-top: 1px solid #171717;
+            margin: 1.2rem 0.5rem;
+        }}
+        
+        /* Sidebar Nav Buttons Styling - Prevent white rectangles */
+        div[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"],
+        div[data-testid="stSidebar"] button[kind="secondary"],
+        div[data-testid="stSidebar"] button {{
+            background-color: transparent !important;
+            background: transparent !important;
+            color: #8f95b2 !important;
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+            text-align: left !important;
+            justify-content: flex-start !important;
+            display: flex !important;
+            width: calc(100% - 1rem) !important;
+            padding: 0.6rem 1rem !important;
+            margin: 0.15rem 0.5rem !important;
+            border-radius: 10px !important;
+            font-size: 0.95rem !important;
+            font-weight: 500 !important;
+            transition: all 0.2s ease !important;
+        }}
+        div[data-testid="stSidebar"] button:hover {{
+            background-color: #171717 !important;
+            background: #171717 !important;
+            color: #ffffff !important;
+        }}
+        
+        /* Force button text elements to inherit the color (vital for Streamlit light mode fallback) */
+        div[data-testid="stSidebar"] button p,
+        div[data-testid="stSidebar"] button span,
+        div[data-testid="stSidebar"] button div,
+        div[data-testid="stSidebar"] button * {{
+            color: inherit !important;
+        }}
+        
+        /* Active nav item override */
+        div[data-testid="stSidebar"] button[data-nav="{active_page}"],
+        div[data-testid="stSidebar"] [data-nav="{active_page}"] button,
+        div[data-testid="stSidebar"] button[data-nav="{active_page}"]:hover,
+        div[data-testid="stSidebar"] button[data-nav="{active_page}"]:active,
+        div[data-testid="stSidebar"] button[data-nav="{active_page}"]:focus {{
+            background-color: #171717 !important;
+            background: #171717 !important;
+            color: #ffffff !important;
+            border-left: 4px solid #2d8cff !important;
+            padding-left: calc(1rem - 4px) !important;
+            border-radius: 0 10px 10px 0 !important;
+        }}
+        
+        /* Sidebar Bottom Sparkle Card */
+        .sidebar-footer-card {{
+            background: linear-gradient(135deg, #171717 0%, #121212 100%);
+            border: 1px solid #2d2d2d;
+            border-radius: 16px;
+            padding: 0.8rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: 1rem 0.5rem;
+        }}
+        .footer-card-icon {{
+            width: 36px;
+            height: 36px;
+            background: radial-gradient(circle, #2d8cff 0%, #0d1e30 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px rgba(45, 140, 255, 0.4);
+        }}
+        .footer-card-title {{
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }}
+        .footer-card-desc {{
+            color: #8f95b2;
+            font-size: 0.75rem;
+        }}
+        
+        /* Chat Workspace Elements */
+        .chat-header-container {{
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            border-bottom: 1px solid #171717 !important;
+            padding-bottom: 1rem !important;
+            margin-bottom: 1.5rem !important;
+            flex-wrap: wrap !important;
+            gap: 1rem !important;
+            width: 100% !important;
+        }}
+        .chat-header-left {{
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.2rem !important;
+            text-align: left !important;
+        }}
+        .chat-header-title {{
+            font-size: 1.4rem !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+        }}
+        .chat-header-subtitle {{
+            font-size: 0.85rem !important;
+            color: #8f95b2 !important;
+            margin: 0 !important;
+        }}
+        .chat-header-right {{
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+            gap: 0.8rem !important;
+            flex-shrink: 0 !important;
+        }}
+        .header-badge {{
+            padding: 0.4rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+        }}
+        .bg-blue {{
+            background-color: rgba(45, 140, 255, 0.12) !important;
+            color: #6ec0ff !important;
+            border: 1px solid rgba(45, 140, 255, 0.3) !important;
+        }}
+        .bg-grey {{
+            background-color: #171717 !important;
+            color: #ffffff !important;
+            border: 1px solid #2d2d2d !important;
+        }}
+        .header-avatar {{
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid #2d8cff;
+            background-color: #171717;
+            box-shadow: 0 0 10px rgba(45, 140, 255, 0.3);
+        }}
+        
+        /* Chat bubbles */
+        div[data-testid="stChatMessage"] {{
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0.8rem 0 !important;
+        }}
+        div[data-testid="stChatMessage"][data-role="user"] {{
+            display: flex !important;
+            flex-direction: row-reverse !important;
+            text-align: right !important;
+        }}
+        div[data-testid="stChatMessage"][data-role="user"] [data-testid="stChatMessageAvatar"] {{
+            margin-left: 0.8rem !important;
+            margin-right: 0 !important;
+            order: 2 !important;
+            background-color: #171717 !important;
+            border: 1px solid #2d2d2d !important;
+        }}
+        div[data-testid="stChatMessage"][data-role="user"] div.stMarkdown {{
+            background-color: #171717 !important;
+            color: #ffffff !important;
+            padding: 0.8rem 1.2rem !important;
+            border-radius: 20px 20px 0px 20px !important;
+            display: inline-block !important;
+            max-width: 75% !important;
+            text-align: left !important;
+            border: 1px solid #2d2d2d !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+        }}
+        div[data-testid="stChatMessage"][data-role="assistant"] {{
+            display: flex !important;
+            flex-direction: row !important;
+        }}
+        div[data-testid="stChatMessage"][data-role="assistant"] [data-testid="stChatMessageAvatar"] {{
+            margin-right: 0.8rem !important;
+            background-color: #2d8cff !important;
+            box-shadow: 0 0 10px rgba(45, 140, 255, 0.4) !important;
+            border: none !important;
+        }}
+        div[data-testid="stChatMessage"][data-role="assistant"] div.stMarkdown {{
+            color: #ffffff !important;
+            background-color: transparent !important;
+            padding: 0.2rem 0 !important;
+            display: inline-block !important;
+            max-width: 85% !important;
+        }}
+        
+        /* Chat Input - Prevent white background and white overlay at the bottom */
+        [data-testid="stBottom"],
+        div[class*="stBottom"],
+        .st-emotion-cache-12fmhud,
+        .st-emotion-cache-1c7n2ri {{
+            background: linear-gradient(180deg, rgba(4, 4, 4, 0) 0%, #040404 40%, #040404 100%) !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }}
+        
+        div[data-testid="stChatInput"] {{
+            background-color: transparent !important;
+            border: none !important;
+            padding: 1.5rem 0 !important;
+        }}
+        div[data-testid="stChatInput"] > div {{
+            background-color: #171717 !important;
+            border: 1px solid #2d2d2d !important;
+            border-radius: 28px !important;
+            padding: 0.3rem 0.8rem !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+            transition: all 0.3s ease !important;
+        }}
+        div[data-testid="stChatInput"] > div:focus-within {{
+            border-color: #2d8cff !important;
+            box-shadow: 0 0 15px rgba(45, 140, 255, 0.3) !important;
+        }}
+        
+        /* Force Textarea transparent background in both modes */
+        div[data-testid="stChatInput"] textarea,
+        div[data-testid="stChatInput"] [data-testid="stChatInputTextArea"],
+        [data-testid="stChatInputTextArea"],
+        .stChatInputTextArea {{
+            background-color: transparent !important;
+            background: transparent !important;
+            color: #ffffff !important;
+            font-size: 0.95rem !important;
+            caret-color: #2d8cff !important;
+            border: none !important;
+            box-shadow: none !important;
+        }}
+        div[data-testid="stChatInput"] button {{
+            background-color: #2d8cff !important;
+            border-radius: 50% !important;
+            width: 36px !important;
+            height: 36px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: #ffffff !important;
+            border: none !important;
+            transition: all 0.2s ease !important;
+        }}
+        div[data-testid="stChatInput"] button:hover {{
+            background-color: #6ec0ff !important;
+            box-shadow: 0 0 10px rgba(45, 140, 255, 0.6) !important;
+        }}
+        
+        /* Custom styled containers & inputs */
+        .content-panel {{
+            background-color: #171717 !important;
+            border: 1px solid #2d2d2d !important;
+            border-radius: 16px !important;
+            padding: 1.8rem !important;
+            margin-bottom: 1.5rem !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+        }}
+        
+        /* Diagnostics KPI Cards */
+        .kpi-container {{
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }}
+        .kpi-card {{
+            flex: 1;
+            min-width: 180px;
+            background: linear-gradient(135deg, #171717 0%, #1a1a1a 100%) !important;
+            border: 1px solid #2d2d2d !important;
+            padding: 1.2rem !important;
+            border-radius: 16px !important;
+            text-align: center !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        }}
+        .kpi-card:hover {{
+            border-color: #2d8cff !important;
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(45, 140, 255, 0.25) !important;
+        }}
+        .kpi-card p {{
+            color: #8f95b2 !important;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            margin: 0 0 0.5rem 0 !important;
+        }}
+        .kpi-card h2 {{
+            color: #ffffff !important;
+            font-size: 1.8rem !important;
+            font-weight: 700 !important;
+            margin: 0 !important;
+        }}
+        
+        /* Expander codes */
+        div[data-testid="stExpander"] {{
+            background-color: #0c0c0c !important;
+            border: 1px solid #2d2d2d !important;
+            border-radius: 12px !important;
+            margin-top: 0.5rem !important;
+            overflow: hidden !important;
+        }}
+        /* Expander header styling without layout disruption */
+        div[data-testid="stExpander"] [data-testid="stExpanderHeader"] {{
+            background-color: #171717 !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            border-bottom: 1px solid #2d2d2d !important;
+        }}
+        div[data-testid="stExpander"] [data-testid="stExpanderHeader"] * {{
+            color: #ffffff !important;
+        }}
+        div[data-testid="stExpander"] [data-testid="stExpanderHeader"]:hover * {{
+            color: #6ec0ff !important;
+        }}
+        div[data-testid="stExpander"] > div[role="transition"] {{
+            padding: 1rem !important;
+            background-color: #0c0c0c !important;
+        }}
+        
+        /* Dataframes & Tables */
+        div[data-testid="stDataFrame"] {{
+            border: 1px solid #2d2d2d !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            background-color: #171717 !important;
+        }}
+        
+        /* Select and inputs */
+        div[data-baseweb="select"] {{
+            background-color: #171717 !important;
+            border: 1px solid #2d2d2d !important;
+            border-radius: 8px !important;
+            color: #ffffff !important;
+        }}
+        div[data-baseweb="select"] * {{
+            color: #ffffff !important;
+            background-color: transparent !important;
+        }}
+        div[data-baseweb="popover"] {{
+            background-color: #171717 !important;
+            border: 1px solid #2d2d2d !important;
+            color: #ffffff !important;
+        }}
+        div[data-baseweb="popover"] li {{
+            color: #ffffff !important;
+            background-color: #171717 !important;
+            transition: all 0.2s ease !important;
+        }}
+        div[data-baseweb="popover"] li:hover {{
+            background-color: #2d8cff !important;
+        }}
+        
+        input[type="text"], input[type="number"], textarea {{
+            background-color: #171717 !important;
+            border: 1px solid #2d2d2d !important;
+            border-radius: 8px !important;
+            color: #ffffff !important;
+            padding: 0.5rem 1rem !important;
+        }}
+        input[type="text"]:focus, textarea:focus {{
+            border-color: #2d8cff !important;
+            outline: none !important;
+        }}
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {{
+            width: 6px;
+            height: 6px;
+        }}
+        ::-webkit-scrollbar-track {{
+            background: #040404;
+        }}
+        ::-webkit-scrollbar-thumb {{
+            background: #2d2d2d;
+            border-radius: 4px;
+        }}
+        ::-webkit-scrollbar-thumb:hover {{
+            background: #2d8cff;
+        }}
     </style>
+    
+    <script>
+        const runCustomTheme = () => {{
+            // 1. Tag Sidebar Buttons
+            const sidebar = window.parent.document.querySelector('[data-testid="stSidebar"]');
+            if (sidebar) {{
+                const buttons = sidebar.querySelectorAll('button');
+                buttons.forEach(button => {{
+                    const text = button.textContent || "";
+                    if (text.includes("Chats")) {{
+                        button.setAttribute('data-nav', 'chats');
+                    }} else if (text.includes("Observability")) {{
+                        button.setAttribute('data-nav', 'observability');
+                    }} else if (text.includes("Benchmarks")) {{
+                        button.setAttribute('data-nav', 'benchmarks');
+                    }} else if (text.includes("Settings")) {{
+                        button.setAttribute('data-nav', 'settings');
+                    }} else if (text.includes("Top Customers")) {{
+                        button.setAttribute('data-nav', 'ex-top');
+                    }} else if (text.includes("Product Reviews")) {{
+                        button.setAttribute('data-nav', 'ex-reviews');
+                    }} else if (text.includes("Category Analysis")) {{
+                        button.setAttribute('data-nav', 'ex-category');
+                    }}
+                }});
+            }}
+
+            // 2. Tag Chat Messages
+            const messages = window.parent.document.querySelectorAll('[data-testid="stChatMessage"]');
+            messages.forEach(msg => {{
+                const avatar = msg.querySelector('[data-testid="stChatMessageAvatar"]');
+                if (avatar) {{
+                    const label = avatar.textContent || "";
+                    if (label.includes("👤")) {{
+                        msg.setAttribute('data-role', 'user');
+                    }} else if (label.includes("✨")) {{
+                        msg.setAttribute('data-role', 'assistant');
+                    }}
+                }}
+            }});
+        }};
+
+        runCustomTheme();
+        setInterval(runCustomTheme, 500);
+    </script>
 """, unsafe_allow_html=True)
 
-# 3. Sidebar
-with st.sidebar:
-    st.title("💡 DataSense AI")
-    st.markdown("Navigate and query your enterprise database using natural language.")
-    st.divider()
 
-    st.markdown("### 👤 User Governance Role")
-    user_role = st.selectbox(
-        "Select Role:",
-        options=["restricted_user", "analyst", "manager", "admin"],
-        index=0,
-        help="Enforces Table/Column RBAC permission controls on the AI graph."
-    )
-    username = st.text_input("Username:", value="anonymous")
-    st.divider()
+# 4. SIDEBAR NAVIGATION
+with st.sidebar:
+    # DataSense AI Brand Logo
+    st.markdown('<div class="logo-container"><span class="logo-text">DataSense</span><span class="logo-sub">AI</span></div>', unsafe_allow_html=True)
     
-    st.markdown("### 💬 Example Queries")
-    st.info("Show the top 3 users by total order amount, ordered descending")
-    st.info("Get all reviews for Laptop Model B2")
-    st.info("Which category department has the highest number of products?")
+    # Search box mockup
+    st.markdown('<div class="search-box"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search..." readonly /></div>', unsafe_allow_html=True)
     
-    st.divider()
-    st.markdown("### 📊 Observability Specs")
-    st.caption("- **Orchestration**: LangGraph")
-    st.caption("- **Retrieval**: FAISS (`IndexFlatIP`)")
+    # Sidebar Section: Settings (Navigation Links)
+    st.markdown('<div class="sidebar-heading">Navigation</div>', unsafe_allow_html=True)
     
+    if st.button("💬 Chats", use_container_width=True):
+        st.session_state.active_page = "chats"
+        st.rerun()
+        
+    if st.button("📊 Observability", use_container_width=True):
+        st.session_state.active_page = "observability"
+        st.rerun()
+        
+    if st.button("📈 Benchmarks", use_container_width=True):
+        st.session_state.active_page = "benchmarks"
+        st.rerun()
+        
+    if st.button("⚙️ Settings", use_container_width=True):
+        st.session_state.active_page = "settings"
+        st.rerun()
+        
+    # Sidebar Section: Chats (clickable mock prompts)
+    st.markdown('<div class="sidebar-heading">Example Chats</div>', unsafe_allow_html=True)
+    
+    if st.button("🛍️ Top Customers Chat", use_container_width=True):
+        st.session_state.active_page = "chats"
+        st.session_state.prefilled_query = "Show the top 3 users by total order amount, ordered descending"
+        st.rerun()
+        
+    if st.button("💻 Product Reviews Chat", use_container_width=True):
+        st.session_state.active_page = "chats"
+        st.session_state.prefilled_query = "Get all reviews for Laptop Model B2"
+        st.rerun()
+        
+    if st.button("📦 Category Analysis Chat", use_container_width=True):
+        st.session_state.active_page = "chats"
+        st.session_state.prefilled_query = "Which category department has the highest number of products?"
+        st.rerun()
+
+    st.markdown('<div class="sidebar-divider"></div>', unsafe_allow_html=True)
+    
+    # Bottom Sparkle Card
+    st.markdown("""
+        <div class="sidebar-footer-card">
+            <div class="footer-card-icon">✨</div>
+            <div class="footer-card-text">
+                <div class="footer-card-title">Update the plan</div>
+                <div class="footer-card-desc">Feel the power of AI</div>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
+
+# 5. RESOLVE CORE TELEMETRY / LLM ENGINE LABELS
+last_prov = None
+last_model = None
+if st.session_state.last_metrics:
+    last_prov = st.session_state.last_metrics.get("active_provider")
+    last_model = st.session_state.last_metrics.get("active_model")
+    
+if last_prov and last_model:
+    llm_engine_display = f"{last_prov.upper()} ({last_model})"
+else:
     try:
         from llm.factory import get_provider
         prov = get_provider()
@@ -81,40 +667,50 @@ with st.sidebar:
         llm_engine_display = f"{prov_name} ({model_name})"
     except Exception:
         llm_engine_display = "Gemini 3.1 Flash Lite"
-        
-    st.caption(f"- **LLM Engine**: {llm_engine_display}")
-    st.caption("- **Telemetry**: In-Memory + Disk Cache")
 
-# 4. Main App Layout - Setup Tabs
-st.title("DataSense AI Telemetry Portal")
-st.markdown("Ask natural language questions to analyze database schemas and monitor step diagnostics in real-time.")
 
-tab_chat, tab_obs, tab_bench = st.tabs(["💬 Chat Workspace", "📊 Observability Dashboard", "📈 Benchmark Analytics"])
+# 6. ROUTE MAIN PAGE CONTENT
+if active_page == "chats":
+    # --- HEADER BAR ---
+    st.markdown(f"""
+        <div class="chat-header-container">
+            <div class="chat-header-left">
+                <div class="chat-header-title">💬 DataSense AI Telemetry Workspace</div>
+                <div class="chat-header-subtitle">Ask natural language queries to analyze database schemas and monitor step diagnostics.</div>
+            </div>
+            <div class="chat-header-right">
+                <span class="header-badge bg-blue">💎 Engine: {llm_engine_display}</span>
+                <span class="header-badge bg-grey">👤 {st.session_state.user_role.upper()} ({st.session_state.username})</span>
+                <img class="header-avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed={st.session_state.username}" />
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
 
-# Setup session state metrics
-if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "Hello! I am your AI SQL Agent. Ask me any analytical question, and I'll generate the query plan, prune the schema via FAISS, write the SQL, and display live metrics diagnostics!"}
-    ]
+    st.markdown('<div style="height: 10px;"></div>', unsafe_allow_html=True)
 
-if "last_metrics" not in st.session_state:
-    st.session_state.last_metrics = None
+    # --- PROCESS PREFILLED RUNS ---
+    prefilled_prompt = None
+    if st.session_state.prefilled_query:
+        prefilled_prompt = st.session_state.prefilled_query
+        st.session_state.prefilled_query = None  # consume query
 
-# ---------------------------------------------------------------------------
-# TAB 1: Chat Workspace
-# ---------------------------------------------------------------------------
-with tab_chat:
+    # --- RENDER CHAT WORKSPACE ---
     # Render Chat History
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"], avatar="✨" if msg["role"] == "assistant" else "👤"):
             st.markdown(msg["content"])
             
-            # If assistant returned structured data, render SQL and table
+            # Render SQL and table details
             if msg["role"] == "assistant" and "data" in msg:
                 data = msg["data"]
                 sql = data.get("sql_query")
                 results = data.get("results")
                 error_msg = data.get("error")
+                active_prov = data.get("active_provider")
+                active_model = data.get("active_model")
+                
+                if active_prov and active_model:
+                    st.caption(f"🤖 Generated via: **{active_prov.upper()}** ({active_model})")
                 
                 with st.expander("🛠️ View SQL Statement"):
                     st.code(sql if sql else "-- No SQL query returned", language="sql")
@@ -124,8 +720,13 @@ with tab_chat:
                 if results:
                     st.dataframe(pd.DataFrame(results), use_container_width=True)
 
-    # Chat Input
-    if prompt := st.chat_input("Ask a question (e.g., Get top 3 spending users)..."):
+    # Get input (from text entry OR template click)
+    prompt = st.chat_input("Ask a question (e.g., Get top 3 spending users)...")
+    if prefilled_prompt:
+        prompt = prefilled_prompt
+
+    # Handle input execution
+    if prompt:
         # Append User Message
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user", avatar="👤"):
@@ -135,14 +736,17 @@ with tab_chat:
         with st.chat_message("assistant", avatar="✨"):
             with st.spinner("Analyzing schema and generating optimized SQL..."):
                 try:
-                    response = requests.post(
-                        API_URL,
-                        json={
-                            "query": prompt,
-                            "user_role": user_role,
-                            "username": username
-                        }
-                    )
+                    payload = {
+                        "query": prompt,
+                        "user_role": st.session_state.user_role,
+                        "username": st.session_state.username
+                    }
+                    if st.session_state.selected_provider != "Default":
+                        payload["provider"] = st.session_state.selected_provider
+                        if st.session_state.selected_model:
+                            payload["model"] = st.session_state.selected_model
+
+                    response = requests.post(API_URL, json=payload)
                     response.raise_for_status()
                     data = response.json()
                     
@@ -161,6 +765,11 @@ with tab_chat:
                         answer_text = "I processed your query, but no records were returned from the database."
 
                     st.markdown(answer_text)
+                    
+                    active_prov = data.get("active_provider")
+                    active_model = data.get("active_model")
+                    if active_prov and active_model:
+                        st.caption(f"🤖 Generated via: **{active_prov.upper()}** ({active_model})")
 
                     # Show SQL expander
                     with st.expander("🛠️ View SQL Statement"):
@@ -178,6 +787,7 @@ with tab_chat:
                         "content": answer_text,
                         "data": data
                     })
+                    st.rerun()
 
                 except requests.exceptions.RequestException as e:
                     error_text = f"An API connection error occurred: {e}"
@@ -188,14 +798,13 @@ with tab_chat:
                     })
 
 
-# ---------------------------------------------------------------------------
-# TAB 2: Observability Dashboard
-# ---------------------------------------------------------------------------
-with tab_obs:
-    st.subheader("🛠️ Run Diagnostics & Execution Telemetries")
+elif active_page == "observability":
+    st.title("📊 Observability Dashboard")
+    st.caption("Live execution diagnostics and token telemetry logs.")
+    st.markdown('<div style="height: 15px;"></div>', unsafe_allow_html=True)
     
     if st.session_state.last_metrics is None:
-        st.info("💡 **No Active Telemetry**: Please execute a query inside the **Chat Workspace** to view live performance telemetries.")
+        st.info("💡 **No Active Telemetry**: Please execute a query inside the **Chats** workspace to view live performance telemetries.")
         
         st.divider()
         st.markdown("### 🚀 Telemetry Metrics Tracked in Real-Time")
@@ -227,18 +836,32 @@ with tab_obs:
         repair_attempts = len(history)
 
         st.markdown("### 📈 Key Performance Indicators (KPIs)")
-        kpi_cols = st.columns(5)
         
-        with kpi_cols[0]:
-            st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Total Latency</p><h2 style='margin:0.2rem 0;'>{total_latency:.2f} s</h2></div>", unsafe_allow_html=True)
-        with kpi_cols[1]:
-            st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Total Tokens</p><h2 style='margin:0.2rem 0;'>{total_tokens:,}</h2></div>", unsafe_allow_html=True)
-        with kpi_cols[2]:
-            st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Prompt Tokens</p><h2 style='margin:0.2rem 0;'>{prompt_tokens:,}</h2></div>", unsafe_allow_html=True)
-        with kpi_cols[3]:
-            st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Completion Tokens</p><h2 style='margin:0.2rem 0;'>{comp_tokens:,}</h2></div>", unsafe_allow_html=True)
-        with kpi_cols[4]:
-            st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Repair Attempts</p><h2 style='margin:0.2rem 0;'>{repair_attempts}</h2></div>", unsafe_allow_html=True)
+        # KPI Layout in custom styled boxes
+        st.markdown(f"""
+            <div class="kpi-container">
+                <div class="kpi-card">
+                    <p>Total Latency</p>
+                    <h2>{total_latency:.2f} s</h2>
+                </div>
+                <div class="kpi-card">
+                    <p>Total Tokens</p>
+                    <h2>{total_tokens:,}</h2>
+                </div>
+                <div class="kpi-card">
+                    <p>Prompt Tokens</p>
+                    <h2>{prompt_tokens:,}</h2>
+                </div>
+                <div class="kpi-card">
+                    <p>Completion Tokens</p>
+                    <h2>{comp_tokens:,}</h2>
+                </div>
+                <div class="kpi-card">
+                    <p>Repair Attempts</p>
+                    <h2>{repair_attempts}</h2>
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
 
         st.divider()
 
@@ -381,15 +1004,10 @@ with tab_obs:
                     st.code(item.get("corrected_sql"), language="sql")
 
 
-# ---------------------------------------------------------------------------
-# TAB 3: Benchmark Analytics
-# ---------------------------------------------------------------------------
-with tab_bench:
-    import os
-    import json
-
-    st.subheader("📈 Multi-Dataset NL2SQL Benchmark Analytics")
-    st.markdown("Monitor historical execution metrics, failure taxonomy diagnostic breakdowns, latency distributions, and token API cost metrics.")
+elif active_page == "benchmarks":
+    st.title("📈 Multi-Dataset NL2SQL Benchmarks")
+    st.caption("Evaluate accuracy metrics, latency bounds, retry statistics, and API cost distributions.")
+    st.markdown('<div style="height: 15px;"></div>', unsafe_allow_html=True)
 
     # 1. Dataset Selection
     dataset_options = {
@@ -432,30 +1050,46 @@ with tab_bench:
                 tot_tok = summary.get("total_tokens", 0)
 
                 # Cost estimation for Gemini 3.5 Flash:
-                # Input tokens: $0.075 per 1,000,000 tokens ($0.000000075 per token)
-                # Output tokens: $0.30 per 1,000,000 tokens ($0.00000030 per token)
                 total_cost = 0.0
                 for r in results:
                     p_tok = r.get("prompt_tokens", 0)
                     c_tok = r.get("completion_tokens", 0)
                     total_cost += (p_tok * 0.000000075) + (c_tok * 0.00000030)
 
-                kpi_cols = st.columns(5)
+                corr_success = summary.get("correction_success_rate_pct", 0.0)
+                corr_passed = summary.get("queries_corrected_successfully", 0)
+                corr_total = summary.get("queries_needing_correction", 0)
 
-                with kpi_cols[0]:
-                    accuracy_str = f"{acc:.1f}%"
-                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Execution Accuracy</p><h2 style='margin:0.2rem 0;color:#10b981;'>{accuracy_str}</h2><p style='color:#8f95b2;margin:0;'>{passed} / {total} cases</p></div>", unsafe_allow_html=True)
-                with kpi_cols[1]:
-                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Avg Latency</p><h2 style='margin:0.2rem 0;'>{avg_lat:.2f} s</h2><p style='color:#8f95b2;margin:0;'>per NL Query</p></div>", unsafe_allow_html=True)
-                with kpi_cols[2]:
-                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Avg Token Size</p><h2 style='margin:0.2rem 0;'>{avg_tok:,.0f}</h2><p style='color:#8f95b2;margin:0;'>tokens / query</p></div>", unsafe_allow_html=True)
-                with kpi_cols[3]:
-                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Run API Cost</p><h2 style='margin:0.2rem 0;color:#3b82f6;'>${total_cost:.5f}</h2><p style='color:#8f95b2;margin:0;'>for {total} queries</p></div>", unsafe_allow_html=True)
-                with kpi_cols[4]:
-                    corr_success = summary.get("correction_success_rate_pct", 0.0)
-                    corr_passed = summary.get("queries_corrected_successfully", 0)
-                    corr_total = summary.get("queries_needing_correction", 0)
-                    st.markdown(f"<div class='kpi-card'><p style='color:#8f95b2;margin:0;'>Correction Rate</p><h2 style='margin:0.2rem 0;'>{corr_success:.1f}%</h2><p style='color:#8f95b2;margin:0;'>{corr_passed} / {corr_total} repaired</p></div>", unsafe_allow_html=True)
+                # Custom KPI panel rendering
+                st.markdown(f"""
+                    <div class="kpi-container">
+                        <div class="kpi-card">
+                            <p>Execution Accuracy</p>
+                            <h2 style="color:#10b981 !important;">{acc:.1f}%</h2>
+                            <span style="color:#8f95b2;font-size:0.75rem;">{passed} / {total} cases</span>
+                        </div>
+                        <div class="kpi-card">
+                            <p>Avg Latency</p>
+                            <h2>{avg_lat:.2f} s</h2>
+                            <span style="color:#8f95b2;font-size:0.75rem;">per NL Query</span>
+                        </div>
+                        <div class="kpi-card">
+                            <p>Avg Token Size</p>
+                            <h2>{avg_tok:,.0f}</h2>
+                            <span style="color:#8f95b2;font-size:0.75rem;">tokens / query</span>
+                        </div>
+                        <div class="kpi-card">
+                            <p>Run API Cost</p>
+                            <h2 style="color:#3b82f6 !important;">${total_cost:.5f}</h2>
+                            <span style="color:#8f95b2;font-size:0.75rem;">for {total} queries</span>
+                        </div>
+                        <div class="kpi-card">
+                            <p>Correction Rate</p>
+                            <h2>{corr_success:.1f}%</h2>
+                            <span style="color:#8f95b2;font-size:0.75rem;">{corr_passed} / {corr_total} repaired</span>
+                        </div>
+                    </div>
+                """, unsafe_allow_html=True)
 
                 st.divider()
 
@@ -590,3 +1224,76 @@ with tab_bench:
         except Exception as file_err:
             st.error(f"Error loading or parsing benchmark run logs: {file_err}")
 
+
+elif active_page == "settings":
+    st.title("⚙️ Telemetry & System Configurations")
+    st.caption("Customize governance roles, adjust LLM router pathways, and inspect dynamic FAISS indexing constraints.")
+    st.markdown('<div style="height: 15px;"></div>', unsafe_allow_html=True)
+    
+    st.markdown('<div class="content-panel">', unsafe_allow_html=True)
+    
+    st.markdown("### 👤 User Governance Role Configuration")
+    st.session_state.user_role = st.selectbox(
+        "Governance Role Policy:",
+        options=["restricted_user", "analyst", "manager", "admin"],
+        index=["restricted_user", "analyst", "manager", "admin"].index(st.session_state.user_role),
+        help="Enforces Table/Column RBAC permission controls on the AI graph."
+    )
+    st.session_state.username = st.text_input("Active Username Session:", value=st.session_state.username)
+    
+    st.divider()
+
+    st.markdown("### 🤖 LLM Engine Router Settings")
+    st.session_state.selected_provider = st.selectbox(
+        "LLM Provider Pathway Override:",
+        options=["Default", "gemini", "openai", "anthropic", "ollama", "vllm", "lmstudio"],
+        index=["Default", "gemini", "openai", "anthropic", "ollama", "vllm", "lmstudio"].index(st.session_state.selected_provider),
+        help="Override the globally configured LLM provider for this session."
+    )
+
+    if st.session_state.selected_provider != "Default":
+        model_placeholders = {
+            "gemini": ["gemini-3.1-flash-lite", "gemini-1.5-pro", "gemini-2.5-pro"],
+            "openai": ["gpt-4o", "gpt-4o-mini", "gpt-4"],
+            "anthropic": ["claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022"],
+            "ollama": ["qwen3:14b", "llama3", "deepseek-r1"],
+            "vllm": ["Qwen/Qwen2.5-Coder-7B-Instruct"],
+            "lmstudio": ["qwen3.5-9b", "qwen3-14b"]
+        }
+        
+        opts = model_placeholders.get(st.session_state.selected_provider, [])
+        opts = opts + ["Custom Model..."]
+        
+        # Calculate active index
+        current_model = st.session_state.selected_model
+        if current_model in opts:
+            active_idx = opts.index(current_model)
+        else:
+            active_idx = len(opts) - 1 if current_model else 0
+            
+        model_choice = st.selectbox(
+            "Model Name:",
+            options=opts,
+            index=active_idx,
+            help="Choose the model to route queries to."
+        )
+        
+        if model_choice == "Custom Model...":
+            st.session_state.selected_model = st.text_input("Enter Custom Model Name:", value=st.session_state.selected_model or "")
+        else:
+            st.session_state.selected_model = model_choice
+    else:
+        st.session_state.selected_model = None
+
+    st.divider()
+    
+    st.markdown("### 📊 Observability Specs & Index Details")
+    col_inf1, col_inf2 = st.columns(2)
+    with col_inf1:
+        st.markdown("**Workflow Engine:** LangGraph (Hierarchical State Graph)")
+        st.markdown("**Embedding Engine:** FAISS (`IndexFlatIP` - Cosine Similarity)")
+    with col_inf2:
+        st.markdown(f"**Default Server Provider:** {llm_engine_display}")
+        st.markdown("**Telemetry Log Target:** Memory Buffer + Audit JSON Log")
+        
+    st.markdown('</div>', unsafe_allow_html=True)

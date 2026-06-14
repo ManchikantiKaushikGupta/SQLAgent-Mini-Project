@@ -9,6 +9,7 @@ import os
 import yaml
 import logging
 from typing import Any, Dict, Optional
+from contextvars import ContextVar
 
 from llm.base import LLMProvider
 from llm.gemini_provider import GeminiProvider
@@ -19,6 +20,11 @@ from llm.vllm_provider import VLLMProvider
 from llm.lmstudio_provider import LMStudioProvider
 
 logger = logging.getLogger("SQLAgent.LLM")
+
+# Context variables to support request-scoped provider and model overrides
+provider_override: ContextVar[Optional[str]] = ContextVar("provider_override", default=None)
+model_override: ContextVar[Optional[str]] = ContextVar("model_override", default=None)
+
 
 
 def load_config() -> Dict[str, Any]:
@@ -120,6 +126,39 @@ def load_config() -> Dict[str, Any]:
         if val:
             config[config_key] = val
 
+    # Apply request-scoped context overrides if present
+    active_prov = provider_override.get()
+    if active_prov:
+        config["provider"] = active_prov
+        active_mod = model_override.get()
+        
+        # Determine the target model for this overridden provider
+        if active_mod:
+            target_model = active_mod
+        else:
+            provider_specific = config.get(active_prov)
+            if isinstance(provider_specific, dict) and "model" in provider_specific:
+                target_model = provider_specific["model"]
+            else:
+                target_model = None
+                
+        if target_model:
+            config["model"] = target_model
+            # Force all dynamic routing keys to match the new provider's model to avoid mismatched models
+            for key in ["planner_model", "generator_model", "validator_model", "clarification_model", "classifier_model", "repair_model"]:
+                config[key] = target_model
+        else:
+            config.pop("model", None)
+            for key in ["planner_model", "generator_model", "validator_model", "clarification_model", "classifier_model", "repair_model"]:
+                config.pop(key, None)
+    else:
+        # If provider is not overridden but model is, set the model globally and for all roles
+        active_mod = model_override.get()
+        if active_mod:
+            config["model"] = active_mod
+            for key in ["planner_model", "generator_model", "validator_model", "clarification_model", "classifier_model", "repair_model"]:
+                config[key] = active_mod
+
     # Validate using LLMConfigSettings to ensure everything conforms
     try:
         from schemas.settings import LLMConfigSettings
@@ -130,6 +169,7 @@ def load_config() -> Dict[str, Any]:
         logger.warning(f"Configuration validation failed: {validation_err}. Returning raw dictionary.")
 
     return config
+
 
 
 class LLMProviderFactory:

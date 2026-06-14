@@ -6,7 +6,7 @@
 # ==============================================================================
 
 # Active LLM provider
-provider: lmstudio
+provider: gemini
 
 # Enforce Air-Gapped Mode (blocks cloud APIs, permits ollama, vllm, lmstudio)
 air_gapped: false
@@ -20,18 +20,18 @@ temperature: 0.0
 # Customize which model is routed to each agent.
 # Note: Caller agents automatically fall back to these models.
 # ------------------------------------------------------------------------------
-planner_model: qwen3.5-9b
-generator_model: qwen3.5-9b
-validator_model: qwen3.5-9b
-clarification_model: qwen3.5-9b
-classifier_model: qwen3.5-9b
-repair_model: qwen3.5-9b
+# planner_model: qwen3.5-9b
+# generator_model: qwen3.5-9b
+# validator_model: qwen3.5-9b
+# clarification_model: qwen3.5-9b
+# classifier_model: qwen3.5-9b
+# repair_model: qwen3.5-9b
 
 # ------------------------------------------------------------------------------
 # LM Studio Provider Configuration
 # ------------------------------------------------------------------------------
 lmstudio:
-  enabled: true
+  enabled: false
   base_url: http://localhost:1234/v1
   api_key: lm-studio
   model: qwen3.5-9b

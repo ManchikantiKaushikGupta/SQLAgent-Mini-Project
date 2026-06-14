@@ -1,6 +1,6 @@
 import requests
 
-url = "http://localhost:8000/api/v1/ask"
+url = "http://localhost:8001/api/v1/ask"
 payload = {
     "query": "Show all products",
     "user_role": "admin",

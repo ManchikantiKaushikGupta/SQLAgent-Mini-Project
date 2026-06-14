@@ -1,16 +1,16 @@
-# Graph Report - SQLAgent-Mini-Project  (2026-06-13)
+# Graph Report - SQLAgent-Mini-Project  (2026-06-15)
 
 ## Corpus Check
-- 84 files · ~71,677 words
+- 84 files · ~74,380 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 936 nodes · 1546 edges · 80 communities (73 shown, 7 thin omitted)
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 163 edges (avg confidence: 0.5)
+- 947 nodes · 1559 edges · 82 communities (74 shown, 8 thin omitted)
+- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 163 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `846459dc`
+- Built from commit: `ee5701ae`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -77,6 +77,8 @@
 - [[_COMMUNITY_Community 77|Community 77]]
 - [[_COMMUNITY_Community 78|Community 78]]
 - [[_COMMUNITY_Community 79|Community 79]]
+- [[_COMMUNITY_Community 80|Community 80]]
+- [[_COMMUNITY_Community 81|Community 81]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `LLMProvider` - 55 edges
@@ -84,7 +86,7 @@
 3. `LMStudioProvider` - 26 edges
 4. `OllamaProvider` - 26 edges
 5. `VLLMProvider` - 26 edges
-6. `get_llm()` - 24 edges
+6. `get_llm()` - 25 edges
 7. `init_metrics_state()` - 22 edges
 8. `SQLErrorClassification` - 21 edges
 9. `BenchmarkCase` - 19 edges
@@ -93,28 +95,28 @@
 ## Surprising Connections (you probably didn't know these)
 - `SQLErrorClassification` --uses--> `SQLErrorClassification`  [INFERRED]
   features/validation_correction/repair_engine.py → schemas/error_taxonomy.py
-- `bool` --uses--> `LMStudioProvider`  [INFERRED]
-  core/air_gap.py → llm/lmstudio_provider.py
-- `bool` --uses--> `VLLMProvider`  [INFERRED]
-  core/air_gap.py → llm/vllm_provider.py
+- `TestProductionSecurity` --uses--> `SecurityException`  [INFERRED]
+  scratch/test_security.py → core/security.py
 - `TestProductionSecurity` --uses--> `RolePermissions`  [INFERRED]
   scratch/test_security.py → core/security.py
 - `SQLAgentState` --uses--> `QueryPlan`  [INFERRED]
   core/state.py → schemas/planner.py
+- `TestBenchmarkExpansion` --uses--> `BenchmarkResult`  [INFERRED]
+  scratch/test_benchmark_expansion.py → evaluation/metrics.py
 
-## Communities (80 total, 7 thin omitted)
+## Communities (82 total, 8 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
-Nodes (51): decide_after_execution(), decide_after_semantic_validation(), decide_after_syntax_validation(), node_clarify_intent(), node_correct_sql(), node_execute_sql(), node_query_planning(), node_retrieve_schema() (+43 more)
+Cohesion: 0.07
+Nodes (55): decide_after_execution(), decide_after_semantic_validation(), decide_after_syntax_validation(), node_clarify_intent(), node_correct_sql(), node_execute_sql(), node_query_planning(), node_retrieve_schema() (+47 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.07
 Nodes (28): 1. Architectural Overview, 2. Step 1: Pre-downloading Model Weights & Software, 3. Step 2: On-Premises Local Model Infrastructure, 4. Step 3: SQLAgent Air-Gapped Configurations, 5. Step 4: Schema Reflection & Vector Indexing Cache, 6. Step 5: Startup Verification and Fail-Fast Guards, 7. Troubleshooting & Recovery, A. Environment Configuration (`.env`) (+20 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.08
-Nodes (26): int, str, int, ndarray, Retrieval Module Initialization, get_schema_retriever(), Any, bool (+18 more)
+Cohesion: 0.07
+Nodes (27): int, str, int, ndarray, Retrieval Module Initialization, get_schema_retriever(), Any, bool (+19 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.25
@@ -133,8 +135,8 @@ Cohesion: 0.29
 Nodes (6): 1. Intent Clarification Agent, 2. Query Planning Agent, 3. SQL Generation Agent, 4. Validation & Correction Agent, Multi-Agent System Design, System Flow
 
 ### Community 7 - "Community 7"
-Cohesion: 0.11
-Nodes (17): lifespan(), FastAPI Application Setup  Provides an entry point for running the API backend., is_air_gap_enabled(), bool, Air-Gapped Deployment Mode Validation Engine  Validates the offline integrity of, Checks if Air-Gapped Deployment Mode is enabled via environment variables     or, Validates that the current environment complies with Air-Gapped Deployment Mode., validate_air_gap_environment() (+9 more)
+Cohesion: 0.50
+Nodes (3): lifespan(), FastAPI Application Setup (Gemini Active)  Provides an entry point for running t, FastAPI
 
 ### Community 8 - "Community 8"
 Cohesion: 0.22
@@ -153,15 +155,15 @@ Cohesion: 0.17
 Nodes (11): 1. Launch LM Studio Server, 2. Configure Environment `.env`, 3. YAML Configuration (`config/providers.yaml`), 4. Run the Application, code:env (# Enable LM Studio Provider), code:yaml (provider: lmstudio), code:bash (uvicorn api.app:app --reload), code:bash (streamlit run frontend/app.py) (+3 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.16
-Nodes (16): build_workflow(), Compiles and returns the LangGraph application., get_database_schema(), Extracts table names, columns, and data types from the connected PostgreSQL data, BenchmarkResult, BenchmarkSummary, NL2SQL Evaluation Benchmark Runner  Compiles and executes the LangGraph SQLAgent, Orchestrates the execution of all benchmark cases, captures metrics,     and log (+8 more)
+Cohesion: 0.18
+Nodes (15): build_workflow(), Compiles and returns the LangGraph application., get_database_schema(), Extracts table names, columns, and data types from the connected PostgreSQL data, BenchmarkResult, BenchmarkSummary, NL2SQL Evaluation Benchmark Runner  Compiles and executes the LangGraph SQLAgent, Orchestrates the execution of all benchmark cases, captures metrics,     and log (+7 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.12
 Nodes (18): Any, str, Structured response representing the semantic correctness verification of a gene, SemanticValidationResult, MockAIMessage, str, Mock of LangChain AIMessage response., Verify that a missing filter literal triggers a rule violation warning alert. (+10 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.19
+Cohesion: 0.18
 Nodes (21): BenchmarkCase, compile_failure_analysis(), main(), print_summary_dashboard(), Any, BenchmarkCase, BenchmarkResult, BenchmarkSummary (+13 more)
 
 ### Community 28 - "Community 28"
@@ -221,8 +223,8 @@ Cohesion: 0.67
 Nodes (3): Objective, PRIORITY 5 — Schema Retrieval Layer [COMPLETED], Status
 
 ### Community 45 - "Community 45"
-Cohesion: 0.18
-Nodes (27): AnthropicProvider, Concrete provider implementation for Anthropic Claude., get_provider(), LLMProviderFactory, load_config(), Any, LLMProvider, str (+19 more)
+Cohesion: 0.12
+Nodes (40): is_air_gap_enabled(), bool, Air-Gapped Deployment Mode Validation Engine  Validates the offline integrity of, Checks if Air-Gapped Deployment Mode is enabled via environment variables     or, Validates that the current environment complies with Air-Gapped Deployment Mode., validate_air_gap_environment(), AnthropicProvider, Concrete provider implementation for Anthropic Claude. (+32 more)
 
 ### Community 46 - "Community 46"
 Cohesion: 0.09
@@ -233,12 +235,12 @@ Cohesion: 0.18
 Nodes (8): Any, BaseChatModel, Embeddings, float, str, Instantiates ChatOpenAI pointed to vLLM's custom base URL.         Runs lazy hea, Instantiates OpenAIEmbeddings pointed to vLLM's custom base URL and runs validat, Pings the vLLM local endpoint and checks if the configured model is hosted.
 
 ### Community 48 - "Community 48"
-Cohesion: 0.06
-Nodes (16): Verifies check_health raises RuntimeError when the configured model is absent., Verifies VLLMProvider pointed to OpenAI-compatible base URL., Verifies vLLM check_health passes when server responds with the matching model., Verifies vLLM check_health raises ConnectionError when server is offline., Verifies vLLM check_health raises RuntimeError when the configured model is abse, Verifies LMStudioProvider configuration for local inference., Verifies LM Studio check_health passes when server responds with the matching mo, Verifies LM Studio check_health raises ConnectionError when server is offline. (+8 more)
+Cohesion: 0.05
+Nodes (19): Verifies OllamaProvider configurations for local inference., Verifies check_health passes when server responds with the matching model., Verifies check_health raises ConnectionError when server is offline., Verifies check_health raises RuntimeError when the configured model is absent., Verifies VLLMProvider pointed to OpenAI-compatible base URL., Verifies vLLM check_health passes when server responds with the matching model., Verifies vLLM check_health raises ConnectionError when server is offline., Verifies vLLM check_health raises RuntimeError when the configured model is abse (+11 more)
 
 ### Community 49 - "Community 49"
-Cohesion: 0.06
-Nodes (34): ABC, get_active_callbacks(), BaseCallbackHandler, Returns the list of active callbacks for the current thread., Registers callbacks for the current thread., register_thread_callbacks(), Any, BaseChatModel (+26 more)
+Cohesion: 0.07
+Nodes (32): ABC, get_active_callbacks(), Returns the list of active callbacks for the current thread., Returns the list of active callbacks for the current thread., Any, BaseChatModel, Embeddings, float (+24 more)
 
 ### Community 50 - "Community 50"
 Cohesion: 0.67
@@ -261,8 +263,8 @@ Cohesion: 0.67
 Nodes (3): Objective, PRIORITY 1 — Structured Outputs, Tasks
 
 ### Community 55 - "Community 55"
-Cohesion: 0.16
-Nodes (15): bool, str, Validation & Correction Pydantic Schemas  Defines structural models for SQL sema, Structured response representing the output of the query correction agent., Structured response representing the output of the query correction agent., SQLCorrectionResult, Unit test suite using mock LLM responses to verify SQL validation, correction, a, SQLCorrectionResult (+7 more)
+Cohesion: 0.18
+Nodes (14): bool, str, Structured response representing the output of the query correction agent., Structured response representing the output of the query correction agent., SQLCorrectionResult, Unit test suite using mock LLM responses to verify SQL validation, correction, a, SQLCorrectionResult, correct_sql() (+6 more)
 
 ### Community 56 - "Community 56"
 Cohesion: 0.21
@@ -293,12 +295,12 @@ Cohesion: 0.25
 Nodes (7): action, details, error, sql, role, timestamp, username
 
 ### Community 68 - "Community 68"
-Cohesion: 0.20
-Nodes (11): ask_database(), QueryRequest, QueryResponse, FastAPI Routes  Defines endpoints for the SQLAgent application., Takes a natural language query, runs it through the SQLAgent graph,     and retu, BaseModel, clear_thread_callbacks(), Clears callbacks for the current thread. (+3 more)
+Cohesion: 0.17
+Nodes (13): ask_database(), QueryRequest, QueryResponse, FastAPI Routes  Defines endpoints for the SQLAgent application., Takes a natural language query, runs it through the SQLAgent graph,     and retu, Takes a natural language query, runs it through the SQLAgent graph,     and retu, BaseModel, clear_thread_callbacks() (+5 more)
 
 ### Community 71 - "Community 71"
-Cohesion: 0.18
-Nodes (14): extract_text(), Any, str, Safely extracts string content from an LLM response or AIMessage.     Handles st, SQLErrorClassification, str, SQL Error Taxonomy Pydantic Schemas  Defines the formal representation of SQL sy, Structured classification of a SQL error within the formal error taxonomy. (+6 more)
+Cohesion: 0.21
+Nodes (11): SQLErrorClassification, str, SQL Error Taxonomy Pydantic Schemas  Defines the formal representation of SQL sy, Structured classification of a SQL error within the formal error taxonomy., SQLErrorClassification, Validation & Correction Pydantic Schemas  Defines structural models for SQL sema, classify_sql_error(), fallback_classify_error() (+3 more)
 
 ### Community 73 - "Community 73"
 Cohesion: 0.08
@@ -313,31 +315,35 @@ Cohesion: 0.67
 Nodes (3): Objective, PRIORITY 12 — Air-Gapped Deployment Mode [COMPLETED], Status
 
 ### Community 76 - "Community 76"
-Cohesion: 0.22
-Nodes (5): BaseCallbackHandler, LangChain Callback handler to transparently capture token usage., TokenUsageTracker, LangChain Callback handler to transparently capture token usage., TokenUsageTracker
+Cohesion: 0.17
+Nodes (9): BaseCallbackHandler, BaseCallbackHandler, Registers callbacks for the current thread., Registers callbacks for the current thread., register_thread_callbacks(), LangChain Callback handler to transparently capture token usage., TokenUsageTracker, LangChain Callback handler to transparently capture token usage. (+1 more)
 
 ### Community 77 - "Community 77"
-Cohesion: 0.11
-Nodes (11): Exception raised when a security policy or validation check is violated., SecurityException, Exception, 4. Verify column-level RBAC restrictions (e.g. Analyst accessing email)., 5. Verify SQL limits are clamped or injected based on role threshold., 6. Verify returned database records are masked for sensitive fields., 7. Verify security actions write clean events to observability/audit_log.json., 1. Verify PII in user questions is properly redacted before hitting LLMs. (+3 more)
+Cohesion: 0.12
+Nodes (8): 4. Verify column-level RBAC restrictions (e.g. Analyst accessing email)., 5. Verify SQL limits are clamped or injected based on role threshold., 6. Verify returned database records are masked for sensitive fields., 7. Verify security actions write clean events to observability/audit_log.json., 1. Verify PII in user questions is properly redacted before hitting LLMs., 2. Verify schema pruning removes unauthorized tables and columns by role., 3. Verify SELECT-only, system table protection, and table-level RBAC., TestProductionSecurity
 
 ### Community 78 - "Community 78"
-Cohesion: 0.22
-Nodes (8): get_llm(), BaseChatModel, float, Returns a configured LangChain ChatModel instance from the active provider., apply_shared_retry(), int, Wraps the ChatModel with a robust, standardized exponential-backoff retry policy, Verifies that shared retry policies wrap models successfully.
+Cohesion: 0.33
+Nodes (4): apply_shared_retry(), int, Wraps the ChatModel with a robust, standardized exponential-backoff retry policy, Verifies that shared retry policies wrap models successfully.
+
+### Community 79 - "Community 79"
+Cohesion: 0.20
+Nodes (10): extract_text(), get_llm(), Any, BaseChatModel, float, str, Safely extracts string content from an LLM response or AIMessage.     Handles st, Returns a configured LangChain ChatModel instance from the active provider. (+2 more)
 
 ## Knowledge Gaps
-- **198 isolated node(s):** `Executive Failure Breakdown`, `timestamp`, `action`, `role`, `username` (+193 more)
+- **199 isolated node(s):** `int`, `str`, `liveServer.settings.port`, `float`, `BaseChatModel` (+194 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `get_llm()` connect `Community 78` to `Community 0`, `Community 71`, `Community 73`, `Community 45`, `Community 49`, `Community 23`, `Community 55`, `Community 56`?**
-  _High betweenness centrality (0.090) - this node is a cross-community bridge._
-- **Why does `LLMProvider` connect `Community 49` to `Community 65`, `Community 3`, `Community 7`, `Community 45`, `Community 79`, `Community 47`, `Community 48`, `Community 53`?**
+- **Why does `get_llm()` connect `Community 79` to `Community 0`, `Community 71`, `Community 73`, `Community 45`, `Community 78`, `Community 49`, `Community 23`, `Community 55`, `Community 56`?**
+  _High betweenness centrality (0.092) - this node is a cross-community bridge._
+- **Why does `LLMProvider` connect `Community 49` to `Community 65`, `Community 3`, `Community 45`, `Community 47`, `Community 80`, `Community 48`, `Community 53`?**
   _High betweenness centrality (0.054) - this node is a cross-community bridge._
-- **Why does `build_workflow()` connect `Community 20` to `Community 0`, `Community 68`, `Community 7`, `Community 40`, `Community 24`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+- **Why does `build_workflow()` connect `Community 20` to `Community 0`, `Community 68`, `Community 40`, `Community 45`, `Community 24`?**
+  _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **Are the 42 inferred relationships involving `LLMProvider` (e.g. with `AnthropicProvider` and `Any`) actually correct?**
   _`LLMProvider` has 42 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 8 inferred relationships involving `TestLLMProviders` (e.g. with `AnthropicProvider` and `LLMProvider`) actually correct?**
