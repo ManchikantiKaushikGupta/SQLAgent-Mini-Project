@@ -4,589 +4,589 @@
   "graph": {},
   "nodes": [
     {
-      "label": "audit_log.json",
-      "file_type": "code",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "id": "observability_audit_log_json",
-      "community": 67,
-      "norm_label": "audit_log.json"
-    },
-    {
-      "label": "timestamp",
-      "file_type": "code",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "id": "observability_audit_log_timestamp",
-      "community": 67,
-      "norm_label": "timestamp"
-    },
-    {
-      "label": "action",
-      "file_type": "code",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "id": "observability_audit_log_action",
-      "community": 67,
-      "norm_label": "action"
-    },
-    {
-      "label": "role",
-      "file_type": "code",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "id": "observability_audit_log_role",
-      "community": 67,
-      "norm_label": "role"
-    },
-    {
-      "label": "username",
-      "file_type": "code",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "id": "observability_audit_log_username",
-      "community": 67,
-      "norm_label": "username"
-    },
-    {
-      "label": "details",
-      "file_type": "code",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "id": "observability_audit_log_details",
-      "community": 67,
-      "norm_label": "details"
-    },
-    {
-      "label": "sql",
-      "file_type": "code",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "id": "observability_audit_log_details_sql",
-      "community": 67,
-      "norm_label": "sql"
-    },
-    {
-      "label": "error",
-      "file_type": "code",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "id": "observability_audit_log_details_error",
-      "community": 67,
-      "norm_label": "error"
-    },
-    {
-      "label": "app.js",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L1",
-      "id": "static_app_js",
-      "community": 29,
-      "norm_label": "app.js"
-    },
-    {
-      "label": "appState",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L7",
-      "id": "static_app_appstate",
-      "community": 29,
-      "norm_label": "appstate"
-    },
-    {
-      "label": "navButtons",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L19",
-      "id": "static_app_navbuttons",
-      "community": 29,
-      "norm_label": "navbuttons"
-    },
-    {
-      "label": "pageViews",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L20",
-      "id": "static_app_pageviews",
-      "community": 29,
-      "norm_label": "pageviews"
-    },
-    {
-      "label": "chatHistory",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L21",
-      "id": "static_app_chathistory",
-      "community": 29,
-      "norm_label": "chathistory"
-    },
-    {
-      "label": "chatWelcome",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L22",
-      "id": "static_app_chatwelcome",
-      "community": 29,
-      "norm_label": "chatwelcome"
-    },
-    {
-      "label": "chatInput",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L23",
-      "id": "static_app_chatinput",
-      "community": 29,
-      "norm_label": "chatinput"
-    },
-    {
-      "label": "chatSendBtn",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L24",
-      "id": "static_app_chatsendbtn",
-      "community": 29,
-      "norm_label": "chatsendbtn"
-    },
-    {
-      "label": "exampleBtns",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L25",
-      "id": "static_app_examplebtns",
-      "community": 29,
-      "norm_label": "examplebtns"
-    },
-    {
-      "label": "welcomeChips",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L26",
-      "id": "static_app_welcomechips",
-      "community": 29,
-      "norm_label": "welcomechips"
-    },
-    {
-      "label": "activeEngineBadge",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L29",
-      "id": "static_app_activeenginebadge",
-      "community": 29,
-      "norm_label": "activeenginebadge"
-    },
-    {
-      "label": "activeUserBadge",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L30",
-      "id": "static_app_activeuserbadge",
-      "community": 29,
-      "norm_label": "activeuserbadge"
-    },
-    {
-      "label": "settingsRole",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L31",
-      "id": "static_app_settingsrole",
-      "community": 29,
-      "norm_label": "settingsrole"
-    },
-    {
-      "label": "settingsUsername",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L32",
-      "id": "static_app_settingsusername",
-      "community": 29,
-      "norm_label": "settingsusername"
-    },
-    {
-      "label": "settingsProvider",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L33",
-      "id": "static_app_settingsprovider",
-      "community": 29,
-      "norm_label": "settingsprovider"
-    },
-    {
-      "label": "settingsModelGroup",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L34",
-      "id": "static_app_settingsmodelgroup",
-      "community": 29,
-      "norm_label": "settingsmodelgroup"
-    },
-    {
-      "label": "settingsModel",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L35",
-      "id": "static_app_settingsmodel",
-      "community": 29,
-      "norm_label": "settingsmodel"
-    },
-    {
-      "label": "systemDefaultEngine",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L36",
-      "id": "static_app_systemdefaultengine",
-      "community": 29,
-      "norm_label": "systemdefaultengine"
-    },
-    {
-      "label": "obsNoData",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L39",
-      "id": "static_app_obsnodata",
-      "community": 29,
-      "norm_label": "obsnodata"
-    },
-    {
-      "label": "obsDataView",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L40",
-      "id": "static_app_obsdataview",
-      "community": 29,
-      "norm_label": "obsdataview"
-    },
-    {
-      "label": "obsKpis",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L41",
-      "id": "static_app_obskpis",
-      "community": 29,
-      "norm_label": "obskpis"
-    },
-    {
-      "label": "obsLatencyBars",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L42",
-      "id": "static_app_obslatencybars",
-      "community": 29,
-      "norm_label": "obslatencybars"
-    },
-    {
-      "label": "obsTokensTable",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L43",
-      "id": "static_app_obstokenstable",
-      "community": 29,
-      "norm_label": "obstokenstable"
-    },
-    {
-      "label": "obsQueryPlanDetails",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L44",
-      "id": "static_app_obsqueryplandetails",
-      "community": 29,
-      "norm_label": "obsqueryplandetails"
-    },
-    {
-      "label": "obsSchemaRetrievalDetails",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L45",
-      "id": "static_app_obsschemaretrievaldetails",
-      "community": 29,
-      "norm_label": "obsschemaretrievaldetails"
-    },
-    {
-      "label": "obsSqlCode",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L46",
-      "id": "static_app_obssqlcode",
-      "community": 29,
-      "norm_label": "obssqlcode"
-    },
-    {
-      "label": "obsValidationResults",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L47",
-      "id": "static_app_obsvalidationresults",
-      "community": 29,
-      "norm_label": "obsvalidationresults"
-    },
-    {
-      "label": "obsCorrectionPanel",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L48",
-      "id": "static_app_obscorrectionpanel",
-      "community": 29,
-      "norm_label": "obscorrectionpanel"
-    },
-    {
-      "label": "obsRepairHistory",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L49",
-      "id": "static_app_obsrepairhistory",
-      "community": 29,
-      "norm_label": "obsrepairhistory"
-    },
-    {
-      "label": "benchmarkSelect",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L52",
-      "id": "static_app_benchmarkselect",
-      "community": 29,
-      "norm_label": "benchmarkselect"
-    },
-    {
-      "label": "benchNoData",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L53",
-      "id": "static_app_benchnodata",
-      "community": 29,
-      "norm_label": "benchnodata"
-    },
-    {
-      "label": "benchDataView",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L54",
-      "id": "static_app_benchdataview",
-      "community": 29,
-      "norm_label": "benchdataview"
-    },
-    {
-      "label": "benchKpis",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L55",
-      "id": "static_app_benchkpis",
-      "community": 29,
-      "norm_label": "benchkpis"
-    },
-    {
-      "label": "benchDifficultyBars",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L56",
-      "id": "static_app_benchdifficultybars",
-      "community": 29,
-      "norm_label": "benchdifficultybars"
-    },
-    {
-      "label": "benchErrorBars",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L57",
-      "id": "static_app_bencherrorbars",
-      "community": 29,
-      "norm_label": "bencherrorbars"
-    },
-    {
-      "label": "benchLatencyDist",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L58",
-      "id": "static_app_benchlatencydist",
-      "community": 29,
-      "norm_label": "benchlatencydist"
-    },
-    {
-      "label": "benchTokenProjections",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L59",
-      "id": "static_app_benchtokenprojections",
-      "community": 29,
-      "norm_label": "benchtokenprojections"
-    },
-    {
-      "label": "benchFailuresTable",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L60",
-      "id": "static_app_benchfailurestable",
-      "community": 29,
-      "norm_label": "benchfailurestable"
-    },
-    {
-      "label": "modelsByProvider",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L63",
-      "id": "static_app_modelsbyprovider",
-      "community": 29,
-      "norm_label": "modelsbyprovider"
-    },
-    {
-      "label": "switchPage()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L76",
-      "id": "static_app_switchpage",
-      "community": 76,
-      "norm_label": "switchpage()"
-    },
-    {
-      "label": "targetPage",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L107",
-      "id": "static_app_targetpage",
-      "community": 29,
-      "norm_label": "targetpage"
-    },
-    {
-      "label": "loadBackendConfig()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L115",
-      "id": "static_app_loadbackendconfig",
-      "community": 59,
-      "norm_label": "loadbackendconfig()"
-    },
-    {
-      "label": "syncEngineBadge()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L144",
-      "id": "static_app_syncenginebadge",
-      "community": 59,
-      "norm_label": "syncenginebadge()"
-    },
-    {
-      "label": "syncUserBadges()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L152",
-      "id": "static_app_syncuserbadges",
-      "community": 59,
-      "norm_label": "syncuserbadges()"
-    },
-    {
-      "label": "opt",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L189",
-      "id": "static_app_opt",
-      "community": 29,
-      "norm_label": "opt"
-    },
-    {
-      "label": "hideWelcome()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L208",
-      "id": "static_app_hidewelcome",
-      "community": 59,
-      "norm_label": "hidewelcome()"
-    },
-    {
-      "label": "appendMessage()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L218",
-      "id": "static_app_appendmessage",
-      "community": 59,
-      "norm_label": "appendmessage()"
-    },
-    {
-      "label": "query",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L248",
-      "id": "static_app_query",
-      "community": 29,
-      "norm_label": "query"
-    },
-    {
-      "label": "handleQuerySubmit()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L256",
-      "id": "static_app_handlequerysubmit",
-      "community": 59,
-      "norm_label": "handlequerysubmit()"
-    },
-    {
-      "label": "renderObservability()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L456",
-      "id": "static_app_renderobservability",
-      "community": 76,
-      "norm_label": "renderobservability()"
-    },
-    {
-      "label": "loadBenchmarkData()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L684",
-      "id": "static_app_loadbenchmarkdata",
-      "community": 76,
-      "norm_label": "loadbenchmarkdata()"
-    },
-    {
-      "label": "renderBenchmarkMetrics()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L707",
-      "id": "static_app_renderbenchmarkmetrics",
-      "community": 76,
-      "norm_label": "renderbenchmarkmetrics()"
-    },
-    {
       "label": "app.py",
       "file_type": "code",
       "source_file": "api/app.py",
       "source_location": "L1",
+      "id": "api_app_py",
       "community": 77,
-      "norm_label": "app.py",
-      "id": "api_app_py"
+      "norm_label": "app.py"
     },
     {
       "label": "lifespan()",
       "file_type": "code",
       "source_file": "api/app.py",
       "source_location": "L14",
+      "id": "api_app_lifespan",
       "community": 77,
-      "norm_label": "lifespan()",
-      "id": "api_app_lifespan"
+      "norm_label": "lifespan()"
     },
     {
       "label": "FastAPI",
       "file_type": "code",
       "source_file": "api/app.py",
       "source_location": "L14",
+      "id": "fastapi",
       "community": 77,
-      "norm_label": "fastapi",
-      "id": "fastapi"
+      "norm_label": "fastapi"
     },
     {
       "label": "serve_spa()",
       "file_type": "code",
       "source_file": "api/app.py",
-      "source_location": "L56",
+      "source_location": "L60",
+      "id": "api_app_serve_spa",
       "community": 77,
-      "norm_label": "serve_spa()",
-      "id": "api_app_serve_spa"
+      "norm_label": "serve_spa()"
     },
     {
       "label": "FastAPI Application Setup (Gemini Active)  Provides an entry point for running t",
       "file_type": "rationale",
       "source_file": "api/app.py",
       "source_location": "L1",
+      "id": "api_app_rationale_1",
       "community": 77,
-      "norm_label": "fastapi application setup (gemini active)  provides an entry point for running t",
-      "id": "api_app_rationale_1"
+      "norm_label": "fastapi application setup (gemini active)  provides an entry point for running t"
+    },
+    {
+      "label": "audit_log.json",
+      "file_type": "code",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "audit_log.json",
+      "id": "observability_audit_log_json"
+    },
+    {
+      "label": "timestamp",
+      "file_type": "code",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "timestamp",
+      "id": "observability_audit_log_timestamp"
+    },
+    {
+      "label": "action",
+      "file_type": "code",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "action",
+      "id": "observability_audit_log_action"
+    },
+    {
+      "label": "role",
+      "file_type": "code",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "role",
+      "id": "observability_audit_log_role"
+    },
+    {
+      "label": "username",
+      "file_type": "code",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "username",
+      "id": "observability_audit_log_username"
+    },
+    {
+      "label": "details",
+      "file_type": "code",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "details",
+      "id": "observability_audit_log_details"
+    },
+    {
+      "label": "sql",
+      "file_type": "code",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "sql",
+      "id": "observability_audit_log_details_sql"
+    },
+    {
+      "label": "error",
+      "file_type": "code",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "community": 67,
+      "norm_label": "error",
+      "id": "observability_audit_log_details_error"
+    },
+    {
+      "label": "app.js",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L1",
+      "community": 29,
+      "norm_label": "app.js",
+      "id": "static_app_js"
+    },
+    {
+      "label": "appState",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L7",
+      "community": 29,
+      "norm_label": "appstate",
+      "id": "static_app_appstate"
+    },
+    {
+      "label": "navButtons",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L19",
+      "community": 29,
+      "norm_label": "navbuttons",
+      "id": "static_app_navbuttons"
+    },
+    {
+      "label": "pageViews",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L20",
+      "community": 29,
+      "norm_label": "pageviews",
+      "id": "static_app_pageviews"
+    },
+    {
+      "label": "chatHistory",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L21",
+      "community": 29,
+      "norm_label": "chathistory",
+      "id": "static_app_chathistory"
+    },
+    {
+      "label": "chatWelcome",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L22",
+      "community": 29,
+      "norm_label": "chatwelcome",
+      "id": "static_app_chatwelcome"
+    },
+    {
+      "label": "chatInput",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L23",
+      "community": 29,
+      "norm_label": "chatinput",
+      "id": "static_app_chatinput"
+    },
+    {
+      "label": "chatSendBtn",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L24",
+      "community": 29,
+      "norm_label": "chatsendbtn",
+      "id": "static_app_chatsendbtn"
+    },
+    {
+      "label": "exampleBtns",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L25",
+      "community": 29,
+      "norm_label": "examplebtns",
+      "id": "static_app_examplebtns"
+    },
+    {
+      "label": "welcomeChips",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L26",
+      "community": 29,
+      "norm_label": "welcomechips",
+      "id": "static_app_welcomechips"
+    },
+    {
+      "label": "activeEngineBadge",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L29",
+      "community": 29,
+      "norm_label": "activeenginebadge",
+      "id": "static_app_activeenginebadge"
+    },
+    {
+      "label": "activeUserBadge",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L30",
+      "community": 29,
+      "norm_label": "activeuserbadge",
+      "id": "static_app_activeuserbadge"
+    },
+    {
+      "label": "settingsRole",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L31",
+      "community": 29,
+      "norm_label": "settingsrole",
+      "id": "static_app_settingsrole"
+    },
+    {
+      "label": "settingsUsername",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L32",
+      "community": 29,
+      "norm_label": "settingsusername",
+      "id": "static_app_settingsusername"
+    },
+    {
+      "label": "settingsProvider",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L33",
+      "community": 29,
+      "norm_label": "settingsprovider",
+      "id": "static_app_settingsprovider"
+    },
+    {
+      "label": "settingsModelGroup",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L34",
+      "community": 29,
+      "norm_label": "settingsmodelgroup",
+      "id": "static_app_settingsmodelgroup"
+    },
+    {
+      "label": "settingsModel",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L35",
+      "community": 29,
+      "norm_label": "settingsmodel",
+      "id": "static_app_settingsmodel"
+    },
+    {
+      "label": "systemDefaultEngine",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L36",
+      "community": 29,
+      "norm_label": "systemdefaultengine",
+      "id": "static_app_systemdefaultengine"
+    },
+    {
+      "label": "obsNoData",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L39",
+      "community": 29,
+      "norm_label": "obsnodata",
+      "id": "static_app_obsnodata"
+    },
+    {
+      "label": "obsDataView",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L40",
+      "community": 29,
+      "norm_label": "obsdataview",
+      "id": "static_app_obsdataview"
+    },
+    {
+      "label": "obsKpis",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L41",
+      "community": 29,
+      "norm_label": "obskpis",
+      "id": "static_app_obskpis"
+    },
+    {
+      "label": "obsLatencyBars",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L42",
+      "community": 29,
+      "norm_label": "obslatencybars",
+      "id": "static_app_obslatencybars"
+    },
+    {
+      "label": "obsTokensTable",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L43",
+      "community": 29,
+      "norm_label": "obstokenstable",
+      "id": "static_app_obstokenstable"
+    },
+    {
+      "label": "obsQueryPlanDetails",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L44",
+      "community": 29,
+      "norm_label": "obsqueryplandetails",
+      "id": "static_app_obsqueryplandetails"
+    },
+    {
+      "label": "obsSchemaRetrievalDetails",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L45",
+      "community": 29,
+      "norm_label": "obsschemaretrievaldetails",
+      "id": "static_app_obsschemaretrievaldetails"
+    },
+    {
+      "label": "obsSqlCode",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L46",
+      "community": 29,
+      "norm_label": "obssqlcode",
+      "id": "static_app_obssqlcode"
+    },
+    {
+      "label": "obsValidationResults",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L47",
+      "community": 29,
+      "norm_label": "obsvalidationresults",
+      "id": "static_app_obsvalidationresults"
+    },
+    {
+      "label": "obsCorrectionPanel",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L48",
+      "community": 29,
+      "norm_label": "obscorrectionpanel",
+      "id": "static_app_obscorrectionpanel"
+    },
+    {
+      "label": "obsRepairHistory",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L49",
+      "community": 29,
+      "norm_label": "obsrepairhistory",
+      "id": "static_app_obsrepairhistory"
+    },
+    {
+      "label": "benchmarkSelect",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L52",
+      "community": 29,
+      "norm_label": "benchmarkselect",
+      "id": "static_app_benchmarkselect"
+    },
+    {
+      "label": "benchNoData",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L53",
+      "community": 29,
+      "norm_label": "benchnodata",
+      "id": "static_app_benchnodata"
+    },
+    {
+      "label": "benchDataView",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L54",
+      "community": 29,
+      "norm_label": "benchdataview",
+      "id": "static_app_benchdataview"
+    },
+    {
+      "label": "benchKpis",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L55",
+      "community": 29,
+      "norm_label": "benchkpis",
+      "id": "static_app_benchkpis"
+    },
+    {
+      "label": "benchDifficultyBars",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L56",
+      "community": 29,
+      "norm_label": "benchdifficultybars",
+      "id": "static_app_benchdifficultybars"
+    },
+    {
+      "label": "benchErrorBars",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L57",
+      "community": 29,
+      "norm_label": "bencherrorbars",
+      "id": "static_app_bencherrorbars"
+    },
+    {
+      "label": "benchLatencyDist",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L58",
+      "community": 29,
+      "norm_label": "benchlatencydist",
+      "id": "static_app_benchlatencydist"
+    },
+    {
+      "label": "benchTokenProjections",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L59",
+      "community": 29,
+      "norm_label": "benchtokenprojections",
+      "id": "static_app_benchtokenprojections"
+    },
+    {
+      "label": "benchFailuresTable",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L60",
+      "community": 29,
+      "norm_label": "benchfailurestable",
+      "id": "static_app_benchfailurestable"
+    },
+    {
+      "label": "modelsByProvider",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L63",
+      "community": 29,
+      "norm_label": "modelsbyprovider",
+      "id": "static_app_modelsbyprovider"
+    },
+    {
+      "label": "switchPage()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L76",
+      "community": 76,
+      "norm_label": "switchpage()",
+      "id": "static_app_switchpage"
+    },
+    {
+      "label": "targetPage",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L107",
+      "community": 29,
+      "norm_label": "targetpage",
+      "id": "static_app_targetpage"
+    },
+    {
+      "label": "loadBackendConfig()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L115",
+      "community": 59,
+      "norm_label": "loadbackendconfig()",
+      "id": "static_app_loadbackendconfig"
+    },
+    {
+      "label": "syncEngineBadge()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L144",
+      "community": 59,
+      "norm_label": "syncenginebadge()",
+      "id": "static_app_syncenginebadge"
+    },
+    {
+      "label": "syncUserBadges()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L152",
+      "community": 59,
+      "norm_label": "syncuserbadges()",
+      "id": "static_app_syncuserbadges"
+    },
+    {
+      "label": "opt",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L189",
+      "community": 29,
+      "norm_label": "opt",
+      "id": "static_app_opt"
+    },
+    {
+      "label": "hideWelcome()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L208",
+      "community": 59,
+      "norm_label": "hidewelcome()",
+      "id": "static_app_hidewelcome"
+    },
+    {
+      "label": "appendMessage()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L218",
+      "community": 59,
+      "norm_label": "appendmessage()",
+      "id": "static_app_appendmessage"
+    },
+    {
+      "label": "query",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L248",
+      "community": 29,
+      "norm_label": "query",
+      "id": "static_app_query"
+    },
+    {
+      "label": "handleQuerySubmit()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L256",
+      "community": 59,
+      "norm_label": "handlequerysubmit()",
+      "id": "static_app_handlequerysubmit"
+    },
+    {
+      "label": "renderObservability()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L456",
+      "community": 76,
+      "norm_label": "renderobservability()",
+      "id": "static_app_renderobservability"
+    },
+    {
+      "label": "loadBenchmarkData()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L684",
+      "community": 76,
+      "norm_label": "loadbenchmarkdata()",
+      "id": "static_app_loadbenchmarkdata"
+    },
+    {
+      "label": "renderBenchmarkMetrics()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L707",
+      "community": 76,
+      "norm_label": "renderbenchmarkmetrics()",
+      "id": "static_app_renderbenchmarkmetrics"
     },
     {
       "label": "routes.py",
@@ -8918,6 +8918,113 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "api/app.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_app_py",
+      "target": "api_app_lifespan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/app.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_app_py",
+      "target": "api_app_serve_spa"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/app.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_app_py",
+      "target": "core_air_gap_is_air_gap_enabled"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/app.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_app_py",
+      "target": "core_air_gap_validate_air_gap_environment"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/app.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_app_py",
+      "target": "fastapi"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/app.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_app_rationale_1",
+      "target": "api_app_py"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/app.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "api_app_lifespan",
+      "target": "core_air_gap_is_air_gap_enabled"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/app.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "api_app_lifespan",
+      "target": "core_air_gap_validate_air_gap_environment"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "api/app.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_app_lifespan",
+      "target": "fastapi"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/routes.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_routes_py",
+      "target": "fastapi"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "observability/audit_log.json",
       "source_location": "L1",
       "weight": 1.0,
@@ -9151,9 +9258,9 @@
       "source_file": "static/app.js",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_app_js",
-      "target": "static_app_chatwelcome",
-      "confidence_score": 1.0
+      "target": "static_app_chatwelcome"
     },
     {
       "relation": "contains",
@@ -9181,9 +9288,9 @@
       "source_file": "static/app.js",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_app_js",
-      "target": "static_app_hidewelcome",
-      "confidence_score": 1.0
+      "target": "static_app_hidewelcome"
     },
     {
       "relation": "contains",
@@ -9491,9 +9598,9 @@
       "source_file": "static/app.js",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_app_js",
-      "target": "static_app_welcomechips",
-      "confidence_score": 1.0
+      "target": "static_app_welcomechips"
     },
     {
       "relation": "calls",
@@ -9557,9 +9664,9 @@
       "source_file": "static/app.js",
       "source_location": "L265",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_app_handlequerysubmit",
-      "target": "static_app_hidewelcome",
-      "confidence_score": 1.0
+      "target": "static_app_hidewelcome"
     },
     {
       "relation": "calls",
@@ -9582,113 +9689,6 @@
       "confidence_score": 1.0,
       "source": "static_app_loadbenchmarkdata",
       "target": "static_app_renderbenchmarkmetrics"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "api/app.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_app_py",
-      "target": "api_app_lifespan"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "api/app.py",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_app_py",
-      "target": "api_app_serve_spa"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/app.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_app_py",
-      "target": "core_air_gap_is_air_gap_enabled"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/app.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_app_py",
-      "target": "core_air_gap_validate_air_gap_environment"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/app.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_app_py",
-      "target": "fastapi"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "api/app.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_app_rationale_1",
-      "target": "api_app_py"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "api/app.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "api_app_lifespan",
-      "target": "core_air_gap_is_air_gap_enabled"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "api/app.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "api_app_lifespan",
-      "target": "core_air_gap_validate_air_gap_environment"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "api/app.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_app_lifespan",
-      "target": "fastapi"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "api/routes.py",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "api_routes_py",
-      "target": "fastapi"
     },
     {
       "relation": "contains",
@@ -25545,5 +25545,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7b2d3c711ca131894c702e203df324957b96ff63"
+  "built_at_commit": "17d3463242be0d08d3603fcc0f9a98beb533db90"
 }

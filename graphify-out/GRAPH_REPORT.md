@@ -1,7 +1,7 @@
 # Graph Report - SQLAgent-Mini-Project  (2026-06-15)
 
 ## Corpus Check
-- 85 files · ~81,105 words
+- 85 files · ~124,310 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7b2d3c71`
+- Built from commit: `17d34632`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

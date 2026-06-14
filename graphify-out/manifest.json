@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\api\\app.py": {
-    "mtime": 1781465406.7788265,
-    "ast_hash": "37c996736c62629fbd17363e7df6caff",
+    "mtime": 1781469965.4616458,
+    "ast_hash": "8a0dfaaf93b713f922278881edeb0b8c",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\api\\routes.py": {
@@ -440,8 +440,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\static\\index.html": {
-    "mtime": 1781469039.3709877,
-    "ast_hash": "fc5dfb99e90d96bfcbdfcb21f9479020",
+    "mtime": 1781469990.7399716,
+    "ast_hash": "7b961dbb53e48f8aa53e3269cea6bd72",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\public\\Logo.png": {
+    "mtime": 1781469771.3561563,
+    "ast_hash": "daa3ba7274b848cd43f9de9595cdf38c",
     "semantic_hash": ""
   }
 }
