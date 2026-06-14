@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\api\\app.py": {
-    "mtime": 1781463174.6971345,
-    "ast_hash": "1c8dfbc17fdb9b60c9aaef118996cf23",
+    "mtime": 1781465406.7788265,
+    "ast_hash": "37c996736c62629fbd17363e7df6caff",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\api\\routes.py": {
-    "mtime": 1781461183.203215,
-    "ast_hash": "60cab588ad8a5e10bed446040b69f075",
+    "mtime": 1781465589.2389252,
+    "ast_hash": "80a8caa9ca53169e088bcbf8b441f0ba",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\core\\graph.py": {
@@ -360,8 +360,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\observability\\audit_log.json": {
-    "mtime": 1781464804.4190207,
-    "ast_hash": "9554273b1f31eb76702046e3d3afc435",
+    "mtime": 1781467648.9778204,
+    "ast_hash": "9defd9950db7e2c8567903c35ffba8fd",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\test_security.py": {
@@ -432,6 +432,16 @@
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\retrieval\\index_cache\\metadata.json": {
     "mtime": 1781353186.0149734,
     "ast_hash": "6b4ecd29cdc3f8240eb9474a45d3dc8b",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\static\\app.js": {
+    "mtime": 1781467230.6203172,
+    "ast_hash": "ee842ae555914ab5c1ed6a75a8d30bee",
+    "semantic_hash": ""
+  },
+  "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\static\\index.html": {
+    "mtime": 1781466965.4468246,
+    "ast_hash": "7548af56519e4176c56a034a2a7b5c35",
     "semantic_hash": ""
   }
 }
