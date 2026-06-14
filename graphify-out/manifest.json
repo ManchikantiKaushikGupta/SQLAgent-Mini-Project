@@ -360,8 +360,8 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\observability\\audit_log.json": {
-    "mtime": 1781467648.9778204,
-    "ast_hash": "9defd9950db7e2c8567903c35ffba8fd",
+    "mtime": 1781469275.9550424,
+    "ast_hash": "681008a7b0bf4e49a8fbe79e976756c3",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\scratch\\test_security.py": {
@@ -435,13 +435,13 @@
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\static\\app.js": {
-    "mtime": 1781467230.6203172,
-    "ast_hash": "ee842ae555914ab5c1ed6a75a8d30bee",
+    "mtime": 1781469100.1776092,
+    "ast_hash": "3a89f3dc091d30f1ea680409848b004b",
     "semantic_hash": ""
   },
   "C:\\Users\\manch\\OneDrive\\Documents\\SQLAgent-Mini-Project\\static\\index.html": {
-    "mtime": 1781466965.4468246,
-    "ast_hash": "7548af56519e4176c56a034a2a7b5c35",
+    "mtime": 1781469039.3709877,
+    "ast_hash": "fc5dfb99e90d96bfcbdfcb21f9479020",
     "semantic_hash": ""
   }
 }

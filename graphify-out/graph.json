@@ -4,429 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "label": "app.py",
-      "file_type": "code",
-      "source_file": "api/app.py",
-      "source_location": "L1",
-      "id": "api_app_py",
-      "community": 7,
-      "norm_label": "app.py"
-    },
-    {
-      "label": "lifespan()",
-      "file_type": "code",
-      "source_file": "api/app.py",
-      "source_location": "L14",
-      "id": "api_app_lifespan",
-      "community": 7,
-      "norm_label": "lifespan()"
-    },
-    {
-      "label": "FastAPI",
-      "file_type": "code",
-      "source_file": "api/app.py",
-      "source_location": "L14",
-      "id": "fastapi",
-      "community": 7,
-      "norm_label": "fastapi"
-    },
-    {
-      "label": "serve_spa()",
-      "file_type": "code",
-      "source_file": "api/app.py",
-      "source_location": "L56",
-      "id": "api_app_serve_spa",
-      "community": 7,
-      "norm_label": "serve_spa()"
-    },
-    {
-      "label": "FastAPI Application Setup (Gemini Active)  Provides an entry point for running t",
-      "file_type": "rationale",
-      "source_file": "api/app.py",
-      "source_location": "L1",
-      "id": "api_app_rationale_1",
-      "community": 7,
-      "norm_label": "fastapi application setup (gemini active)  provides an entry point for running t"
-    },
-    {
-      "label": "routes.py",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L1",
-      "id": "api_routes_py",
-      "community": 73,
-      "norm_label": "routes.py"
-    },
-    {
-      "label": "QueryRequest",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L26",
-      "id": "api_routes_queryrequest",
-      "community": 73,
-      "norm_label": "queryrequest"
-    },
-    {
-      "label": "BaseModel",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "id": "basemodel",
-      "community": 73,
-      "norm_label": "basemodel"
-    },
-    {
-      "label": "QueryResponse",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L34",
-      "id": "api_routes_queryresponse",
-      "community": 73,
-      "norm_label": "queryresponse"
-    },
-    {
-      "label": "ask_database()",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L46",
-      "id": "api_routes_ask_database",
-      "community": 73,
-      "norm_label": "ask_database()"
-    },
-    {
-      "label": "get_config()",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L152",
-      "id": "api_routes_get_config",
-      "community": 73,
-      "norm_label": "get_config()"
-    },
-    {
-      "label": "get_benchmark()",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L166",
-      "id": "api_routes_get_benchmark",
-      "community": 73,
-      "norm_label": "get_benchmark()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "api/routes.py",
-      "source_location": "L166",
-      "id": "api_routes_py_str",
-      "community": 73,
-      "norm_label": "str"
-    },
-    {
-      "label": "FastAPI Routes  Defines endpoints for the SQLAgent application.",
-      "file_type": "rationale",
-      "source_file": "api/routes.py",
-      "source_location": "L1",
-      "id": "api_routes_rationale_1",
-      "community": 73,
-      "norm_label": "fastapi routes  defines endpoints for the sqlagent application."
-    },
-    {
-      "label": "Takes a natural language query, runs it through the SQLAgent graph,     and retu",
-      "file_type": "rationale",
-      "source_file": "api/routes.py",
-      "source_location": "L47",
-      "id": "api_routes_rationale_47",
-      "community": 73,
-      "norm_label": "takes a natural language query, runs it through the sqlagent graph,     and retu"
-    },
-    {
-      "label": "Returns the current LLM configurations and dynamic schema settings.",
-      "file_type": "rationale",
-      "source_file": "api/routes.py",
-      "source_location": "L153",
-      "id": "api_routes_rationale_153",
-      "community": 73,
-      "norm_label": "returns the current llm configurations and dynamic schema settings."
-    },
-    {
-      "label": "Serves the selected benchmark JSON log file from the evaluation directory.",
-      "file_type": "rationale",
-      "source_file": "api/routes.py",
-      "source_location": "L167",
-      "id": "api_routes_rationale_167",
-      "community": 73,
-      "norm_label": "serves the selected benchmark json log file from the evaluation directory."
-    },
-    {
-      "label": "llm.py",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L1",
-      "id": "core_llm_py",
-      "community": 79,
-      "norm_label": "llm.py"
-    },
-    {
-      "label": "get_active_callbacks()",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L16",
-      "id": "core_llm_get_active_callbacks",
-      "community": 49,
-      "norm_label": "get_active_callbacks()"
-    },
-    {
-      "label": "BaseCallbackHandler",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L16",
-      "id": "basecallbackhandler",
-      "community": 24,
-      "norm_label": "basecallbackhandler"
-    },
-    {
-      "label": "register_thread_callbacks()",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L22",
-      "id": "core_llm_register_thread_callbacks",
-      "community": 24,
-      "norm_label": "register_thread_callbacks()"
-    },
-    {
-      "label": "clear_thread_callbacks()",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L26",
-      "id": "core_llm_clear_thread_callbacks",
-      "community": 24,
-      "norm_label": "clear_thread_callbacks()"
-    },
-    {
-      "label": "get_llm()",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L34",
-      "id": "core_llm_get_llm",
-      "community": 79,
-      "norm_label": "get_llm()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L34",
-      "id": "core_llm_py_str",
-      "community": 79,
-      "norm_label": "str"
-    },
-    {
-      "label": "float",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L34",
-      "id": "float",
-      "community": 65,
-      "norm_label": "float"
-    },
-    {
-      "label": "BaseChatModel",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L34",
-      "id": "basechatmodel",
-      "community": 65,
-      "norm_label": "basechatmodel"
-    },
-    {
-      "label": "extract_text()",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L102",
-      "id": "core_llm_extract_text",
-      "community": 79,
-      "norm_label": "extract_text()"
-    },
-    {
-      "label": "Any",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L102",
-      "id": "core_llm_py_any",
-      "community": 79,
-      "norm_label": "any"
-    },
-    {
-      "label": "Returns the list of active callbacks for the current thread.",
-      "file_type": "rationale",
-      "source_file": "core/llm.py",
-      "source_location": "L17",
-      "id": "core_llm_rationale_17",
-      "community": 49,
-      "norm_label": "returns the list of active callbacks for the current thread."
-    },
-    {
-      "label": "Registers callbacks for the current thread.",
-      "file_type": "rationale",
-      "source_file": "core/llm.py",
-      "source_location": "L23",
-      "id": "core_llm_rationale_23",
-      "community": 24,
-      "norm_label": "registers callbacks for the current thread."
-    },
-    {
-      "label": "Clears callbacks for the current thread.",
-      "file_type": "rationale",
-      "source_file": "core/llm.py",
-      "source_location": "L27",
-      "id": "core_llm_rationale_27",
-      "community": 24,
-      "norm_label": "clears callbacks for the current thread."
-    },
-    {
-      "label": "Returns a configured LangChain ChatModel instance from the active provider.",
-      "file_type": "rationale",
-      "source_file": "core/llm.py",
-      "source_location": "L35",
-      "id": "core_llm_rationale_35",
-      "community": 79,
-      "norm_label": "returns a configured langchain chatmodel instance from the active provider."
-    },
-    {
-      "label": "Safely extracts string content from an LLM response or AIMessage.     Handles st",
-      "file_type": "rationale",
-      "source_file": "core/llm.py",
-      "source_location": "L103",
-      "id": "core_llm_rationale_103",
-      "community": 79,
-      "norm_label": "safely extracts string content from an llm response or aimessage.     handles st"
-    },
-    {
-      "label": "app.py",
-      "file_type": "code",
-      "source_file": "frontend/app.py",
-      "source_location": "L1",
-      "id": "frontend_app_py",
-      "community": 7,
-      "norm_label": "app.py"
-    },
-    {
-      "label": "factory.py",
-      "file_type": "code",
-      "source_file": "llm/factory.py",
-      "source_location": "L1",
-      "id": "llm_factory_py",
-      "community": 45,
-      "norm_label": "factory.py"
-    },
-    {
-      "label": "load_config()",
-      "file_type": "code",
-      "source_file": "llm/factory.py",
-      "source_location": "L30",
-      "id": "llm_factory_load_config",
-      "community": 45,
-      "norm_label": "load_config()"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "llm/factory.py",
-      "source_location": "L30",
-      "id": "llm_factory_py_str",
-      "community": 45,
-      "norm_label": "str"
-    },
-    {
-      "label": "Any",
-      "file_type": "code",
-      "source_file": "llm/factory.py",
-      "source_location": "L30",
-      "id": "llm_factory_py_any",
-      "community": 45,
-      "norm_label": "any"
-    },
-    {
-      "label": "LLMProviderFactory",
-      "file_type": "code",
-      "source_file": "llm/factory.py",
-      "source_location": "L175",
-      "id": "llm_factory_llmproviderfactory",
-      "community": 45,
-      "norm_label": "llmproviderfactory"
-    },
-    {
-      "label": ".create_provider()",
-      "file_type": "code",
-      "source_file": "llm/factory.py",
-      "source_location": "L181",
-      "id": "llm_factory_llmproviderfactory_create_provider",
-      "community": 45,
-      "norm_label": ".create_provider()"
-    },
-    {
-      "label": "LLMProvider",
-      "file_type": "code",
-      "source_file": "llm/factory.py",
-      "source_location": "L181",
-      "id": "llmprovider",
-      "community": 45,
-      "norm_label": "llmprovider"
-    },
-    {
-      "label": "get_provider()",
-      "file_type": "code",
-      "source_file": "llm/factory.py",
-      "source_location": "L253",
-      "id": "llm_factory_get_provider",
-      "community": 7,
-      "norm_label": "get_provider()"
-    },
-    {
-      "label": "LLM Provider Factory  Manages runtime config loading from yaml or env variables",
-      "file_type": "rationale",
-      "source_file": "llm/factory.py",
-      "source_location": "L1",
-      "id": "llm_factory_rationale_1",
-      "community": 45,
-      "norm_label": "llm provider factory  manages runtime config loading from yaml or env variables"
-    },
-    {
-      "label": "Loads configuration from 'config/providers.yaml' or 'llm_config.yaml',     falli",
-      "file_type": "rationale",
-      "source_file": "llm/factory.py",
-      "source_location": "L31",
-      "id": "llm_factory_rationale_31",
-      "community": 45,
-      "norm_label": "loads configuration from 'config/providers.yaml' or 'llm_config.yaml',     falli"
-    },
-    {
-      "label": "Factory to construct and configure the globally selected LLMProvider.",
-      "file_type": "rationale",
-      "source_file": "llm/factory.py",
-      "source_location": "L176",
-      "id": "llm_factory_rationale_176",
-      "community": 45,
-      "norm_label": "factory to construct and configure the globally selected llmprovider."
-    },
-    {
-      "label": "Builds the concrete LLMProvider from configuration.          Args:             c",
-      "file_type": "rationale",
-      "source_file": "llm/factory.py",
-      "source_location": "L182",
-      "id": "llm_factory_rationale_182",
-      "community": 45,
-      "norm_label": "builds the concrete llmprovider from configuration.          args:             c"
-    },
-    {
-      "label": "Convenience function returning the globally configured provider.     Re-loads co",
-      "file_type": "rationale",
-      "source_file": "llm/factory.py",
-      "source_location": "L254",
-      "id": "llm_factory_rationale_254",
-      "community": 7,
-      "norm_label": "convenience function returning the globally configured provider.     re-loads co"
-    },
-    {
       "label": "audit_log.json",
       "file_type": "code",
       "source_file": "observability/audit_log.json",
@@ -499,15 +76,6 @@
       "norm_label": "error"
     },
     {
-      "label": "test_api_request.py",
-      "file_type": "code",
-      "source_file": "scratch/test_api_request.py",
-      "source_location": "L1",
-      "id": "scratch_test_api_request_py",
-      "community": 69,
-      "norm_label": "test_api_request.py"
-    },
-    {
       "label": "app.js",
       "file_type": "code",
       "source_file": "static/app.js",
@@ -529,7 +97,7 @@
       "label": "navButtons",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L18",
+      "source_location": "L19",
       "id": "static_app_navbuttons",
       "community": 29,
       "norm_label": "navbuttons"
@@ -538,7 +106,7 @@
       "label": "pageViews",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "static_app_pageviews",
       "community": 29,
       "norm_label": "pageviews"
@@ -547,16 +115,25 @@
       "label": "chatHistory",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L20",
+      "source_location": "L21",
       "id": "static_app_chathistory",
       "community": 29,
       "norm_label": "chathistory"
     },
     {
+      "label": "chatWelcome",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L22",
+      "id": "static_app_chatwelcome",
+      "community": 29,
+      "norm_label": "chatwelcome"
+    },
+    {
       "label": "chatInput",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L21",
+      "source_location": "L23",
       "id": "static_app_chatinput",
       "community": 29,
       "norm_label": "chatinput"
@@ -565,7 +142,7 @@
       "label": "chatSendBtn",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L22",
+      "source_location": "L24",
       "id": "static_app_chatsendbtn",
       "community": 29,
       "norm_label": "chatsendbtn"
@@ -574,16 +151,25 @@
       "label": "exampleBtns",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L23",
+      "source_location": "L25",
       "id": "static_app_examplebtns",
       "community": 29,
       "norm_label": "examplebtns"
     },
     {
-      "label": "activeEngineBadge",
+      "label": "welcomeChips",
       "file_type": "code",
       "source_file": "static/app.js",
       "source_location": "L26",
+      "id": "static_app_welcomechips",
+      "community": 29,
+      "norm_label": "welcomechips"
+    },
+    {
+      "label": "activeEngineBadge",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L29",
       "id": "static_app_activeenginebadge",
       "community": 29,
       "norm_label": "activeenginebadge"
@@ -592,7 +178,7 @@
       "label": "activeUserBadge",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L27",
+      "source_location": "L30",
       "id": "static_app_activeuserbadge",
       "community": 29,
       "norm_label": "activeuserbadge"
@@ -601,7 +187,7 @@
       "label": "settingsRole",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L28",
+      "source_location": "L31",
       "id": "static_app_settingsrole",
       "community": 29,
       "norm_label": "settingsrole"
@@ -610,7 +196,7 @@
       "label": "settingsUsername",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L29",
+      "source_location": "L32",
       "id": "static_app_settingsusername",
       "community": 29,
       "norm_label": "settingsusername"
@@ -619,7 +205,7 @@
       "label": "settingsProvider",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L30",
+      "source_location": "L33",
       "id": "static_app_settingsprovider",
       "community": 29,
       "norm_label": "settingsprovider"
@@ -628,7 +214,7 @@
       "label": "settingsModelGroup",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L31",
+      "source_location": "L34",
       "id": "static_app_settingsmodelgroup",
       "community": 29,
       "norm_label": "settingsmodelgroup"
@@ -637,7 +223,7 @@
       "label": "settingsModel",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L32",
+      "source_location": "L35",
       "id": "static_app_settingsmodel",
       "community": 29,
       "norm_label": "settingsmodel"
@@ -646,7 +232,7 @@
       "label": "systemDefaultEngine",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L33",
+      "source_location": "L36",
       "id": "static_app_systemdefaultengine",
       "community": 29,
       "norm_label": "systemdefaultengine"
@@ -655,7 +241,7 @@
       "label": "obsNoData",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L36",
+      "source_location": "L39",
       "id": "static_app_obsnodata",
       "community": 29,
       "norm_label": "obsnodata"
@@ -664,7 +250,7 @@
       "label": "obsDataView",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L37",
+      "source_location": "L40",
       "id": "static_app_obsdataview",
       "community": 29,
       "norm_label": "obsdataview"
@@ -673,7 +259,7 @@
       "label": "obsKpis",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L38",
+      "source_location": "L41",
       "id": "static_app_obskpis",
       "community": 29,
       "norm_label": "obskpis"
@@ -682,7 +268,7 @@
       "label": "obsLatencyBars",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L39",
+      "source_location": "L42",
       "id": "static_app_obslatencybars",
       "community": 29,
       "norm_label": "obslatencybars"
@@ -691,7 +277,7 @@
       "label": "obsTokensTable",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L40",
+      "source_location": "L43",
       "id": "static_app_obstokenstable",
       "community": 29,
       "norm_label": "obstokenstable"
@@ -700,7 +286,7 @@
       "label": "obsQueryPlanDetails",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L41",
+      "source_location": "L44",
       "id": "static_app_obsqueryplandetails",
       "community": 29,
       "norm_label": "obsqueryplandetails"
@@ -709,7 +295,7 @@
       "label": "obsSchemaRetrievalDetails",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L42",
+      "source_location": "L45",
       "id": "static_app_obsschemaretrievaldetails",
       "community": 29,
       "norm_label": "obsschemaretrievaldetails"
@@ -718,7 +304,7 @@
       "label": "obsSqlCode",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L43",
+      "source_location": "L46",
       "id": "static_app_obssqlcode",
       "community": 29,
       "norm_label": "obssqlcode"
@@ -727,7 +313,7 @@
       "label": "obsValidationResults",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L44",
+      "source_location": "L47",
       "id": "static_app_obsvalidationresults",
       "community": 29,
       "norm_label": "obsvalidationresults"
@@ -736,7 +322,7 @@
       "label": "obsCorrectionPanel",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L45",
+      "source_location": "L48",
       "id": "static_app_obscorrectionpanel",
       "community": 29,
       "norm_label": "obscorrectionpanel"
@@ -745,7 +331,7 @@
       "label": "obsRepairHistory",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L46",
+      "source_location": "L49",
       "id": "static_app_obsrepairhistory",
       "community": 29,
       "norm_label": "obsrepairhistory"
@@ -754,7 +340,7 @@
       "label": "benchmarkSelect",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L49",
+      "source_location": "L52",
       "id": "static_app_benchmarkselect",
       "community": 29,
       "norm_label": "benchmarkselect"
@@ -763,7 +349,7 @@
       "label": "benchNoData",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L50",
+      "source_location": "L53",
       "id": "static_app_benchnodata",
       "community": 29,
       "norm_label": "benchnodata"
@@ -772,7 +358,7 @@
       "label": "benchDataView",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L51",
+      "source_location": "L54",
       "id": "static_app_benchdataview",
       "community": 29,
       "norm_label": "benchdataview"
@@ -781,7 +367,7 @@
       "label": "benchKpis",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L52",
+      "source_location": "L55",
       "id": "static_app_benchkpis",
       "community": 29,
       "norm_label": "benchkpis"
@@ -790,7 +376,7 @@
       "label": "benchDifficultyBars",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L53",
+      "source_location": "L56",
       "id": "static_app_benchdifficultybars",
       "community": 29,
       "norm_label": "benchdifficultybars"
@@ -799,7 +385,7 @@
       "label": "benchErrorBars",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L54",
+      "source_location": "L57",
       "id": "static_app_bencherrorbars",
       "community": 29,
       "norm_label": "bencherrorbars"
@@ -808,7 +394,7 @@
       "label": "benchLatencyDist",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L55",
+      "source_location": "L58",
       "id": "static_app_benchlatencydist",
       "community": 29,
       "norm_label": "benchlatencydist"
@@ -817,7 +403,7 @@
       "label": "benchTokenProjections",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L56",
+      "source_location": "L59",
       "id": "static_app_benchtokenprojections",
       "community": 29,
       "norm_label": "benchtokenprojections"
@@ -826,7 +412,7 @@
       "label": "benchFailuresTable",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L57",
+      "source_location": "L60",
       "id": "static_app_benchfailurestable",
       "community": 29,
       "norm_label": "benchfailurestable"
@@ -835,7 +421,7 @@
       "label": "modelsByProvider",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L60",
+      "source_location": "L63",
       "id": "static_app_modelsbyprovider",
       "community": 29,
       "norm_label": "modelsbyprovider"
@@ -844,16 +430,16 @@
       "label": "switchPage()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L73",
+      "source_location": "L76",
       "id": "static_app_switchpage",
-      "community": 29,
+      "community": 76,
       "norm_label": "switchpage()"
     },
     {
       "label": "targetPage",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L104",
+      "source_location": "L107",
       "id": "static_app_targetpage",
       "community": 29,
       "norm_label": "targetpage"
@@ -862,91 +448,532 @@
       "label": "loadBackendConfig()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L112",
+      "source_location": "L115",
       "id": "static_app_loadbackendconfig",
-      "community": 29,
+      "community": 59,
       "norm_label": "loadbackendconfig()"
     },
     {
       "label": "syncEngineBadge()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L141",
+      "source_location": "L144",
       "id": "static_app_syncenginebadge",
-      "community": 29,
+      "community": 59,
       "norm_label": "syncenginebadge()"
     },
     {
       "label": "syncUserBadges()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L149",
+      "source_location": "L152",
       "id": "static_app_syncuserbadges",
-      "community": 29,
+      "community": 59,
       "norm_label": "syncuserbadges()"
     },
     {
       "label": "opt",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L186",
+      "source_location": "L189",
       "id": "static_app_opt",
       "community": 29,
       "norm_label": "opt"
     },
     {
+      "label": "hideWelcome()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L208",
+      "id": "static_app_hidewelcome",
+      "community": 59,
+      "norm_label": "hidewelcome()"
+    },
+    {
       "label": "appendMessage()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L205",
+      "source_location": "L218",
       "id": "static_app_appendmessage",
-      "community": 29,
+      "community": 59,
       "norm_label": "appendmessage()"
-    },
-    {
-      "label": "handleQuerySubmit()",
-      "file_type": "code",
-      "source_file": "static/app.js",
-      "source_location": "L232",
-      "id": "static_app_handlequerysubmit",
-      "community": 29,
-      "norm_label": "handlequerysubmit()"
     },
     {
       "label": "query",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L417",
+      "source_location": "L248",
       "id": "static_app_query",
       "community": 29,
       "norm_label": "query"
     },
     {
+      "label": "handleQuerySubmit()",
+      "file_type": "code",
+      "source_file": "static/app.js",
+      "source_location": "L256",
+      "id": "static_app_handlequerysubmit",
+      "community": 59,
+      "norm_label": "handlequerysubmit()"
+    },
+    {
       "label": "renderObservability()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L429",
+      "source_location": "L456",
       "id": "static_app_renderobservability",
-      "community": 29,
+      "community": 76,
       "norm_label": "renderobservability()"
     },
     {
       "label": "loadBenchmarkData()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L657",
+      "source_location": "L684",
       "id": "static_app_loadbenchmarkdata",
-      "community": 29,
+      "community": 76,
       "norm_label": "loadbenchmarkdata()"
     },
     {
       "label": "renderBenchmarkMetrics()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L680",
+      "source_location": "L707",
       "id": "static_app_renderbenchmarkmetrics",
-      "community": 29,
+      "community": 76,
       "norm_label": "renderbenchmarkmetrics()"
+    },
+    {
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "api/app.py",
+      "source_location": "L1",
+      "community": 77,
+      "norm_label": "app.py",
+      "id": "api_app_py"
+    },
+    {
+      "label": "lifespan()",
+      "file_type": "code",
+      "source_file": "api/app.py",
+      "source_location": "L14",
+      "community": 77,
+      "norm_label": "lifespan()",
+      "id": "api_app_lifespan"
+    },
+    {
+      "label": "FastAPI",
+      "file_type": "code",
+      "source_file": "api/app.py",
+      "source_location": "L14",
+      "community": 77,
+      "norm_label": "fastapi",
+      "id": "fastapi"
+    },
+    {
+      "label": "serve_spa()",
+      "file_type": "code",
+      "source_file": "api/app.py",
+      "source_location": "L56",
+      "community": 77,
+      "norm_label": "serve_spa()",
+      "id": "api_app_serve_spa"
+    },
+    {
+      "label": "FastAPI Application Setup (Gemini Active)  Provides an entry point for running t",
+      "file_type": "rationale",
+      "source_file": "api/app.py",
+      "source_location": "L1",
+      "community": 77,
+      "norm_label": "fastapi application setup (gemini active)  provides an entry point for running t",
+      "id": "api_app_rationale_1"
+    },
+    {
+      "label": "routes.py",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L1",
+      "community": 77,
+      "norm_label": "routes.py",
+      "id": "api_routes_py"
+    },
+    {
+      "label": "QueryRequest",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L26",
+      "community": 77,
+      "norm_label": "queryrequest",
+      "id": "api_routes_queryrequest"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "community": 55,
+      "norm_label": "basemodel",
+      "id": "basemodel"
+    },
+    {
+      "label": "QueryResponse",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L34",
+      "community": 77,
+      "norm_label": "queryresponse",
+      "id": "api_routes_queryresponse"
+    },
+    {
+      "label": "ask_database()",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L46",
+      "community": 77,
+      "norm_label": "ask_database()",
+      "id": "api_routes_ask_database"
+    },
+    {
+      "label": "get_config()",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L152",
+      "community": 77,
+      "norm_label": "get_config()",
+      "id": "api_routes_get_config"
+    },
+    {
+      "label": "get_benchmark()",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L166",
+      "community": 77,
+      "norm_label": "get_benchmark()",
+      "id": "api_routes_get_benchmark"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "api/routes.py",
+      "source_location": "L166",
+      "community": 77,
+      "norm_label": "str",
+      "id": "api_routes_py_str"
+    },
+    {
+      "label": "FastAPI Routes  Defines endpoints for the SQLAgent application.",
+      "file_type": "rationale",
+      "source_file": "api/routes.py",
+      "source_location": "L1",
+      "community": 77,
+      "norm_label": "fastapi routes  defines endpoints for the sqlagent application.",
+      "id": "api_routes_rationale_1"
+    },
+    {
+      "label": "Takes a natural language query, runs it through the SQLAgent graph,     and retu",
+      "file_type": "rationale",
+      "source_file": "api/routes.py",
+      "source_location": "L47",
+      "community": 77,
+      "norm_label": "takes a natural language query, runs it through the sqlagent graph,     and retu",
+      "id": "api_routes_rationale_47"
+    },
+    {
+      "label": "Returns the current LLM configurations and dynamic schema settings.",
+      "file_type": "rationale",
+      "source_file": "api/routes.py",
+      "source_location": "L153",
+      "community": 77,
+      "norm_label": "returns the current llm configurations and dynamic schema settings.",
+      "id": "api_routes_rationale_153"
+    },
+    {
+      "label": "Serves the selected benchmark JSON log file from the evaluation directory.",
+      "file_type": "rationale",
+      "source_file": "api/routes.py",
+      "source_location": "L167",
+      "community": 77,
+      "norm_label": "serves the selected benchmark json log file from the evaluation directory.",
+      "id": "api_routes_rationale_167"
+    },
+    {
+      "label": "llm.py",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L1",
+      "community": 79,
+      "norm_label": "llm.py",
+      "id": "core_llm_py"
+    },
+    {
+      "label": "get_active_callbacks()",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L16",
+      "community": 49,
+      "norm_label": "get_active_callbacks()",
+      "id": "core_llm_get_active_callbacks"
+    },
+    {
+      "label": "BaseCallbackHandler",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L16",
+      "community": 24,
+      "norm_label": "basecallbackhandler",
+      "id": "basecallbackhandler"
+    },
+    {
+      "label": "register_thread_callbacks()",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L22",
+      "community": 24,
+      "norm_label": "register_thread_callbacks()",
+      "id": "core_llm_register_thread_callbacks"
+    },
+    {
+      "label": "clear_thread_callbacks()",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L26",
+      "community": 24,
+      "norm_label": "clear_thread_callbacks()",
+      "id": "core_llm_clear_thread_callbacks"
+    },
+    {
+      "label": "get_llm()",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L34",
+      "community": 73,
+      "norm_label": "get_llm()",
+      "id": "core_llm_get_llm"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L34",
+      "community": 71,
+      "norm_label": "str",
+      "id": "core_llm_py_str"
+    },
+    {
+      "label": "float",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L34",
+      "community": 73,
+      "norm_label": "float",
+      "id": "float"
+    },
+    {
+      "label": "BaseChatModel",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L34",
+      "community": 73,
+      "norm_label": "basechatmodel",
+      "id": "basechatmodel"
+    },
+    {
+      "label": "extract_text()",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L102",
+      "community": 71,
+      "norm_label": "extract_text()",
+      "id": "core_llm_extract_text"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "core/llm.py",
+      "source_location": "L102",
+      "community": 71,
+      "norm_label": "any",
+      "id": "core_llm_py_any"
+    },
+    {
+      "label": "Returns the list of active callbacks for the current thread.",
+      "file_type": "rationale",
+      "source_file": "core/llm.py",
+      "source_location": "L17",
+      "community": 49,
+      "norm_label": "returns the list of active callbacks for the current thread.",
+      "id": "core_llm_rationale_17"
+    },
+    {
+      "label": "Registers callbacks for the current thread.",
+      "file_type": "rationale",
+      "source_file": "core/llm.py",
+      "source_location": "L23",
+      "community": 24,
+      "norm_label": "registers callbacks for the current thread.",
+      "id": "core_llm_rationale_23"
+    },
+    {
+      "label": "Clears callbacks for the current thread.",
+      "file_type": "rationale",
+      "source_file": "core/llm.py",
+      "source_location": "L27",
+      "community": 24,
+      "norm_label": "clears callbacks for the current thread.",
+      "id": "core_llm_rationale_27"
+    },
+    {
+      "label": "Returns a configured LangChain ChatModel instance from the active provider.",
+      "file_type": "rationale",
+      "source_file": "core/llm.py",
+      "source_location": "L35",
+      "community": 73,
+      "norm_label": "returns a configured langchain chatmodel instance from the active provider.",
+      "id": "core_llm_rationale_35"
+    },
+    {
+      "label": "Safely extracts string content from an LLM response or AIMessage.     Handles st",
+      "file_type": "rationale",
+      "source_file": "core/llm.py",
+      "source_location": "L103",
+      "community": 71,
+      "norm_label": "safely extracts string content from an llm response or aimessage.     handles st",
+      "id": "core_llm_rationale_103"
+    },
+    {
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "frontend/app.py",
+      "source_location": "L1",
+      "community": 45,
+      "norm_label": "app.py",
+      "id": "frontend_app_py"
+    },
+    {
+      "label": "factory.py",
+      "file_type": "code",
+      "source_file": "llm/factory.py",
+      "source_location": "L1",
+      "community": 45,
+      "norm_label": "factory.py",
+      "id": "llm_factory_py"
+    },
+    {
+      "label": "load_config()",
+      "file_type": "code",
+      "source_file": "llm/factory.py",
+      "source_location": "L30",
+      "community": 45,
+      "norm_label": "load_config()",
+      "id": "llm_factory_load_config"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "llm/factory.py",
+      "source_location": "L30",
+      "community": 45,
+      "norm_label": "str",
+      "id": "llm_factory_py_str"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "llm/factory.py",
+      "source_location": "L30",
+      "community": 45,
+      "norm_label": "any",
+      "id": "llm_factory_py_any"
+    },
+    {
+      "label": "LLMProviderFactory",
+      "file_type": "code",
+      "source_file": "llm/factory.py",
+      "source_location": "L175",
+      "community": 45,
+      "norm_label": "llmproviderfactory",
+      "id": "llm_factory_llmproviderfactory"
+    },
+    {
+      "label": ".create_provider()",
+      "file_type": "code",
+      "source_file": "llm/factory.py",
+      "source_location": "L181",
+      "community": 45,
+      "norm_label": ".create_provider()",
+      "id": "llm_factory_llmproviderfactory_create_provider"
+    },
+    {
+      "label": "LLMProvider",
+      "file_type": "code",
+      "source_file": "llm/factory.py",
+      "source_location": "L181",
+      "community": 45,
+      "norm_label": "llmprovider",
+      "id": "llmprovider"
+    },
+    {
+      "label": "get_provider()",
+      "file_type": "code",
+      "source_file": "llm/factory.py",
+      "source_location": "L253",
+      "community": 45,
+      "norm_label": "get_provider()",
+      "id": "llm_factory_get_provider"
+    },
+    {
+      "label": "LLM Provider Factory  Manages runtime config loading from yaml or env variables",
+      "file_type": "rationale",
+      "source_file": "llm/factory.py",
+      "source_location": "L1",
+      "community": 45,
+      "norm_label": "llm provider factory  manages runtime config loading from yaml or env variables",
+      "id": "llm_factory_rationale_1"
+    },
+    {
+      "label": "Loads configuration from 'config/providers.yaml' or 'llm_config.yaml',     falli",
+      "file_type": "rationale",
+      "source_file": "llm/factory.py",
+      "source_location": "L31",
+      "community": 45,
+      "norm_label": "loads configuration from 'config/providers.yaml' or 'llm_config.yaml',     falli",
+      "id": "llm_factory_rationale_31"
+    },
+    {
+      "label": "Factory to construct and configure the globally selected LLMProvider.",
+      "file_type": "rationale",
+      "source_file": "llm/factory.py",
+      "source_location": "L176",
+      "community": 45,
+      "norm_label": "factory to construct and configure the globally selected llmprovider.",
+      "id": "llm_factory_rationale_176"
+    },
+    {
+      "label": "Builds the concrete LLMProvider from configuration.          Args:             c",
+      "file_type": "rationale",
+      "source_file": "llm/factory.py",
+      "source_location": "L182",
+      "community": 45,
+      "norm_label": "builds the concrete llmprovider from configuration.          args:             c",
+      "id": "llm_factory_rationale_182"
+    },
+    {
+      "label": "Convenience function returning the globally configured provider.     Re-loads co",
+      "file_type": "rationale",
+      "source_file": "llm/factory.py",
+      "source_location": "L254",
+      "community": 45,
+      "norm_label": "convenience function returning the globally configured provider.     re-loads co",
+      "id": "llm_factory_rationale_254"
+    },
+    {
+      "label": "test_api_request.py",
+      "file_type": "code",
+      "source_file": "scratch/test_api_request.py",
+      "source_location": "L1",
+      "community": 69,
+      "norm_label": "test_api_request.py",
+      "id": "scratch_test_api_request_py"
     },
     {
       "label": "build_graph_offline.py",
@@ -1133,7 +1160,7 @@
       "file_type": "code",
       "source_file": "core/air_gap.py",
       "source_location": "L1",
-      "community": 7,
+      "community": 45,
       "norm_label": "air_gap.py",
       "id": "core_air_gap_py"
     },
@@ -1142,7 +1169,7 @@
       "file_type": "code",
       "source_file": "core/air_gap.py",
       "source_location": "L22",
-      "community": 7,
+      "community": 45,
       "norm_label": "is_air_gap_enabled()",
       "id": "core_air_gap_is_air_gap_enabled"
     },
@@ -1151,7 +1178,7 @@
       "file_type": "code",
       "source_file": "core/air_gap.py",
       "source_location": "L22",
-      "community": 7,
+      "community": 45,
       "norm_label": "bool",
       "id": "core_air_gap_py_bool"
     },
@@ -1160,7 +1187,7 @@
       "file_type": "code",
       "source_file": "core/air_gap.py",
       "source_location": "L44",
-      "community": 7,
+      "community": 40,
       "norm_label": "validate_air_gap_environment()",
       "id": "core_air_gap_validate_air_gap_environment"
     },
@@ -1169,7 +1196,7 @@
       "file_type": "rationale",
       "source_file": "core/air_gap.py",
       "source_location": "L1",
-      "community": 7,
+      "community": 45,
       "norm_label": "air-gapped deployment mode validation engine  validates the offline integrity of",
       "id": "core_air_gap_rationale_1"
     },
@@ -1178,7 +1205,7 @@
       "file_type": "rationale",
       "source_file": "core/air_gap.py",
       "source_location": "L23",
-      "community": 7,
+      "community": 45,
       "norm_label": "checks if air-gapped deployment mode is enabled via environment variables     or",
       "id": "core_air_gap_rationale_23"
     },
@@ -1187,7 +1214,7 @@
       "file_type": "rationale",
       "source_file": "core/air_gap.py",
       "source_location": "L45",
-      "community": 7,
+      "community": 40,
       "norm_label": "validates that the current environment complies with air-gapped deployment mode.",
       "id": "core_air_gap_rationale_45"
     },
@@ -1313,7 +1340,7 @@
       "file_type": "code",
       "source_file": "core/graph.py",
       "source_location": "L219",
-      "community": 20,
+      "community": 77,
       "norm_label": "build_workflow()",
       "id": "core_graph_build_workflow"
     },
@@ -1358,7 +1385,7 @@
       "file_type": "rationale",
       "source_file": "core/graph.py",
       "source_location": "L220",
-      "community": 20,
+      "community": 77,
       "norm_label": "compiles and returns the langgraph application.",
       "id": "core_graph_rationale_220"
     },
@@ -1367,7 +1394,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L1",
-      "community": 59,
+      "community": 52,
       "norm_label": "security.py",
       "id": "core_security_py"
     },
@@ -1376,7 +1403,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L22",
-      "community": 78,
+      "community": 77,
       "norm_label": "securityexception",
       "id": "core_security_securityexception"
     },
@@ -1385,7 +1412,7 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 78,
+      "community": 77,
       "norm_label": "exception",
       "id": "exception"
     },
@@ -1394,7 +1421,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L26",
-      "community": 59,
+      "community": 52,
       "norm_label": "rolepermissions",
       "id": "core_security_rolepermissions"
     },
@@ -1403,7 +1430,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L39",
-      "community": 59,
+      "community": 52,
       "norm_label": ".normalize_role_name()",
       "id": "core_security_rolepermissions_normalize_role_name"
     },
@@ -1421,7 +1448,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L43",
-      "community": 59,
+      "community": 52,
       "norm_label": "securityconfig",
       "id": "core_security_securityconfig"
     },
@@ -1430,7 +1457,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L52",
-      "community": 59,
+      "community": 52,
       "norm_label": ".get_default_config()",
       "id": "core_security_securityconfig_get_default_config"
     },
@@ -1493,7 +1520,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L185",
-      "community": 59,
+      "community": 52,
       "norm_label": "auditlogger",
       "id": "core_security_auditlogger"
     },
@@ -1502,7 +1529,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L190",
-      "community": 59,
+      "community": 52,
       "norm_label": ".__init__()",
       "id": "core_security_auditlogger_init"
     },
@@ -1520,7 +1547,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L212",
-      "community": 68,
+      "community": 52,
       "norm_label": "securitymanager",
       "id": "core_security_securitymanager"
     },
@@ -1538,7 +1565,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L225",
-      "community": 59,
+      "community": 52,
       "norm_label": "._init_manager()",
       "id": "core_security_securitymanager_init_manager"
     },
@@ -1547,7 +1574,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L230",
-      "community": 68,
+      "community": 52,
       "norm_label": ".get_role_permissions()",
       "id": "core_security_securitymanager_get_role_permissions"
     },
@@ -1556,7 +1583,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L244",
-      "community": 68,
+      "community": 52,
       "norm_label": ".prune_schema_for_role()",
       "id": "core_security_securitymanager_prune_schema_for_role"
     },
@@ -1565,7 +1592,7 @@
       "file_type": "code",
       "source_file": "core/security.py",
       "source_location": "L310",
-      "community": 68,
+      "community": 52,
       "norm_label": ".validate_sql_security()",
       "id": "core_security_securitymanager_validate_sql_security"
     },
@@ -1583,7 +1610,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L1",
-      "community": 59,
+      "community": 52,
       "norm_label": "production governance and security module  implements role-based access control",
       "id": "core_security_rationale_1"
     },
@@ -1592,7 +1619,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L23",
-      "community": 78,
+      "community": 77,
       "norm_label": "exception raised when a security policy or validation check is violated.",
       "id": "core_security_rationale_23"
     },
@@ -1601,7 +1628,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L27",
-      "community": 59,
+      "community": 52,
       "norm_label": "pydantic model representing access permissions for a specific role.",
       "id": "core_security_rationale_27"
     },
@@ -1610,7 +1637,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L44",
-      "community": 59,
+      "community": 52,
       "norm_label": "pydantic model representing the global enterprise security policy configuration.",
       "id": "core_security_rationale_44"
     },
@@ -1619,7 +1646,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L53",
-      "community": 59,
+      "community": 52,
       "norm_label": "generates the standard out-of-the-box enterprise security policy.",
       "id": "core_security_rationale_53"
     },
@@ -1664,7 +1691,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L186",
-      "community": 59,
+      "community": 52,
       "norm_label": "appends structured json logs representing security actions,      verifications,",
       "id": "core_security_rationale_186"
     },
@@ -1682,7 +1709,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L213",
-      "community": 68,
+      "community": 52,
       "norm_label": "global coordinator for database governance, rbac enforcement, pii scrubbing,",
       "id": "core_security_rationale_213"
     },
@@ -1691,7 +1718,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L231",
-      "community": 68,
+      "community": 52,
       "norm_label": "fetches the permissions mapping for a given role, falling back securely.",
       "id": "core_security_rationale_231"
     },
@@ -1700,7 +1727,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L245",
-      "community": 68,
+      "community": 52,
       "norm_label": "removes unauthorized tables and columns from the database schema context.",
       "id": "core_security_rationale_245"
     },
@@ -1709,7 +1736,7 @@
       "file_type": "rationale",
       "source_file": "core/security.py",
       "source_location": "L311",
-      "community": 68,
+      "community": 52,
       "norm_label": "parses generated sql, performs static ast verification for rbac,         prevent",
       "id": "core_security_rationale_311"
     },
@@ -1790,7 +1817,7 @@
       "file_type": "code",
       "source_file": "db/database.py",
       "source_location": "L50",
-      "community": 20,
+      "community": 77,
       "norm_label": "get_database_schema()",
       "id": "db_database_get_database_schema"
     },
@@ -1844,7 +1871,7 @@
       "file_type": "rationale",
       "source_file": "db/database.py",
       "source_location": "L51",
-      "community": 20,
+      "community": 77,
       "norm_label": "extracts table names, columns, and data types from the connected postgresql data",
       "id": "db_database_rationale_51"
     },
@@ -3068,7 +3095,7 @@
       "file_type": "code",
       "source_file": "llm/anthropic_provider.py",
       "source_location": "L23",
-      "community": 76,
+      "community": 49,
       "norm_label": ".__init__()",
       "id": "llm_anthropic_provider_anthropicprovider_init"
     },
@@ -3077,7 +3104,7 @@
       "file_type": "code",
       "source_file": "llm/anthropic_provider.py",
       "source_location": "L23",
-      "community": 76,
+      "community": 49,
       "norm_label": "str",
       "id": "llm_anthropic_provider_py_str"
     },
@@ -3356,7 +3383,7 @@
       "file_type": "code",
       "source_file": "llm/gemini_provider.py",
       "source_location": "L21",
-      "community": 76,
+      "community": 49,
       "norm_label": ".__init__()",
       "id": "llm_gemini_provider_geminiprovider_init"
     },
@@ -3365,7 +3392,7 @@
       "file_type": "code",
       "source_file": "llm/gemini_provider.py",
       "source_location": "L21",
-      "community": 76,
+      "community": 49,
       "norm_label": "str",
       "id": "llm_gemini_provider_py_str"
     },
@@ -3509,7 +3536,7 @@
       "file_type": "code",
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L115",
-      "community": 65,
+      "community": 73,
       "norm_label": ".get_chat_model()",
       "id": "llm_lmstudio_provider_lmstudioprovider_get_chat_model"
     },
@@ -3518,7 +3545,7 @@
       "file_type": "code",
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L115",
-      "community": 65,
+      "community": 73,
       "norm_label": "float",
       "id": "llm_lmstudio_provider_py_float"
     },
@@ -3536,7 +3563,7 @@
       "file_type": "code",
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L115",
-      "community": 65,
+      "community": 73,
       "norm_label": "basechatmodel",
       "id": "llm_lmstudio_provider_py_basechatmodel"
     },
@@ -3590,7 +3617,7 @@
       "file_type": "rationale",
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L116",
-      "community": 65,
+      "community": 73,
       "norm_label": "instantiates chatopenai pointed to lm studio's custom base url.         runs laz",
       "id": "llm_lmstudio_provider_rationale_116"
     },
@@ -3617,7 +3644,7 @@
       "file_type": "code",
       "source_file": "llm/ollama_provider.py",
       "source_location": "L21",
-      "community": 7,
+      "community": 45,
       "norm_label": "ollamaprovider",
       "id": "llm_ollama_provider_ollamaprovider"
     },
@@ -3716,7 +3743,7 @@
       "file_type": "rationale",
       "source_file": "llm/ollama_provider.py",
       "source_location": "L22",
-      "community": 7,
+      "community": 45,
       "norm_label": "concrete provider implementation for ollama local models.     supports cached co",
       "id": "llm_ollama_provider_rationale_22"
     },
@@ -3770,7 +3797,7 @@
       "file_type": "code",
       "source_file": "llm/openai_provider.py",
       "source_location": "L20",
-      "community": 45,
+      "community": 49,
       "norm_label": ".__init__()",
       "id": "llm_openai_provider_openaiprovider_init"
     },
@@ -3779,7 +3806,7 @@
       "file_type": "code",
       "source_file": "llm/openai_provider.py",
       "source_location": "L20",
-      "community": 45,
+      "community": 49,
       "norm_label": "str",
       "id": "llm_openai_provider_py_str"
     },
@@ -4130,7 +4157,7 @@
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L16",
-      "community": 73,
+      "community": 77,
       "norm_label": "tokenaccumulatorcallback",
       "id": "observability_metrics_tokenaccumulatorcallback"
     },
@@ -4139,7 +4166,7 @@
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L21",
-      "community": 73,
+      "community": 77,
       "norm_label": ".__init__()",
       "id": "observability_metrics_tokenaccumulatorcallback_init"
     },
@@ -4148,7 +4175,7 @@
       "file_type": "code",
       "source_file": "observability/metrics.py",
       "source_location": "L27",
-      "community": 73,
+      "community": 77,
       "norm_label": ".on_llm_end()",
       "id": "observability_metrics_tokenaccumulatorcallback_on_llm_end"
     },
@@ -4247,7 +4274,7 @@
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L17",
-      "community": 73,
+      "community": 77,
       "norm_label": "langchain callback handler that intercepts llm execution endpoints      and thre",
       "id": "observability_metrics_rationale_17"
     },
@@ -4256,7 +4283,7 @@
       "file_type": "rationale",
       "source_file": "observability/metrics.py",
       "source_location": "L28",
-      "community": 73,
+      "community": 77,
       "norm_label": "called at the end of llm generation to extract and add tokens.",
       "id": "observability_metrics_rationale_28"
     },
@@ -4463,7 +4490,7 @@
       "file_type": "code",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L317",
-      "community": 2,
+      "community": 0,
       "norm_label": "get_schema_retriever()",
       "id": "retrieval_schema_retriever_get_schema_retriever"
     },
@@ -4553,7 +4580,7 @@
       "file_type": "rationale",
       "source_file": "retrieval/schema_retriever.py",
       "source_location": "L318",
-      "community": 2,
+      "community": 0,
       "norm_label": "returns the global schemaretriever singleton instance.",
       "id": "retrieval_schema_retriever_rationale_318"
     },
@@ -5336,7 +5363,7 @@
       "file_type": "code",
       "source_file": "schemas/settings.py",
       "source_location": "L1",
-      "community": 73,
+      "community": 68,
       "norm_label": "settings.py",
       "id": "schemas_settings_py"
     },
@@ -5345,7 +5372,7 @@
       "file_type": "code",
       "source_file": "schemas/settings.py",
       "source_location": "L11",
-      "community": 73,
+      "community": 68,
       "norm_label": "lmstudioprovidersettings",
       "id": "schemas_settings_lmstudioprovidersettings"
     },
@@ -5363,7 +5390,7 @@
       "file_type": "rationale",
       "source_file": "schemas/settings.py",
       "source_location": "L1",
-      "community": 73,
+      "community": 68,
       "norm_label": "llm configuration and provider settings schemas  defines pydantic models for ver",
       "id": "schemas_settings_rationale_1"
     },
@@ -5372,7 +5399,7 @@
       "file_type": "rationale",
       "source_file": "schemas/settings.py",
       "source_location": "L12",
-      "community": 73,
+      "community": 68,
       "norm_label": "configuration settings specific to lm studio local server.",
       "id": "schemas_settings_rationale_12"
     },
@@ -5390,7 +5417,7 @@
       "file_type": "code",
       "source_file": "schemas/validation.py",
       "source_location": "L1",
-      "community": 71,
+      "community": 55,
       "norm_label": "validation.py",
       "id": "schemas_validation_py"
     },
@@ -5417,7 +5444,7 @@
       "file_type": "rationale",
       "source_file": "schemas/validation.py",
       "source_location": "L1",
-      "community": 71,
+      "community": 55,
       "norm_label": "validation & correction pydantic schemas  defines structural models for sql sema",
       "id": "schemas_validation_rationale_1"
     },
@@ -5912,7 +5939,7 @@
       "file_type": "code",
       "source_file": "scratch/test_pipeline_e2e.py",
       "source_location": "L1",
-      "community": 20,
+      "community": 77,
       "norm_label": "test_pipeline_e2e.py",
       "id": "scratch_test_pipeline_e2e_py"
     },
@@ -5921,7 +5948,7 @@
       "file_type": "code",
       "source_file": "scratch/test_pipeline_e2e.py",
       "source_location": "L19",
-      "community": 20,
+      "community": 77,
       "norm_label": "test_e2e_pipeline()",
       "id": "scratch_test_pipeline_e2e_test_e2e_pipeline"
     },
@@ -5984,7 +6011,7 @@
       "file_type": "code",
       "source_file": "scratch/test_providers.py",
       "source_location": "L59",
-      "community": 45,
+      "community": 48,
       "norm_label": ".test_gemini_provider_instantiation()",
       "id": "scratch_test_providers_testllmproviders_test_gemini_provider_instantiation"
     },
@@ -6038,7 +6065,7 @@
       "file_type": "code",
       "source_file": "scratch/test_providers.py",
       "source_location": "L149",
-      "community": 7,
+      "community": 48,
       "norm_label": ".test_ollama_health_check_missing_model()",
       "id": "scratch_test_providers_testllmproviders_test_ollama_health_check_missing_model"
     },
@@ -6137,7 +6164,7 @@
       "file_type": "code",
       "source_file": "scratch/test_providers.py",
       "source_location": "L316",
-      "community": 48,
+      "community": 79,
       "norm_label": ".test_apply_shared_retry()",
       "id": "scratch_test_providers_testllmproviders_test_apply_shared_retry"
     },
@@ -6173,7 +6200,7 @@
       "file_type": "rationale",
       "source_file": "scratch/test_providers.py",
       "source_location": "L60",
-      "community": 45,
+      "community": 48,
       "norm_label": "verifies geminiprovider is correctly constructed and configured.",
       "id": "scratch_test_providers_rationale_60"
     },
@@ -6227,7 +6254,7 @@
       "file_type": "rationale",
       "source_file": "scratch/test_providers.py",
       "source_location": "L150",
-      "community": 7,
+      "community": 48,
       "norm_label": "verifies check_health raises runtimeerror when the configured model is absent.",
       "id": "scratch_test_providers_rationale_150"
     },
@@ -6326,7 +6353,7 @@
       "file_type": "rationale",
       "source_file": "scratch/test_providers.py",
       "source_location": "L317",
-      "community": 48,
+      "community": 79,
       "norm_label": "verifies that shared retry policies wrap models successfully.",
       "id": "scratch_test_providers_rationale_317"
     },
@@ -6335,7 +6362,7 @@
       "file_type": "code",
       "source_file": "scratch/test_schema_retriever.py",
       "source_location": "L1",
-      "community": 2,
+      "community": 0,
       "norm_label": "test_schema_retriever.py",
       "id": "scratch_test_schema_retriever_py"
     },
@@ -6344,7 +6371,7 @@
       "file_type": "code",
       "source_file": "scratch/test_schema_retriever.py",
       "source_location": "L22",
-      "community": 2,
+      "community": 0,
       "norm_label": "run_retrieval_tests()",
       "id": "scratch_test_schema_retriever_run_retrieval_tests"
     },
@@ -6353,7 +6380,7 @@
       "file_type": "rationale",
       "source_file": "scratch/test_schema_retriever.py",
       "source_location": "L1",
-      "community": 2,
+      "community": 0,
       "norm_label": "test schema retriever  isolated script to verify the faiss-based schema retrieve",
       "id": "scratch_test_schema_retriever_rationale_1"
     },
@@ -6362,7 +6389,7 @@
       "file_type": "code",
       "source_file": "scratch/test_security.py",
       "source_location": "L1",
-      "community": 20,
+      "community": 77,
       "norm_label": "test_security.py",
       "id": "scratch_test_security_py"
     },
@@ -6452,7 +6479,7 @@
       "file_type": "code",
       "source_file": "scratch/test_security.py",
       "source_location": "L211",
-      "community": 20,
+      "community": 77,
       "norm_label": ".test_e2e_graph_security()",
       "id": "scratch_test_security_testproductionsecurity_test_e2e_graph_security"
     },
@@ -6461,7 +6488,7 @@
       "file_type": "rationale",
       "source_file": "scratch/test_security.py",
       "source_location": "L1",
-      "community": 20,
+      "community": 77,
       "norm_label": "security and governance test suite  validates all security, safety, and rbac req",
       "id": "scratch_test_security_rationale_1"
     },
@@ -6533,7 +6560,7 @@
       "file_type": "rationale",
       "source_file": "scratch/test_security.py",
       "source_location": "L212",
-      "community": 20,
+      "community": 77,
       "norm_label": "8. run end-to-end security scenarios through the langgraph workflow.",
       "id": "scratch_test_security_rationale_212"
     },
@@ -6695,7 +6722,7 @@
       "file_type": "code",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L1",
-      "community": 7,
+      "community": 45,
       "norm_label": "verify_offline.py",
       "id": "scratch_verify_offline_py"
     },
@@ -6713,7 +6740,7 @@
       "file_type": "code",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L55",
-      "community": 40,
+      "community": 20,
       "norm_label": "enable_socket_shield()",
       "id": "scratch_verify_offline_enable_socket_shield"
     },
@@ -6722,7 +6749,7 @@
       "file_type": "code",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L61",
-      "community": 40,
+      "community": 20,
       "norm_label": "disable_socket_shield()",
       "id": "scratch_verify_offline_disable_socket_shield"
     },
@@ -6758,7 +6785,7 @@
       "file_type": "code",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L90",
-      "community": 40,
+      "community": 20,
       "norm_label": ".test_socket_shield_blocks_internet()",
       "id": "scratch_verify_offline_testofflineintegrity_test_socket_shield_blocks_internet"
     },
@@ -6821,7 +6848,7 @@
       "file_type": "code",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L317",
-      "community": 40,
+      "community": 20,
       "norm_label": ".test_e2e_graph_air_gapped_execution()",
       "id": "scratch_verify_offline_testofflineintegrity_test_e2e_graph_air_gapped_execution"
     },
@@ -6830,7 +6857,7 @@
       "file_type": "rationale",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L1",
-      "community": 7,
+      "community": 45,
       "norm_label": "air-gapped operation & offline verification test suite  validates the full offli",
       "id": "scratch_verify_offline_rationale_1"
     },
@@ -6848,7 +6875,7 @@
       "file_type": "rationale",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L56",
-      "community": 40,
+      "community": 20,
       "norm_label": "enables the offline socket blocking interceptor.",
       "id": "scratch_verify_offline_rationale_56"
     },
@@ -6857,7 +6884,7 @@
       "file_type": "rationale",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L62",
-      "community": 40,
+      "community": 20,
       "norm_label": "disables the offline socket blocking interceptor.",
       "id": "scratch_verify_offline_rationale_62"
     },
@@ -6866,7 +6893,7 @@
       "file_type": "rationale",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L91",
-      "community": 40,
+      "community": 20,
       "norm_label": "verify that socket shield blocks external internet while allowing localhost.",
       "id": "scratch_verify_offline_rationale_91"
     },
@@ -6929,7 +6956,7 @@
       "file_type": "rationale",
       "source_file": "scratch/verify_offline.py",
       "source_location": "L318",
-      "community": 40,
+      "community": 20,
       "norm_label": "8. run end-to-end sqlagent graph while strict socket shield is active.",
       "id": "scratch_verify_offline_rationale_318"
     },
@@ -8891,6 +8918,674 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "observability_audit_log_json",
+      "target": "observability_audit_log_action"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "observability_audit_log_json",
+      "target": "observability_audit_log_details"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "observability_audit_log_json",
+      "target": "observability_audit_log_role"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "observability_audit_log_json",
+      "target": "observability_audit_log_timestamp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "observability_audit_log_json",
+      "target": "observability_audit_log_username"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "observability_audit_log_details",
+      "target": "observability_audit_log_details_error"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "observability/audit_log.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "observability_audit_log_details",
+      "target": "observability_audit_log_details_sql"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_activeenginebadge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_activeuserbadge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L205",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_appendmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_appstate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_benchdataview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_benchdifficultybars"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_bencherrorbars"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_benchfailurestable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_benchkpis"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_benchlatencydist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_benchmarkselect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_benchnodata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_benchtokenprojections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_chathistory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_chatinput"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_chatsendbtn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_chatwelcome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_examplebtns"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L232",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_handlequerysubmit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_hidewelcome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L112",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_loadbackendconfig"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L657",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_loadbenchmarkdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_modelsbyprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_navbuttons"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obscorrectionpanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obsdataview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obskpis"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obslatencybars"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obsnodata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obsqueryplandetails"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obsrepairhistory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obsschemaretrievaldetails"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obssqlcode"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obstokenstable"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_obsvalidationresults"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L186",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_opt"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_pageviews"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L417",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_query"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L680",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_renderbenchmarkmetrics"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L429",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_renderobservability"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_settingsmodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_settingsmodelgroup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_settingsprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_settingsrole"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_settingsusername"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_switchpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L141",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_syncenginebadge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L149",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_syncuserbadges"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_systemdefaultengine"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_targetpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "static_app_js",
+      "target": "static_app_welcomechips",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L98",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_switchpage",
+      "target": "static_app_loadbenchmarkdata"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_switchpage",
+      "target": "static_app_renderobservability"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_loadbackendconfig",
+      "target": "static_app_syncenginebadge"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L133",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_loadbackendconfig",
+      "target": "static_app_syncuserbadges"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L293",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_handlequerysubmit",
+      "target": "static_app_syncenginebadge"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L265",
+      "weight": 1.0,
+      "source": "static_app_handlequerysubmit",
+      "target": "static_app_hidewelcome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L241",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_handlequerysubmit",
+      "target": "static_app_appendmessage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "static/app.js",
+      "source_location": "L668",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "static_app_loadbenchmarkdata",
+      "target": "static_app_renderbenchmarkmetrics"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "api/app.py",
       "source_location": "L14",
       "weight": 1.0,
@@ -8904,9 +9599,9 @@
       "source_file": "api/app.py",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_app_py",
-      "target": "api_app_serve_spa",
-      "confidence_score": 1.0
+      "target": "api_app_serve_spa"
     },
     {
       "relation": "imports",
@@ -9011,9 +9706,9 @@
       "source_file": "api/routes.py",
       "source_location": "L166",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_routes_py",
-      "target": "api_routes_get_benchmark",
-      "confidence_score": 1.0
+      "target": "api_routes_get_benchmark"
     },
     {
       "relation": "contains",
@@ -9021,9 +9716,9 @@
       "source_file": "api/routes.py",
       "source_location": "L152",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_routes_py",
-      "target": "api_routes_get_config",
-      "confidence_score": 1.0
+      "target": "api_routes_get_config"
     },
     {
       "relation": "contains",
@@ -9447,9 +10142,9 @@
       "source_file": "api/routes.py",
       "source_location": "L153",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_routes_rationale_153",
-      "target": "api_routes_get_config",
-      "confidence_score": 1.0
+      "target": "api_routes_get_config"
     },
     {
       "relation": "references",
@@ -9458,9 +10153,9 @@
       "source_file": "api/routes.py",
       "source_location": "L166",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_routes_get_benchmark",
-      "target": "api_routes_py_str",
-      "confidence_score": 1.0
+      "target": "api_routes_py_str"
     },
     {
       "relation": "rationale_for",
@@ -9468,9 +10163,9 @@
       "source_file": "api/routes.py",
       "source_location": "L167",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_routes_rationale_167",
-      "target": "api_routes_get_benchmark",
-      "confidence_score": 1.0
+      "target": "api_routes_get_benchmark"
     },
     {
       "relation": "contains",
@@ -9562,9 +10257,9 @@
       "source_file": "core/llm.py",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_llm_get_active_callbacks",
-      "target": "basecallbackhandler",
-      "confidence_score": 1.0
+      "target": "basecallbackhandler"
     },
     {
       "relation": "calls",
@@ -9726,9 +10421,9 @@
       "source_file": "core/llm.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_llm_register_thread_callbacks",
-      "target": "basecallbackhandler",
-      "confidence_score": 1.0
+      "target": "basecallbackhandler"
     },
     {
       "relation": "inherits",
@@ -9919,9 +10614,9 @@
       "source_file": "core/llm.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_llm_get_llm",
-      "target": "basechatmodel",
-      "confidence_score": 1.0
+      "target": "basechatmodel"
     },
     {
       "relation": "references",
@@ -9941,9 +10636,9 @@
       "source_file": "core/llm.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_llm_get_llm",
-      "target": "float",
-      "confidence_score": 1.0
+      "target": "float"
     },
     {
       "relation": "calls",
@@ -10951,9 +11646,9 @@
       "source_file": "llm/factory.py",
       "source_location": "L181",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "llm_factory_llmproviderfactory_create_provider",
-      "target": "llmprovider",
-      "confidence_score": 1.0
+      "target": "llmprovider"
     },
     {
       "relation": "rationale_for",
@@ -10982,9 +11677,9 @@
       "source_file": "llm/factory.py",
       "source_location": "L253",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "llm_factory_get_provider",
-      "target": "llmprovider",
-      "confidence_score": 1.0
+      "target": "llmprovider"
     },
     {
       "relation": "inherits",
@@ -11122,633 +11817,6 @@
       "confidence_score": 1.0,
       "source": "scratch_verify_offline_py",
       "target": "llm_factory_get_provider"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "observability_audit_log_json",
-      "target": "observability_audit_log_action"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "observability_audit_log_json",
-      "target": "observability_audit_log_details"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "observability_audit_log_json",
-      "target": "observability_audit_log_role"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "observability_audit_log_json",
-      "target": "observability_audit_log_timestamp"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "observability_audit_log_json",
-      "target": "observability_audit_log_username"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "observability_audit_log_details",
-      "target": "observability_audit_log_details_error"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "observability/audit_log.json",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "observability_audit_log_details",
-      "target": "observability_audit_log_details_sql"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_activeenginebadge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_activeuserbadge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L205",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_appendmessage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_appstate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L51",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_benchdataview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L53",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_benchdifficultybars",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L54",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_bencherrorbars",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L57",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_benchfailurestable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L52",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_benchkpis",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L55",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_benchlatencydist",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L49",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_benchmarkselect",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_benchnodata",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_benchtokenprojections",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_chathistory",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_chatinput",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_chatsendbtn",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_examplebtns",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L232",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_handlequerysubmit",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L112",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_loadbackendconfig",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L657",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_loadbenchmarkdata",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_modelsbyprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_navbuttons",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L45",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obscorrectionpanel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obsdataview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L38",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obskpis",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L39",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obslatencybars",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obsnodata",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L41",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obsqueryplandetails",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L46",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obsrepairhistory",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L42",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obsschemaretrievaldetails",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obssqlcode",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L40",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obstokenstable",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L44",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_obsvalidationresults",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L186",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_opt",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_pageviews",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L417",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_query",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L680",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_renderbenchmarkmetrics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L429",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_renderobservability",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L32",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_settingsmodel",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_settingsmodelgroup",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_settingsprovider",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_settingsrole",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_settingsusername",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L73",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_switchpage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L141",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_syncenginebadge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L149",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_syncuserbadges",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L33",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_systemdefaultengine",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L104",
-      "weight": 1.0,
-      "source": "static_app_js",
-      "target": "static_app_targetpage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L98",
-      "weight": 1.0,
-      "source": "static_app_switchpage",
-      "target": "static_app_loadbenchmarkdata",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L96",
-      "weight": 1.0,
-      "source": "static_app_switchpage",
-      "target": "static_app_renderobservability",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L128",
-      "weight": 1.0,
-      "source": "static_app_loadbackendconfig",
-      "target": "static_app_syncenginebadge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L133",
-      "weight": 1.0,
-      "source": "static_app_loadbackendconfig",
-      "target": "static_app_syncuserbadges",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L293",
-      "weight": 1.0,
-      "source": "static_app_handlequerysubmit",
-      "target": "static_app_syncenginebadge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L241",
-      "weight": 1.0,
-      "source": "static_app_handlequerysubmit",
-      "target": "static_app_appendmessage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "static/app.js",
-      "source_location": "L668",
-      "weight": 1.0,
-      "source": "static_app_loadbenchmarkdata",
-      "target": "static_app_renderbenchmarkmetrics",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -25477,5 +25545,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "849a0e750e8ebf14c8b5fafa4da7ef03b5c9727b"
+  "built_at_commit": "7b2d3c711ca131894c702e203df324957b96ff63"
 }
