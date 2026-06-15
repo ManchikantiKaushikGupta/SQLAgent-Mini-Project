@@ -13,7 +13,7 @@ import time
 import uuid
 import logging
 from datetime import datetime
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 # Ensure project root is in the Python path to run directly
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -147,11 +147,20 @@ class TokenUsageTracker(BaseCallbackHandler):
                             self.completion_tokens += getattr(usage, "completion_tokens", 0)
                             self.total_tokens += getattr(usage, "total_tokens", 0)
 
-def run_benchmarks() -> Tuple[BenchmarkSummary, List[BenchmarkResult]]:
+def run_benchmarks(
+    limit: Optional[int] = None,
+    provider: Optional[str] = None,
+    model: Optional[str] = None
+) -> Tuple[BenchmarkSummary, List[BenchmarkResult]]:
     """
     Orchestrates the execution of all benchmark cases, captures metrics,
     and logs failures.
     """
+    if provider:
+        os.environ["LLM_PROVIDER"] = provider
+    if model:
+        os.environ["LLM_MODEL"] = model
+
     logger.info("Initializing SQLAgent pipeline...")
     app = build_workflow()
     
@@ -167,7 +176,11 @@ def run_benchmarks() -> Tuple[BenchmarkSummary, List[BenchmarkResult]]:
     print(f"[RUN] SQLAgent Benchmark Run {run_id}")
     print(f"========================================================\n")
     
-    for case in BENCHMARK_CASES:
+    cases_to_run = BENCHMARK_CASES
+    if limit is not None:
+        cases_to_run = BENCHMARK_CASES[:limit]
+
+    for case in cases_to_run:
         print(f"Running [{case.id}] ({case.difficulty}): '{case.query}'")
         
         # Initialize token tracker and register to current thread
@@ -318,6 +331,12 @@ def run_benchmarks() -> Tuple[BenchmarkSummary, List[BenchmarkResult]]:
     for k, v in diff_stats.items():
         v["accuracy_pct"] = (v["passed"] / v["total"]) * 100
         
+    # Retrieve active provider and model
+    from llm.factory import load_config
+    config = load_config()
+    final_provider = config.get("provider", "gemini")
+    final_model = config.get("model", "Unknown")
+
     summary = BenchmarkSummary(
         run_id=run_id,
         timestamp=start_timestamp,
@@ -332,7 +351,9 @@ def run_benchmarks() -> Tuple[BenchmarkSummary, List[BenchmarkResult]]:
         queries_needing_correction=queries_needing_correction,
         queries_corrected_successfully=queries_corrected_successfully,
         correction_success_rate_pct=correction_success_rate,
-        difficulty_breakdown=diff_stats
+        difficulty_breakdown=diff_stats,
+        provider=final_provider,
+        model=final_model
     )
     
     return summary, results
@@ -426,6 +447,34 @@ def render_dashboard(summary: BenchmarkSummary, results: List[BenchmarkResult]):
     print(f"========================================================\n")
 
 if __name__ == "__main__":
-    summary, results = run_benchmarks()
+    import argparse
+    from typing import Optional
+    
+    parser = argparse.ArgumentParser(description="NL2SQL Benchmark Suite Runner")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Limit the number of benchmark cases run."
+    )
+    parser.add_argument(
+        "--provider",
+        type=str,
+        default=None,
+        help="Override active LLM provider."
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default=None,
+        help="Override active LLM model name."
+    )
+    args = parser.parse_args()
+    
+    summary, results = run_benchmarks(
+        limit=args.limit,
+        provider=args.provider,
+        model=args.model
+    )
     write_reports(summary, results)
     render_dashboard(summary, results)

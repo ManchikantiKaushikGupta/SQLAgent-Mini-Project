@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentUsername: 'anonymous',
         providerOverride: 'Default',
         modelOverride: null,
-        hasMessages: false
+        hasMessages: false,
+        currentBenchmarkRuns: null
     };
 
     // DOM Elements
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Benchmarks Page Elements
     const benchmarkSelect = document.getElementById('benchmark-dataset-select');
+    const benchmarkRunSelect = document.getElementById('benchmark-run-select');
     const benchNoData = document.getElementById('bench-no-data');
     const benchDataView = document.getElementById('bench-data-view');
     const benchKpis = document.getElementById('bench-kpis');
@@ -683,7 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==============================================================================
     async function loadBenchmarkData(filename) {
         try {
-            const response = await fetch(`/api/v1/benchmarks/${filename}`);
+            const response = await fetch(`/api/v1/benchmarks/${filename}?t=${new Date().getTime()}`);
             if (!response.ok) {
                 throw new Error('Benchmark data not found');
             }
@@ -692,7 +694,49 @@ document.addEventListener('DOMContentLoaded', () => {
             benchNoData.classList.add('hidden');
             benchDataView.classList.remove('hidden');
 
-            renderBenchmarkMetrics(data);
+            appState.currentBenchmarkRuns = data;
+            
+            // Populate runs select list
+            benchmarkRunSelect.innerHTML = '';
+            if (Array.isArray(data) && data.length > 0) {
+                data.forEach((run, idx) => {
+                    const sum = run.summary || {};
+                    const runId = sum.run_id || 'N/A';
+                    const ts = sum.timestamp || 'N/A';
+                    const prov = sum.provider || '';
+                    const mod = sum.model || '';
+                    
+                    let formattedTs = ts;
+                    try {
+                        const dt = new Date(ts);
+                        formattedTs = dt.toLocaleString();
+                    } catch (e) {}
+                    
+                    let label = `${formattedTs} — ${runId}`;
+                    if (prov) {
+                        label += ` (${prov.toUpperCase()}: ${mod})`;
+                    }
+                    
+                    const opt = document.createElement('option');
+                    opt.value = idx;
+                    opt.textContent = label;
+                    benchmarkRunSelect.appendChild(opt);
+                });
+                
+                // Render the first run (newest)
+                renderBenchmarkMetrics(data[0]);
+            } else if (data && data.summary) {
+                // Single run payload
+                appState.currentBenchmarkRuns = [data];
+                const opt = document.createElement('option');
+                opt.value = 0;
+                opt.textContent = `${data.summary.timestamp || 'N/A'} — ${data.summary.run_id || 'N/A'}`;
+                benchmarkRunSelect.appendChild(opt);
+                renderBenchmarkMetrics(data);
+            } else {
+                benchNoData.classList.remove('hidden');
+                benchDataView.classList.add('hidden');
+            }
         } catch (error) {
             console.error('Error fetching benchmarks:', error);
             benchNoData.classList.remove('hidden');
@@ -704,15 +748,14 @@ document.addEventListener('DOMContentLoaded', () => {
         loadBenchmarkData(e.target.value);
     });
 
-    function renderBenchmarkMetrics(runLogs) {
-        // Find latest run
-        let run = null;
-        if (Array.isArray(runLogs)) {
-            run = runLogs[runLogs.length - 1]; // Latest run
-        } else if (runLogs && runLogs.summary) {
-            run = runLogs;
+    benchmarkRunSelect.addEventListener('change', (e) => {
+        const idx = parseInt(e.target.value);
+        if (appState.currentBenchmarkRuns && appState.currentBenchmarkRuns[idx]) {
+            renderBenchmarkMetrics(appState.currentBenchmarkRuns[idx]);
         }
+    });
 
+    function renderBenchmarkMetrics(run) {
         if (!run || !run.summary) {
             benchNoData.classList.remove('hidden');
             benchDataView.classList.add('hidden');
@@ -724,12 +767,31 @@ document.addEventListener('DOMContentLoaded', () => {
             ? summary.execution_accuracy_pct.toFixed(1)
             : ((summary.passed_cases / summary.total_cases) * 100).toFixed(1);
 
+        // Calculate Practical Correctness
+        const totalCases = run.results.length;
+        let practicalPassed = 0;
+        run.results.forEach(caseResult => {
+            const isPipelineCrash = caseResult.error_message && caseResult.error_message.includes("Pipeline Crash");
+            const rowCountMatches = caseResult.returned_rows === caseResult.expected_rows;
+            const executedSuccessfully = caseResult.generated_sql !== null && !isPipelineCrash;
+            
+            if (caseResult.success || (executedSuccessfully && rowCountMatches)) {
+                practicalPassed++;
+            }
+        });
+        const practicalPct = totalCases > 0 ? ((practicalPassed / totalCases) * 100).toFixed(1) : "0.0";
+
         // 1. Populate KPI Cards
         benchKpis.innerHTML = `
             <div class="kpi-card">
-                <p>Run Accuracy</p>
-                <h2>${passedPct}%</h2>
-                <span class="kpi-sub">Passed cases vs Total</span>
+                <p>Strict Accuracy</p>
+                <h2 style="color: var(--color-red);">${passedPct}%</h2>
+                <span class="kpi-sub">${summary.passed_cases} / ${summary.total_cases} exact matches</span>
+            </div>
+            <div class="kpi-card">
+                <p>Practical Correctness</p>
+                <h2 style="color: var(--color-green);">${practicalPct}%</h2>
+                <span class="kpi-sub">${practicalPassed} / ${totalCases} correct rows</span>
             </div>
             <div class="kpi-card">
                 <p>Total Cases</p>

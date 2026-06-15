@@ -128,7 +128,22 @@ class LMStudioProvider(LLMProvider):
         model_name = kwargs.pop("model", self.model)
 
         # Run health check to verify endpoint and model presence
-        self.check_health(model_name)
+        try:
+            self.check_health(model_name)
+            is_offline = False
+        except (ConnectionError, RuntimeError) as health_err:
+            if os.getenv("LMSTUDIO_SIMULATE_FALLBACK", "false").lower() in ("true", "1", "yes"):
+                logger.warning(f"LM Studio offline ({health_err}). Falling back to Gemini simulation model.")
+                is_offline = True
+            else:
+                raise health_err
+
+        if is_offline:
+            from llm.gemini_provider import GeminiProvider
+            gemini_api_key = os.getenv("GOOGLE_API_KEY")
+            gemini_model_name = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
+            fallback_prov = GeminiProvider(api_key=gemini_api_key, model=gemini_model_name)
+            return fallback_prov.get_chat_model(temperature=temperature, **kwargs)
 
         callbacks = resolve_callbacks(**kwargs)
 
@@ -159,7 +174,22 @@ class LMStudioProvider(LLMProvider):
         model_name = kwargs.pop("model", self.embeddings_model or "text-embedding-3-small")
         
         # Run health check
-        self.check_health(self.model)
+        try:
+            self.check_health(self.model)
+            is_offline = False
+        except (ConnectionError, RuntimeError) as health_err:
+            if os.getenv("LMSTUDIO_SIMULATE_FALLBACK", "false").lower() in ("true", "1", "yes"):
+                logger.warning(f"LM Studio offline ({health_err}). Falling back to Gemini simulation embeddings.")
+                is_offline = True
+            else:
+                raise health_err
+
+        if is_offline:
+            from llm.gemini_provider import GeminiProvider
+            gemini_api_key = os.getenv("GOOGLE_API_KEY")
+            gemini_model_name = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
+            fallback_prov = GeminiProvider(api_key=gemini_api_key, model=gemini_model_name)
+            return fallback_prov.get_embeddings(**kwargs)
 
         class LMStudioEmbeddings(OpenAIEmbeddings):
             """

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataSense AI - Telemetry Portal</title>
     <meta name="description" content="DataSense AI — NL2SQL telemetry workspace for querying databases and monitoring live performance diagnostics.">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/style.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -344,19 +344,29 @@
                     <p class="view-subtitle">Historical latency distributions, projected API cost models, and failure taxonomies.</p>
                 </header>
 
-                <div class="content-panel" style="margin-bottom:1.5rem;">
-                    <label for="benchmark-dataset-select" class="form-label">
-                        <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
-                        </svg>
-                        Select Evaluation Target Benchmark:
-                    </label>
-                    <select class="form-select" id="benchmark-dataset-select">
-                        <option value="run_history.json">Baseline E-Commerce</option>
-                        <option value="run_history_spider.json">Spider</option>
-                        <option value="run_history_spider_realistic.json">Spider Realistic</option>
-                        <option value="run_history_spider_syn.json">Spider SYN</option>
-                    </select>
+                <div class="content-panel" style="margin-bottom:1.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label for="benchmark-dataset-select" class="form-label">
+                            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>
+                            </svg>
+                            Select Evaluation Target Benchmark:
+                        </label>
+                        <select class="form-select" id="benchmark-dataset-select">
+                            <option value="run_history.json">Baseline E-Commerce</option>
+                            <option value="run_history_spider.json">Spider</option>
+                            <option value="run_history_spider_realistic.json">Spider Realistic</option>
+                            <option value="run_history_spider_syn.json">Spider SYN</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1.5; min-width: 300px;" id="benchmark-run-selector-container">
+                        <label for="benchmark-run-select" class="form-label">
+                            📅 Select Benchmark Run from History:
+                        </label>
+                        <select class="form-select" id="benchmark-run-select">
+                            <!-- Options populated dynamically -->
+                        </select>
+                    </div>
                 </div>
 
                 <div id="bench-no-data" class="content-panel info-box hidden">
@@ -534,6 +544,6 @@
         </main>
     </div>
 
-    <script src="/static/app.js"></script>
+    <script src="/static/app.js?v=2"></script>
 </body>
 </html>

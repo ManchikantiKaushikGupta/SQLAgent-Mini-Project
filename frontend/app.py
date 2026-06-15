@@ -1033,13 +1033,40 @@ elif active_page == "benchmarks":
             if not history_data:
                 st.warning("The run history file exists but has no records.")
             else:
-                # Get the most recent run
-                latest_run = history_data[0]
+                from datetime import datetime
+                # Let user select which run to view
+                run_options = []
+                for i, run in enumerate(history_data):
+                    sum_val = run.get("summary", {})
+                    run_id = sum_val.get("run_id", "N/A")
+                    ts = sum_val.get("timestamp", "N/A")
+                    prov = sum_val.get("provider", "")
+                    mod = sum_val.get("model", "")
+                    
+                    try:
+                        dt = datetime.fromisoformat(ts)
+                        formatted_ts = dt.strftime("%Y-%m-%d %H:%M:%S")
+                    except Exception:
+                        formatted_ts = ts
+                        
+                    label = f"{formatted_ts} — {run_id}"
+                    if prov:
+                        label += f" ({prov.upper()}: {mod})"
+                    run_options.append((label, i))
+
+                selected_run_label = st.selectbox(
+                    "📅 Select Benchmark Run from History:", 
+                    options=[opt[0] for opt in run_options],
+                    index=0
+                )
+                selected_idx = next(opt[1] for opt in run_options if opt[0] == selected_run_label)
+                
+                latest_run = history_data[selected_idx]
                 summary = latest_run.get("summary", {})
                 results = latest_run.get("results", [])
 
                 # Render run metadata
-                st.markdown(f"#### 🏷️ Latest Run ID: `{summary.get('run_id', 'N/A')}` | Timestamp: `{summary.get('timestamp', 'N/A')}`")
+                st.markdown(f"#### 🏷️ Selected Run ID: `{summary.get('run_id', 'N/A')}` | Timestamp: `{summary.get('timestamp', 'N/A')}`")
 
                 # --- KPI Metrics Panel ---
                 acc = summary.get("execution_accuracy_pct", 0.0)
@@ -1060,13 +1087,28 @@ elif active_page == "benchmarks":
                 corr_passed = summary.get("queries_corrected_successfully", 0)
                 corr_total = summary.get("queries_needing_correction", 0)
 
+                # Calculate Practical Correctness
+                practical_passed = 0
+                for r in results:
+                    is_pipeline_crash = "Pipeline Crash" in (r.get("error_message") or "")
+                    row_count_matches = r.get("returned_rows") == r.get("expected_rows")
+                    executed_successfully = r.get("generated_sql") is not None and not is_pipeline_crash
+                    if r.get("success", False) or (executed_successfully and row_count_matches):
+                        practical_passed += 1
+                practical_acc = (practical_passed / total * 100) if total > 0 else 0.0
+
                 # Custom KPI panel rendering
                 st.markdown(f"""
                     <div class="kpi-container">
                         <div class="kpi-card">
-                            <p>Execution Accuracy</p>
-                            <h2 style="color:#10b981 !important;">{acc:.1f}%</h2>
-                            <span style="color:#8f95b2;font-size:0.75rem;">{passed} / {total} cases</span>
+                            <p>Strict Accuracy</p>
+                            <h2 style="color:#ef4444 !important;">{acc:.1f}%</h2>
+                            <span style="color:#8f95b2;font-size:0.75rem;">{passed} / {total} exact matches</span>
+                        </div>
+                        <div class="kpi-card">
+                            <p>Practical Correctness</p>
+                            <h2 style="color:#10b981 !important;">{practical_acc:.1f}%</h2>
+                            <span style="color:#8f95b2;font-size:0.75rem;">{practical_passed} / {total} correct rows</span>
                         </div>
                         <div class="kpi-card">
                             <p>Avg Latency</p>
@@ -1082,11 +1124,6 @@ elif active_page == "benchmarks":
                             <p>Run API Cost</p>
                             <h2 style="color:#3b82f6 !important;">${total_cost:.5f}</h2>
                             <span style="color:#8f95b2;font-size:0.75rem;">for {total} queries</span>
-                        </div>
-                        <div class="kpi-card">
-                            <p>Correction Rate</p>
-                            <h2>{corr_success:.1f}%</h2>
-                            <span style="color:#8f95b2;font-size:0.75rem;">{corr_passed} / {corr_total} repaired</span>
                         </div>
                     </div>
                 """, unsafe_allow_html=True)

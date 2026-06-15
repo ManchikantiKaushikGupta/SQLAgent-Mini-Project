@@ -14,7 +14,7 @@ import uuid
 import logging
 import argparse
 from datetime import datetime
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 # Ensure project root is in the Python path to run directly
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -239,6 +239,12 @@ def run_dataset_benchmark(
     for k, v in diff_stats.items():
         v["accuracy_pct"] = (v["passed"] / v["total"]) * 100
         
+    # Retrieve active provider and model
+    from llm.factory import load_config
+    config = load_config()
+    final_provider = config.get("provider", "gemini")
+    final_model = config.get("model", "Unknown")
+
     summary = BenchmarkSummary(
         run_id=run_id,
         timestamp=start_timestamp,
@@ -253,7 +259,9 @@ def run_dataset_benchmark(
         queries_needing_correction=queries_needing_correction,
         queries_corrected_successfully=queries_corrected_successfully,
         correction_success_rate_pct=correction_success_rate,
-        difficulty_breakdown=diff_stats
+        difficulty_breakdown=diff_stats,
+        provider=final_provider,
+        model=final_model
     )
     
     return summary, results
@@ -445,8 +453,31 @@ def main():
         default="spider",
         help="Select which benchmark dataset to execute against (default: spider)."
     )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Limit the number of benchmark cases run."
+    )
+    parser.add_argument(
+        "--provider",
+        type=str,
+        default=None,
+        help="Override active LLM provider."
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default=None,
+        help="Override active LLM model name."
+    )
     args = parser.parse_args()
     
+    if args.provider:
+        os.environ["LLM_PROVIDER"] = args.provider
+    if args.model:
+        os.environ["LLM_MODEL"] = args.model
+        
     print("Initializing LLM pipelines and fetching schemas...")
     app = build_workflow()
     schema = get_database_schema()
@@ -462,6 +493,8 @@ def main():
     for dataset in datasets_to_run:
         try:
             cases = load_dataset(dataset)
+            if args.limit:
+                cases = cases[:args.limit]
             summary, results = run_dataset_benchmark(dataset, cases, app, schema)
             
             # Compile failure diagnostics

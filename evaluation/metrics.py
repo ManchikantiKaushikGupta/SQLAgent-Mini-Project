@@ -56,3 +56,6 @@ class BenchmarkSummary(BaseModel):
     queries_corrected_successfully: int = Field(0, description="Number of queries that failed initially but were corrected successfully")
     correction_success_rate_pct: float = Field(0.0, description="Percentage of initially failed queries that were successfully corrected")
     difficulty_breakdown: Dict[str, Dict[str, Any]] = Field(default_factory=dict, description="Execution accuracy stats broken down by difficulty tier")
+    provider: Optional[str] = Field(None, description="The LLM provider used for this run")
+    model: Optional[str] = Field(None, description="The model name used for this run")
+

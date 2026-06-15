@@ -1,6 +1,242 @@
 [
   {
     "summary": {
+      "run_id": "run_c4efe393",
+      "timestamp": "2026-06-15T09:59:16.008997",
+      "total_cases": 5,
+      "passed_cases": 1,
+      "failed_cases": 4,
+      "execution_accuracy_pct": 20.0,
+      "average_latency_seconds": 129.0245571613312,
+      "total_tokens": 0,
+      "avg_tokens_per_query": 0.0,
+      "total_retries": 0,
+      "queries_needing_correction": 0,
+      "queries_corrected_successfully": 0,
+      "correction_success_rate_pct": 100.0,
+      "difficulty_breakdown": {
+        "simple": {
+          "passed": 1,
+          "total": 4,
+          "accuracy_pct": 25.0
+        },
+        "medium": {
+          "passed": 0,
+          "total": 1,
+          "accuracy_pct": 0.0
+        }
+      },
+      "provider": "lmstudio",
+      "model": "qwen3.5-9b"
+    },
+    "results": [
+      {
+        "case_id": "case_01",
+        "query": "Show me all premium users",
+        "reference_sql": "SELECT * FROM users WHERE is_premium = true",
+        "generated_sql": "SELECT id, first_name, email, country, is_premium FROM users WHERE is_premium = TRUE LIMIT 1000",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 186.42168974876404,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 15,
+        "returned_rows": 15
+      },
+      {
+        "case_id": "case_02",
+        "query": "Find all categories in the Electronics department",
+        "reference_sql": "SELECT * FROM categories WHERE department = 'Electronics'",
+        "generated_sql": "SELECT id, name FROM categories WHERE department = 'Electronics' LIMIT 1000",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 102.6741394996643,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 3,
+        "returned_rows": 3
+      },
+      {
+        "case_id": "case_03",
+        "query": "Count the total number of products",
+        "reference_sql": "SELECT COUNT(*) FROM products",
+        "generated_sql": "SELECT COUNT(*) AS total_products_count FROM products LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 116.22068095207214,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 1,
+        "returned_rows": 1
+      },
+      {
+        "case_id": "case_04",
+        "query": "Find all products with an average rating greater than 4.5",
+        "reference_sql": "SELECT name, average_rating FROM products WHERE average_rating > 4.5",
+        "generated_sql": "SELECT id, name FROM products WHERE average_rating > 4.5 LIMIT 1000",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 98.54923343658447,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 15,
+        "returned_rows": 15
+      },
+      {
+        "case_id": "case_05",
+        "query": "List the top 5 most expensive products and their category name",
+        "reference_sql": "SELECT p.name AS product_name, p.price, c.name AS category_name FROM products p JOIN categories c ON p.category_id = c.id ORDER BY p.price DESC LIMIT 5",
+        "generated_sql": "SELECT products.name, products.price, categories.name FROM products INNER JOIN categories ON products.category_id = categories.id ORDER BY products.price DESC LIMIT 5",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 141.25704216957092,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 5,
+        "returned_rows": 5
+      }
+    ]
+  },
+  {
+    "summary": {
+      "run_id": "run_8fa18a33",
+      "timestamp": "2026-06-15T09:57:19.152019",
+      "total_cases": 5,
+      "passed_cases": 2,
+      "failed_cases": 3,
+      "execution_accuracy_pct": 40.0,
+      "average_latency_seconds": 17.23528480529785,
+      "total_tokens": 0,
+      "avg_tokens_per_query": 0.0,
+      "total_retries": 2,
+      "queries_needing_correction": 2,
+      "queries_corrected_successfully": 1,
+      "correction_success_rate_pct": 50.0,
+      "difficulty_breakdown": {
+        "simple": {
+          "passed": 1,
+          "total": 4,
+          "accuracy_pct": 25.0
+        },
+        "medium": {
+          "passed": 1,
+          "total": 1,
+          "accuracy_pct": 100.0
+        }
+      },
+      "provider": "gemini",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "results": [
+      {
+        "case_id": "case_01",
+        "query": "Show me all premium users",
+        "reference_sql": "SELECT * FROM users WHERE is_premium = true",
+        "generated_sql": "SELECT id, first_name, last_name, email, city, country, is_premium, CAST(signup_date AS VARCHAR) AS signup_date FROM users WHERE is_premium = TRUE LIMIT 1000",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 31.99308943748474,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 1,
+        "corrected_successfully": false,
+        "initial_sql_valid": false,
+        "expected_rows": 15,
+        "returned_rows": 15
+      },
+      {
+        "case_id": "case_02",
+        "query": "Find all categories in the Electronics department",
+        "reference_sql": "SELECT * FROM categories WHERE department = 'Electronics'",
+        "generated_sql": "SELECT categories.id, categories.name FROM categories WHERE categories.department = 'Electronics' LIMIT 1000",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 6.2751171588897705,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 3,
+        "returned_rows": 3
+      },
+      {
+        "case_id": "case_03",
+        "query": "Count the total number of products",
+        "reference_sql": "SELECT COUNT(*) FROM products",
+        "generated_sql": "SELECT COUNT(products.id) AS total_products FROM products LIMIT 1000",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 18.779791116714478,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 1,
+        "returned_rows": 1
+      },
+      {
+        "case_id": "case_04",
+        "query": "Find all products with an average rating greater than 4.5",
+        "reference_sql": "SELECT name, average_rating FROM products WHERE average_rating > 4.5",
+        "generated_sql": "SELECT products.id, products.name, products.category_id, products.price, products.stock_quantity, products.average_rating FROM products WHERE products.average_rating > 4.5 LIMIT 1000",
+        "success": false,
+        "error_message": "Execution data cells or order do not match reference results.",
+        "latency_seconds": 6.267368793487549,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 0,
+        "corrected_successfully": false,
+        "initial_sql_valid": true,
+        "expected_rows": 15,
+        "returned_rows": 15
+      },
+      {
+        "case_id": "case_05",
+        "query": "List the top 5 most expensive products and their category name",
+        "reference_sql": "SELECT p.name AS product_name, p.price, c.name AS category_name FROM products p JOIN categories c ON p.category_id = c.id ORDER BY p.price DESC LIMIT 5",
+        "generated_sql": "SELECT products.name AS product_name, products.price, categories.name AS category_name FROM products INNER JOIN categories ON products.category_id = categories.id ORDER BY products.price DESC LIMIT 5",
+        "success": true,
+        "error_message": null,
+        "latency_seconds": 22.86105751991272,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retry_count": 1,
+        "corrected_successfully": true,
+        "initial_sql_valid": false,
+        "expected_rows": 5,
+        "returned_rows": 5
+      }
+    ]
+  },
+  {
+    "summary": {
       "run_id": "run_bfc19d2e",
       "timestamp": "2026-05-29T23:15:38.269239",
       "total_cases": 10,
