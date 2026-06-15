@@ -355,16 +355,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 extraContainer.appendChild(sqlExpander);
             }
 
-            // 2. Results Data Table
+            // 2. Results Data Table & Chart Visualization
             if (data.results && data.results.length > 0) {
+                const visualizationWrapper = document.createElement('div');
+                visualizationWrapper.classList.add('results-visualization-container');
+
+                const headers = Object.keys(data.results[0]);
+
+                // Determine if there is numerical data for a chart
+                const numericColumns = headers.filter(h => {
+                    const val = data.results[0][h];
+                    return typeof val === 'number' || (!isNaN(val) && val !== null && val !== '');
+                });
+
+                const hasNumericData = numericColumns.length > 0;
+
+                // Create Tabs Header
+                const tabsDiv = document.createElement('div');
+                tabsDiv.classList.add('vis-tabs');
+
+                const tableTabBtn = document.createElement('button');
+                tableTabBtn.classList.add('vis-tab-btn', 'active');
+                tableTabBtn.innerHTML = `
+                    <svg style="width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                    Table
+                `;
+                tabsDiv.appendChild(tableTabBtn);
+
+                let chartTabBtn = null;
+                if (hasNumericData && typeof Chart !== 'undefined') {
+                    chartTabBtn = document.createElement('button');
+                    chartTabBtn.classList.add('vis-tab-btn');
+                    chartTabBtn.innerHTML = `
+                        <svg style="width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        Chart
+                    `;
+                    tabsDiv.appendChild(chartTabBtn);
+                }
+
+                visualizationWrapper.appendChild(tabsDiv);
+
+                // Create Table Container
                 const tableContainer = document.createElement('div');
-                tableContainer.classList.add('table-container');
+                tableContainer.classList.add('table-container', 'vis-view');
 
                 const table = document.createElement('table');
                 table.classList.add('data-table');
 
                 // Generate table headers
-                const headers = Object.keys(data.results[0]);
                 const thead = document.createElement('thead');
                 const headerRow = document.createElement('tr');
                 headers.forEach(h => {
@@ -389,7 +427,115 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 table.appendChild(tbody);
                 tableContainer.appendChild(table);
-                extraContainer.appendChild(tableContainer);
+                visualizationWrapper.appendChild(tableContainer);
+
+                // Create Chart Container (if data supports it)
+                let chartContainer = null;
+                let chartInstance = null;
+
+                if (hasNumericData && typeof Chart !== 'undefined') {
+                    chartContainer = document.createElement('div');
+                    chartContainer.classList.add('chart-container', 'vis-view', 'hidden');
+
+                    const canvas = document.createElement('canvas');
+                    canvas.style.width = '100%';
+                    canvas.style.height = '280px';
+                    chartContainer.appendChild(canvas);
+                    visualizationWrapper.appendChild(chartContainer);
+
+                    // Infer labels and values
+                    const labelColumn = headers.find(h => !numericColumns.includes(h)) || headers[0];
+                    const labels = data.results.map(row => {
+                        const val = row[labelColumn];
+                        return (val === null || val === undefined) ? 'N/A' : String(val);
+                    });
+
+                    // Map datasets for up to 3 numerical columns
+                    const colors = [
+                        { bg: 'rgba(45, 140, 255, 0.7)', border: '#2d8cff' },
+                        { bg: 'rgba(16, 185, 129, 0.7)', border: '#10b981' },
+                        { bg: 'rgba(245, 158, 11, 0.7)', border: '#f59e0b' }
+                    ];
+
+                    const datasets = numericColumns.slice(0, 3).map((col, idx) => {
+                        const color = colors[idx % colors.length];
+                        return {
+                            label: col.replace(/_/g, ' ').toUpperCase(),
+                            data: data.results.map(row => {
+                                const val = parseFloat(row[col]);
+                                return isNaN(val) ? 0 : val;
+                            }),
+                            backgroundColor: color.bg,
+                            borderColor: color.border,
+                            borderWidth: 1.5,
+                            borderRadius: 4
+                        };
+                    });
+
+                    // Add click listeners to tabs
+                    tableTabBtn.addEventListener('click', () => {
+                        tableTabBtn.classList.add('active');
+                        if (chartTabBtn) chartTabBtn.classList.remove('active');
+                        tableContainer.classList.remove('hidden');
+                        chartContainer.classList.add('hidden');
+                    });
+
+                    chartTabBtn.addEventListener('click', () => {
+                        chartTabBtn.classList.add('active');
+                        tableTabBtn.classList.remove('active');
+                        tableContainer.classList.add('hidden');
+                        chartContainer.classList.remove('hidden');
+
+                        // Initialize Chart.js dynamically on first load of the tab
+                        if (!chartInstance) {
+                            const ctx = canvas.getContext('2d');
+                            chartInstance = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: labels,
+                                    datasets: datasets
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    plugins: {
+                                        legend: {
+                                            labels: {
+                                                color: '#8f95b2',
+                                                font: { family: "'Inter', sans-serif", size: 11 }
+                                            }
+                                        },
+                                        tooltip: {
+                                            backgroundColor: '#171717',
+                                            titleColor: '#ffffff',
+                                            bodyColor: '#d1d5db',
+                                            borderColor: '#2d8cff',
+                                            borderWidth: 1
+                                        }
+                                    },
+                                    scales: {
+                                        x: {
+                                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                                            ticks: {
+                                                color: '#8f95b2',
+                                                font: { family: "'Inter', sans-serif" }
+                                            }
+                                        },
+                                        y: {
+                                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                                            ticks: {
+                                                color: '#8f95b2',
+                                                font: { family: "'Inter', sans-serif" }
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    });
+                }
+
+                extraContainer.appendChild(visualizationWrapper);
             }
 
             // 3. Telemetry Mini-Banner

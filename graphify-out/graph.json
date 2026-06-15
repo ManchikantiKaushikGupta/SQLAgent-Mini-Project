@@ -9,7 +9,7 @@
       "source_file": "build_graph_offline.py",
       "source_location": "L1",
       "id": "build_graph_offline_py",
-      "community": 2,
+      "community": 85,
       "norm_label": "build_graph_offline.py"
     },
     {
@@ -18,7 +18,7 @@
       "source_file": "build_graph_offline.py",
       "source_location": "L20",
       "id": "sqlagent_mini_project_build_graph_offline_load_detection",
-      "community": 2,
+      "community": 85,
       "norm_label": "load_detection()"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "build_graph_offline.py",
       "source_location": "L26",
       "id": "sqlagent_mini_project_build_graph_offline_extract_offline",
-      "community": 2,
+      "community": 85,
       "norm_label": "extract_offline()"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "build_graph_offline.py",
       "source_location": "L55",
       "id": "sqlagent_mini_project_build_graph_offline_label_communities",
-      "community": 2,
+      "community": 85,
       "norm_label": "label_communities()"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "build_graph_offline.py",
       "source_location": "L55",
       "id": "build_graph_offline_py_int",
-      "community": 2,
+      "community": 85,
       "norm_label": "int"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "build_graph_offline.py",
       "source_location": "L55",
       "id": "build_graph_offline_py_str",
-      "community": 2,
+      "community": 85,
       "norm_label": "str"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "build_graph_offline.py",
       "source_location": "L72",
       "id": "sqlagent_mini_project_build_graph_offline_main",
-      "community": 2,
+      "community": 85,
       "norm_label": "main()"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "api/routes.py",
       "source_location": "L1",
       "id": "api_routes_py",
-      "community": 20,
+      "community": 24,
       "norm_label": "routes.py"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "api/routes.py",
       "source_location": "L26",
       "id": "api_routes_queryrequest",
-      "community": 20,
+      "community": 24,
       "norm_label": "queryrequest"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "",
       "source_location": "",
       "id": "basemodel",
-      "community": 80,
+      "community": 24,
       "norm_label": "basemodel"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "api/routes.py",
       "source_location": "L34",
       "id": "api_routes_queryresponse",
-      "community": 20,
+      "community": 24,
       "norm_label": "queryresponse"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "api/routes.py",
       "source_location": "L46",
       "id": "api_routes_ask_database",
-      "community": 20,
+      "community": 24,
       "norm_label": "ask_database()"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "api/routes.py",
       "source_location": "L152",
       "id": "api_routes_get_config",
-      "community": 20,
+      "community": 24,
       "norm_label": "get_config()"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "api/routes.py",
       "source_location": "L166",
       "id": "api_routes_get_benchmark",
-      "community": 20,
+      "community": 24,
       "norm_label": "get_benchmark()"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "api/routes.py",
       "source_location": "L166",
       "id": "api_routes_py_str",
-      "community": 20,
+      "community": 24,
       "norm_label": "str"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "api/routes.py",
       "source_location": "L1",
       "id": "api_routes_rationale_1",
-      "community": 20,
+      "community": 24,
       "norm_label": "fastapi routes  defines endpoints for the sqlagent application."
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "api/routes.py",
       "source_location": "L47",
       "id": "api_routes_rationale_47",
-      "community": 20,
+      "community": 24,
       "norm_label": "takes a natural language query, runs it through the sqlagent graph,     and retu"
     },
     {
@@ -324,7 +324,7 @@
       "source_file": "api/routes.py",
       "source_location": "L153",
       "id": "api_routes_rationale_153",
-      "community": 20,
+      "community": 24,
       "norm_label": "returns the current llm configurations and dynamic schema settings."
     },
     {
@@ -333,7 +333,7 @@
       "source_file": "api/routes.py",
       "source_location": "L167",
       "id": "api_routes_rationale_167",
-      "community": 20,
+      "community": 24,
       "norm_label": "serves the selected benchmark json log file from the evaluation directory."
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "core/llm.py",
       "source_location": "L34",
       "id": "core_llm_get_llm",
-      "community": 71,
+      "community": 73,
       "norm_label": "get_llm()"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "core/llm.py",
       "source_location": "L34",
       "id": "core_llm_py_float",
-      "community": 71,
+      "community": 73,
       "norm_label": "float"
     },
     {
@@ -648,7 +648,7 @@
       "source_file": "core/llm.py",
       "source_location": "L34",
       "id": "core_llm_py_basechatmodel",
-      "community": 71,
+      "community": 73,
       "norm_label": "basechatmodel"
     },
     {
@@ -702,7 +702,7 @@
       "source_file": "core/llm.py",
       "source_location": "L35",
       "id": "core_llm_rationale_35",
-      "community": 71,
+      "community": 73,
       "norm_label": "returns a configured langchain chatmodel instance from the active provider."
     },
     {
@@ -720,7 +720,7 @@
       "source_file": "core/security.py",
       "source_location": "L1",
       "id": "core_security_py",
-      "community": 81,
+      "community": 82,
       "norm_label": "security.py"
     },
     {
@@ -729,7 +729,7 @@
       "source_file": "core/security.py",
       "source_location": "L22",
       "id": "core_security_securityexception",
-      "community": 81,
+      "community": 87,
       "norm_label": "securityexception"
     },
     {
@@ -738,7 +738,7 @@
       "source_file": "",
       "source_location": "",
       "id": "exception",
-      "community": 81,
+      "community": 87,
       "norm_label": "exception"
     },
     {
@@ -747,7 +747,7 @@
       "source_file": "core/security.py",
       "source_location": "L26",
       "id": "core_security_rolepermissions",
-      "community": 52,
+      "community": 82,
       "norm_label": "rolepermissions"
     },
     {
@@ -756,7 +756,7 @@
       "source_file": "core/security.py",
       "source_location": "L39",
       "id": "core_security_rolepermissions_normalize_role_name",
-      "community": 52,
+      "community": 82,
       "norm_label": ".normalize_role_name()"
     },
     {
@@ -774,7 +774,7 @@
       "source_file": "core/security.py",
       "source_location": "L43",
       "id": "core_security_securityconfig",
-      "community": 81,
+      "community": 82,
       "norm_label": "securityconfig"
     },
     {
@@ -783,7 +783,7 @@
       "source_file": "core/security.py",
       "source_location": "L52",
       "id": "core_security_securityconfig_get_default_config",
-      "community": 52,
+      "community": 82,
       "norm_label": ".get_default_config()"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "core/security.py",
       "source_location": "L185",
       "id": "core_security_auditlogger",
-      "community": 52,
+      "community": 82,
       "norm_label": "auditlogger"
     },
     {
@@ -855,7 +855,7 @@
       "source_file": "core/security.py",
       "source_location": "L190",
       "id": "core_security_auditlogger_init",
-      "community": 52,
+      "community": 82,
       "norm_label": ".__init__()"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "core/security.py",
       "source_location": "L225",
       "id": "core_security_securitymanager_init_manager",
-      "community": 52,
+      "community": 82,
       "norm_label": "._init_manager()"
     },
     {
@@ -936,7 +936,7 @@
       "source_file": "core/security.py",
       "source_location": "L1",
       "id": "core_security_rationale_1",
-      "community": 81,
+      "community": 82,
       "norm_label": "production governance and security module  implements role-based access control"
     },
     {
@@ -945,7 +945,7 @@
       "source_file": "core/security.py",
       "source_location": "L23",
       "id": "core_security_rationale_23",
-      "community": 81,
+      "community": 87,
       "norm_label": "exception raised when a security policy or validation check is violated."
     },
     {
@@ -954,7 +954,7 @@
       "source_file": "core/security.py",
       "source_location": "L27",
       "id": "core_security_rationale_27",
-      "community": 52,
+      "community": 82,
       "norm_label": "pydantic model representing access permissions for a specific role."
     },
     {
@@ -963,7 +963,7 @@
       "source_file": "core/security.py",
       "source_location": "L44",
       "id": "core_security_rationale_44",
-      "community": 81,
+      "community": 82,
       "norm_label": "pydantic model representing the global enterprise security policy configuration."
     },
     {
@@ -972,7 +972,7 @@
       "source_file": "core/security.py",
       "source_location": "L53",
       "id": "core_security_rationale_53",
-      "community": 52,
+      "community": 82,
       "norm_label": "generates the standard out-of-the-box enterprise security policy."
     },
     {
@@ -1017,7 +1017,7 @@
       "source_file": "core/security.py",
       "source_location": "L186",
       "id": "core_security_rationale_186",
-      "community": 52,
+      "community": 82,
       "norm_label": "appends structured json logs representing security actions,      verifications,"
     },
     {
@@ -2205,7 +2205,7 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L1",
       "id": "features_validation_correction_error_classifier_py",
-      "community": 39,
+      "community": 83,
       "norm_label": "error_classifier.py"
     },
     {
@@ -2214,7 +2214,7 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L58",
       "id": "validation_correction_error_classifier_fallback_classify_error",
-      "community": 39,
+      "community": 83,
       "norm_label": "fallback_classify_error()"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L58",
       "id": "features_validation_correction_error_classifier_py_str",
-      "community": 39,
+      "community": 83,
       "norm_label": "str"
     },
     {
@@ -2232,7 +2232,7 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L58",
       "id": "features_validation_correction_error_classifier_py_sqlerrorclassification",
-      "community": 39,
+      "community": 83,
       "norm_label": "sqlerrorclassification"
     },
     {
@@ -2241,7 +2241,7 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L133",
       "id": "validation_correction_error_classifier_classify_sql_error",
-      "community": 39,
+      "community": 83,
       "norm_label": "classify_sql_error()"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L1",
       "id": "validation_correction_error_classifier_rationale_1",
-      "community": 39,
+      "community": 83,
       "norm_label": "sql error taxonomy classifier module  uses llm-based structured diagnostics to c"
     },
     {
@@ -2259,7 +2259,7 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L63",
       "id": "validation_correction_error_classifier_rationale_63",
-      "community": 39,
+      "community": 83,
       "norm_label": "rule-based heuristic fallback classifier to ensure resilience if the llm     or"
     },
     {
@@ -2268,7 +2268,7 @@
       "source_file": "features/validation_correction/error_classifier.py",
       "source_location": "L139",
       "id": "validation_correction_error_classifier_rationale_139",
-      "community": 39,
+      "community": 83,
       "norm_label": "diagnoses and categorizes a sql execution or parsing error under the formal"
     },
     {
@@ -2457,7 +2457,7 @@
       "source_file": "llm/anthropic_provider.py",
       "source_location": "L23",
       "id": "llm_anthropic_provider_anthropicprovider_init",
-      "community": 82,
+      "community": 49,
       "norm_label": ".__init__()"
     },
     {
@@ -2466,7 +2466,7 @@
       "source_file": "llm/anthropic_provider.py",
       "source_location": "L23",
       "id": "llm_anthropic_provider_py_str",
-      "community": 82,
+      "community": 49,
       "norm_label": "str"
     },
     {
@@ -3276,7 +3276,7 @@
       "source_file": "llm/openai_provider.py",
       "source_location": "L20",
       "id": "llm_openai_provider_openaiprovider_init",
-      "community": 82,
+      "community": 49,
       "norm_label": ".__init__()"
     },
     {
@@ -3285,7 +3285,7 @@
       "source_file": "llm/openai_provider.py",
       "source_location": "L20",
       "id": "llm_openai_provider_py_str",
-      "community": 82,
+      "community": 49,
       "norm_label": "str"
     },
     {
@@ -3708,7 +3708,7 @@
       "source_file": "observability/metrics.py",
       "source_location": "L16",
       "id": "observability_metrics_tokenaccumulatorcallback",
-      "community": 20,
+      "community": 24,
       "norm_label": "tokenaccumulatorcallback"
     },
     {
@@ -3717,7 +3717,7 @@
       "source_file": "observability/metrics.py",
       "source_location": "L21",
       "id": "observability_metrics_tokenaccumulatorcallback_init",
-      "community": 20,
+      "community": 24,
       "norm_label": ".__init__()"
     },
     {
@@ -3726,7 +3726,7 @@
       "source_file": "observability/metrics.py",
       "source_location": "L27",
       "id": "observability_metrics_tokenaccumulatorcallback_on_llm_end",
-      "community": 20,
+      "community": 0,
       "norm_label": ".on_llm_end()"
     },
     {
@@ -3825,7 +3825,7 @@
       "source_file": "observability/metrics.py",
       "source_location": "L17",
       "id": "observability_metrics_rationale_17",
-      "community": 20,
+      "community": 24,
       "norm_label": "langchain callback handler that intercepts llm execution endpoints      and thre"
     },
     {
@@ -3834,7 +3834,7 @@
       "source_file": "observability/metrics.py",
       "source_location": "L28",
       "id": "observability_metrics_rationale_28",
-      "community": 20,
+      "community": 0,
       "norm_label": "called at the end of llm generation to extract and add tokens."
     },
     {
@@ -4752,7 +4752,7 @@
       "source_file": "schemas/error_taxonomy.py",
       "source_location": "L1",
       "id": "schemas_error_taxonomy_py",
-      "community": 39,
+      "community": 83,
       "norm_label": "error_taxonomy.py"
     },
     {
@@ -4761,7 +4761,7 @@
       "source_file": "schemas/error_taxonomy.py",
       "source_location": "L11",
       "id": "schemas_error_taxonomy_sqlerrorclassification",
-      "community": 39,
+      "community": 83,
       "norm_label": "sqlerrorclassification"
     },
     {
@@ -4770,7 +4770,7 @@
       "source_file": "schemas/error_taxonomy.py",
       "source_location": "L1",
       "id": "schemas_error_taxonomy_rationale_1",
-      "community": 39,
+      "community": 83,
       "norm_label": "sql error taxonomy pydantic schemas  defines the formal representation of sql sy"
     },
     {
@@ -4779,7 +4779,7 @@
       "source_file": "schemas/error_taxonomy.py",
       "source_location": "L12",
       "id": "schemas_error_taxonomy_rationale_12",
-      "community": 39,
+      "community": 83,
       "norm_label": "structured classification of a sql error within the formal error taxonomy."
     },
     {
@@ -4788,7 +4788,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L1",
       "id": "schemas_planner_py",
-      "community": 80,
+      "community": 73,
       "norm_label": "planner.py"
     },
     {
@@ -4797,7 +4797,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L4",
       "id": "schemas_planner_tablerequirement",
-      "community": 80,
+      "community": 73,
       "norm_label": "tablerequirement"
     },
     {
@@ -4806,7 +4806,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L10",
       "id": "schemas_planner_tablerequirement_normalize_table",
-      "community": 80,
+      "community": 73,
       "norm_label": ".normalize_table()"
     },
     {
@@ -4815,7 +4815,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L10",
       "id": "schemas_planner_py_any",
-      "community": 80,
+      "community": 73,
       "norm_label": "any"
     },
     {
@@ -4824,7 +4824,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L18",
       "id": "schemas_planner_joinrequirement",
-      "community": 80,
+      "community": 73,
       "norm_label": "joinrequirement"
     },
     {
@@ -4833,7 +4833,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L26",
       "id": "schemas_planner_joinrequirement_normalize_join",
-      "community": 80,
+      "community": 73,
       "norm_label": ".normalize_join()"
     },
     {
@@ -4842,7 +4842,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L36",
       "id": "schemas_planner_filterrequirement",
-      "community": 80,
+      "community": 73,
       "norm_label": "filterrequirement"
     },
     {
@@ -4851,7 +4851,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L43",
       "id": "schemas_planner_filterrequirement_normalize_filter",
-      "community": 80,
+      "community": 73,
       "norm_label": ".normalize_filter()"
     },
     {
@@ -4860,7 +4860,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L60",
       "id": "schemas_planner_aggregationrequirement",
-      "community": 80,
+      "community": 73,
       "norm_label": "aggregationrequirement"
     },
     {
@@ -4869,7 +4869,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L65",
       "id": "schemas_planner_orderbyrequirement",
-      "community": 80,
+      "community": 73,
       "norm_label": "orderbyrequirement"
     },
     {
@@ -4878,7 +4878,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L71",
       "id": "schemas_planner_orderbyrequirement_normalize_order_by",
-      "community": 80,
+      "community": 73,
       "norm_label": ".normalize_order_by()"
     },
     {
@@ -4896,7 +4896,7 @@
       "source_file": "schemas/planner.py",
       "source_location": "L94",
       "id": "schemas_planner_queryplan_normalize_plan",
-      "community": 80,
+      "community": 73,
       "norm_label": ".normalize_plan()"
     },
     {
@@ -4968,7 +4968,7 @@
       "source_file": "schemas/validation.py",
       "source_location": "L1",
       "id": "schemas_validation_py",
-      "community": 55,
+      "community": 83,
       "norm_label": "validation.py"
     },
     {
@@ -4995,7 +4995,7 @@
       "source_file": "schemas/validation.py",
       "source_location": "L1",
       "id": "schemas_validation_rationale_1",
-      "community": 55,
+      "community": 83,
       "norm_label": "validation & correction pydantic schemas  defines structural models for sql sema"
     },
     {
@@ -5319,7 +5319,7 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L1",
       "id": "scratch_test_error_taxonomy_py",
-      "community": 39,
+      "community": 83,
       "norm_label": "test_error_taxonomy.py"
     },
     {
@@ -5400,7 +5400,7 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L147",
       "id": "scratch_test_error_taxonomy_testerrortaxonomyengine_test_correct_sql_integration_ast",
-      "community": 55,
+      "community": 39,
       "norm_label": ".test_correct_sql_integration_ast()"
     },
     {
@@ -5463,7 +5463,7 @@
       "source_file": "scratch/test_error_taxonomy.py",
       "source_location": "L148",
       "id": "scratch_test_error_taxonomy_rationale_148",
-      "community": 55,
+      "community": 39,
       "norm_label": "verify taxonomy integration in correct_sql when ast repair succeeds."
     },
     {
@@ -6973,7 +6973,7 @@
       "label": "renderObservability()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L458",
+      "source_location": "L604",
       "id": "static_app_renderobservability",
       "community": 76,
       "norm_label": "renderobservability()"
@@ -6982,7 +6982,7 @@
       "label": "loadBenchmarkData()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L686",
+      "source_location": "L832",
       "id": "static_app_loadbenchmarkdata",
       "community": 76,
       "norm_label": "loadbenchmarkdata()"
@@ -6991,7 +6991,7 @@
       "label": "idx",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L752",
+      "source_location": "L898",
       "id": "static_app_idx",
       "community": 29,
       "norm_label": "idx"
@@ -7000,7 +7000,7 @@
       "label": "renderBenchmarkMetrics()",
       "file_type": "code",
       "source_file": "static/app.js",
-      "source_location": "L758",
+      "source_location": "L904",
       "id": "static_app_renderbenchmarkmetrics",
       "community": 76,
       "norm_label": "renderbenchmarkmetrics()"
@@ -8772,99 +8772,18 @@
     {
       "label": "BaseCallbackHandler",
       "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L16",
-      "community": 24,
+      "source_file": "",
+      "source_location": "",
+      "community": 49,
       "norm_label": "basecallbackhandler",
       "id": "basecallbackhandler"
     },
     {
-      "label": "float",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L34",
-      "community": 71,
-      "norm_label": "float",
-      "id": "float"
-    },
-    {
-      "label": "BaseChatModel",
-      "file_type": "code",
-      "source_file": "core/llm.py",
-      "source_location": "L34",
-      "community": 71,
-      "norm_label": "basechatmodel",
-      "id": "basechatmodel"
-    },
-    {
-      "label": "Orchestrates the execution of all benchmark cases, captures metrics,     and log",
-      "file_type": "rationale",
-      "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L151",
-      "community": 24,
-      "norm_label": "orchestrates the execution of all benchmark cases, captures metrics,     and log",
-      "id": "evaluation_benchmark_runner_rationale_151"
-    },
-    {
-      "label": "Saves full run logs to file system and updates failed_queries.json",
-      "file_type": "rationale",
-      "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L341",
-      "community": 24,
-      "norm_label": "saves full run logs to file system and updates failed_queries.json",
-      "id": "evaluation_benchmark_runner_rationale_341"
-    },
-    {
-      "label": "Prints a rich ANSI console dashboard summarizing the run.",
-      "file_type": "rationale",
-      "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L392",
-      "community": 24,
-      "norm_label": "prints a rich ansi console dashboard summarizing the run.",
-      "id": "evaluation_benchmark_runner_rationale_392"
-    },
-    {
-      "label": "Analyzes failed queries and generates a rich, diagnostic Markdown report.",
-      "file_type": "rationale",
-      "source_file": "evaluation/expanded_runner.py",
-      "source_location": "L267",
-      "community": 24,
-      "norm_label": "analyzes failed queries and generates a rich, diagnostic markdown report.",
-      "id": "evaluation_expanded_runner_rationale_267"
-    },
-    {
-      "label": "Persists evaluation runs to disk inside the /evaluation directory.",
-      "file_type": "rationale",
-      "source_file": "evaluation/expanded_runner.py",
-      "source_location": "L362",
-      "community": 24,
-      "norm_label": "persists evaluation runs to disk inside the /evaluation directory.",
-      "id": "evaluation_expanded_runner_rationale_362"
-    },
-    {
-      "label": "Renders an aggregate summary dashboard of all evaluated datasets in the terminal",
-      "file_type": "rationale",
-      "source_file": "evaluation/expanded_runner.py",
-      "source_location": "L415",
-      "community": 24,
-      "norm_label": "renders an aggregate summary dashboard of all evaluated datasets in the terminal",
-      "id": "evaluation_expanded_runner_rationale_415"
-    },
-    {
-      "label": "Instantiates LMStudioEmbeddings pointed to LM Studio's custom base URL and runs",
-      "file_type": "rationale",
-      "source_file": "llm/lmstudio_provider.py",
-      "source_location": "L148",
-      "community": 65,
-      "norm_label": "instantiates lmstudioembeddings pointed to lm studio's custom base url and runs",
-      "id": "llm_lmstudio_provider_rationale_148"
-    },
-    {
       "label": "int",
       "file_type": "code",
-      "source_file": "retrieval/schema_retriever.py",
-      "source_location": "L38",
-      "community": 2,
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L150",
+      "community": 24,
       "norm_label": "int",
       "id": "int"
     },
@@ -8878,10 +8797,28 @@
       "id": "benchmarkcase"
     },
     {
+      "label": "float",
+      "file_type": "code",
+      "source_file": "llm/lmstudio_provider.py",
+      "source_location": "L115",
+      "community": 73,
+      "norm_label": "float",
+      "id": "float"
+    },
+    {
+      "label": "BaseChatModel",
+      "file_type": "code",
+      "source_file": "llm/lmstudio_provider.py",
+      "source_location": "L115",
+      "community": 73,
+      "norm_label": "basechatmodel",
+      "id": "basechatmodel"
+    },
+    {
       "label": "Embeddings",
       "file_type": "code",
       "source_file": "llm/lmstudio_provider.py",
-      "source_location": "L147",
+      "source_location": "L162",
       "community": 65,
       "norm_label": "embeddings",
       "id": "embeddings"
@@ -13199,16 +13136,6 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L151",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_benchmark_runner_rationale_151",
-      "target": "evaluation_benchmark_runner_run_benchmarks"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L155",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13244,9 +13171,9 @@
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L150",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_run_benchmarks",
-      "target": "evaluation_benchmark_runner_py_int"
+      "target": "evaluation_benchmark_runner_py_int",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -13293,6 +13220,17 @@
       "target": "evaluation_metrics_benchmarksummary"
     },
     {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "evaluation_benchmark_runner_run_benchmarks",
+      "target": "int"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -13309,9 +13247,9 @@
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L33",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "evaluation_benchmark_runner_py_int",
-      "target": "evaluation_metrics_benchmarkcase"
+      "target": "evaluation_metrics_benchmarkcase",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -13319,9 +13257,9 @@
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L33",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "evaluation_benchmark_runner_py_int",
-      "target": "evaluation_metrics_benchmarkresult"
+      "target": "evaluation_metrics_benchmarkresult",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -13329,9 +13267,9 @@
       "source_file": "evaluation/benchmark_runner.py",
       "source_location": "L33",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "evaluation_benchmark_runner_py_int",
-      "target": "evaluation_metrics_benchmarksummary"
+      "target": "evaluation_metrics_benchmarksummary",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -13466,16 +13404,6 @@
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_write_reports",
       "target": "evaluation_benchmark_runner_py_benchmarkresult"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L341",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_benchmark_runner_rationale_341",
-      "target": "evaluation_benchmark_runner_write_reports"
     },
     {
       "relation": "rationale_for",
@@ -13486,16 +13414,6 @@
       "confidence_score": 1.0,
       "source": "evaluation_benchmark_runner_rationale_362",
       "target": "evaluation_benchmark_runner_write_reports"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/benchmark_runner.py",
-      "source_location": "L392",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_benchmark_runner_rationale_392",
-      "target": "evaluation_benchmark_runner_render_dashboard"
     },
     {
       "relation": "rationale_for",
@@ -14136,9 +14054,9 @@
       "source_file": "evaluation/expanded_runner.py",
       "source_location": "L77",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "evaluation_expanded_runner_run_dataset_benchmark",
-      "target": "evaluation_expanded_runner_py_benchmarkcase"
+      "target": "evaluation_expanded_runner_py_benchmarkcase",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -14275,9 +14193,9 @@
       "source_file": "evaluation/expanded_runner.py",
       "source_location": "L34",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "evaluation_expanded_runner_py_benchmarkcase",
-      "target": "evaluation_metrics_benchmarkcase"
+      "target": "evaluation_metrics_benchmarkcase",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -14285,9 +14203,9 @@
       "source_file": "evaluation/expanded_runner.py",
       "source_location": "L34",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "evaluation_expanded_runner_py_benchmarkcase",
-      "target": "evaluation_metrics_benchmarkresult"
+      "target": "evaluation_metrics_benchmarkresult",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -14295,9 +14213,9 @@
       "source_file": "evaluation/expanded_runner.py",
       "source_location": "L34",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "evaluation_expanded_runner_py_benchmarkcase",
-      "target": "evaluation_metrics_benchmarksummary"
+      "target": "evaluation_metrics_benchmarksummary",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -14459,16 +14377,6 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/expanded_runner.py",
-      "source_location": "L267",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_expanded_runner_rationale_267",
-      "target": "evaluation_expanded_runner_compile_failure_analysis"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/expanded_runner.py",
       "source_location": "L275",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14512,16 +14420,6 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/expanded_runner.py",
-      "source_location": "L362",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_expanded_runner_rationale_362",
-      "target": "evaluation_expanded_runner_write_dataset_reports"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/expanded_runner.py",
       "source_location": "L370",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14559,16 +14457,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_expanded_runner_main",
-      "target": "evaluation_expanded_runner_print_summary_dashboard"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "evaluation/expanded_runner.py",
-      "source_location": "L415",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "evaluation_expanded_runner_rationale_415",
       "target": "evaluation_expanded_runner_print_summary_dashboard"
     },
     {
@@ -14622,6 +14510,16 @@
       "target": "evaluation_metrics_py"
     },
     {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarkcase",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/metrics.py",
@@ -14629,6 +14527,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_metrics_rationale_12",
+      "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "int",
       "target": "evaluation_metrics_benchmarkcase"
     },
     {
@@ -14651,6 +14559,16 @@
       "confidence_score": 0.5,
       "source": "scratch_test_benchmark_expansion_testbenchmarkexpansion",
       "target": "evaluation_metrics_benchmarkcase"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarkcase",
+      "target": "evaluation_metrics_benchmarkresult"
     },
     {
       "relation": "rationale_for",
@@ -14663,6 +14581,16 @@
       "target": "evaluation_metrics_benchmarkresult"
     },
     {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "int",
+      "target": "evaluation_metrics_benchmarkresult"
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -14684,6 +14612,16 @@
       "target": "evaluation_metrics_benchmarkresult"
     },
     {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/expanded_runner.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "benchmarkcase",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "evaluation/metrics.py",
@@ -14691,6 +14629,16 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "evaluation_metrics_rationale_42",
+      "target": "evaluation_metrics_benchmarksummary"
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "evaluation/benchmark_runner.py",
+      "source_location": "L33",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "int",
       "target": "evaluation_metrics_benchmarksummary"
     },
     {
@@ -16767,9 +16715,9 @@
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L15",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "llm_lmstudio_provider_py_basechatmodel",
-      "target": "llm_base_llmprovider"
+      "target": "llm_base_llmprovider",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -16777,9 +16725,9 @@
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L15",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "llm_lmstudio_provider_py_embeddings",
-      "target": "llm_base_llmprovider"
+      "target": "llm_base_llmprovider",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -16787,9 +16735,9 @@
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L15",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "llm_lmstudio_provider_py_float",
-      "target": "llm_base_llmprovider"
+      "target": "llm_base_llmprovider",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -18104,9 +18052,9 @@
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L188",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "llm_lmstudio_provider_py_basechatmodel",
-      "target": "llm_gemini_provider_geminiprovider"
+      "target": "llm_gemini_provider_geminiprovider",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -18114,9 +18062,9 @@
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L188",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "llm_lmstudio_provider_py_embeddings",
-      "target": "llm_gemini_provider_geminiprovider"
+      "target": "llm_gemini_provider_geminiprovider",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -18124,9 +18072,9 @@
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L188",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "llm_lmstudio_provider_py_float",
-      "target": "llm_gemini_provider_geminiprovider"
+      "target": "llm_gemini_provider_geminiprovider",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -18558,9 +18506,9 @@
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L115",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "llm_lmstudio_provider_lmstudioprovider_get_chat_model",
-      "target": "llm_lmstudio_provider_py_basechatmodel"
+      "target": "llm_lmstudio_provider_py_basechatmodel",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -18569,9 +18517,9 @@
       "source_file": "llm/lmstudio_provider.py",
       "source_location": "L115",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "llm_lmstudio_provider_lmstudioprovider_get_chat_model",
-      "target": "llm_lmstudio_provider_py_float"
+      "target": "llm_lmstudio_provider_py_float",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -18610,21 +18558,11 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "llm/lmstudio_provider.py",
-      "source_location": "L147",
+      "source_location": "L162",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "llm_lmstudio_provider_lmstudioprovider_get_embeddings",
-      "target": "llm_lmstudio_provider_py_embeddings"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "llm/lmstudio_provider.py",
-      "source_location": "L148",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "llm_lmstudio_provider_rationale_148",
-      "target": "llm_lmstudio_provider_lmstudioprovider_get_embeddings"
+      "target": "llm_lmstudio_provider_py_embeddings",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -23761,9 +23699,9 @@
       "source_file": "static/app.js",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_app_js",
-      "target": "static_app_benchmarkrunselect",
-      "confidence_score": 1.0
+      "target": "static_app_benchmarkrunselect"
     },
     {
       "relation": "contains",
@@ -23871,9 +23809,9 @@
       "source_file": "static/app.js",
       "source_location": "L752",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "static_app_js",
-      "target": "static_app_idx",
-      "confidence_score": 1.0
+      "target": "static_app_idx"
     },
     {
       "relation": "contains",
@@ -26175,5 +26113,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d60082a31ca2a3b25c52724d0adc4411412c9519"
+  "built_at_commit": "31e655d6fbdd21c8bf76d0d92764b98b9c535dd7"
 }

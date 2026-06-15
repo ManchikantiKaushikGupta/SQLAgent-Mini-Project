@@ -1543,3 +1543,57 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(45,140,255,0.4); }
+
+/* ==============================================================================
+   RESULTS VISUALIZER TABS & CHARTS
+   ============================================================================== */
+.results-visualization-container {
+    margin-top: 0.8rem;
+    width: 100%;
+}
+
+.vis-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 0.4rem;
+}
+
+.vis-tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border-radius: 4px;
+}
+
+.vis-tab-btn:hover {
+    color: var(--text-primary);
+    background-color: rgba(255,255,255,0.04);
+}
+
+.vis-tab-btn.active {
+    color: var(--text-primary);
+    background-color: rgba(45, 140, 255, 0.12);
+    border: 1px solid rgba(45, 140, 255, 0.3);
+}
+
+.vis-view.hidden {
+    display: none !important;
+}
+
+.chart-container {
+    background: rgba(20,21,23,0.4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.2rem;
+    margin-top: 0.6rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
